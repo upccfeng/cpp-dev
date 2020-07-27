@@ -2,10 +2,15 @@ import os
 import subprocess
 import sys
 import argparse
+import git
 
 __dir__ = os.path.dirname(os.path.realpath(__file__))
 sys.path.insert(0, os.path.join(__dir__, 'pylib'))
 import taskrunner
+
+@taskrunner.task
+def git_clone():
+    print('git_clone')
 
 @taskrunner.task
 def foo():

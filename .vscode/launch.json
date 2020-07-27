@@ -10,6 +10,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/tasks.py",
             "args": [
+                "git_clone"
             ],
             "console": "integratedTerminal"
         },

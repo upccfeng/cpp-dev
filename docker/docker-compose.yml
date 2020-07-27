@@ -1,0 +1,12 @@
+version: '2'
+services:
+  dev-image:
+    image: cppdev
+    container_name: cppdev
+    networks:
+      - default
+    ports: #(HOST:CONTAINER)
+      - "10022:22"
+    privileged: true
+    volumes: #(HOST:CONTAINER)
+      - "..:/workspace"
