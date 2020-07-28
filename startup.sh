@@ -1,3 +1,3 @@
-python3 -m venv unix-python-dev
-source unix-python-dev/bin/activate
-pip install -r requirements.txt
+python3 -m venv python-dev
+source python-dev/bin/activate
+pip3 install -r requirements.txt

@@ -10,9 +10,10 @@
             "request": "launch",
             "program": "${workspaceFolder}/tasks.py",
             "args": [
-                "git_clone"
+                "build_google_test"
             ],
-            "console": "integratedTerminal"
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/build"
         },
 
     ]

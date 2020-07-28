@@ -1,3 +1,3 @@
-python3 -m venv win-python-dev
-call win-python-dev\Scripts\activate.bat
+python3 -m venv python-dev
+call python-dev\Scripts\activate.bat
 pip install -r requirements.txt

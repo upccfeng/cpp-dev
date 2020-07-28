@@ -9,8 +9,49 @@ sys.path.insert(0, os.path.join(__dir__, 'pylib'))
 import taskrunner
 
 @taskrunner.task
-def git_clone():
-    print('git_clone')
+def build_google_test():
+    BUILD_DIR = os.getcwd()
+    #
+    # TODO: check is donwload yet
+    #
+    git.Git(BUILD_DIR).clone("https://github.com/google/googletest.git")
+
+    GOOGLE_TEST_DIR = os.path.join(BUILD_DIR, 'googletest')
+
+    #
+    # TODO: mkdir build folder in google test, and build in it
+    #
+    cmd = '\n'.join(['cd {}'.format(GOOGLE_TEST_DIR),
+                        'cmake .',
+                        'make'])
+    b_cmd = str.encode(cmd)
+
+    p = subprocess.Popen('bash', stdin=subprocess.PIPE,
+                         stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    p.stdin.write(b_cmd)
+    p.stdin.close()
+
+    stdout = []
+
+    while True:
+        ln = p.stdout.readline()
+        if not ln:
+            break
+
+        sys.stdout.write(ln.decode('utf-8'))
+
+        stdout.append(ln)
+
+    p.wait()
+
+    # stderr = [ln.replace('\r\n', '') for ln in p.stderr.readlines()]
+
+    # return ExecResult(
+    #     return_code=p.returncode,
+    #     stdout=stdout,
+    #     stderr=stderr)
+
+
 
 @taskrunner.task
 def foo():
