@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/tasks.py",
             "args": [
-                "build_google_test"
+                "build_googletest"
             ],
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}/build"
