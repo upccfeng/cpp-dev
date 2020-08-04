@@ -2,12 +2,18 @@ import os
 import subprocess
 import sys
 import argparse
+import logging
 import git
 
 __dir__ = os.path.dirname(os.path.realpath(__file__))
 sys.path.insert(0, os.path.join(__dir__, 'pylib'))
 import taskrunner
 
+
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s - %(levelname)s: %(message)s',
+                    filename='./tasks.log')
+logger = logging.getLogger()
 
 class BuildCodeException(Exception):
     pass
@@ -26,9 +32,8 @@ def build_googletest():
 
     if not os.path.isdir(GOOGLETEST_DIR):
         raise PathErrorExcetpion('Path: "{}" not found'.format(GOOGLETEST_DIR))
-        sys.exit(1)
     else:
-        print('GoogleTest source path is: {}'.format(GOOGLETEST_DIR))
+        logger.info('GoogleTest source path is: {}'.format(GOOGLETEST_DIR))
 
     GOOGLETEST_BUILD_DIR = os.path.join(GOOGLETEST_DIR, 'build')
     if not os.path.isdir(GOOGLETEST_BUILD_DIR):
@@ -36,9 +41,8 @@ def build_googletest():
 
     if not os.path.isdir(GOOGLETEST_BUILD_DIR):
         raise PathErrorExcetpion('Path: "{}" not found'.format(GOOGLETEST_BUILD_DIR))
-        sys.exit(1)
     else:
-        print('GoogleTest build path is: {}'.format(GOOGLETEST_BUILD_DIR))
+        logger.info('GoogleTest build path is: {}'.format(GOOGLETEST_BUILD_DIR))
 
     INSTALL_DIR = os.path.join(BUILD_DIR, 'install')
     if not os.path.isdir(INSTALL_DIR):
@@ -46,9 +50,8 @@ def build_googletest():
 
     if not os.path.isdir(INSTALL_DIR):
         raise PathErrorExcetpion('Path: "{}" not found'.format(INSTALL_DIR))
-        sys.exit(1)
     else:
-        print('GoogleTest install path is: {}'.format(INSTALL_DIR))
+        logger.info('GoogleTest install path is: {}'.format(INSTALL_DIR))
 
     #
     # TODO: support multiplatform (windows, linux, macos), now support linux
@@ -97,6 +100,10 @@ if __name__ == '__main__':
     #
     CPP_BUILD_DIR = __dir__
 
+    logger.info('Start to run task')
+
     taskrunner.main({
         'default': ['foo', 'bar', 'car']
     }, dir=CPP_BUILD_DIR)
+
+    logger.info('End of running')
