@@ -1,0 +1,1 @@
+# make exec test_all using google test
