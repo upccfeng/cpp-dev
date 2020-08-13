@@ -1,1 +1,22 @@
-# make exec of test_processing using google test
+cmake_minimum_required(VERSION 3.0.0)
+
+project(test_processing)
+
+add_definitions(-std=c++14)
+add_definitions(-g -O0)
+
+set(PROCESSING_DIR ${CMAKE_SOURCE_DIR}/processing)
+set(BUILD_DIR ${CMAKE_SOURCE_DIR}/build)
+set(INSTALL_DIR ${BUILD_DIR}/install)
+set(INCLUDE_DIR ${INSTALL_DIR}/include)
+set(LIB_DIR ${INSTALL_DIR}/lib)
+
+include_directories(${INCLUDE_DIR})
+link_directories(${LIB_DIR})
+
+add_executable(test_processing
+    test_processing.cpp
+    ${PROCESSING_DIR}/solution.cpp
+)
+
+target_link_libraries(test_processing gtest gtest_main pthread)
