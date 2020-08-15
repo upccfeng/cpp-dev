@@ -7,16 +7,16 @@ add_definitions(-g -O0)
 
 set(PROCESSING_DIR ${CMAKE_SOURCE_DIR}/processing)
 set(BUILD_DIR ${CMAKE_SOURCE_DIR}/build)
-set(INSTALL_DIR ${BUILD_DIR}/install)
-set(INCLUDE_DIR ${INSTALL_DIR}/include)
-set(LIB_DIR ${INSTALL_DIR}/lib)
+set(GOOGLE_TEST_INSTALL_DIR ${BUILD_DIR}/install/googletest)
+set(GOOGLE_TEST_INCLUDE_DIR ${GOOGLE_TEST_INSTALL_DIR}/include)
+set(LIB_DIR ${GOOGLE_TEST_INSTALL_DIR}/lib)
 set(TOOLS_SRC_DIR ${CMAKE_SOURCE_DIR}/tools/src)
 set(TOOLS_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/tools/include)
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/tools)
 add_subdirectory(${CMAKE_SOURCE_DIR}/leetcode)
 
-include_directories(${INCLUDE_DIR})
+include_directories(${GOOGLE_TEST_INCLUDE_DIR})
 link_directories(${LIB_DIR})
 
 add_executable(test_processing

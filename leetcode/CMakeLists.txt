@@ -4,7 +4,7 @@ project(test_all)
 
 file(GLOB SOLUTION_FILES ${PROJECT_SOURCE_DIR}/*.cpp)
 
-include_directories(${INCLUDE_DIR} ${TOOLS_INCLUDE_DIR})
+include_directories(${GOOGLE_TEST_INCLUDE_DIR} ${TOOLS_INCLUDE_DIR})
 link_directories(${LIB_DIR})
 
 add_executable(test_all
