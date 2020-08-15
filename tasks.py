@@ -22,7 +22,10 @@ class PathErrorExcetpion(Exception):
     pass
 
 @taskrunner.task
-def build_googletest():
+def build_googletest_bk():
+    #
+    # TODO: install to googletest folder
+    #
     BUILD_DIR = os.getcwd()
 
     GOOGLETEST = 'googletest'
@@ -83,27 +86,60 @@ def build_googletest():
         raise BuildCodeException('Build {} failed'.format(GOOGLETEST))
 
 @taskrunner.task
-def foo():
-    print('foo')
+def download_googletest():
+    #
+    # TODO: Download the googlet test code if folder is not exist.
+    #
+    print('download_googletest')
 
 @taskrunner.task
-def bar():
-    print('bar')
+def build_googletest():
+    #
+    # TODOO: build google test and install to google test folder
+    #
+    print('build_googletest')
 
 @taskrunner.task
-def car():
-    print('car')
+def clean_googletest():
+    #
+    # TODO: remove google test build folder and install folder
+    #
+    print('clean_googletest')
+
+@taskrunner.task
+def build_tests():
+    #
+    # TODO: build test code
+    #
+    print('build_tests')
+
+@taskrunner.task
+def clean_tests():
+    #
+    # TODO: remove test code build folder
+    #
+    print('clean_tests')
+
+@taskrunner.task
+def clean_all():
+    #
+    # TODO: remove root build folder
+    #
+    print('clean_all')
 
 if __name__ == '__main__':
     #
     # TODO: pwd should be the build folder, maybe current
     #
-    CPP_BUILD_DIR = __dir__
+    CPP_ROOT_DIR = __dir__
 
     logger.info('Start to run task')
 
     taskrunner.main({
-        'default': ['foo', 'bar', 'car']
-    }, dir=CPP_BUILD_DIR)
+        'default': ['download_googletest', 'build_googletest', 'build_tests'],
+        'rebuild_googletest': ['clean_googletest', 'build_googletest'],
+        'rebuild_tests': ['clean_tests', 'build_tests'],
+        'rebuild_all': ['clean_all', 'default']
+    }, cpp_root_dir=CPP_ROOT_DIR)
 
     logger.info('End of running')

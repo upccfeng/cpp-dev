@@ -5,7 +5,7 @@ import json
 
 tasks = {}
 
-def parse_arguments(args, alias, dir):
+def parse_arguments(args, alias, cpp_root_dir):
 
     parser = argparse.ArgumentParser()
 
@@ -42,7 +42,7 @@ class TaskTypeError(Exception):
     pass
 
 def main(alias, **kwargs):
-    CPP_BUILD_DIR = kwargs['dir']
+    CPP_ROOT_DIR = kwargs['cpp_root_dir']
 
     if len(sys.argv) == 1:
         sys.argv.append('default')
@@ -68,4 +68,8 @@ def main(alias, **kwargs):
         tasks[arg_opts.task]()
     else:
         for k in tasks[arg_opts.task]:
-            tasks[k]()
+            if k in alias:
+                for sub_k in alias[k]:
+                    tasks[sub_k]()
+            else:
+                tasks[k]()
