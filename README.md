@@ -1,6 +1,6 @@
 # Cpp development environment
 
-## Get Ubuntu Container
+## Get Ubuntu env by Docker
 
 ```bash
 cd docker
