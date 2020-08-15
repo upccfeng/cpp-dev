@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "../string_tool/string_tool.hpp"
+#include "string_tool.hpp"
 
 using namespace std;
 

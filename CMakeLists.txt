@@ -10,6 +10,11 @@ set(BUILD_DIR ${CMAKE_SOURCE_DIR}/build)
 set(INSTALL_DIR ${BUILD_DIR}/install)
 set(INCLUDE_DIR ${INSTALL_DIR}/include)
 set(LIB_DIR ${INSTALL_DIR}/lib)
+set(TOOLS_SRC_DIR ${CMAKE_SOURCE_DIR}/tools/src)
+set(TOOLS_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/tools/include)
+
+add_subdirectory(${CMAKE_SOURCE_DIR}/tools)
+add_subdirectory(${CMAKE_SOURCE_DIR}/leetcode)
 
 include_directories(${INCLUDE_DIR})
 link_directories(${LIB_DIR})
