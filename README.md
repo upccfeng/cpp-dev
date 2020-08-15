@@ -1,15 +1,12 @@
-# Env for venv in python
+# Cpp development environment
 
-## Windows
+## Get Ubuntu Container
 
-### Requirments
-
-* python3
-
-### Start-up
-
-```bat
-call startup.bat
+```bash
+cd docker
+docker build -t cppdev
+docker-compose up -d
+docker exec -it cppdev bash
 ```
 
 ## Ubuntu
@@ -17,10 +14,29 @@ call startup.bat
 ### Requirments
 
 * python3
-* python3-venv
+* pip3
+* python3-venv (options for python virtual env)
 
-## Start-up
+### Set up tasks runner env
 
 ```bash
-source startup.sh
+source startup.sh # startup-venv.sh for virtual env
 ```
+
+### Build Code
+
+```bash
+python3 tasks.py [task]
+```
+
+### Run Test
+
+```bash
+./build/cpp_build/test_processing
+./build/cpp_build/leetcode/test_all
+./build/cpp_build/tools/test_tools
+```
+
+### Windows
+
+To do list
