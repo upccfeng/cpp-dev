@@ -4,6 +4,7 @@ import sys
 import argparse
 import logging
 import git
+import shutil
 
 __dir__ = os.path.dirname(os.path.realpath(__file__))
 sys.path.insert(0, os.path.join(__dir__, 'pylib'))
@@ -21,6 +22,8 @@ class BuildCodeException(Exception):
 class PathErrorExcetpion(Exception):
     pass
 
+class RemoveFolderErrorExcetpion(Exception):
+    pass
 #
 # TODO: maybe can bring the build path from parameters
 #
@@ -31,10 +34,10 @@ if not os.path.isdir(BUILD_DIR):
 GOOGLETEST_DIR = os.path.join(BUILD_DIR, 'sources', 'googletest')
 
 INSTALL_DIR = os.path.join(BUILD_DIR, 'install')
-if not os.path.isdir(INSTALL_DIR):
+if not os.path.exists(INSTALL_DIR):
     os.mkdir(INSTALL_DIR)
 
-if not os.path.isdir(INSTALL_DIR):
+if not os.path.exists(INSTALL_DIR):
     raise PathErrorExcetpion('Path: "{}" not found'.format(INSTALL_DIR))
 else:
     logger.info('Install path is: {}'.format(INSTALL_DIR))
@@ -43,10 +46,10 @@ else:
 def download_googletest():
     logger.info('Start to donwload google test from GitHub')
 
-    if not os.path.isdir(GOOGLETEST_DIR):
+    if not os.path.exists(GOOGLETEST_DIR):
         git.Git(BUILD_DIR).clone('https://github.com/google/googletest.git', GOOGLETEST_DIR)
 
-    if not os.path.isdir(GOOGLETEST_DIR):
+    if not os.path.exists(GOOGLETEST_DIR):
         raise PathErrorExcetpion('Path: "{}" not found'.format(GOOGLETEST_DIR))
     else:
         logger.info('GoogleTest source path is: {}'.format(GOOGLETEST_DIR))
@@ -57,19 +60,19 @@ def build_googletest():
     logger.info('Start to build google test and install')
 
     GOOGLETEST_BUILD_DIR = os.path.join(GOOGLETEST_DIR, 'build')
-    if not os.path.isdir(GOOGLETEST_BUILD_DIR):
+    if not os.path.exists(GOOGLETEST_BUILD_DIR):
         os.mkdir(GOOGLETEST_BUILD_DIR)
 
-    if not os.path.isdir(GOOGLETEST_BUILD_DIR):
+    if not os.path.exists(GOOGLETEST_BUILD_DIR):
         raise PathErrorExcetpion('Path: "{}" not found'.format(GOOGLETEST_BUILD_DIR))
     else:
         logger.info('GoogleTest build path is: {}'.format(GOOGLETEST_BUILD_DIR))
 
     GOOGLETEST_INSTALL_DIR = os.path.join(INSTALL_DIR, 'googletest')
-    if not os.path.isdir(GOOGLETEST_INSTALL_DIR):
+    if not os.path.exists(GOOGLETEST_INSTALL_DIR):
         os.mkdir(GOOGLETEST_INSTALL_DIR)
 
-    if not os.path.isdir(GOOGLETEST_INSTALL_DIR):
+    if not os.path.exists(GOOGLETEST_INSTALL_DIR):
         raise PathErrorExcetpion('Path: "{}" not found'.format(GOOGLETEST_INSTALL_DIR))
     else:
         logger.info('GoogleTest install path is: {}'.format(GOOGLETEST_INSTALL_DIR))
@@ -105,10 +108,25 @@ def build_googletest():
 
 @taskrunner.task
 def clean_googletest():
-    #
-    # TODO: remove google test build folder and install folder
-    #
-    print('clean_googletest')
+    logger.info('Start to clean googletest build and install folder')
+
+    GOOGLETEST_BUILD_DIR = os.path.join(BUILD_DIR, 'sources', 'googletest', 'build')
+    try:
+        shutil.rmtree(GOOGLETEST_BUILD_DIR)
+    except OSError as e:
+        logger.info(e)
+
+    if os.path.exists(GOOGLETEST_BUILD_DIR):
+        raise RemoveFolderErrorExcetpion('Remove "{}" folder failed'.format(GOOGLETEST_BUILD_DIR))
+
+    GOOGLETEST_INSTALL_DIR = os.path.join(BUILD_DIR, 'install', 'googletest')
+    try:
+        shutil.rmtree(GOOGLETEST_INSTALL_DIR)
+    except OSError as e:
+        logger.info(e)
+
+    if os.path.exists(GOOGLETEST_INSTALL_DIR):
+        raise RemoveFolderErrorExcetpion('Remove "{}" folder failed'.format(GOOGLETEST_INSTALL_DIR))
 
 @taskrunner.task
 def build_tests():
