@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/tasks.py",
             "args": [
-                "clean_all"
+                "default"
             ],
             "console": "integratedTerminal"
         },

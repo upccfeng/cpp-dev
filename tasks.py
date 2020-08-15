@@ -25,14 +25,18 @@ class PathErrorExcetpion(Exception):
 class RemoveFolderErrorExcetpion(Exception):
     pass
 
+GOOGLETEST_BUIILD_FOLDER = 'googletest_build'
+CPP_TEST_BUILD_FOLDER = 'cpp_build'
+SOURCE_DIR = os.getcwd()
+
 #
 # TODO: maybe can bring the build path from parameters
 #
-BUILD_DIR = os.path.join(os.getcwd(), 'build')
+BUILD_DIR = os.path.join(SOURCE_DIR, 'build')
 if not os.path.exists(BUILD_DIR):
     os.mkdir(BUILD_DIR)
 
-GOOGLETEST_DIR = os.path.join(BUILD_DIR, 'sources', 'googletest')
+GOOGLETEST_DIR = os.path.join(BUILD_DIR, 'third_party_source', 'googletest')
 
 INSTALL_DIR = os.path.join(BUILD_DIR, 'install')
 if not os.path.exists(INSTALL_DIR):
@@ -45,7 +49,7 @@ else:
 
 @taskrunner.task
 def download_googletest():
-    logger.info('Start to donwload google test from GitHub')
+    logger.info('Donwload google test from GitHub')
 
     if not os.path.exists(GOOGLETEST_DIR):
         git.Git(BUILD_DIR).clone('https://github.com/google/googletest.git', GOOGLETEST_DIR)
@@ -60,7 +64,7 @@ def download_googletest():
 def build_googletest():
     logger.info('Start to build google test and install')
 
-    GOOGLETEST_BUILD_DIR = os.path.join(GOOGLETEST_DIR, 'build')
+    GOOGLETEST_BUILD_DIR = os.path.join(BUILD_DIR, GOOGLETEST_BUIILD_FOLDER)
     if not os.path.exists(GOOGLETEST_BUILD_DIR):
         os.mkdir(GOOGLETEST_BUILD_DIR)
 
@@ -109,9 +113,9 @@ def build_googletest():
 
 @taskrunner.task
 def clean_googletest():
-    logger.info('Start to clean googletest build and install folder')
+    logger.info('Clean googletest build and install folder')
 
-    GOOGLETEST_BUILD_DIR = os.path.join(BUILD_DIR, 'sources', 'googletest', 'build')
+    GOOGLETEST_BUILD_DIR = os.path.join(BUILD_DIR, GOOGLETEST_BUIILD_FOLDER)
     try:
         shutil.rmtree(GOOGLETEST_BUILD_DIR)
     except OSError as e:
@@ -131,21 +135,61 @@ def clean_googletest():
 
 @taskrunner.task
 def build_tests():
+    logger.info('Build Cpp test code')
+
+    CPP_BUILD_DIR = os.path.join(BUILD_DIR, CPP_TEST_BUILD_FOLDER)
+    if not os.path.exists(CPP_BUILD_DIR):
+        os.mkdir(CPP_BUILD_DIR)
+
+    if not os.path.exists(CPP_BUILD_DIR):
+        raise PathErrorExcetpion('Path: "{}" not found'.format(CPP_BUILD_DIR))
+    else:
+        logger.info('Cpp test code build path is: {}'.format(CPP_BUILD_DIR))
+
     #
-    # TODO: build test code
+    # TODO: support multiplatform (windows, linux, macos), now support linux
+    #       * use differen shell on different platform
+    #       * cmake will bring additional params, ex: -DCMAKE_CXX_COMPILER, -DCMAKE_CXX_COMPILER
     #
-    print('build_tests')
+    cmd = '\n'.join(['cd {}'.format(CPP_BUILD_DIR),
+                        'cmake {src_dir}'.format(src_dir=SOURCE_DIR),
+                        'make'])
+    b_cmd = str.encode(cmd)
+
+    p = subprocess.Popen('bash', stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    p.stdin.write(b_cmd)
+    p.stdin.close()
+
+    stdout = []
+    while True:
+        ln = p.stdout.readline()
+        if not ln:
+            break
+
+        sys.stdout.write(ln.decode('utf-8'))
+        stdout.append(ln)
+
+    p.wait()
+
+    if p.returncode:
+        raise BuildCodeException('Build Cpp test code failed')
 
 @taskrunner.task
 def clean_tests():
-    #
-    # TODO: remove test code build folder
-    #
-    print('clean_tests')
+    logger.info('Clean cpp build folder')
+
+    CPP_BUILD_DIR = os.path.join(BUILD_DIR, CPP_TEST_BUILD_FOLDER)
+    try:
+        shutil.rmtree(CPP_BUILD_DIR)
+    except OSError as e:
+        logger.info(e)
+
+    if os.path.exists(CPP_BUILD_DIR):
+        raise RemoveFolderErrorExcetpion('Remove "{}" folder failed'.format(CPP_BUILD_DIR))
 
 @taskrunner.task
 def clean_all():
-    logger.info('Start to clean root build folder')
+    logger.info('Clean root build folder')
 
     try:
         shutil.rmtree(BUILD_DIR)
@@ -171,9 +215,9 @@ if __name__ == '__main__':
 
     taskrunner.main({
         'default': ['download_googletest', 'build_googletest', 'build_tests'],
-        'rebuild_googletest': ['clean_googletest', 'build_googletest'],
-        'rebuild_tests': ['clean_tests', 'build_tests'],
-        'rebuild_all': ['clean_all', 'default']
+        'googletest_clean_and_build': ['clean_googletest', 'build_googletest'],
+        'tests_clean_and_build': ['clean_tests', 'build_tests'],
+        'all_clean_and_build': ['clean_all', 'default']
     }, cpp_root_dir=CPP_ROOT_DIR)
 
     logger.info('End of running')
