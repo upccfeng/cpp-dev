@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/tasks.py",
             "args": [
-                "rebuild_googletest"
+                "clean_all"
             ],
             "console": "integratedTerminal"
         },

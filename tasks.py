@@ -24,11 +24,12 @@ class PathErrorExcetpion(Exception):
 
 class RemoveFolderErrorExcetpion(Exception):
     pass
+
 #
 # TODO: maybe can bring the build path from parameters
 #
 BUILD_DIR = os.path.join(os.getcwd(), 'build')
-if not os.path.isdir(BUILD_DIR):
+if not os.path.exists(BUILD_DIR):
     os.mkdir(BUILD_DIR)
 
 GOOGLETEST_DIR = os.path.join(BUILD_DIR, 'sources', 'googletest')
@@ -144,10 +145,21 @@ def clean_tests():
 
 @taskrunner.task
 def clean_all():
-    #
-    # TODO: remove root build folder
-    #
-    print('clean_all')
+    logger.info('Start to clean root build folder')
+
+    try:
+        shutil.rmtree(BUILD_DIR)
+    except OSError as e:
+        logger.info(e)
+
+    if os.path.exists(BUILD_DIR):
+        raise RemoveFolderErrorExcetpion('Remove "{}" folder failed'.format(BUILD_DIR))
+
+    if not os.path.exists(BUILD_DIR):
+        os.mkdir(BUILD_DIR)
+
+    if not os.path.exists(INSTALL_DIR):
+        os.mkdir(INSTALL_DIR)
 
 if __name__ == '__main__':
     #
