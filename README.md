@@ -4,7 +4,7 @@
 
 ```bash
 cd docker
-docker build -t cppdev
+docker build -t cppdev .
 docker-compose up -d
 docker exec -it cppdev bash
 ```
@@ -37,6 +37,10 @@ python3 tasks.py [task]
 ./build/cpp_build/tools/test_tools
 ```
 
-### Windows
+## Windows
 
-To do list
+TBD
+
+## MacOS
+
+TBD
