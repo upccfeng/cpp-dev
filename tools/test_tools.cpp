@@ -1,17 +1,12 @@
 #include <iostream>
 #include "gtest/gtest.h"
 #include "string_tools.hpp"
-#include "sort.hpp"
+#include "sort_tools.hpp"
 
 TEST(Test_StringTools, debug)
 {
     std::vector<int> result;
     StringTools::KMP(result, "caatcat", "caatcacaatcatcaatcat");
-
-    for(auto a : result)
-    {
-        std::cout << a << std::endl;
-    }
 }
 
 TEST(TEST_Sort, debug)

@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/build/cpp_build/tools/test_tools",
             "args": [
-                "--gtest_filter=*",
+                "--gtest_filter=TEST_Sort.*",
                 "--gtest_break_on_failure"
             ],
             "preLaunchTask": "Cpp-build-tests",
