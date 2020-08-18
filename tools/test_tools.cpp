@@ -1,22 +1,9 @@
 #include <iostream>
-#include <vector>
 #include "gtest/gtest.h"
 #include "string_tools.hpp"
+#include "sort.hpp"
 
-class Test_StringTools : public testing::Test
-{
-    void SetUp() override
-    {
-        std::cout << "setup" << std::endl;
-    }
-
-    void TearDown() override
-    {
-        std::cout << "teardown" << std::endl;
-    }
-};
-
-TEST_F(Test_StringTools, debug)
+TEST(Test_StringTools, debug)
 {
     std::vector<int> result;
     StringTools::KMP(result, "caatcat", "caatcacaatcatcaatcat");
@@ -25,4 +12,12 @@ TEST_F(Test_StringTools, debug)
     {
         std::cout << a << std::endl;
     }
+}
+
+TEST(TEST_Sort, debug)
+{
+    std::vector<int> result = {6, 5, 4, 3, 2, 1};
+    SortTools::quicksort(result, 0, result.size());
+    std::vector<int> expect = {1, 2, 3, 4, 5, 6};
+    ASSERT_EQ(result, expect);
 }

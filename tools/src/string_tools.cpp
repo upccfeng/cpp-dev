@@ -77,8 +77,6 @@ void StringTools::KMP_Pattern_Relation(const std::string& pattern, int kmpNext[]
             kmpNext[taking + 1] = pos;
         }
     }
-    int a = 0;
-
 }
 
 void StringTools::KMP(std::vector<int>& result, std::string pattern, std::string target) {

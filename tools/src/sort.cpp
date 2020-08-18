@@ -1,6 +1,6 @@
 #include "sort.hpp"
 
-void SortFunc::bubblesort(std::vector<int> &target)
+void SortTools::bubblesort(std::vector<int> &target)
 {
     int target_size = target.size();
     int times = target_size;
@@ -25,7 +25,7 @@ void SortFunc::bubblesort(std::vector<int> &target)
     }
 }
 
-void SortFunc::quicksort(std::vector<int> &target, int leftp, int rightp)
+void SortTools::quicksort(std::vector<int> &target, int leftp, int rightp)
 {
     int middle = target[leftp];
     int i = leftp + 1;

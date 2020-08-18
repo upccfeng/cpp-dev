@@ -1,9 +1,9 @@
 #include <iostream>
 #include <vector>
 
-class SortFunc
+class SortTools
 {
 public:
-    void quicksort(std::vector<int> &target, int leftp, int rightp);
-    void bubblesort(std::vector<int> &target);
+    static void quicksort(std::vector<int> &target, int leftp, int rightp);
+    static void bubblesort(std::vector<int> &target);
 };
