@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-class StringTool
+class StringTools
 {
 private:
     static void MP_Pattern_Relation(const std::string& pattern, int mpNext[]);

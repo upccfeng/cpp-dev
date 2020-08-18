@@ -1,0 +1,41 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Cpp-build-tests",
+            "type": "shell",
+            "command": "python3",
+            "args": [
+                "tasks.py",
+                "build_tests"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Cpp-clean-all-build",
+            "type": "shell",
+            "command": "python3",
+            "args": [
+                "tasks.py",
+                "all_clean_and_build"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "Create Python env",
+            "type": "shell",
+            "command": "source ./starup.sh",
+            "args": []
+        }
+    ]
+}

@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "string_tool.hpp"
+#include "string_tools.hpp"
 
 using namespace std;
 
@@ -24,7 +24,7 @@ public:
         for (int i = 0; i < listlen; i++)
         {
             vector<string> result;
-            StringTool strtool;
+            StringTools strtool;
             strtool.SplitStringByToken(result, transactions[i], ",");
             tlist[i].name = result[0];
             tlist[i].time = stoi(result[1]);

@@ -1,8 +1,28 @@
 #include <iostream>
+#include <vector>
 #include "gtest/gtest.h"
+#include "string_tools.hpp"
 
-TEST(test_tool, HelloWorld)
+class Test_StringTools : public testing::Test
 {
-    int a = 10;
-    ASSERT_EQ(a, 10);
+    void SetUp() override
+    {
+        std::cout << "setup" << std::endl;
+    }
+
+    void TearDown() override
+    {
+        std::cout << "teardown" << std::endl;
+    }
+};
+
+TEST_F(Test_StringTools, debug)
+{
+    std::vector<int> result;
+    StringTools::KMP(result, "caatcat", "caatcacaatcatcaatcat");
+
+    for(auto a : result)
+    {
+        std::cout << a << std::endl;
+    }
 }
