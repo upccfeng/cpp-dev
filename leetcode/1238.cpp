@@ -33,7 +33,12 @@ public:
     {
         vector<int> ans;
         arraySize = pow(2, n);
-        int dataArray[arraySize] = {0};
+        int* dataArray = new int[arraySize]();
+        for(int i = 0; i < arraySize; i++)
+        {
+            dataArray[i] = 0;
+        }
+        //int dataArray[arraySize] = {0};
 
         ans.push_back(start);
         dataArray[start] = -1;
@@ -55,6 +60,8 @@ public:
             ans.push_back(start ^ i ^ i >> 1); // start at "start" to generate gray code sequence
         }
         */
+
+        delete[] dataArray;
         return ans;
     }
 };

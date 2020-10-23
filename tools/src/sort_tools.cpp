@@ -25,40 +25,54 @@ void SortTools::bubblesort(std::vector<int> &target)
     }
 }
 
-void SortTools::quicksort(std::vector<int> &target, int leftp, int rightp)
+void SortTools::quicksort(std::vector<int> &target, int left_bound, int right_bound)
 {
-    int middle = target[leftp];
-    int i = leftp + 1;
-    int j = rightp;
+    if (right_bound - left_bound < 1)
+    {
+        return;
+    }
+    int middle = target[left_bound];
+    int big_pos = left_bound + 1;
+    int small_pos = right_bound;
     while (true)
     {
-        for (i; i <= rightp; i++)
+        for (big_pos; big_pos <= right_bound; big_pos++)
         {
-            if (target[i] > middle)
+            if(target[big_pos] > middle)
             {
                 break;
             }
         }
-        for (j; j > leftp; j--)
+        for (small_pos; small_pos > left_bound; small_pos--)
         {
-            if (target[j] < middle)
+            if(target[small_pos] < middle)
             {
                 break;
             }
         }
-        if (i < j)
+
+        if (big_pos < small_pos)
         {
-            std::swap(target[i], target[j]);
-            i++;
-            j--;
+            std::swap(target[big_pos], target[small_pos]);
+            big_pos++;
+            small_pos--;
         }
         else
         {
-            std::swap(target[leftp], target[j]);
-            if (j - leftp > 1)
-                quicksort(target, leftp, j - 1);
-            if (rightp - j > 1)
-                quicksort(target, j + 1, rightp);
+            if (big_pos > right_bound)
+                big_pos--;
+            if (small_pos < left_bound)
+                small_pos--;
+
+            std::swap(target[left_bound], target[small_pos]);
+            if (right_bound - small_pos > 1)
+            {
+                quicksort(target, small_pos + 1, right_bound);
+            }
+            if (small_pos - 1 - left_bound > 1)
+            {
+                quicksort(target, left_bound, small_pos - 1);
+            }
             break;
         }
     }
