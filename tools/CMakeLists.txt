@@ -14,4 +14,4 @@ add_executable(test_tools
     test_tools.cpp
 )
 
-target_link_libraries(test_tools tools gtest gtest_main pthread)
+target_link_libraries(test_tools tools gtest gmock gtest_main pthread)

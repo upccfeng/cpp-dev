@@ -12,4 +12,4 @@ add_executable(test_all
     ${SOLUTION_FILES}
 )
 
-target_link_libraries(test_all tools gtest gtest_main pthread)
+target_link_libraries(test_all tools gtest gmock gtest_main pthread)
