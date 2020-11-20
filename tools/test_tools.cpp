@@ -1,4 +1,9 @@
 #include <iostream>
+
+#include "assert.h"
+#include "gmock/gmock.h"
+
+
 #include "gtest/gtest.h"
 #include "string_tools.hpp"
 #include "sort_tools.hpp"
@@ -9,42 +14,64 @@ TEST(Test_StringTools, debug)
     StringTools::KMP(result, "caatcat", "caatcacaatcatcaatcat");
 }
 
-TEST(TEST_Sort, normal_set)
+class TestSortTestSuit : public ::testing::Test
 {
-    std::vector<int> result = {5, 3, 2, 6, 9, 3, 1, 4, -10, -999};
-    SortTools::quicksort(result, 0, result.size() - 1);
-    std::vector<int> expect = {-999, -10, 1, 2, 3, 3, 4 ,5 ,6, 9};
-    ASSERT_EQ(result, expect);
+public:
+    using int_data = std::vector<int>;
+    using int_data_entry = std::pair<int_data, int_data>; // <input, expect>
+    std::vector<int_data_entry> int_data_entries;
+
+private:
+    void SetUp() override
+    {
+        // Normal set
+        int_data_entries.emplace_back((int_data_entry){
+                {5, 3, 2, 6, 9, 3, 1, 4, -10, -999},
+                {-999, -10, 1, 2, 3, 3, 4 ,5 ,6, 9}
+            });
+
+        // decreasing set
+        int_data_entries.emplace_back((int_data_entry){
+                {6, 5, 4, 3, 2, 1},
+                {1, 2, 3, 4, 5, 6}
+            });
+
+        // increasing set
+        int_data_entries.emplace_back((int_data_entry){
+                {1, 2, 3, 4, 5, 6},
+                {1, 2, 3, 4, 5, 6}
+            });
+
+        // empty set
+        int_data_entries.emplace_back((int_data_entry){
+                {},
+                {}
+            });
+
+        // same elements set
+        int_data_entries.emplace_back((int_data_entry){
+                {3,3,3,3,3,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2},
+                {1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3}
+            });
+    }
+};
+
+TEST_F(TestSortTestSuit, bubble_sort)
+{
+    for (auto& data_entry : int_data_entries)
+    {
+        auto data = data_entry.first;
+        SortTools::bubblesort(data);
+        ASSERT_THAT(data, testing::Eq(data_entry.second));
+    }
 }
 
-TEST(TEST_Sort, decreasing_set)
+TEST_F(TestSortTestSuit, quick_sort)
 {
-    std::vector<int> result = {6, 5, 4, 3, 2, 1};
-    SortTools::quicksort(result, 0, result.size() - 1);
-    std::vector<int> expect = {1, 2, 3, 4, 5, 6};
-    ASSERT_EQ(result, expect);
-}
-
-TEST(TEST_Sort, increasing_set)
-{
-    std::vector<int> result = {1, 2, 3, 4, 5, 6};
-    SortTools::quicksort(result, 0, result.size() - 1);
-    std::vector<int> expect = {1, 2, 3, 4, 5, 6};
-    ASSERT_EQ(result, expect);
-}
-
-TEST(TEST_Sort, empty_set)
-{
-    std::vector<int> result = {};
-    SortTools::quicksort(result, 0, result.size() - 1);
-    std::vector<int> expect = {};
-    ASSERT_EQ(result, expect);
-}
-
-TEST(TEST_Sort, the_same_elements_set)
-{
-    std::vector<int> result = {3,3,3,3,3,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2};
-    SortTools::quicksort(result, 0, result.size() - 1);
-    std::vector<int> expect = {1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3};
-    ASSERT_EQ(result, expect);
+    for (auto& data_entry : int_data_entries)
+    {
+        auto data = data_entry.first;
+        SortTools::quicksort(data, 0, data.size() - 1);
+        ASSERT_THAT(data, testing::Eq(data_entry.second));
+    }
 }

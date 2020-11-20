@@ -20,7 +20,9 @@ docker exec -it cppdev bash
 ### Set up tasks runner env
 
 ```bash
-source startup.sh # startup-venv.sh for virtual env
+source startup.sh
+# or
+source startup-venv.sh # for virtual env
 ```
 
 ### Build Code

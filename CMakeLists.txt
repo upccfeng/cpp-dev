@@ -24,4 +24,4 @@ add_executable(test_processing
     ${PROCESSING_DIR}/solution.cpp
 )
 
-target_link_libraries(test_processing gtest gtest_main pthread)
+target_link_libraries(test_processing gtest gmock gtest_main pthread)
