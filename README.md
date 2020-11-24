@@ -39,10 +39,6 @@ python3 tasks.py [task]
 ./build/cpp_build/tools/test_tools
 ```
 
-## Windows
-
-TBD
-
-## MacOS
+## Windows with WSL
 
 TBD

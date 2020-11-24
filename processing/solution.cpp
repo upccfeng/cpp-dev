@@ -1,7 +1,8 @@
+#include "solution.hpp"
 
+// function definition
 
-int a(int b)
+vector<int> Solution::partitionLabels(string S)
 {
-    b = 10;
-    return b;
+    return {};
 }

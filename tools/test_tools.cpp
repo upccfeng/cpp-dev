@@ -2,9 +2,8 @@
 
 #include "assert.h"
 #include "gmock/gmock.h"
-
-
 #include "gtest/gtest.h"
+
 #include "string_tools.hpp"
 #include "sort_tools.hpp"
 
