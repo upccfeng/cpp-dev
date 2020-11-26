@@ -25,7 +25,10 @@
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
                 }
-            ]
+            ],
+            "osx": {
+                "MIMode": "lldb"
+            }
         },
         {
             "name": "Cpp-tools",
