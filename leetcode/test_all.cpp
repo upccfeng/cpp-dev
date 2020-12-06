@@ -10,7 +10,7 @@ using namespace testing;
 
 namespace p763
 {
-    TEST(test_processing, Case_1)
+    TEST(test_763, Case_1)
     {
         Solution s;
         string input = "ababcbacadefegdehijhklij";
@@ -19,7 +19,7 @@ namespace p763
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_processing, Case_sigle)
+    TEST(test_763, Case_sigle)
     {
         Solution s;
         string input = "a";
@@ -28,7 +28,7 @@ namespace p763
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_processing, Case_the_same)
+    TEST(test_763, Case_the_same)
     {
         Solution s;
         string input = "aaaaa";
@@ -37,7 +37,7 @@ namespace p763
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_processing, Case_usecase_1)
+    TEST(test_763, Case_usecase_1)
     {
         Solution s;
         string input = "aaabbbccc";
@@ -46,7 +46,7 @@ namespace p763
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_processing, Case_usecase_2)
+    TEST(test_763, Case_usecase_2)
     {
         Solution s;
         string input = "aaabbbccca";
@@ -55,7 +55,7 @@ namespace p763
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_processing, Case_usecase_3)
+    TEST(test_763, Case_usecase_3)
     {
         Solution s;
         string input = "aaabbbcccabgkgge";
@@ -64,7 +64,7 @@ namespace p763
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_processing, Case_wrong_1)
+    TEST(test_763, Case_wrong_1)
     {
         Solution s;
         string input = "caedbdedda";

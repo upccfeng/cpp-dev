@@ -4,15 +4,20 @@
 
 using namespace std;
 
-namespace processing
+namespace p5
 {
     class Solution
     {
+    public:
+        string longestPalindrome(string s)
+        {
+            return "";
+        }
     };
-} // namespace processing
+} // namespace p5
 
 /*
-Problem:
+Problem: https://leetcode.com/problems/longest-palindromic-substring/
 
 HINT:
 
