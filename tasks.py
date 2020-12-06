@@ -87,6 +87,8 @@ def build_googletest():
     #       * use differen shell on different platform
     #       * cmake will bring additional params, ex: -DCMAKE_CXX_COMPILER, -DCMAKE_CXX_COMPILER
     #
+    # TODO: generate xcode project on macos and build it.
+    #       generate visual studio project on windows and build it.
     cmd = '\n'.join(['cd {}'.format(GOOGLETEST_BUILD_DIR),
                         'cmake -DCMAKE_INSTALL_PREFIX={install_path} {src_dir}'.format(install_path=GOOGLETEST_INSTALL_DIR, src_dir=GOOGLETEST_DIR),
                         'make',
@@ -151,6 +153,8 @@ def build_tests():
     #       * use differen shell on different platform
     #       * cmake will bring additional params, ex: -DCMAKE_CXX_COMPILER, -DCMAKE_CXX_COMPILER
     #
+    # TODO: generate xcode project on macos and build it.
+    #       generate visual studio project on windows and build it.
     cmd = '\n'.join(['cd {}'.format(CPP_BUILD_DIR),
                         'cmake {src_dir}'.format(src_dir=SOURCE_DIR),
                         'make'])
