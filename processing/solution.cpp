@@ -10,8 +10,67 @@ namespace p11
 {
     class Solution
     {
+    public:
+        int maxArea(vector<int>& height)
+        {
+            int max = 0;
+            auto l_it = height.begin();
+            auto r_it = height.end() - 1;
+            while (true)
+            {
+                int distance = std::distance(l_it, r_it);
+                max = std::max(max, std::min(*l_it, *r_it) * distance);
+
+                if (*l_it > *r_it)
+                {
+                    --r_it;
+                }
+                else
+                {
+                    ++l_it;
+                }
+
+                if (distance == 1)
+                {
+                    break;
+                }
+            };
+
+            return max;
+        }
+    };
+
+    class Solution_self
+    {
         using list_t = std::list<int>;
+        using boundary_t = std::pair<int, int>;
         list_t height_list[30001];
+
+        boundary_t get_boundary(int level, list_t* list, int max)
+        {
+            int rightest = height_list[level].back();
+            int leftest = height_list[level].front();
+            for (int i = max; i > level; --i)
+            {
+                if (list[i].empty())
+                {
+                    continue;
+                }
+
+                if (list[i].back() > rightest)
+                {
+                    rightest = list[i].back();
+                }
+
+                if (list[i].front() < leftest)
+                {
+                    leftest = list[i].front();
+                }
+            }
+
+            return std::make_pair(leftest, rightest);
+        }
+
     public:
         int maxArea(vector<int>& height)
         {
@@ -19,24 +78,25 @@ namespace p11
             int max_height = 0;
             for (it; it != height.end(); ++it)
             {
+                int pos = std::distance(height.begin(), it);
                 if (*it > max_height)
                 {
                     max_height = *it;
                 }
-                int pos = std::distance(height.begin(), it);
-                for (int h = 1; h <= *it; h++)
-                {
-                    height_list[h].emplace_back(pos);
-                }
+                height_list[*it].emplace_back(pos);
             }
 
             int max_water = 0;
             for (int taking_height = max_height; taking_height > 0 ; --taking_height)
             {
-                int temp_water, left, right;
-                left = height_list[taking_height].front();
-                right = height_list[taking_height].back();
-                temp_water = taking_height * (right - left);
+                if (height_list[taking_height].empty())
+                {
+                    continue;
+                }
+
+                auto boundary = get_boundary(taking_height, height_list, max_height);
+
+                int temp_water = taking_height * (boundary.second - boundary.first);
                 if (temp_water > max_water)
                 {
                     max_water = temp_water;
