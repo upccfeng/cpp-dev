@@ -1,8 +1,5 @@
 #include <string>
-#include <vector>
-#include <map>
-#include <list>
-#include <algorithm>
+#include <cmath>
 
 using namespace std;
 
@@ -11,7 +8,7 @@ namespace pXX
     class Solution
     {
     public:
-        int XX(std::vector<int>)
+        int XX()
         {
             return 0;
         }
@@ -19,13 +16,14 @@ namespace pXX
 } // namespace pXX
 
 /*
-Problem:
+# Problem:
 
-HINT:
 
-Algorithm
+## HINT:
 
-Time Complexity:
+## Algorithm:
 
-Space Complexity:
+## Time Complexity:
+
+## Space Complexity:
 */

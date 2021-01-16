@@ -6,6 +6,75 @@
 
 using namespace testing;
 
+#include "7.cpp"
+
+namespace p7
+{
+    using Solution = Solution;
+    TEST(test_7, Case_1)
+    {
+        Solution s;
+        int input = 123;
+        int result = s.reverse(input);
+        int expect = 321;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_7, Case_2)
+    {
+        Solution s;
+        int input = -123;
+        int result = s.reverse(input);
+        int expect = -321;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_7, Case_3)
+    {
+        Solution s;
+        int input = 120;
+        int result = s.reverse(input);
+        int expect = 21;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_7, Case_4)
+    {
+        Solution s;
+        int input = 0;
+        int result = s.reverse(input);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_7, Case_Customize_1)
+    {
+        Solution s;
+        int input = pow(2, 31) - 1;
+        int result = s.reverse(input);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_7, Case_Customize_3)
+    {
+        Solution s;
+        int input = -(pow(2, 31));
+        int result = s.reverse(input);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_7, Case_Fail_1)
+    {
+        Solution s;
+        int input = 1463847412;
+        int result = s.reverse(input);
+        int expect = 2147483641;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p7
+
 #include "11.cpp"
 
 namespace p11
