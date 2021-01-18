@@ -1,5 +1,6 @@
 #include <string>
 #include <cmath>
+#include <limits.h>
 
 using namespace std;
 
@@ -11,92 +12,65 @@ namespace p8
         {
             if (sign)
             {
-                if (data <= (pow(2, 31) - 1 - e) / 10)
-                {
+                if (data <= (INT_MAX - e) / 10)
                     return false;
-                }
-                else
-                {
-                    return true;
-                }
             }
             else
             {
-                if (-data >= (-pow(2, 31) + e) / 10)
-                {
+                if (data >= (INT_MIN + e) / 10)
                     return false;
-                }
-                else
-                {
-                    return true;
-                }
             }
+            return true;
         }
     public:
         int myAtoi(std::string s)
         {
+
+            auto a = -5 % 10;
             bool sign = true;
-            long long int data = 0;
+            int data = 0;
             bool start = false;
 
             for (const auto& e : s)
             {
-                if (e == '-')
+                if (e == '-' || e == '+')
                 {
-                    if (start)
+                    if (!start)
                     {
-                        return sign ? data : -data;
+                        start = true;
+                        sign = (e == '+') ? true : false;
                     }
-
-                    start = true;
-                    sign = false;
-                }
-                else if (e == '+')
-                {
-                    if (start)
-                    {
-                        return sign ? data : -data;
-                    }
-
-                    start = true;
-                    sign = true;
+                    else
+                        return data;
                 }
                 else if (e == ' ')
                 {
-                    if (start)
+                    if (!start)
                     {
-                        break;
+                        continue;
                     }
+                    else
+                        return data;
                 }
                 else if (e > 57 || e < 48)
                 {
-                    if (start)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        return 0;
-                    }
-
-                    sign = true;
+                    return data;
                 }
                 else
                 {
                     start = true;
-
                     if (is_overflow(sign, data, e - 48))
                     {
                         return sign ? pow(2, 31) -1 : -pow(2, 31);
                     }
                     else
                     {
-                        data = data * 10 + (e - 48);
+                        data = sign ? data * 10 + (e - 48) : data * 10 - (e - 48);
                     }
                 }
             }
 
-            return sign ? data : -data;
+            return data;
         }
     };
 } // namespace p8
@@ -106,41 +80,52 @@ namespace p8
 https://leetcode.com/problems/string-to-integer-atoi/
 
 ## HINT:
-
-## Algorithm:
+use marco to avoid the time spend in pow().
+use INT_MAX and INT_MIN instead of `pow(2, 31) - 1` and `-pow(2, 31)`
 
 ASCII:
+' ' -> 32
 '-' -> 45
 '+' -> 43
 '0' -> 48
 '9' -> 57
 
+## Algorithm:
+
 ```pseudo code
-sign = 1
+sign = true
 data = 0
 start = false
 
 for e in s:
-    if e == 45:
-        sign = false
-    elif e == 43:
-        sign = true
-    elif e > 57 or e < 48:
-        sign = true
-        if start:
-            break
-    else:
-        start = true
-        if is_overflow(sign, data, e):
-            return 2^31 - 1 ? sign : -2^31
+    if e == '+' or e == '-':
+        if not start:
+            sign = true
         else:
+            return data
+    elif e == ' ':
+        if not start:
+            continue:
+        else:
+            return data
+    elif e > 57 or e < 48:
+        return data
+    else:
+        if not start:
+            start = true
             data = data * 10 + (e-48)
-
-return data ? sign : -data
+            data = sign ? data : -data
+        else:
+            if is_overflow(sign, data, e):
+                return sign ? pow(2, 31) -1 : -pow(2, 31);
+            else:
+                data = sign ? data : -data
 ```
 
 
 ## Time Complexity:
+log(n)
 
 ## Space Complexity:
+log(1)
 */

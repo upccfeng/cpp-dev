@@ -93,6 +93,15 @@ namespace p8
         ASSERT_EQ(result, expect);
     }
 
+    TEST(test_8, Case_Custmize_5)
+    {
+        Solution s;
+        std::string input = "-2147483647";
+        int result = s.myAtoi(input);
+        int expect = -2147483647;
+        ASSERT_EQ(result, expect);
+    }
+
     TEST(test_8, Case_fail_1)
     {
         Solution s;
@@ -117,6 +126,15 @@ namespace p8
         std::string input = "-5-";
         int result = s.myAtoi(input);
         int expect = -5;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_8, Case_fail_4)
+    {
+        Solution s;
+        std::string input = "00000-42a1234";
+        int result = s.myAtoi(input);
+        int expect = 0;
         ASSERT_EQ(result, expect);
     }
 } // namespace p8
