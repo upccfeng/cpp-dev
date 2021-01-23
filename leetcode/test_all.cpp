@@ -208,6 +208,67 @@ namespace p8
     }
 } // namespace p8
 
+#include "9.cpp"
+
+namespace p9
+{
+    using Solution = Solution;
+
+    TEST(test_9, Case_1)
+    {
+        Solution s;
+        int input = 121;
+        bool result = s.isPalindrome(input);
+        bool expect = true;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_9, Case_2)
+    {
+        Solution s;
+        int input = -121;
+        bool result = s.isPalindrome(input);
+        bool expect = false;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_9, Case_3)
+    {
+        Solution s;
+        int input = 10;
+        bool result = s.isPalindrome(input);
+        bool expect = false;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_9, Case_4)
+    {
+        Solution s;
+        int input = -101;
+        bool result = s.isPalindrome(input);
+        bool expect = false;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_9, Case_Customer_1)
+    {
+        Solution s;
+        int input = 1234321;
+        bool result = s.isPalindrome(input);
+        bool expect = true;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_9, Case_Customer_2)
+    {
+        Solution s;
+        int input = 2147483647;
+        bool result = s.isPalindrome(input);
+        bool expect = false;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p9
+
 #include "11.cpp"
 
 namespace p11
