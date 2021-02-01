@@ -417,6 +417,30 @@ namespace p13
     }
 } // namespace p13
 
+#include "14.cpp"
+
+namespace p14
+{
+    using Solution = Solution;
+
+    TEST(test_14, Case_1)
+    {
+        Solution s;
+        std::vector<std::string> input = {"flower", "flow", "flight"};
+        std::string result = s.longestCommonPrefix(input);
+        std::string expect = "fl";
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_14, Case_2)
+    {
+        Solution s;
+        std::vector<std::string> input = {"dog", "racecar", "car"};
+        std::string result = s.longestCommonPrefix(input);
+        std::string expect = "";
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p14
 
 #include "763.cpp"
 
