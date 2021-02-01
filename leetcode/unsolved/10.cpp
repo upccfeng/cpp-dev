@@ -48,22 +48,12 @@ namespace p10
 } // namespace p10
 
 /*
-Problem: https://leetcode.com/problems/longest-palindromic-substring/
+Problem:
+https://leetcode.com/problems/regular-expression-matching/
 
 HINT:
 
 Algorithm:
-
-```
-for start_c in s:
-    longgest_pal = start_c
-    r_boundary = start_c.pos() + 1
-    l_boundary = start_c.pos() - 1
-    while(??):
-        case: r == l:
-        case: r == r-1:
-        case: l == l+1:
-```
 
 Time Complexity:
 

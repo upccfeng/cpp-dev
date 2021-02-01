@@ -365,6 +365,59 @@ namespace p11
     }
 } // namespace p11
 
+#include "13.cpp"
+
+namespace p13
+{
+    using Solution = Solution;
+
+    TEST(test_13, Case_1)
+    {
+        Solution s;
+        string input = "III";
+        int result = s.romanToInt(input);
+        int expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_13, Case_2)
+    {
+        Solution s;
+        string input = "IV";
+        int result = s.romanToInt(input);
+        int expect = 4;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_13, Case_3)
+    {
+        Solution s;
+        string input = "IX";
+        int result = s.romanToInt(input);
+        int expect = 9;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_13, Case_4)
+    {
+        Solution s;
+        string input = "LVIII";
+        int result = s.romanToInt(input);
+        int expect = 58;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_13, Case_5)
+    {
+        Solution s;
+        string input = "MCMXCIV";
+        int result = s.romanToInt(input);
+        int expect = 1994;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p13
+
+
 #include "763.cpp"
 
 namespace p763
