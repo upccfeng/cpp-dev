@@ -442,6 +442,59 @@ namespace p14
     }
 } // namespace p14
 
+#include "17.cpp"
+
+namespace p17
+{
+    using Solution = Solution;
+
+    TEST(test_17, Case_1)
+    {
+        Solution s;
+        string input = "23";
+        vector<string> result = s.letterCombinations(input);
+        vector<string> expect = {"ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"};
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_17, Case_2)
+    {
+        Solution s;
+        string input = "";
+        vector<string> result = s.letterCombinations(input);
+        vector<string> expect = {};
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_17, Case_3)
+    {
+        Solution s;
+        string input = "2";
+        vector<string> result = s.letterCombinations(input);
+        vector<string> expect = {"a", "b", "c"};
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_17, Case_Customer_1)
+    {
+        Solution s;
+        string input = "234";
+        vector<string> result = s.letterCombinations(input);
+        vector<string> expect = {
+            "adg", "adh", "adi",
+            "aeg", "aeh", "aei",
+            "afg", "afh", "afi",
+            "bdg", "bdh", "bdi",
+            "beg", "beh", "bei",
+            "bfg", "bfh", "bfi",
+            "cdg", "cdh", "cdi",
+            "ceg", "ceh", "cei",
+            "cfg", "cfh", "cfi",
+        };
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p17
+
 #include "763.cpp"
 
 namespace p763
