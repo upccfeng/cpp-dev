@@ -495,6 +495,57 @@ namespace p17
     }
 } // namespace p17
 
+#include "19.cpp"
+
+namespace p19
+{
+    using Solution = Solution;
+
+    TEST(test_19, Case_1)
+    {
+        Solution s;
+        ListNode* input = ListNode::makeList({1,2,3,4,5});
+        ListNode* result = s.removeNthFromEnd(input, 2);
+        vector<int> expect = {1,2,3,5};
+        ASSERT_TRUE(ListNode::cmp(result, expect));
+
+        ListNode::freeList(result);
+    }
+
+    TEST(test_19, Case_2)
+    {
+        Solution s;
+        ListNode* input = ListNode::makeList({1});
+        ListNode* result = s.removeNthFromEnd(input, 1);
+        vector<int> expect = {};
+        ASSERT_TRUE(ListNode::cmp(result, expect));
+
+        ListNode::freeList(result);
+    }
+
+    TEST(test_19, Case_3)
+    {
+        Solution s;
+        ListNode* input = ListNode::makeList({1,2});
+        ListNode* result = s.removeNthFromEnd(input, 1);
+        vector<int> expect = {1};
+        ASSERT_TRUE(ListNode::cmp(result, expect));
+
+        ListNode::freeList(result);
+    }
+
+    TEST(test_19, Case_Customer_1)
+    {
+        Solution s;
+        ListNode* input = ListNode::makeList({1,2});
+        ListNode* result = s.removeNthFromEnd(input, 2);
+        vector<int> expect = {2};
+        ASSERT_TRUE(ListNode::cmp(result, expect));
+
+        ListNode::freeList(result);
+    }
+} // namespace p19
+
 #include "763.cpp"
 
 namespace p763
