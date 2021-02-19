@@ -442,6 +442,110 @@ namespace p14
     }
 } // namespace p14
 
+#include "17.cpp"
+
+namespace p17
+{
+    using Solution = Solution;
+
+    TEST(test_17, Case_1)
+    {
+        Solution s;
+        string input = "23";
+        vector<string> result = s.letterCombinations(input);
+        vector<string> expect = {"ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"};
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_17, Case_2)
+    {
+        Solution s;
+        string input = "";
+        vector<string> result = s.letterCombinations(input);
+        vector<string> expect = {};
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_17, Case_3)
+    {
+        Solution s;
+        string input = "2";
+        vector<string> result = s.letterCombinations(input);
+        vector<string> expect = {"a", "b", "c"};
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_17, Case_Customer_1)
+    {
+        Solution s;
+        string input = "234";
+        vector<string> result = s.letterCombinations(input);
+        vector<string> expect = {
+            "adg", "adh", "adi",
+            "aeg", "aeh", "aei",
+            "afg", "afh", "afi",
+            "bdg", "bdh", "bdi",
+            "beg", "beh", "bei",
+            "bfg", "bfh", "bfi",
+            "cdg", "cdh", "cdi",
+            "ceg", "ceh", "cei",
+            "cfg", "cfh", "cfi",
+        };
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p17
+
+#include "19.cpp"
+
+namespace p19
+{
+    using Solution = Solution;
+
+    TEST(test_19, Case_1)
+    {
+        Solution s;
+        ListNode* input = ListNode::makeList({1,2,3,4,5});
+        ListNode* result = s.removeNthFromEnd(input, 2);
+        vector<int> expect = {1,2,3,5};
+        ASSERT_TRUE(ListNode::cmp(result, expect));
+
+        ListNode::freeList(result);
+    }
+
+    TEST(test_19, Case_2)
+    {
+        Solution s;
+        ListNode* input = ListNode::makeList({1});
+        ListNode* result = s.removeNthFromEnd(input, 1);
+        vector<int> expect = {};
+        ASSERT_TRUE(ListNode::cmp(result, expect));
+
+        ListNode::freeList(result);
+    }
+
+    TEST(test_19, Case_3)
+    {
+        Solution s;
+        ListNode* input = ListNode::makeList({1,2});
+        ListNode* result = s.removeNthFromEnd(input, 1);
+        vector<int> expect = {1};
+        ASSERT_TRUE(ListNode::cmp(result, expect));
+
+        ListNode::freeList(result);
+    }
+
+    TEST(test_19, Case_Customer_1)
+    {
+        Solution s;
+        ListNode* input = ListNode::makeList({1,2});
+        ListNode* result = s.removeNthFromEnd(input, 2);
+        vector<int> expect = {2};
+        ASSERT_TRUE(ListNode::cmp(result, expect));
+
+        ListNode::freeList(result);
+    }
+} // namespace p19
+
 #include "20.cpp"
 
 namespace p20
