@@ -442,6 +442,103 @@ namespace p14
     }
 } // namespace p14
 
+#include "20.cpp"
+
+namespace p20
+{
+    using Solution = Solution;
+
+    TEST(test_20, Case_1)
+    {
+        Solution s;
+        string input = "()";
+        bool result = s.isValid(input);
+        bool expect = true;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_20, Case_2)
+    {
+        Solution s;
+        string input = "()[]{}";
+        bool result = s.isValid(input);
+        bool expect = true;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_20, Case_3)
+    {
+        Solution s;
+        string input = "(]";
+        bool result = s.isValid(input);
+        bool expect = false;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_20, Case_4)
+    {
+        Solution s;
+        string input = "([)]";
+        bool result = s.isValid(input);
+        bool expect = false;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_20, Case_5)
+    {
+        Solution s;
+        string input = "{[]}";
+        bool result = s.isValid(input);
+        bool expect = true;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_20, Case_Customer_1)
+    {
+        Solution s;
+        string input = "";
+        bool result = s.isValid(input);
+        bool expect = true;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_20, Case_Customer_2)
+    {
+        Solution s;
+        string input = "{{{{";
+        bool result = s.isValid(input);
+        bool expect = false;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_20, Case_Customer_3)
+    {
+        Solution s;
+        string input = "]]]]";
+        bool result = s.isValid(input);
+        bool expect = false;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_20, Case_Customer_4)
+    {
+        Solution s;
+        string input = ")]]]]";
+        bool result = s.isValid(input);
+        bool expect = false;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_20, Case_Customer_5)
+    {
+        Solution s;
+        string input = "11";
+        bool result = s.isValid(input);
+        bool expect = false;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p20
+
 #include "763.cpp"
 
 namespace p763
