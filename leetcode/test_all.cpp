@@ -643,6 +643,97 @@ namespace p20
     }
 } // namespace p20
 
+#include "21.cpp"
+
+namespace p21
+{
+    using Solution = Solution;
+
+    TEST(test_21, Case_1)
+    {
+        Solution s;
+        ListNode* input_1 = ListNode::makeList({1,2,4});
+        ListNode* input_2 = ListNode::makeList({1,3,4});
+        ListNode* result = s.mergeTwoLists(input_1, input_2);
+        vector<int> expect = {1,1,2,3,4,4};
+        ASSERT_TRUE(ListNode::cmp(result, expect));
+
+        ListNode::freeList(result);
+    }
+
+    TEST(test_21, Case_2)
+    {
+        Solution s;
+        ListNode* input_1 = ListNode::makeList({});
+        ListNode* input_2 = ListNode::makeList({});
+        ListNode* result = s.mergeTwoLists(input_1, input_2);
+        vector<int> expect = {};
+        ASSERT_TRUE(ListNode::cmp(result, expect));
+
+        ListNode::freeList(result);
+    }
+
+    TEST(test_21, Case_3)
+    {
+        Solution s;
+        ListNode* input_1 = ListNode::makeList({});
+        ListNode* input_2 = ListNode::makeList({0});
+        ListNode* result = s.mergeTwoLists(input_1, input_2);
+        vector<int> expect = {0};
+        ASSERT_TRUE(ListNode::cmp(result, expect));
+
+        ListNode::freeList(result);
+    }
+
+    TEST(test_21, Case_Customer_1)
+    {
+        Solution s;
+        ListNode* input_1 = ListNode::makeList({1,2});
+        ListNode* input_2 = ListNode::makeList({});
+        ListNode* result = s.mergeTwoLists(input_1, input_2);
+        vector<int> expect = {1,2};
+        ASSERT_TRUE(ListNode::cmp(result, expect));
+
+        ListNode::freeList(result);
+    }
+
+    TEST(test_21, Case_Customer_2)
+    {
+        Solution s;
+        ListNode* input_1 = ListNode::makeList({1,2});
+        ListNode* input_2 = ListNode::makeList({3,4});
+        ListNode* result = s.mergeTwoLists(input_1, input_2);
+        vector<int> expect = {1,2,3,4};
+        ASSERT_TRUE(ListNode::cmp(result, expect));
+
+        ListNode::freeList(result);
+    }
+
+    TEST(test_21, Case_Customer_3)
+    {
+        Solution s;
+        ListNode* input_1 = ListNode::makeList({1,2,3});
+        ListNode* input_2 = ListNode::makeList({4});
+        ListNode* result = s.mergeTwoLists(input_1, input_2);
+        vector<int> expect = {1,2,3,4};
+        ASSERT_TRUE(ListNode::cmp(result, expect));
+
+        ListNode::freeList(result);
+    }
+
+    TEST(test_21, Case_Customer_4)
+    {
+        Solution s;
+        ListNode* input_1 = ListNode::makeList({1});
+        ListNode* input_2 = ListNode::makeList({2,3,4});
+        ListNode* result = s.mergeTwoLists(input_1, input_2);
+        vector<int> expect = {1,2,3,4};
+        ASSERT_TRUE(ListNode::cmp(result, expect));
+
+        ListNode::freeList(result);
+    }
+} // namespace p21
+
 #include "763.cpp"
 
 namespace p763
