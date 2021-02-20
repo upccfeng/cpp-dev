@@ -759,6 +759,63 @@ namespace p22
     }
 } // namespace p22
 
+#include "26.cpp"
+
+namespace p26
+{
+    using Solution = Solution;
+
+    TEST(test_26, Case_1)
+    {
+        Solution s;
+        vector<int> input = {1,1,2};
+        int result_count = s.removeDuplicates(input);
+        vector<int> result(input.begin(), input.begin() + result_count);
+        vector<int> expect = {1,2};
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_26, Case_2)
+    {
+        Solution s;
+        vector<int> input = {0,0,1,1,1,2,2,3,3,4};
+        int result_count = s.removeDuplicates(input);
+        vector<int> result(input.begin(), input.begin() + result_count);
+        vector<int> expect = {0,1,2,3,4};
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_26, Case_Customer_1)
+    {
+        Solution s;
+        vector<int> input = {};
+        int result_count = s.removeDuplicates(input);
+        vector<int> result(input.begin(), input.begin() + result_count);
+        vector<int> expect = {};
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_26, Case_Customer_2)
+    {
+        Solution s;
+        vector<int> input = {1};
+        int result_count = s.removeDuplicates(input);
+        vector<int> result(input.begin(), input.begin() + result_count);
+        vector<int> expect = {1};
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_26, Case_Customer_3)
+    {
+        Solution s;
+        vector<int> input = {1,1,1,1};
+        int result_count = s.removeDuplicates(input);
+        vector<int> result(input.begin(), input.begin() + result_count);
+        vector<int> expect = {1};
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p26
+
 #include "763.cpp"
 
 namespace p763
