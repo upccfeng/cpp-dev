@@ -734,6 +734,31 @@ namespace p21
     }
 } // namespace p21
 
+#include "22.cpp"
+
+namespace p22
+{
+    using Solution = Solution;
+
+    TEST(test_22, Case_1)
+    {
+        Solution s;
+        int input = 3;
+        vector<string> result = s.generateParenthesis(input);
+        vector<string> expect = {"((()))","(()())","(())()","()(())","()()()"};
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_22, Case_2)
+    {
+        Solution s;
+        int input = 1;
+        vector<string> result = s.generateParenthesis(input);
+        vector<string> expect = {"()"};
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p22
+
 #include "763.cpp"
 
 namespace p763

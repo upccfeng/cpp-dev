@@ -4,6 +4,18 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Cpp-re-make",
+            "type": "shell",
+            "command": "cd ./build/cpp_build/ && make",
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
             "label": "Cpp-build-tests",
             "type": "shell",
             "command": "python3",
@@ -13,11 +25,7 @@
             ],
             "problemMatcher": [
                 "$gcc"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
+            ]
         },
         {
             "label": "Cpp-clean-all-build",
