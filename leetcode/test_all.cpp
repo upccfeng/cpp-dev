@@ -913,6 +913,123 @@ namespace p28
     }
 } // namespace p28
 
+#include "29.cpp"
+
+namespace p29
+{
+    using Solution = Solution;
+
+    TEST(test_29, Case_1)
+    {
+        Solution s;
+        int input_dividend = 10;
+        int input_divisor = 3;
+        int result = s.divide(input_dividend, input_divisor);
+        int expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_29, Case_2)
+    {
+        Solution s;
+        int input_dividend = 7;
+        int input_divisor = -3;
+        int result = s.divide(input_dividend, input_divisor);
+        int expect = -2;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_29, Case_3)
+    {
+        Solution s;
+        int input_dividend = 0;
+        int input_divisor = 1;
+        int result = s.divide(input_dividend, input_divisor);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_29, Case_4)
+    {
+        Solution s;
+        int input_dividend = 1;
+        int input_divisor = 1;
+        int result = s.divide(input_dividend, input_divisor);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_29, Case_Customer_1)
+    {
+        Solution s;
+        int input_dividend = -10;
+        int input_divisor = -3;
+        int result = s.divide(input_dividend, input_divisor);
+        int expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_29, Case_Customer_2)
+    {
+        Solution s;
+        int input_dividend = INT_MIN;
+        int input_divisor = -1;
+        int result = s.divide(input_dividend, input_divisor);
+        int expect = INT_MAX;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_29, Case_Customer_3)
+    {
+        Solution s;
+        int input_dividend = INT_MAX;
+        int input_divisor = -1;
+        int result = s.divide(input_dividend, input_divisor);
+        int expect = INT_MIN + 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_29, Case_Fail_1)
+    {
+        Solution s;
+        int input_dividend = INT_MAX;
+        int input_divisor = 1;
+        int result = s.divide(input_dividend, input_divisor);
+        int expect = INT_MAX;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_29, Case_Fail_2)
+    {
+        Solution s;
+        int input_dividend = -1;
+        int input_divisor = 1;
+        int result = s.divide(input_dividend, input_divisor);
+        int expect = -1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_29, Case_Fail_3)
+    {
+        Solution s;
+        int input_dividend = 1038925803;
+        int input_divisor = -2147483648;
+        int result = s.divide(input_dividend, input_divisor);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_29, Case_Fail_4)
+    {
+        Solution s;
+        int input_dividend = -2147483648;
+        int input_divisor = 1;
+        int result = s.divide(input_dividend, input_divisor);
+        int expect = -2147483648;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p29
+
 #include "763.cpp"
 
 namespace p763
