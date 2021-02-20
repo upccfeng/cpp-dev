@@ -19,9 +19,11 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/leetcode)
 include_directories(${GOOGLE_TEST_INCLUDE_DIR})
 link_directories(${LIB_DIR})
 
+include_directories(${TOOLS_INCLUDE_DIR})
+
 add_executable(test_processing
     test_processing.cpp
     ${PROCESSING_DIR}/solution.cpp
 )
 
-target_link_libraries(test_processing gtest gmock gtest_main pthread)
+target_link_libraries(test_processing tools gtest gmock gtest_main pthread)
