@@ -816,6 +816,103 @@ namespace p26
     }
 } // namespace p26
 
+#include "28.cpp"
+
+namespace p28
+{
+    using Solution = Solution;
+
+    TEST(test_28, Case_1)
+    {
+        Solution s;
+        string input_haystack = "hello";
+        string input_needle = "ll";
+        int result = s.strStr(input_haystack, input_needle);
+        int expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_28, Case_2)
+    {
+        Solution s;
+        string input_haystack = "aaaaa";
+        string input_needle = "bba";
+        int result = s.strStr(input_haystack, input_needle);
+        int expect = -1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_28, Case_3)
+    {
+        Solution s;
+        string input_haystack = "";
+        string input_needle = "";
+        int result = s.strStr(input_haystack, input_needle);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_28, Case_Customer_1)
+    {
+        Solution s;
+        string input_haystack = "abc";
+        string input_needle = "abc";
+        int result = s.strStr(input_haystack, input_needle);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_28, Case_Customer_2)
+    {
+        Solution s;
+        string input_haystack = "abcabc";
+        string input_needle = "abc";
+        int result = s.strStr(input_haystack, input_needle);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_28, Case_Customer_3)
+    {
+        Solution s;
+        string input_haystack = "ababc";
+        string input_needle = "abc";
+        int result = s.strStr(input_haystack, input_needle);
+        int expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_28, Case_Customer_4)
+    {
+        Solution s;
+        string input_haystack = "ababc";
+        string input_needle = "";
+        int result = s.strStr(input_haystack, input_needle);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_28, Case_Customer_5)
+    {
+        Solution s;
+        string input_haystack = "bbb";
+        string input_needle = "xxx";
+        int result = s.strStr(input_haystack, input_needle);
+        int expect = -1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_28, Case_Fail_1)
+    {
+        Solution s;
+        string input_haystack = "mississippi";
+        string input_needle = "issip";
+        int result = s.strStr(input_haystack, input_needle);
+        int expect = 4;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p28
+
 #include "763.cpp"
 
 namespace p763
