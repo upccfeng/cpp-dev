@@ -1097,3 +1097,64 @@ namespace p763
         ASSERT_EQ(result, expect);
     }
 } // namespace p763
+
+#include "rekuten210221_1.cpp"
+
+namespace p_rekuten210221_1
+{
+    using Solution = Solution;
+
+    TEST(test_rekuten210221_1, Case_1)
+    {
+        Solution s;
+        vector<int> input = {1, 0, 2, 0, 0, 2};
+        int result = s.solution(input);
+        int expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_rekuten210221_1, Case_2)
+    {
+        Solution s;
+        vector<int> input = {3, 1, 0, 2, 0, 0, 2};
+        int result = s.solution(input);
+        int expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_rekuten210221_1, Case_3)
+    {
+        Solution s;
+        vector<int> input = {33};
+        int result = s.solution(input);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_rekuten210221_1, Case_4)
+    {
+        Solution s;
+        vector<int> input = {10000, 10000};
+        int result = s.solution(input);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_rekuten210221_1, Case_5)
+    {
+        Solution s;
+        vector<int> input = {10000, 10000, 10000, 10000};
+        int result = s.solution(input);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_rekuten210221_1, Case_6)
+    {
+        Solution s;
+        vector<int> input = {10000, 10000, 10000};
+        int result = s.solution(input);
+        int expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_rekuten210221_1
