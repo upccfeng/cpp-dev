@@ -1030,6 +1030,67 @@ namespace p29
     }
 } // namespace p29
 
+#include "33.cpp"
+
+namespace p33
+{
+    using Solution = Solution;
+
+    TEST(test_33, Case_1)
+    {
+        Solution s;
+        vector<int> input = {4,5,6,7,0,1,2};
+        int result = s.search(input, 0);
+        int expect = 4;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_33, Case_2)
+    {
+        Solution s;
+        vector<int> input = {4,5,6,7,0,1,2};
+        int result = s.search(input, 3);
+        int expect = -1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_33, Case_3)
+    {
+        Solution s;
+        vector<int> input = {1};
+        int result = s.search(input, 0);
+        int expect = -1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_33, Case_Customer_1)
+    {
+        Solution s;
+        vector<int> input = {4,5,6,7,0,1,2};
+        int result = s.search(input, 5);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_33, Case_Customer_2)
+    {
+        Solution s;
+        vector<int> input = {4,5,6,7,0,1,2};
+        int result = s.search(input, 1);
+        int expect = 5;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_33, Case_Fail_1)
+    {
+        Solution s;
+        vector<int> input = {8,9,1,5,6,7};
+        int result = s.search(input, 5);
+        int expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p33
+
 #include "763.cpp"
 
 namespace p763
