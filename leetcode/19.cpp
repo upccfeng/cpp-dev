@@ -121,8 +121,8 @@ return head
 ```
 
 ## Time Complexity:
-log(n), n is length of input list
+O(n), n is length of input list
 
 ## Space Complexity:
-log(1)
+O(1)
 */

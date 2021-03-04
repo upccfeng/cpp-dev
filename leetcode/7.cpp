@@ -80,14 +80,14 @@ else:
 
 ## Time Complexity:
 
-log(T + N)
+O(T + N)
 
 T is to_string time complexity.
 N is the digits of input.
 
 ## Space Complexity:
 
-log(N)
+O(N)
 
 N is the digits of input.
 */

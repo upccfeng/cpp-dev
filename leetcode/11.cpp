@@ -146,10 +146,10 @@ while true:
 ```
 
 Time Complexity:
-Self: n + (1+n)*n/2 => log(n^2)
-Ans: log(n)
+Self: n + (1+n)*n/2 => O(n^2)
+O(n)
 
 Space Complexity:
-Self: log(1)
-Ans: log(1)
+Self: O(1)
+O(1)
 */

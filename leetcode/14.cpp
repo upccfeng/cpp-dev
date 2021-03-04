@@ -59,8 +59,8 @@ return prefix
 ```
 
 ## Time Complexity:
-log(m*n): m is the size of strs, and n is the length of longest str in strs
+O(m*n): m is the size of strs, and n is the length of longest str in strs
 
 ## Space Complexity:
-log(1)
+O(1)
 */

@@ -98,8 +98,8 @@ def addpar(res, str, n, m):
 ```
 
 ## Time Complexity:
-log(n^2)?
+O(n^2)?
 
 ## Space Complexity:
-log(n)
+O(n)
 */

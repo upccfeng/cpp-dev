@@ -100,9 +100,9 @@ return result
 ```
 
 ## Time Complexity:
-log(n) - which n is length of input string - s.
+O(n) - which n is length of input string - s.
 
 ## Space Complexity:
-log(7) -> log(1)
+O(7) -> log(1)
 P.S. the space can be avoid if use if-else to get roman-char value.
 */

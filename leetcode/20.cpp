@@ -126,8 +126,8 @@ else:
 ```
 
 ## Time Complexity:
-log(n)
+O(n)
 
 ## Space Complexity:
-log(n)
+O(n)
 */

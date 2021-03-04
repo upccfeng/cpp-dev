@@ -96,8 +96,8 @@ return ans
 ```
 
 ## Time Complexity:
-log(n + 10020)
+O(n + 10020)
 
 ## Space Complexity:
-log(10020)
+O(10020)
 */

@@ -70,8 +70,8 @@ return pos
 ```
 
 ## Time Complexity:
-log(n+n/m)?
+O(n+n/m)?
 
 ## Space Complexity:
-log(1)
+O(1)
 */

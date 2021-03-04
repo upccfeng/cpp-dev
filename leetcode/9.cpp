@@ -59,8 +59,8 @@ return false
 ```
 
 ## Time Complexity:
-log(n)
+O(n)
 
 ## Space Complexity:
-log(1)
+O(1)
 */

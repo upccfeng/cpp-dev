@@ -163,8 +163,8 @@ return head;
 ```
 
 ## Time Complexity:
-log(m+n)
+O(m+n)
 
 ## Space Complexity:
-log(1)
+O(1)
 */

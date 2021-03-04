@@ -120,8 +120,8 @@ return ans
 ```
 
 ## Time Complexity:
-log(4^n)
+O(4^n)
 
 ## Space Complexity:
-log(1)
+O(1)
 */

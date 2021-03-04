@@ -166,8 +166,8 @@ return (dividend_sign * divisor_sign) * ret;
 ```
 
 ## Time Complexity:
-log(32) -> log(1)
+O(32) -> O(1)
 
 ## Space Complexity:
-log(1)
+O(1)
 */
