@@ -1,6 +1,9 @@
 #include <iostream>
 #include <vector>
 
+#include "common.hpp"
+using namespace common;
+
 /*
 #include "leetcode/contest_problem_solution/1290.cpp"
 
@@ -17,12 +20,6 @@ int main()
     s.getDecimalValue(head);
 }
 */
-
-struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode(int x) : val(x), next(NULL) {}
-};
 
 class Solution {
 public:

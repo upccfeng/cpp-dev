@@ -1,59 +1,11 @@
 #include <vector>
 using namespace std;
 
+#include "common.hpp"
+using namespace common;
+
 namespace p19
 {
-    struct ListNode {
-        int val;
-        ListNode *next;
-        ListNode() : val(0), next(nullptr) {}
-        ListNode(int x) : val(x), next(nullptr) {}
-        ListNode(int x, ListNode *next) : val(x), next(next) {}
-
-        static ListNode* makeList(const vector<int>& target)
-        {
-            ListNode* head = nullptr;
-            ListNode* current = nullptr;
-            for (const auto& e : target)
-            {
-                ListNode* data = new ListNode(e);
-
-                if (!head)
-                {
-                    head = data;
-                    current = data;
-                }
-                else
-                {
-                    current->next = data;
-                    current = current->next;
-                }
-            }
-            return head;
-        }
-        static void freeList(ListNode* head)
-        {
-            while(head)
-            {
-                ListNode* current = head;
-                head = head->next;
-                delete current;
-            }
-        }
-        static bool cmp(ListNode* head, const vector<int>& rhs_v)
-        {
-            ListNode* current = head;
-            for (const auto& e : rhs_v)
-            {
-                if (current->val != e)
-                    return false;
-
-                current = current->next;
-            }
-            return current == nullptr;
-        }
-    };
-
     class Solution {
     public:
         ListNode* removeNthFromEnd(ListNode* head, int n) {
