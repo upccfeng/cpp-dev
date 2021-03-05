@@ -1301,6 +1301,57 @@ namespace p763
     }
 } // namespace p763
 
+#include "3361_daily.cpp"
+
+namespace p3661_daily
+{
+    using Solution = Solution;
+
+    TEST(test_3661_daily, Case_1)
+    {
+        Solution s;
+        TreeNode* input = TreeNode::makeTree({3, 9, 20, -1, -1, 15, 7}, {true, true, true, false, false, true, true}, 3);
+        vector<double> result = s.averageOfLevels(input);
+        vector<double> expect = {3, 14.5, 11};
+        ASSERT_EQ(result, expect);
+
+        TreeNode::freeTree(input);
+    }
+
+    TEST(test_3661_daily, Case_2)
+    {
+        Solution s;
+        TreeNode* input = TreeNode::makeTree({3, 9, 20, 15, 7, -1, -1}, {true, true, true, true, true, false, false}, 3);
+        vector<double> result = s.averageOfLevels(input);
+        vector<double> expect = {3, 14.5, 11};
+        ASSERT_EQ(result, expect);
+
+        TreeNode::freeTree(input);
+    }
+
+    TEST(test_3661_daily, Case_3)
+    {
+        Solution s;
+        TreeNode* input = TreeNode::makeTree({1, -1, 1}, {true, false, true}, 2);
+        vector<double> result = s.averageOfLevels(input);
+        vector<double> expect = {1, 1};
+        ASSERT_EQ(result, expect);
+
+        TreeNode::freeTree(input);
+    }
+
+    TEST(test_3661_daily, Case_4)
+    {
+        Solution s;
+        TreeNode* input = TreeNode::makeTree({57, 46, 89, -36, -1, -1, -1}, {true, true, true, true, false, false, false}, 3);
+        vector<double> result = s.averageOfLevels(input);
+        vector<double> expect = {57, 67.5, -36};
+        ASSERT_EQ(result, expect);
+
+        TreeNode::freeTree(input);
+    }
+} // namespace p3661_daily
+
 #include "rekuten210221_1.cpp"
 
 namespace p_rekuten210221_1
