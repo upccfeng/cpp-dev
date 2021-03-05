@@ -1091,6 +1091,103 @@ namespace p33
     }
 } // namespace p33
 
+#include "34.cpp"
+
+namespace p34
+{
+    using Solution = Solution;
+
+    TEST(test_34, Case_1)
+    {
+        Solution s;
+        vector<int> input_nums = {5,7,7,8,8,10};
+        int input_target = 8;
+        vector<int> result = s.searchRange(input_nums, input_target);
+        vector<int> expect = {3,4};
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_34, Case_2)
+    {
+        Solution s;
+        vector<int> input_nums = {5,7,7,8,8,10};
+        int input_target = 6;
+        vector<int> result = s.searchRange(input_nums, input_target);
+        vector<int> expect = {-1,-1};
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_34, Case_3)
+    {
+        Solution s;
+        vector<int> input_nums = {};
+        int input_target = 0;
+        vector<int> result = s.searchRange(input_nums, input_target);
+        vector<int> expect = {-1,-1};
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_34, Case_Customer_1)
+    {
+        Solution s;
+        vector<int> input_nums = {5,7,7,8,8,10};
+        int input_target = 7;
+        vector<int> result = s.searchRange(input_nums, input_target);
+        vector<int> expect = {1,2};
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_34, Case_Customer_2)
+    {
+        Solution s;
+        vector<int> input_nums = {5,7,7,8,8,10};
+        int input_target = 10;
+        vector<int> result = s.searchRange(input_nums, input_target);
+        vector<int> expect = {5,5};
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_34, Case_Customer_3)
+    {
+        Solution s;
+        vector<int> input_nums = {5};
+        int input_target = 5;
+        vector<int> result = s.searchRange(input_nums, input_target);
+        vector<int> expect = {0,0};
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_34, Case_Customer_4)
+    {
+        Solution s;
+        vector<int> input_nums = {5};
+        int input_target = 6;
+        vector<int> result = s.searchRange(input_nums, input_target);
+        vector<int> expect = {-1, -1};
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_34, Case_Customer_5)
+    {
+        Solution s;
+        vector<int> input_nums = {5,5,5};
+        int input_target = 5;
+        vector<int> result = s.searchRange(input_nums, input_target);
+        vector<int> expect = {0,2};
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_34, Case_Customer_6)
+    {
+        Solution s;
+        vector<int> input_nums = {1,2,3,4,5,6,7,8,9,10,11};
+        int input_target = 10;
+        vector<int> result = s.searchRange(input_nums, input_target);
+        vector<int> expect = {9,9};
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p34
+
 #include "763.cpp"
 
 namespace p763
