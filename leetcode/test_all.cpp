@@ -1233,6 +1233,58 @@ namespace p36
     }
 } // namespace p36
 
+#include "66.cpp"
+
+namespace p66
+{
+    using Solution = Solution;
+
+    TEST(test_66, Case_1)
+    {
+        Solution s;
+        vector<int> input = {1,2,3};
+        vector<int> result = s.plusOne(input);
+        vector<int> expect = {1,2,4};
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_66, Case_2)
+    {
+        Solution s;
+        vector<int> input = {4,3,2,1};
+        vector<int> result = s.plusOne(input);
+        vector<int> expect = {4,3,2,2};
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_66, Case_3)
+    {
+        Solution s;
+        vector<int> input = {0};
+        vector<int> result = s.plusOne(input);
+        vector<int> expect = {1};
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_66, Case_Customer_1)
+    {
+        Solution s;
+        vector<int> input = {9,9};
+        vector<int> result = s.plusOne(input);
+        vector<int> expect = {1,0,0};
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_66, Case_Customer_2)
+    {
+        Solution s;
+        vector<int> input = {1,0,9};
+        vector<int> result = s.plusOne(input);
+        vector<int> expect = {1,1,0};
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p66
+
 #include "763.cpp"
 
 namespace p763
