@@ -1350,6 +1350,17 @@ namespace p3661_daily
 
         TreeNode::freeTree(input);
     }
+
+    TEST(test_3661_daily, Case_5)
+    {
+        Solution s;
+        TreeNode* input = TreeNode::makeTree({0, 1, -1}, {true, true, false}, 2);
+        vector<double> result = s.averageOfLevels(input);
+        vector<double> expect = {0, 1};
+        ASSERT_EQ(result, expect);
+
+        TreeNode::freeTree(input);
+    }
 } // namespace p3661_daily
 
 #include "rekuten210221_1.cpp"

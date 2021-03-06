@@ -16,7 +16,7 @@ namespace p3661_daily
             int current_level = 0;
             TreeNode* taking = root;
 
-            stack<pair<TreeNode*, bool>> previous;
+            stack<pair<TreeNode*, int>> previous_level;
 
             while(taking)
             {
@@ -33,34 +33,34 @@ namespace p3661_daily
 
                 if (taking->left != nullptr)
                 {
-                    previous.push(std::make_pair(taking, true));
+                    previous_level.push(std::make_pair(taking, current_level));
                     taking = taking->left;
                     ++current_level;
                 }
                 else if (taking->right != nullptr)
                 {
-                    previous.push(std::make_pair(taking, false));
                     taking = taking->right;
                     ++current_level;
                 }
                 else
                 {
-                    while (!previous.empty())
+                    bool next = false;
+                    while (!previous_level.empty())
                     {
-                        auto tmp = previous.top();
-                        previous.pop();
-                        --current_level;
+                        auto tmp = previous_level.top();
+                        previous_level.pop();
+                        current_level = tmp.second;
 
-                        if (tmp.second && tmp.first->right)
+                        if (tmp.first->right)
                         {
-                            previous.push(std::make_pair(tmp.first, false));
-                            taking = (tmp.first)->right;
+                            next = true;
+                            taking = tmp.first->right;
                             ++current_level;
                             break;
                         }
                     }
 
-                    if (previous.empty())
+                    if (!next && previous_level.empty())
                         break;
                 }
             }
@@ -83,9 +83,58 @@ https://leetcode.com/explore/challenge/card/march-leetcoding-challenge-2021/588/
 
 ## HINT:
 
+Traversal the tree, and record the total and count of ever level.
+
 ## Algorithm:
 
+```
+ret = {}
+cnt = {}
+current_level = 0
+TreeNode* taking = root
+previous_level;
+
+while(taking)
+{
+    if current_level >= ret.size():
+        ret.append(taking->val)
+        cnt.append(1)
+    else:
+        ret[current_level] += taking->val
+        ++cnt[current_level]
+
+    if taking->left != nullptr:
+        previous_level.append({taking, current_level})
+        taking = taking->left
+        ++current_level
+    elif taking->right != nullptr:
+        taking = taking->right
+        ++current_level
+    else:
+        next = false
+        while !previous_level.empty():
+            tmp = previous_level.top()
+            previous_level.pop()
+            current_level = tmp.second
+
+            if tmp.first->right:
+                next = true
+                taking = tmp.first->right
+                ++current_level
+                break
+
+        if !next and previous_level.empty():
+            break;
+
+for i in range(0, ret.size()):
+    ret[i] /= cnt[i]
+
+return ret
+```
+
 ## Time Complexity:
+O(log n)
 
 ## Space Complexity:
+O(log n): hight of tree
 */
