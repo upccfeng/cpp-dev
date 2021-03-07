@@ -1415,6 +1415,85 @@ namespace p3661_daily
     }
 } // namespace p3661_daily
 
+#include "3662_daily.cpp"
+
+namespace p3662_daily
+{
+    using Solution = Solution;
+
+    TEST(test_3662_daily, Case_1)
+    {
+        Solution s;
+        vector<string> input = {"time", "me", "bell"};
+        int result = s.minimumLengthEncoding(input);
+        int expect = 10;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_3662_daily, Case_2)
+    {
+        Solution s;
+        vector<string> input = {"t"};
+        int result = s.minimumLengthEncoding(input);
+        int expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_3662_daily, Case_Customer_1)
+    {
+        Solution s;
+        vector<string> input = {"me", "time", "bell"};
+        int result = s.minimumLengthEncoding(input);
+        int expect = 10;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_3662_daily, Case_Customer_2)
+    {
+        Solution s;
+        vector<string> input = {"me", "time", "ime", "bell"};
+        int result = s.minimumLengthEncoding(input);
+        int expect = 10;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_3662_daily, Case_Customer_3)
+    {
+        Solution s;
+        vector<string> input = {"ctime", "atime", "time", "bell"};
+        int result = s.minimumLengthEncoding(input);
+        int expect = 17;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_3662_daily, Case_Customer_4)
+    {
+        Solution s;
+        vector<string> input = {"ab", "ab"};
+        int result = s.minimumLengthEncoding(input);
+        int expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_3662_daily, Case_Customer_5)
+    {
+        Solution s;
+        vector<string> input = {"aaaaa", "aaa", "aa"};
+        int result = s.minimumLengthEncoding(input);
+        int expect = 6;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_3662_daily, Case_Fail_1)
+    {
+        Solution s;
+        vector<string> input = {"aaa", "abc", "aaa", "asd", "fdg", "abc", "kld"};
+        int result = s.minimumLengthEncoding(input);
+        int expect = 20;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p3662_daily
+
 #include "rekuten210221_1.cpp"
 
 namespace p_rekuten210221_1
