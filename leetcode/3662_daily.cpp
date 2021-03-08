@@ -89,11 +89,66 @@ namespace p3662_daily
 /*
 # Problem:
 
+https://leetcode.com/problems/short-encoding-of-words/
+
 ## HINT:
+
+Use substr to compare string will be slower.
 
 ## Algorithm:
 
+```
+ret_str = {}
+for e in words:
+    if ret_str.empty():
+        ret_str.append(e)
+    else:
+        is_match = true
+        for t in ret_str:
+            is_match = true
+            if e.size() <= t.size():
+                i = t.size()-1
+                j = e.size()-1
+                while (j >= 0):
+                    if e[j] != t[i]:
+                        is_match = false
+                        break
+                    --i
+                    --j
+
+                if is_match:
+                    break
+                else:
+                    continue
+            else:
+                i = t.size()-1
+                j = e.size()-1
+                while (i >= 0):
+                    if t[i] != e[j]:
+                        is_match = false
+                        break
+                    --i
+                    --j
+
+                if is_match:
+                    t = e.substr(0, j + 1) + t
+                    break
+                else
+                    continue;
+
+        if !is_match:
+            ret_str.emplace_back(e)
+
+ret = 0
+for e : ret_str:
+    ret += e.size() + 1
+
+return ret;
+```
+
 ## Time Complexity:
+O(n^2)
 
 ## Space Complexity:
+O(n)
 */
