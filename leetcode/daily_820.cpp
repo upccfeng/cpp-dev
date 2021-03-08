@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-namespace p3662_daily
+namespace pdaily_820
 {
     class Solution
     {
@@ -84,7 +84,7 @@ namespace p3662_daily
             return ret;
         }
     };
-} // namespace p3662_daily
+} // namespace pdaily_820
 
 /*
 # Problem:

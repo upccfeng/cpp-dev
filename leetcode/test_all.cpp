@@ -1353,13 +1353,13 @@ namespace p763
     }
 } // namespace p763
 
-#include "3361_daily.cpp"
+#include "daily_637.cpp"
 
-namespace p3661_daily
+namespace pdaily_637
 {
     using Solution = Solution;
 
-    TEST(test_3661_daily, Case_1)
+    TEST(test_daily_637, Case_1)
     {
         Solution s;
         TreeNode* input = TreeNode::makeTree({3, 9, 20, -1, -1, 15, 7}, {true, true, true, false, false, true, true}, 3);
@@ -1370,7 +1370,7 @@ namespace p3661_daily
         TreeNode::freeTree(input);
     }
 
-    TEST(test_3661_daily, Case_2)
+    TEST(test_daily_637, Case_2)
     {
         Solution s;
         TreeNode* input = TreeNode::makeTree({3, 9, 20, 15, 7, -1, -1}, {true, true, true, true, true, false, false}, 3);
@@ -1381,7 +1381,7 @@ namespace p3661_daily
         TreeNode::freeTree(input);
     }
 
-    TEST(test_3661_daily, Case_3)
+    TEST(test_daily_637, Case_3)
     {
         Solution s;
         TreeNode* input = TreeNode::makeTree({1, -1, 1}, {true, false, true}, 2);
@@ -1392,7 +1392,7 @@ namespace p3661_daily
         TreeNode::freeTree(input);
     }
 
-    TEST(test_3661_daily, Case_4)
+    TEST(test_daily_637, Case_4)
     {
         Solution s;
         TreeNode* input = TreeNode::makeTree({57, 46, 89, -36, -1, -1, -1}, {true, true, true, true, false, false, false}, 3);
@@ -1403,7 +1403,7 @@ namespace p3661_daily
         TreeNode::freeTree(input);
     }
 
-    TEST(test_3661_daily, Case_5)
+    TEST(test_daily_637, Case_5)
     {
         Solution s;
         TreeNode* input = TreeNode::makeTree({0, 1, -1}, {true, true, false}, 2);
@@ -1413,15 +1413,15 @@ namespace p3661_daily
 
         TreeNode::freeTree(input);
     }
-} // namespace p3661_daily
+} // namespace pdaily_637
 
-#include "3662_daily.cpp"
+#include "daily_820.cpp"
 
-namespace p3662_daily
+namespace pdaily_820
 {
     using Solution = Solution;
 
-    TEST(test_3662_daily, Case_1)
+    TEST(test_daily_820, Case_1)
     {
         Solution s;
         vector<string> input = {"time", "me", "bell"};
@@ -1430,7 +1430,7 @@ namespace p3662_daily
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_3662_daily, Case_2)
+    TEST(test_daily_820, Case_2)
     {
         Solution s;
         vector<string> input = {"t"};
@@ -1439,7 +1439,7 @@ namespace p3662_daily
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_3662_daily, Case_Customer_1)
+    TEST(test_daily_820, Case_Customer_1)
     {
         Solution s;
         vector<string> input = {"me", "time", "bell"};
@@ -1448,7 +1448,7 @@ namespace p3662_daily
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_3662_daily, Case_Customer_2)
+    TEST(test_daily_820, Case_Customer_2)
     {
         Solution s;
         vector<string> input = {"me", "time", "ime", "bell"};
@@ -1457,7 +1457,7 @@ namespace p3662_daily
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_3662_daily, Case_Customer_3)
+    TEST(test_daily_820, Case_Customer_3)
     {
         Solution s;
         vector<string> input = {"ctime", "atime", "time", "bell"};
@@ -1466,7 +1466,7 @@ namespace p3662_daily
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_3662_daily, Case_Customer_4)
+    TEST(test_daily_820, Case_Customer_4)
     {
         Solution s;
         vector<string> input = {"ab", "ab"};
@@ -1475,7 +1475,7 @@ namespace p3662_daily
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_3662_daily, Case_Customer_5)
+    TEST(test_daily_820, Case_Customer_5)
     {
         Solution s;
         vector<string> input = {"aaaaa", "aaa", "aa"};
@@ -1484,7 +1484,7 @@ namespace p3662_daily
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_3662_daily, Case_Fail_1)
+    TEST(test_daily_820, Case_Fail_1)
     {
         Solution s;
         vector<string> input = {"aaa", "abc", "aaa", "asd", "fdg", "abc", "kld"};
@@ -1492,7 +1492,7 @@ namespace p3662_daily
         int expect = 20;
         ASSERT_EQ(result, expect);
     }
-} // namespace p3662_daily
+} // namespace pdaily_820
 
 #include "rekuten210221_1.cpp"
 
