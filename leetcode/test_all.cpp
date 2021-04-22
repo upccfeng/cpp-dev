@@ -1494,6 +1494,83 @@ namespace pdaily_820
     }
 } // namespace pdaily_820
 
+#include "daily_1209.cpp"
+
+namespace pdaily_1209
+{
+    using Solution = Solution;
+
+    TEST(test_daily_1209, Case_Customer_1)
+    {
+        Solution s;
+        string input_s = "abcddd";
+        int input_k = 2;
+        auto result = s.removeDuplicates(input_s, input_k);
+        string expect = "abcd";
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_daily_1209, Case_Customer_2)
+    {
+        Solution s;
+        string input_s = "dddcc";
+        int input_k = 3;
+        auto result = s.removeDuplicates(input_s, input_k);
+        string expect = "cc";
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_daily_1209, Case_Customer_3)
+    {
+        Solution s;
+        string input_s = "caabbbacd";
+        int input_k = 3;
+        auto result = s.removeDuplicates(input_s, input_k);
+        string expect = "ccd";
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_daily_1209, Case_Customer_4)
+    {
+        Solution s;
+        string input_s = "caabbbacc";
+        int input_k = 3;
+        auto result = s.removeDuplicates(input_s, input_k);
+        string expect = "";
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_daily_1209, Case_1)
+    {
+        Solution s;
+        string input_s = "abcd";
+        int input_k = 2;
+        auto result = s.removeDuplicates(input_s, input_k);
+        string expect = "abcd";
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_daily_1209, Case_2)
+    {
+        Solution s;
+        string input_s = "deeedbbcccbdaa";
+        int input_k = 3;
+        auto result = s.removeDuplicates(input_s, input_k);
+        string expect = "aa";
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_daily_1209, Case_3)
+    {
+        Solution s;
+        string input_s = "pbbcggttciiippooaais";
+        int input_k = 2;
+        auto result = s.removeDuplicates(input_s, input_k);
+        string expect = "ps";
+        ASSERT_EQ(result, expect);
+    }
+} // namespace pdaily_1209
+
 #include "rekuten210221_1.cpp"
 
 namespace p_rekuten210221_1
