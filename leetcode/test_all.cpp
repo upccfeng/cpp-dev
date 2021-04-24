@@ -1285,6 +1285,58 @@ namespace p66
     }
 } // namespace p66
 
+#include "daily_696.cpp"
+
+namespace pdaily_696
+{
+    using Solution = Solution;
+
+    TEST(test_daily_696, Case_1)
+    {
+        Solution s;
+        string input = "00110011";
+        int result = s.countBinarySubstrings(input);
+        int expect = 6;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_daily_696, Case_2)
+    {
+        Solution s;
+        string input = "10101";
+        int result = s.countBinarySubstrings(input);
+        int expect = 4;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_daily_696, Case_Customer_1)
+    {
+        Solution s;
+        string input = "";
+        int result = s.countBinarySubstrings(input);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_daily_696, Case_Customer_2)
+    {
+        Solution s;
+        string input = "111111";
+        int result = s.countBinarySubstrings(input);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_daily_696, Case_Customer_3)
+    {
+        Solution s;
+        string input = "00001111";
+        int result = s.countBinarySubstrings(input);
+        int expect = 4;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace pdaily_696
+
 #include "763.cpp"
 
 namespace p763
