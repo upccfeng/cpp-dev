@@ -1285,13 +1285,13 @@ namespace p66
     }
 } // namespace p66
 
-#include "daily_696.cpp"
+#include "696_daily.cpp"
 
-namespace pdaily_696
+namespace p696_daily
 {
     using Solution = Solution;
 
-    TEST(test_daily_696, Case_1)
+    TEST(test_696_daily, Case_1)
     {
         Solution s;
         string input = "00110011";
@@ -1300,7 +1300,7 @@ namespace pdaily_696
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_daily_696, Case_2)
+    TEST(test_696_daily, Case_2)
     {
         Solution s;
         string input = "10101";
@@ -1309,7 +1309,7 @@ namespace pdaily_696
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_daily_696, Case_Customer_1)
+    TEST(test_696_daily, Case_Customer_1)
     {
         Solution s;
         string input = "";
@@ -1318,7 +1318,7 @@ namespace pdaily_696
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_daily_696, Case_Customer_2)
+    TEST(test_696_daily, Case_Customer_2)
     {
         Solution s;
         string input = "111111";
@@ -1327,7 +1327,7 @@ namespace pdaily_696
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_daily_696, Case_Customer_3)
+    TEST(test_696_daily, Case_Customer_3)
     {
         Solution s;
         string input = "00001111";
@@ -1335,7 +1335,7 @@ namespace pdaily_696
         int expect = 4;
         ASSERT_EQ(result, expect);
     }
-} // namespace pdaily_696
+} // namespace p696_daily
 
 #include "763.cpp"
 
@@ -1405,13 +1405,13 @@ namespace p763
     }
 } // namespace p763
 
-#include "daily_637.cpp"
+#include "637_daily.cpp"
 
-namespace pdaily_637
+namespace p637_daily
 {
     using Solution = Solution;
 
-    TEST(test_daily_637, Case_1)
+    TEST(test_637_daily, Case_1)
     {
         Solution s;
         TreeNode* input = TreeNode::makeTree({3, 9, 20, -1, -1, 15, 7}, {true, true, true, false, false, true, true}, 3);
@@ -1422,7 +1422,7 @@ namespace pdaily_637
         TreeNode::freeTree(input);
     }
 
-    TEST(test_daily_637, Case_2)
+    TEST(test_637_daily, Case_2)
     {
         Solution s;
         TreeNode* input = TreeNode::makeTree({3, 9, 20, 15, 7, -1, -1}, {true, true, true, true, true, false, false}, 3);
@@ -1433,7 +1433,7 @@ namespace pdaily_637
         TreeNode::freeTree(input);
     }
 
-    TEST(test_daily_637, Case_3)
+    TEST(test_637_daily, Case_3)
     {
         Solution s;
         TreeNode* input = TreeNode::makeTree({1, -1, 1}, {true, false, true}, 2);
@@ -1444,7 +1444,7 @@ namespace pdaily_637
         TreeNode::freeTree(input);
     }
 
-    TEST(test_daily_637, Case_4)
+    TEST(test_637_daily, Case_4)
     {
         Solution s;
         TreeNode* input = TreeNode::makeTree({57, 46, 89, -36, -1, -1, -1}, {true, true, true, true, false, false, false}, 3);
@@ -1455,7 +1455,7 @@ namespace pdaily_637
         TreeNode::freeTree(input);
     }
 
-    TEST(test_daily_637, Case_5)
+    TEST(test_637_daily, Case_5)
     {
         Solution s;
         TreeNode* input = TreeNode::makeTree({0, 1, -1}, {true, true, false}, 2);
@@ -1465,15 +1465,15 @@ namespace pdaily_637
 
         TreeNode::freeTree(input);
     }
-} // namespace pdaily_637
+} // namespace p637_daily
 
-#include "daily_820.cpp"
+#include "820_daily.cpp"
 
-namespace pdaily_820
+namespace p820_daily
 {
     using Solution = Solution;
 
-    TEST(test_daily_820, Case_1)
+    TEST(test_820_daily, Case_1)
     {
         Solution s;
         vector<string> input = {"time", "me", "bell"};
@@ -1482,7 +1482,7 @@ namespace pdaily_820
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_daily_820, Case_2)
+    TEST(test_820_daily, Case_2)
     {
         Solution s;
         vector<string> input = {"t"};
@@ -1491,7 +1491,7 @@ namespace pdaily_820
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_daily_820, Case_Customer_1)
+    TEST(test_820_daily, Case_Customer_1)
     {
         Solution s;
         vector<string> input = {"me", "time", "bell"};
@@ -1500,7 +1500,7 @@ namespace pdaily_820
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_daily_820, Case_Customer_2)
+    TEST(test_820_daily, Case_Customer_2)
     {
         Solution s;
         vector<string> input = {"me", "time", "ime", "bell"};
@@ -1509,7 +1509,7 @@ namespace pdaily_820
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_daily_820, Case_Customer_3)
+    TEST(test_820_daily, Case_Customer_3)
     {
         Solution s;
         vector<string> input = {"ctime", "atime", "time", "bell"};
@@ -1518,7 +1518,7 @@ namespace pdaily_820
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_daily_820, Case_Customer_4)
+    TEST(test_820_daily, Case_Customer_4)
     {
         Solution s;
         vector<string> input = {"ab", "ab"};
@@ -1527,7 +1527,7 @@ namespace pdaily_820
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_daily_820, Case_Customer_5)
+    TEST(test_820_daily, Case_Customer_5)
     {
         Solution s;
         vector<string> input = {"aaaaa", "aaa", "aa"};
@@ -1536,7 +1536,7 @@ namespace pdaily_820
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_daily_820, Case_Fail_1)
+    TEST(test_820_daily, Case_Fail_1)
     {
         Solution s;
         vector<string> input = {"aaa", "abc", "aaa", "asd", "fdg", "abc", "kld"};
@@ -1544,15 +1544,15 @@ namespace pdaily_820
         int expect = 20;
         ASSERT_EQ(result, expect);
     }
-} // namespace pdaily_820
+} // namespace p820_daily
 
-#include "daily_1209.cpp"
+#include "1209_daily.cpp"
 
-namespace pdaily_1209
+namespace p1209_daily
 {
     using Solution = Solution;
 
-    TEST(test_daily_1209, Case_Customer_1)
+    TEST(test_1209_daily, Case_Customer_1)
     {
         Solution s;
         string input_s = "abcddd";
@@ -1562,7 +1562,7 @@ namespace pdaily_1209
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_daily_1209, Case_Customer_2)
+    TEST(test_1209_daily, Case_Customer_2)
     {
         Solution s;
         string input_s = "dddcc";
@@ -1572,7 +1572,7 @@ namespace pdaily_1209
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_daily_1209, Case_Customer_3)
+    TEST(test_1209_daily, Case_Customer_3)
     {
         Solution s;
         string input_s = "caabbbacd";
@@ -1582,7 +1582,7 @@ namespace pdaily_1209
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_daily_1209, Case_Customer_4)
+    TEST(test_1209_daily, Case_Customer_4)
     {
         Solution s;
         string input_s = "caabbbacc";
@@ -1592,7 +1592,7 @@ namespace pdaily_1209
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_daily_1209, Case_1)
+    TEST(test_1209_daily, Case_1)
     {
         Solution s;
         string input_s = "abcd";
@@ -1602,7 +1602,7 @@ namespace pdaily_1209
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_daily_1209, Case_2)
+    TEST(test_1209_daily, Case_2)
     {
         Solution s;
         string input_s = "deeedbbcccbdaa";
@@ -1612,7 +1612,7 @@ namespace pdaily_1209
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_daily_1209, Case_3)
+    TEST(test_1209_daily, Case_3)
     {
         Solution s;
         string input_s = "pbbcggttciiippooaais";
@@ -1621,7 +1621,7 @@ namespace pdaily_1209
         string expect = "ps";
         ASSERT_EQ(result, expect);
     }
-} // namespace pdaily_1209
+} // namespace p1209_daily
 
 #include "1837_weekly_contest.cpp"
 

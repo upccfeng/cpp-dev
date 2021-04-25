@@ -4,7 +4,7 @@ using namespace std;
 #include "common.hpp"
 using namespace common;
 
-namespace pdaily_637
+namespace p637_daily
 {
     class Solution
     {
@@ -74,7 +74,7 @@ namespace pdaily_637
             return ret;
         }
     };
-} // namespace pdaily_637
+} // namespace p637_daily
 
 /*
 # Problem:

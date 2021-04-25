@@ -3,7 +3,7 @@
 
 using namespace std;
 
-namespace pdaily_1209
+namespace p1209_daily
 {
     class Solution
     {
@@ -43,7 +43,7 @@ namespace pdaily_1209
             return res;
         }
     };
-} // namespace pdaily_1209
+} // namespace p1209_daily
 
 /*
 # Problem:
