@@ -1623,6 +1623,100 @@ namespace pdaily_1209
     }
 } // namespace pdaily_1209
 
+#include "1837_weekly_contest.cpp"
+
+namespace p1837_weekly_contest
+{
+    using Solution = Solution;
+
+    TEST(test_1837_weekly_contest, Case_1)
+    {
+        Solution s;
+        int input_n = 34;
+        int input_k = 6;
+        int result = s.sumBase(input_n, input_k);
+        int expect = 9;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_1837_weekly_contest, Case_2)
+    {
+        Solution s;
+        int input_n = 10;
+        int input_k = 10;
+        int result = s.sumBase(input_n, input_k);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_1837_weekly_contest, Case_Customer_1)
+    {
+        Solution s;
+        int input_n = 10;
+        int input_k = 2;
+        int result = s.sumBase(input_n, input_k);
+        int expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p1837_weekly_contest
+
+#include "1838_weekly_contest.cpp"
+
+namespace p1838_weekly_contest
+{
+    using Solution = Solution;
+
+    TEST(test_1838_weekly_contest, Case_1)
+    {
+        Solution s;
+        vector<int> input_nums = {1, 2, 4};
+        int input_k = 5;
+        int result = s.maxFrequency(input_nums, input_k);
+        int expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_1838_weekly_contest, Case_2)
+    {
+        Solution s;
+        vector<int> input_nums = {1,4,8,13};
+        int input_k = 5;
+        int result = s.maxFrequency(input_nums, input_k);
+        int expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_1838_weekly_contest, Case_3)
+    {
+        Solution s;
+        vector<int> input_nums = {3,9,6};
+        int input_k = 2;
+        int result = s.maxFrequency(input_nums, input_k);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_1838_weekly_contest, Case_Customer_1)
+    {
+        Solution s;
+        vector<int> input_nums = {1,4,8,11};
+        int input_k = 10;
+        int result = s.maxFrequency(input_nums, input_k);
+        int expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_1838_weekly_contest, Case_Fail_1)
+    {
+        Solution s;
+        vector<int> input_nums = {9930,9923,9983,9997,9934,9952,9945,9914,9985,9982,9970,9932,9985,9902,9975,9990,9922,9990,9994,9937,9996,9964,9943,9963,9911,9925,9935,9945,9933,9916,9930,9938,10000,9916,9911,9959,9957,9907,9913,9916,9993,9930,9975,9924,9988,9923,9910,9925,9977,9981,9927,9930,9927,9925,9923,9904,9928,9928,9986,9903,9985,9954,9938,9911,9952,9974,9926,9920,9972,9983,9973,9917,9995,9973,9977,9947,9936,9975,9954,9932,9964,9972,9935,9946,9966};
+        int input_k = 3056;
+        int result = s.maxFrequency(input_nums, input_k);
+        int expect = 73;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p1838_weekly_contest
+
 #include "rekuten210221_1.cpp"
 
 namespace p_rekuten210221_1
