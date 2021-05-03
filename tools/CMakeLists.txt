@@ -14,4 +14,8 @@ add_executable(test_tools
     test_tools.cpp
 )
 
+if(MSVC)
+target_link_libraries(test_tools tools gtest gmock gtest_main)
+else()
 target_link_libraries(test_tools tools gtest gmock gtest_main pthread)
+endif()

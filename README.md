@@ -39,6 +39,13 @@ python3 tasks.py [task]
 ./build/cpp_build/tools/test_tools
 ```
 
-## Windows with WSL
+## Windows with MSVC
 
-TBD
+```bat
+REM git clone https://github.com/upccfeng/cpp-dev.git as <SOURCE_DIR>
+
+mkdir <BUILD_DIR>
+cd <BUILD_DIR>
+..\<SOURCE_DIR>\msvc_startup.bat
+REM open sln file
+```

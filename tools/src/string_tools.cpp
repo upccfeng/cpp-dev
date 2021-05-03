@@ -40,7 +40,11 @@ void StringTools::MP(std::vector<int>& result, std::string pattern, std::string 
         return;
     }
 
-    int mpNext[pattern_len + 1];
+    //
+    // FIXME: Patch for windows env
+    // 
+    // int mpNext[pattern_len + 1];
+    int mpNext[1000];
     MP_Pattern_Relation(pattern, mpNext);
 
     int p_taking = 0, t_taking = 0;
@@ -88,7 +92,11 @@ void StringTools::KMP(std::vector<int>& result, std::string pattern, std::string
         return;
     }
 
-    int kmpNext[pattern_len + 1];
+    //
+    // FIXME: Patch for windows env
+    // 
+    // int kmpNext[pattern_len + 1];
+    int kmpNext[1000];
     KMP_Pattern_Relation(pattern, kmpNext);
 
     int p_taking = 0, t_taking = 0;

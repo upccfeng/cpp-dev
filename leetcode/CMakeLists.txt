@@ -12,4 +12,8 @@ add_executable(test_all
     ${SOLUTION_FILES}
 )
 
+if(MSVC)
+target_link_libraries(test_all tools gtest gmock gtest_main)
+else()
 target_link_libraries(test_all tools gtest gmock gtest_main pthread)
+endif()

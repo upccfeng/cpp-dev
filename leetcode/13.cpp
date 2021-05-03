@@ -24,32 +24,32 @@ namespace p13
             for (auto it = s.begin(); it != s.end(); ++it)
             {
 
-                if (*it == 'I' && *(it + 1) == 'V')
+                if (*it == 'I' && (it + 1) != s.end() && *(it + 1) == 'V')
                 {
                     result += 4;
                     ++it;
                 }
-                else if (*it == 'I' && *(it + 1) == 'X')
+                else if (*it == 'I' && (it + 1) != s.end() && *(it + 1) == 'X')
                 {
                     result += 9;
                     ++it;
                 }
-                else if (*it == 'X' && *(it + 1) == 'L')
+                else if (*it == 'X' && (it + 1) != s.end() && *(it + 1) == 'L')
                 {
                     result += 40;
                     ++it;
                 }
-                else if (*it == 'X' && *(it + 1) == 'C')
+                else if (*it == 'X' && (it + 1) != s.end() && *(it + 1) == 'C')
                 {
                     result += 90;
                     ++it;
                 }
-                else if (*it == 'C' && *(it + 1) == 'D')
+                else if (*it == 'C' && (it + 1) != s.end() && *(it + 1) == 'D')
                 {
                     result += 400;
                     ++it;
                 }
-                else if (*it == 'C' && *(it + 1) == 'M')
+                else if (*it == 'C' && (it + 1) != s.end() && *(it + 1) == 'M')
                 {
                     result += 900;
                     ++it;
