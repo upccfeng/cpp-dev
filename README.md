@@ -46,6 +46,6 @@ REM git clone https://github.com/upccfeng/cpp-dev.git as <SOURCE_DIR>
 
 mkdir <BUILD_DIR>
 cd <BUILD_DIR>
-..\<SOURCE_DIR>\msvc_startup.bat
+<SOURCE_DIR>\msvc_startup.bat
 REM open sln file
 ```
