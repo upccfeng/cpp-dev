@@ -1233,6 +1233,40 @@ namespace p36
     }
 } // namespace p36
 
+#include "46.cpp"
+
+namespace p46
+{
+    using Solution = Solution;
+
+    TEST(test_46, Case_1)
+    {
+        Solution s;
+        vector<int> input = { 1, 2, 3 };
+        vector<vector<int>> result = s.permute(input);
+        vector<vector<int>> expect = { {1, 2, 3} ,{1, 3, 2},{2, 1, 3},{2, 3, 1},{3, 2, 1},{3, 1, 2} };
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_46, Case_2)
+    {
+        Solution s;
+        vector<int> input = { 0, 1 };
+        vector<vector<int>> result = s.permute(input);
+        vector<vector<int>> expect = { {0, 1} ,{1, 0} };
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_46, Case_3)
+    {
+        Solution s;
+        vector<int> input = { 1 };
+        vector<vector<int>> result = s.permute(input);
+        vector<vector<int>> expect = { {1} };
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p46
+
 #include "66.cpp"
 
 namespace p66
