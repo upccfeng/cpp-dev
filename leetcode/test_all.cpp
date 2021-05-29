@@ -1267,6 +1267,31 @@ namespace p46
     }
 } // namespace p46
 
+#include "47.cpp"
+
+namespace p47
+{
+    using Solution = Solution;
+
+    TEST(test_47, Case_1)
+    {
+        Solution s;
+        vector<int> input = { 1,1,2 };
+        vector<vector<int>> result = s.permuteUnique(input);
+        vector<vector<int>> expect = { {1, 1, 2}, {1, 2, 1}, {2, 1, 1} };
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_47, Case_2)
+    {
+        Solution s;
+        vector<int> input = { 1,2,3 };
+        vector<vector<int>> result = s.permuteUnique(input);
+        vector<vector<int>> expect = { {1,2,3} ,{1,3,2},{2,1,3},{2,3,1},{3,1,2},{3,2,1} };
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p47
+
 #include "66.cpp"
 
 namespace p66
