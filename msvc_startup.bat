@@ -1,7 +1,7 @@
 set BUILD_DIR=%cd%
 
 set SOURCE_DIR=%~dp0
-python3 -m venv python-dev
+python3 -m virtualenv python-dev
 call %BUILD_DIR%\python-dev\Scripts\activate.bat
 python3 -m pip install -r %SOURCE_DIR%\requirements.txt
 
