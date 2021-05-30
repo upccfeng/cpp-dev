@@ -6,7 +6,6 @@ project(test_processing)
 add_definitions(-std=c++17)
 add_definitions(-g -O0)
 
-set(PROCESSING_DIR ${CMAKE_SOURCE_DIR}/processing)
 set(BUILD_DIR ${CMAKE_SOURCE_DIR}/build)
 set(GOOGLE_TEST_INSTALL_DIR ${BUILD_DIR}/install/googletest)
 set(GOOGLE_TEST_INCLUDE_DIR ${GOOGLE_TEST_INSTALL_DIR}/include)
@@ -22,6 +21,7 @@ if(MSVC)
     add_subdirectory(${BUILD_DIR}/third_party_source/googletest)
 endif()
 
+add_subdirectory(${CMAKE_SOURCE_DIR}/processing)
 add_subdirectory(${CMAKE_SOURCE_DIR}/leetcode)
 add_subdirectory(${CMAKE_SOURCE_DIR}/tools)
 
@@ -31,14 +31,6 @@ if(NOT MSVC)
     link_directories(${LIB_DIR})
 endif()
 
-add_executable(test_processing
-    test_processing.cpp
-    ${PROCESSING_DIR}/solution.cpp
-)
-
 if(MSVC)
-    target_link_libraries(test_processing tools gtest gmock gtest_main)
     set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT test_processing)
-else()
-    target_link_libraries(test_processing tools gtest gmock gtest_main pthread)
 endif()
