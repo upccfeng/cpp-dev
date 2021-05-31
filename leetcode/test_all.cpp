@@ -1292,6 +1292,31 @@ namespace p47
     }
 } // namespace p47
 
+#include "52_daily.cpp"
+
+namespace p52_daily
+{
+    using Solution = Solution;
+
+    TEST(test_52_daily, Case_1)
+    {
+        Solution s;
+        int input = 4;
+        int result = s.totalNQueens(input);
+        int expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_52_daily, Case_2)
+    {
+        Solution s;
+        int input = 1;
+        int result = s.totalNQueens(input);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p52_daily
+
 #include "66.cpp"
 
 namespace p66
