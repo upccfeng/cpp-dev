@@ -1,10 +1,12 @@
 # Since 3.6 version,user can use VS_STARTUP_PROJECT to specify startup project.
 cmake_minimum_required(VERSION 3.6)
 
-project(test_processing)
+project(test_cppdev)
 
 add_definitions(-std=c++17)
 add_definitions(-g -O0)
+
+enable_testing()
 
 set(BUILD_DIR ${CMAKE_SOURCE_DIR}/build)
 set(GOOGLE_TEST_INSTALL_DIR ${BUILD_DIR}/install/googletest)
@@ -33,4 +35,8 @@ endif()
 
 if(MSVC)
     set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT test_processing)
+
+    add_test(NAME test_tools COMMAND test_tools)
+    add_test(NAME test_processing COMMAND test_processing)
+    add_test(NAME test_all COMMAND test_all)
 endif()
