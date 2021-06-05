@@ -1,22 +1,22 @@
 #include "binary_tools.hpp"
 
+std::vector<int> BinaryTools::get_binary(int data)
+{
+    std::vector<int> _data;
+    while (data > 0)
+    {
+        _data.emplace_back(data % 2);
+
+        data /= 2;
+    }
+
+    return _data;
+}
+
 std::vector<int> BinaryTools::binary_of_two_int_sum(int a, int b)
 {
-    std::vector<int> _a, _b;
-
-    while (a > 0)
-    {
-        _a.emplace_back(a % 2);
-
-        a /= 2;
-    }
-
-    while (b > 0)
-    {
-        _b.emplace_back(b % 2);
-
-        b /= 2;
-    }
+    std::vector<int> _a = get_binary(a);
+    std::vector<int> _b = get_binary(b);
 
     std::vector<int> t(_a.size() + _b.size(), 0);
     for (int bcnt = 0; bcnt < _b.size(); ++bcnt)
