@@ -6,12 +6,98 @@
 
 #include "string_tools.hpp"
 #include "sort_tools.hpp"
+#include "binary_tools.hpp"
 
 TEST(Test_StringTools, debug)
 {
+    //
+    // TODO: need to finish the test cases
+    //
     std::vector<int> result;
     StringTools::KMP(result, "caatcat", "caatcacaatcatcaatcat");
 }
+
+class TestBinaryTools : public ::testing::Test
+{
+
+};
+
+TEST(TestBinaryTools, Case_Normal_add_1)
+{
+    int input_1 = 7;
+    int input_2 = 3;
+    std::vector<int> result = BinaryTools::binary_of_two_int_sum(input_1, input_2);
+    int expect_one_size = 3;
+    int result_one_size = 0;
+
+    for (const auto e : result)
+    {
+        if (e == 1)
+        {
+            ++result_one_size;
+        }
+    }
+
+    ASSERT_EQ(result_one_size, expect_one_size);
+}
+
+TEST(TestBinaryTools, Case_Normal_add_2)
+{
+    int input_1 = 4;
+    int input_2 = 8;
+    std::vector<int> result = BinaryTools::binary_of_two_int_sum(input_1, input_2);
+    int expect_one_size = 1;
+    int result_one_size = 0;
+
+    for (const auto e : result)
+    {
+        if (e == 1)
+        {
+            ++result_one_size;
+        }
+    }
+
+    ASSERT_EQ(result_one_size, expect_one_size);
+}
+
+TEST(TestBinaryTools, Case_Boundary_1)
+{
+    int input_1 = 100000000;
+    int input_2 = 100000000;
+    std::vector<int> result = BinaryTools::binary_of_two_int_sum(input_1, input_2);
+    int expect_one_size = 20;
+    int result_one_size = 0;
+
+    for (const auto e : result)
+    {
+        if (e == 1)
+        {
+            ++result_one_size;
+        }
+    }
+
+    ASSERT_EQ(result_one_size, expect_one_size);
+}
+
+TEST(TestBinaryTools, Case_Boundary_2)
+{
+    int input_1 = 0;
+    int input_2 = 100000000;
+    std::vector<int> result = BinaryTools::binary_of_two_int_sum(input_1, input_2);
+    int expect_one_size = 0;
+    int result_one_size = 0;
+
+    for (const auto e : result)
+    {
+        if (e == 1)
+        {
+            ++result_one_size;
+        }
+    }
+
+    ASSERT_EQ(result_one_size, expect_one_size);
+}
+
 
 class TestSortTestSuit : public ::testing::Test
 {
