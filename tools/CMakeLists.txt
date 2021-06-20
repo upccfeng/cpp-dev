@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.0.0)
 
 project(test_tools)
 
+set(TOOLS_SRC_DIR ${CMAKE_SOURCE_DIR}/tools/src)
 file(GLOB TOOLS_SRC_FILES ${TOOLS_SRC_DIR}/*.cpp)
 file(GLOB TOOLS_INCLUDE_FILES ${TOOLS_INCLUDE_DIR}/*.hpp)
 

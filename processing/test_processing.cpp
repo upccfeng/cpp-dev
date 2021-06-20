@@ -1,12 +1,21 @@
-#include <iostream>
-
 #include "assert.h"
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
 
-#include "solution.cpp"
-
+using namespace std;
 using namespace testing;
+
+namespace pXX
+{
+    class Solution
+    {
+    public:
+        int xx(int xx)
+        {
+            return 0;
+        }
+    };
+} // namespace pXX
 
 namespace pXX
 {
@@ -21,3 +30,15 @@ namespace pXX
         ASSERT_EQ(result, expect);
     }
 } // namespace pXX
+
+/*
+# Problem:
+
+## HINT:
+
+## Algorithm:
+
+## Time Complexity:
+
+## Space Complexity:
+*/

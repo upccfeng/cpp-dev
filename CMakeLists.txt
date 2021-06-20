@@ -6,13 +6,15 @@ project(test_cppdev)
 add_definitions(-std=c++17)
 add_definitions(-g -O0)
 
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+
 enable_testing()
 
 set(BUILD_DIR ${CMAKE_SOURCE_DIR}/build)
 set(GOOGLE_TEST_INSTALL_DIR ${BUILD_DIR}/install/googletest)
 set(GOOGLE_TEST_INCLUDE_DIR ${GOOGLE_TEST_INSTALL_DIR}/include)
 set(LIB_DIR ${GOOGLE_TEST_INSTALL_DIR}/lib)
-set(TOOLS_SRC_DIR ${CMAKE_SOURCE_DIR}/tools/src)
+
 set(TOOLS_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/tools/include)
 
 if(MSVC)
