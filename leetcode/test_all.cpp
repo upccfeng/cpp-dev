@@ -1369,6 +1369,49 @@ namespace p66
     }
 } // namespace p66
 
+#include "307.cpp"
+
+namespace p307
+{
+    TEST(test_p307, Case_1)
+    {
+        vector<int> nums = { 1, 3, 5 };
+        int result;
+
+        NumArray* obj = new NumArray(nums);
+
+        result = obj->sumRange(0, 2);
+        ASSERT_EQ(result, 9);
+
+        obj->update(1, 2);
+
+        result = obj->sumRange(0, 2);
+        ASSERT_EQ(result, 8);
+    }
+
+    TEST(test_p307, Case_fail_1)
+    {
+        vector<int> nums = { 9, -8 };
+        int result;
+
+        NumArray* obj = new NumArray(nums);
+
+        obj->update(0, 3);
+
+        result = obj->sumRange(1, 1);
+        ASSERT_EQ(result, -8);
+
+        result = obj->sumRange(0, 1);
+        ASSERT_EQ(result, -5);
+
+        obj->update(1, -3);
+
+        result = obj->sumRange(0, 1);
+        ASSERT_EQ(result, 0);
+    }
+
+} // namespace p307
+
 #include "696_daily.cpp"
 
 namespace p696_daily
