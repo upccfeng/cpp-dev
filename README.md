@@ -1,12 +1,25 @@
 # Cpp development environment
 
-## Get Ubuntu env by Docker
+## Windows with MSVC
+
+```bat
+REM "git clone https://github.com/upccfeng/cpp-dev.git" as <SOURCE_DIR>
+
+mkdir <BUILD_DIR>
+cd <BUILD_DIR>
+<SOURCE_DIR>\msvc_startup.bat
+REM Open sln file
+```
+
+## MacOS with Xcode
 
 ```bash
-cd docker
-docker build -t cppdev .
-docker-compose up -d
-docker exec -it cppdev bash
+# "git clone https://github.com/upccfeng/cpp-dev.git" as <SOURCE_DIR>
+
+mkdir <BUILD_DIR>
+cd <BUILD_DIR>
+bash <SOURCE_DIR>/xcode_startup.sh
+# Open xcodeproj file
 ```
 
 ## Ubuntu
@@ -39,13 +52,11 @@ python3 tasks.py [task]
 ./build/cpp_build/tools/test_tools
 ```
 
-## Windows with MSVC
+### Get Ubuntu env by Docker
 
-```bat
-REM git clone https://github.com/upccfeng/cpp-dev.git as <SOURCE_DIR>
-
-mkdir <BUILD_DIR>
-cd <BUILD_DIR>
-<SOURCE_DIR>\msvc_startup.bat
-REM open sln file
+```bash
+cd docker
+docker build -t cppdev .
+docker-compose up -d
+docker exec -it cppdev bash
 ```
