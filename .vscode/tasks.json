@@ -6,7 +6,7 @@
         {
             "label": "Cpp-re-make",
             "type": "shell",
-            "command": "cd ./build/cpp_build/ && make",
+            "command": "cd ${workspaceFolder}/../cpp-dev.build && make",
             "problemMatcher": [
                 "$gcc"
             ],
@@ -14,36 +14,6 @@
                 "kind": "build",
                 "isDefault": true
             }
-        },
-        {
-            "label": "Cpp-build-tests",
-            "type": "shell",
-            "command": "python3",
-            "args": [
-                "tasks.py",
-                "build_tests"
-            ],
-            "problemMatcher": [
-                "$gcc"
-            ]
-        },
-        {
-            "label": "Cpp-clean-all-build",
-            "type": "shell",
-            "command": "python3",
-            "args": [
-                "tasks.py",
-                "all_clean_and_build"
-            ],
-            "problemMatcher": [
-                "$gcc"
-            ]
-        },
-        {
-            "label": "Create Python env",
-            "type": "shell",
-            "command": "source ./starup.sh",
-            "args": []
         }
     ]
 }

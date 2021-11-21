@@ -8,7 +8,7 @@
             "name": "Cpp-processing",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/cpp_build/test_processing",
+            "program": "${workspaceFolder}/../cpp-dev.build/processing/test_processing",
             "args": [
                 "--gtest_filter=*.*",
                 "--gtest_break_on_failure"
@@ -34,7 +34,7 @@
             "name": "Cpp-all",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/cpp_build/leetcode/test_all",
+            "program": "${workspaceFolder}/../cpp-dev.build/leetcode/test_all",
             "args": [
                 "--gtest_filter=*.*",
                 "--gtest_break_on_failure"
@@ -60,7 +60,7 @@
             "name": "Cpp-tools",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/cpp_build/tools/test_tools",
+            "program": "${workspaceFolder}/../cpp-dev.build/tools/test_tools",
             "args": [
                 "--gtest_filter=*.*",
                 "--gtest_break_on_failure"
@@ -83,15 +83,28 @@
             }
         },
         {
-            "name": "Python-Task",
+            "name": "Python-Build",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/tasks.py",
+            "program": "${workspaceFolder}/build.py",
             "args": [
-                "default"
+                "vscode",
+                "--build-dir", "${workspaceFolder}/../cpp-dev.build"
             ],
             "console": "integratedTerminal"
         },
+        {
+            "name": "Python-Test-Build",
+            "type": "python",
+            "request": "launch",
+            "module": "pytest",
+            "args": [
+                "${workspaceFolder}/tests/test_build.py",
+                "-x",
+                "-vvv",
+            ],
+            "console": "integratedTerminal"
+        }
 
     ]
 }

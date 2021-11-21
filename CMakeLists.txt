@@ -10,7 +10,7 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 enable_testing()
 
-set(BUILD_DIR ${CMAKE_SOURCE_DIR}/build)
+set(BUILD_DIR ${CMAKE_CURRENT_BINARY_DIR})
 set(GOOGLE_TEST_INSTALL_DIR ${BUILD_DIR}/install/googletest)
 set(GOOGLE_TEST_INCLUDE_DIR ${GOOGLE_TEST_INSTALL_DIR}/include)
 set(LIB_DIR ${GOOGLE_TEST_INSTALL_DIR}/lib)
@@ -22,6 +22,8 @@ if(MSVC)
     set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MT")
     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MTd")
 
+    add_subdirectory(${BUILD_DIR}/third_party_source/googletest)
+elseif(APPLE)
     add_subdirectory(${BUILD_DIR}/third_party_source/googletest)
 endif()
 
