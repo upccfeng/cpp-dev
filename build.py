@@ -38,6 +38,14 @@ class Build:
 
         self.src_dir = os.path.realpath(os.path.dirname(__file__))
 
+        #
+        # TODO: Any better way? Lookup environment?
+        #
+        if self.platform == "msvc":
+            self.shell = "cmd"
+        else:
+            self.shell = "bash"
+
     def _download_googletest(self, url="https://github.com/google/googletest.git"):
         logger.info('Donwload google test from GitHub: {}'.format(url))
 
@@ -63,10 +71,10 @@ class Build:
             return "Unix Makefiles"
 
     @staticmethod
-    def _run_cmd(cmds):
+    def _run_cmd(cmds, shell="bash"):
         b_cmd = str.encode(cmds)
 
-        p = subprocess.Popen('bash', stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen(shell, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         p.stdin.write(b_cmd)
         p.stdin.close()
 
@@ -76,8 +84,11 @@ class Build:
             if not ln:
                 break
 
-            sys.stdout.write(ln.decode('utf-8'))
-            stdout.append(ln)
+            try:
+                sys.stdout.write(ln.decode('utf-8'))
+                stdout.append(ln)
+            except:
+                sys.stdout.write("unknow binary\n")
 
         p.wait()
 
@@ -116,7 +127,7 @@ class Build:
                             'make',
                             'make install'])
 
-        if Build._run_cmd(cmds):
+        if Build._run_cmd(cmds, shell=self.shell):
             raise BuildCodeException('Build googletest failed')
 
     def _build_third_party(self):
@@ -132,10 +143,10 @@ class Build:
         src_dir = self.src_dir
 
         cmds = '\n'.join(['cd {}'.format(build_dir),
-                            'cmake {src_dir} '.format(src_dir=src_dir, generators=Build._get_generator(self.platform)),
+                            'cmake {src_dir} -G "{generators}"'.format(src_dir=src_dir, generators=Build._get_generator(self.platform)),
                             'cmake --build {build_dir}'.format(build_dir=build_dir)])
 
-        if Build._run_cmd(cmds):
+        if Build._run_cmd(cmds, shell=self.shell):
             raise BuildCodeException('Build Cpp test code failed')
 
     def build(self):

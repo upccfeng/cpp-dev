@@ -23,7 +23,7 @@ call .\python-dev\Scripts\activate.bat
 REM Build
 cd <SOURCE_DIR>
 python3 -m pip install -r requirements.txt
-python3 build.py vscode --build-dir <BUILD_DIR>
+python3 build.py msvc --build-dir <BUILD_DIR>
 
 REM Open with MSVC
 cd <BUILD_DIR>
@@ -53,7 +53,7 @@ source ./python-dev/bin/activate
 # Build
 cd <SOURCE_DIR>
 python3 -m pip install -r requirements.txt
-python3 build.py vscode --build-dir <BUILD_DIR>
+python3 build.py xcode --build-dir <BUILD_DIR>
 
 # Open with Xcode
 cd <BUILD_DIR>

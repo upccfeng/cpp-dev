@@ -22,9 +22,9 @@ if(MSVC)
     set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MT")
     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MTd")
 
-    add_subdirectory(${BUILD_DIR}/third_party_source/googletest)
+    add_subdirectory(${BUILD_DIR}/third_party_source/googletest third_party_build)
 elseif(APPLE)
-    add_subdirectory(${BUILD_DIR}/third_party_source/googletest)
+    add_subdirectory(${BUILD_DIR}/third_party_source/googletest third_party_build)
 endif()
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/processing)
