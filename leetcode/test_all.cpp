@@ -1412,6 +1412,63 @@ namespace p307
 
 } // namespace p307
 
+#include "461_daily.cpp"
+
+namespace p461
+{
+    using Solution = Solution;
+
+    TEST(test_461, Case_1)
+    {
+        Solution s;
+        int input_a = 1;
+        int input_b = 4;
+        int result = s.hammingDistance(input_a, input_b);
+        int expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_461, Case_2)
+    {
+        Solution s;
+        int input_a = 3;
+        int input_b = 1;
+        int result = s.hammingDistance(input_a, input_b);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_461, Case_Custmize_1)
+    {
+        Solution s;
+        int input_a = 12;
+        int input_b = 3;
+        int result = s.hammingDistance(input_a, input_b);
+        int expect = 4;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_461, Case_Custmize_2)
+    {
+        Solution s;
+        int input_a = 3;
+        int input_b = 3;
+        int result = s.hammingDistance(input_a, input_b);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_461, Case_Custmize_3)
+    {
+        Solution s;
+        int input_a = 0;
+        int input_b = 8;
+        int result = s.hammingDistance(input_a, input_b);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p461
+
 #include "696_daily.cpp"
 
 namespace p696_daily
