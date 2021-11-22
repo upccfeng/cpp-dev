@@ -38,6 +38,7 @@ namespace p461
 
 /*
 # Problem:
+https://leetcode.com/problems/hamming-distance/
 
 ## HINT:
 bitwise operator, >> and ^ are usefull

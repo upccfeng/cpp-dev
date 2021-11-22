@@ -1469,6 +1469,77 @@ namespace p461
     }
 } // namespace p461
 
+#include "540_daily.cpp"
+
+namespace p540
+{
+    using Solution = Solution;
+
+    TEST(test_540, Case_1)
+    {
+        Solution s;
+        std::vector<int> input = { 1,1,2,3,3,4,4,8,8 };
+        int result = s.singleNonDuplicate(input);
+        int expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_540, Case_2)
+    {
+        Solution s;
+        std::vector<int> input = { 3,3,7,7,10,11,11 };
+        int result = s.singleNonDuplicate(input);
+        int expect = 10;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_540, Case_Customize_1)
+    {
+        Solution s;
+        std::vector<int> input = { 1,1,2,2,3,4,4,8,8 };
+        int result = s.singleNonDuplicate(input);
+        int expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_540, Case_Customize_2)
+    {
+        Solution s;
+        std::vector<int> input = { 1,1,2,2,3,3,4,8,8 };
+        int result = s.singleNonDuplicate(input);
+        int expect = 4;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_540, Case_Customize_3)
+    {
+        Solution s;
+        std::vector<int> input = { 3 };
+        int result = s.singleNonDuplicate(input);
+        int expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_540, Case_Customize_4)
+    {
+        Solution s;
+        std::vector<int> input = { 1,1,3 };
+        int result = s.singleNonDuplicate(input);
+        int expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_540, Case_Runtime_error_1)
+    {
+        Solution s;
+        std::vector<int> input = { 1,1,2,2,3 };
+        int result = s.singleNonDuplicate(input);
+        int expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p540
+
+
 #include "696_daily.cpp"
 
 namespace p696_daily
