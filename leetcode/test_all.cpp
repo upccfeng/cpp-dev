@@ -1188,6 +1188,84 @@ namespace p34
     }
 } // namespace p34
 
+#include "35_daily.cpp"
+
+namespace p35_daily
+{
+    using Solution = Solution;
+
+    TEST(test_35_daily, Case_1)
+    {
+        Solution s;
+        std::vector<int> input_nums = { 1,3,5,6 };
+        int input_target = 5;
+        int result = s.searchInsert(input_nums, input_target);
+        int expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_35_daily, Case_2)
+    {
+        Solution s;
+        std::vector<int> input_nums = { 1,3,5,6 };
+        int input_target = 2;
+        int result = s.searchInsert(input_nums, input_target);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_35_daily, Case_3)
+    {
+        Solution s;
+        std::vector<int> input_nums = { 1,3,5,6 };
+        int input_target = 7;
+        int result = s.searchInsert(input_nums, input_target);
+        int expect = 4;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_35_daily, Case_4)
+    {
+        Solution s;
+        std::vector<int> input_nums = { 1,3,5,6 };
+        int input_target = 0;
+        int result = s.searchInsert(input_nums, input_target);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_35_daily, Case_5)
+    {
+        Solution s;
+        std::vector<int> input_nums = { 1 };
+        int input_target = 0;
+        int result = s.searchInsert(input_nums, input_target);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_35_daily, Case_Wrong_1)
+    {
+        Solution s;
+        std::vector<int> input_nums = { 1 };
+        int input_target = 1;
+        int result = s.searchInsert(input_nums, input_target);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_35_daily, Case_RunTime_1)
+    {
+        Solution s;
+        std::vector<int> input_nums = { 1,3 };
+        int input_target = 0;
+        int result = s.searchInsert(input_nums, input_target);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p35_daily
+
+
 #include "36.cpp"
 
 namespace p36
