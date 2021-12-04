@@ -197,3 +197,37 @@ TEST_F(TestSortTestSuit, quick_sort)
         ASSERT_THAT(data, testing::Eq(data_entry.second));
     }
 }
+
+
+#include "listnode.hpp"
+
+class TestNodeList : public ::testing::Test
+{
+
+};
+
+TEST_F(TestNodeList, ListHelper)
+{
+    {
+        std::shared_ptr<ListNode> x = std::shared_ptr<ListNode>(ListHelper::create({1, 2, 3, 4}), ListHelper::remove);
+        ASSERT_THAT(ListHelper::compare(x, { 1, 2, 3, 4 }), testing::Eq(true));
+        ASSERT_THAT(ListHelper::compare(x, { 1, 2, 3, 5 }), testing::Eq(false));
+        ASSERT_THAT(ListHelper::compare(x, { 1, 2, 3 }), testing::Eq(false));
+        ASSERT_THAT(ListHelper::compare(x, { 1, 2, 3, 4, 5 }), testing::Eq(false));
+    }
+
+    {
+        std::shared_ptr<ListNode> x = std::shared_ptr<ListNode>(ListHelper::create({}), ListHelper::remove);
+        ASSERT_THAT(ListHelper::compare(x, {}), testing::Eq(true));
+        ASSERT_THAT(ListHelper::compare(x, { 1 }), testing::Eq(false));
+    }
+
+    {
+        std::shared_ptr<ListNode> x = std::shared_ptr<ListNode>(ListHelper::create({1, 2}), ListHelper::remove);
+        std::shared_ptr<ListNode> y = std::shared_ptr<ListNode>(ListHelper::create({1, 2}), ListHelper::remove);
+        ASSERT_THAT(ListHelper::compare(x.get(), y.get()), testing::Eq(true));
+        ASSERT_THAT(ListHelper::compare(x.get(), {1, 2}), testing::Eq(true));
+        ASSERT_THAT(ListHelper::compare(x, {1, 2}), testing::Eq(true));
+        ASSERT_THAT(ListHelper::compare(x.get(), y), testing::Eq(true));
+    }
+}

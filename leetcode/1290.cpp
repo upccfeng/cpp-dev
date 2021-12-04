@@ -1,8 +1,7 @@
 #include <iostream>
 #include <vector>
 
-#include "common.hpp"
-using namespace common;
+#include "listnode.hpp"
 
 /*
 #include "leetcode/contest_problem_solution/1290.cpp"

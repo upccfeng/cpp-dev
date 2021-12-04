@@ -1,8 +1,7 @@
 #include <vector>
 using namespace std;
 
-#include "common.hpp"
-using namespace common;
+#include "listnode.hpp"
 
 namespace p19
 {

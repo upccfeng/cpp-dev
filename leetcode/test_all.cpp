@@ -504,45 +504,37 @@ namespace p19
     TEST(test_19, Case_1)
     {
         Solution s;
-        ListNode* input = ListNode::makeList({1,2,3,4,5});
-        ListNode* result = s.removeNthFromEnd(input, 2);
-        vector<int> expect = {1,2,3,5};
-        ASSERT_TRUE(ListNode::cmp(result, expect));
-
-        ListNode::freeList(result);
+        auto input = ListHelper::create({ 1,2,3,4,5 });
+        auto result = std::shared_ptr<ListNode>(s.removeNthFromEnd(input, 2), ListHelper::remove);
+        auto expect = ListHelper::create({ 1,2,3,5 });
+        ASSERT_THAT(ListHelper::compare(expect, result), testing::Eq(true));
     }
 
     TEST(test_19, Case_2)
     {
         Solution s;
-        ListNode* input = ListNode::makeList({1});
-        ListNode* result = s.removeNthFromEnd(input, 1);
-        vector<int> expect = {};
-        ASSERT_TRUE(ListNode::cmp(result, expect));
-
-        ListNode::freeList(result);
+        auto input = ListHelper::create({ 1 });
+        auto result = std::shared_ptr<ListNode>(s.removeNthFromEnd(input, 1), ListHelper::remove);
+        auto expect = ListHelper::create({});
+        ASSERT_THAT(ListHelper::compare(expect, result), testing::Eq(true));
     }
 
     TEST(test_19, Case_3)
     {
         Solution s;
-        ListNode* input = ListNode::makeList({1,2});
-        ListNode* result = s.removeNthFromEnd(input, 1);
-        vector<int> expect = {1};
-        ASSERT_TRUE(ListNode::cmp(result, expect));
-
-        ListNode::freeList(result);
+        auto input = ListHelper::create({ 1,2 });
+        auto result = std::shared_ptr<ListNode>(s.removeNthFromEnd(input, 1), ListHelper::remove);
+        auto expect = ListHelper::create({ 1 });
+        ASSERT_THAT(ListHelper::compare(expect, result), testing::Eq(true));
     }
 
     TEST(test_19, Case_Customer_1)
     {
         Solution s;
-        ListNode* input = ListNode::makeList({1,2});
-        ListNode* result = s.removeNthFromEnd(input, 2);
-        vector<int> expect = {2};
-        ASSERT_TRUE(ListNode::cmp(result, expect));
-
-        ListNode::freeList(result);
+        auto input = ListHelper::create({ 1,2 });
+        auto result = std::shared_ptr<ListNode>(s.removeNthFromEnd(input, 2), ListHelper::remove);
+        auto expect = ListHelper::create({ 2 });
+        ASSERT_THAT(ListHelper::compare(expect, result), testing::Eq(true));
     }
 } // namespace p19
 
@@ -652,85 +644,71 @@ namespace p21
     TEST(test_21, Case_1)
     {
         Solution s;
-        ListNode* input_1 = ListNode::makeList({1,2,4});
-        ListNode* input_2 = ListNode::makeList({1,3,4});
-        ListNode* result = s.mergeTwoLists(input_1, input_2);
-        vector<int> expect = {1,1,2,3,4,4};
-        ASSERT_TRUE(ListNode::cmp(result, expect));
-
-        ListNode::freeList(result);
+        auto input_1 = ListHelper::create({ 1,2,4 });
+        auto input_2 = ListHelper::create({ 1,3,4 });
+        auto result = std::shared_ptr<ListNode>(s.mergeTwoLists(input_1, input_2), ListHelper::remove);
+        auto expect = ListHelper::create({ 1,1,2,3,4,4 });
+        ASSERT_THAT(ListHelper::compare(expect, result), testing::Eq(true));
     }
 
     TEST(test_21, Case_2)
     {
         Solution s;
-        ListNode* input_1 = ListNode::makeList({});
-        ListNode* input_2 = ListNode::makeList({});
-        ListNode* result = s.mergeTwoLists(input_1, input_2);
-        vector<int> expect = {};
-        ASSERT_TRUE(ListNode::cmp(result, expect));
-
-        ListNode::freeList(result);
+        auto input_1 = ListHelper::create({});
+        auto input_2 = ListHelper::create({});
+        auto result = std::shared_ptr<ListNode>(s.mergeTwoLists(input_1, input_2), ListHelper::remove);
+        auto expect = ListHelper::create({});
+        ASSERT_THAT(ListHelper::compare(expect, result), testing::Eq(true));
     }
 
     TEST(test_21, Case_3)
     {
         Solution s;
-        ListNode* input_1 = ListNode::makeList({});
-        ListNode* input_2 = ListNode::makeList({0});
-        ListNode* result = s.mergeTwoLists(input_1, input_2);
-        vector<int> expect = {0};
-        ASSERT_TRUE(ListNode::cmp(result, expect));
-
-        ListNode::freeList(result);
+        auto input_1 = ListHelper::create({});
+        auto input_2 = ListHelper::create({ 0 });
+        auto result = std::shared_ptr<ListNode>(s.mergeTwoLists(input_1, input_2), ListHelper::remove);
+        auto expect = ListHelper::create({ 0 });
+        ASSERT_THAT(ListHelper::compare(expect, result), testing::Eq(true));
     }
 
     TEST(test_21, Case_Customer_1)
     {
         Solution s;
-        ListNode* input_1 = ListNode::makeList({1,2});
-        ListNode* input_2 = ListNode::makeList({});
-        ListNode* result = s.mergeTwoLists(input_1, input_2);
-        vector<int> expect = {1,2};
-        ASSERT_TRUE(ListNode::cmp(result, expect));
-
-        ListNode::freeList(result);
+        auto input_1 = ListHelper::create({ 1,2 });
+        auto input_2 = ListHelper::create({});
+        auto result = std::shared_ptr<ListNode>(s.mergeTwoLists(input_1, input_2), ListHelper::remove);
+        auto expect = ListHelper::create({ 1,2 });
+        ASSERT_THAT(ListHelper::compare(expect, result), testing::Eq(true));
     }
 
     TEST(test_21, Case_Customer_2)
     {
         Solution s;
-        ListNode* input_1 = ListNode::makeList({1,2});
-        ListNode* input_2 = ListNode::makeList({3,4});
-        ListNode* result = s.mergeTwoLists(input_1, input_2);
-        vector<int> expect = {1,2,3,4};
-        ASSERT_TRUE(ListNode::cmp(result, expect));
-
-        ListNode::freeList(result);
+        auto input_1 = ListHelper::create({ 1,2 });
+        auto input_2 = ListHelper::create({ 3,4 });
+        auto result = std::shared_ptr<ListNode>(s.mergeTwoLists(input_1, input_2), ListHelper::remove);
+        auto expect = ListHelper::create({ 1,2,3,4 });
+        ASSERT_THAT(ListHelper::compare(expect, result), testing::Eq(true));
     }
 
     TEST(test_21, Case_Customer_3)
     {
         Solution s;
-        ListNode* input_1 = ListNode::makeList({1,2,3});
-        ListNode* input_2 = ListNode::makeList({4});
-        ListNode* result = s.mergeTwoLists(input_1, input_2);
-        vector<int> expect = {1,2,3,4};
-        ASSERT_TRUE(ListNode::cmp(result, expect));
-
-        ListNode::freeList(result);
+        auto input_1 = ListHelper::create({ 1,2,3 });
+        auto input_2 = ListHelper::create({ 4 });
+        auto result = std::shared_ptr<ListNode>(s.mergeTwoLists(input_1, input_2), ListHelper::remove);
+        auto expect = ListHelper::create({ 1,2,3,4 });
+        ASSERT_THAT(ListHelper::compare(expect, result), testing::Eq(true));
     }
 
     TEST(test_21, Case_Customer_4)
     {
         Solution s;
-        ListNode* input_1 = ListNode::makeList({1});
-        ListNode* input_2 = ListNode::makeList({2,3,4});
-        ListNode* result = s.mergeTwoLists(input_1, input_2);
-        vector<int> expect = {1,2,3,4};
-        ASSERT_TRUE(ListNode::cmp(result, expect));
-
-        ListNode::freeList(result);
+        auto input_1 = ListHelper::create({ 1 });
+        auto input_2 = ListHelper::create({ 2,3,4 });
+        auto result = std::shared_ptr<ListNode>(s.mergeTwoLists(input_1, input_2), ListHelper::remove);
+        auto expect = ListHelper::create({ 1,2,3,4 });
+        ASSERT_THAT(ListHelper::compare(expect, result), testing::Eq(true));
     }
 } // namespace p21
 
