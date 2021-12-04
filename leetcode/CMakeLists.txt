@@ -1,18 +1,21 @@
 cmake_minimum_required(VERSION 3.6)
 
-project(test_all)
+project(test_problems)
 
-file(GLOB SOLUTION_FILES ${PROJECT_SOURCE_DIR}/*.cpp)
+file(GLOB SRC_DIR ${PROJECT_SOURCE_DIR}/src)
+file(GLOB SRC_FILES ${SRC_DIR}/*.cpp)
 
-include_directories(${GOOGLE_TEST_INCLUDE_DIR} ${TOOLS_INCLUDE_DIR})
+include_directories(${TOOLS_INCLUDE_DIR})
 link_directories(${LIB_DIR})
+add_library(problems ${SRC_FILES})
 
-add_executable(test_all
-    ${SOLUTION_FILES}
+include_directories(${GOOGLE_TEST_INCLUDE_DIR} ${SRC_DIR})
+add_executable(test_problems
+    ${PROJECT_SOURCE_DIR}/test_problems.cpp
 )
 
 if(MSVC)
-target_link_libraries(test_all tools gtest gmock gtest_main)
+target_link_libraries(test_problems tools gtest gmock gtest_main)
 else()
-target_link_libraries(test_all tools gtest gmock gtest_main pthread)
+target_link_libraries(test_problems tools gtest gmock gtest_main pthread)
 endif()
