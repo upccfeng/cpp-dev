@@ -1,18 +1,5 @@
-#include "assert.h"
-#include "gmock/gmock.h"
-#include "gtest/gtest.h"
-
-using namespace testing;
-
-////////// include the needed std container ////////////
-
-// using namespace std;
 #include <vector>
 #include <map>
-// #include <string>
-// ...
-
-////////////////////////////////////////////////////////
 
 namespace p53_daily
 {

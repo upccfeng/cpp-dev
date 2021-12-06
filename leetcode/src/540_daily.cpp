@@ -1,9 +1,3 @@
-#include "assert.h"
-#include "gmock/gmock.h"
-#include "gtest/gtest.h"
-
-using namespace testing;
-
 #include <vector>
 
 namespace p540
