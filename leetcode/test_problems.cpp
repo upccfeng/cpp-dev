@@ -2067,6 +2067,58 @@ namespace p1209_daily
     }
 } // namespace p1209_daily
 
+#include "1290_daily.cpp"
+
+namespace p1290_daily
+{
+    using Solution = Solution;
+
+    TEST(test_1290_daily, Case_1)
+    {
+        Solution s;
+        auto input = std::shared_ptr<ListNode>(ListHelper::create({ 1,0,1 }), ListHelper::remove);
+        int result = s.getDecimalValue(input.get());
+        int expect = 5;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_1290_daily, Case_2)
+    {
+        Solution s;
+        auto input = std::shared_ptr<ListNode>(ListHelper::create({ 0 }), ListHelper::remove);
+        int result = s.getDecimalValue(input.get());
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_1290_daily, Case_3)
+    {
+        Solution s;
+        auto input = std::shared_ptr<ListNode>(ListHelper::create({ 1 }), ListHelper::remove);
+        int result = s.getDecimalValue(input.get());
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_1290_daily, Case_4)
+    {
+        Solution s;
+        auto input = std::shared_ptr<ListNode>(ListHelper::create({ 1,0,0,1,0,0,1,1,1,0,0,0,0,0,0 }), ListHelper::remove);
+        int result = s.getDecimalValue(input.get());
+        int expect = 18880;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_1290_daily, Case_5)
+    {
+        Solution s;
+        auto input = std::shared_ptr<ListNode>(ListHelper::create({ 0, 0 }), ListHelper::remove);
+        int result = s.getDecimalValue(input.get());
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p1290_daily
+
 #include "1837_weekly_contest.cpp"
 
 namespace p1837_weekly_contest
