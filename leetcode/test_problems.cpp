@@ -2119,6 +2119,43 @@ namespace p1290_daily
     }
 } // namespace p1290_daily
 
+#include "1306.cpp"
+
+namespace p1306
+{
+    using Solution = Solution;
+
+    TEST(test_1306, Case_1)
+    {
+        Solution s;
+        std::vector<int> input_arr = { 4,2,3,0,3,1,2 };
+        int input_start = 5;
+        bool result = s.canReach(input_arr, input_start);
+        int expect = true;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_1306, Case_2)
+    {
+        Solution s;
+        std::vector<int> input_arr = { 4,2,3,0,3,1,2 };
+        int input_start = 0;
+        bool result = s.canReach(input_arr, input_start);
+        int expect = true;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_1306, Case_3)
+    {
+        Solution s;
+        std::vector<int> input_arr = { 3,0,2,1,2 };
+        int input_start = 2;
+        bool result = s.canReach(input_arr, input_start);
+        int expect = false;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p1306
+
 #include "1837_weekly_contest.cpp"
 
 namespace p1837_weekly_contest
