@@ -1601,6 +1601,94 @@ namespace p328
     }
 } // namespace p328
 
+#include "416.cpp"
+
+namespace p416
+{
+    using Solution = Solution;
+
+    TEST(test_416, Case_1)
+    {
+        Solution s;
+        std::vector<int> input = { 1,5,11,5 };
+        bool result = s.canPartition(input);
+        bool expect = true;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_416, Case_2)
+    {
+        Solution s;
+        std::vector<int> input = { 1,2,3,5 };
+        bool result = s.canPartition(input);
+        bool expect = false;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_416, Case_Customize_1)
+    {
+        Solution s;
+        std::vector<int> input = { 1 };
+        bool result = s.canPartition(input);
+        bool expect = false;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_416, Case_Customize_2)
+    {
+        Solution s;
+        std::vector<int> input = { 1, 1 };
+        bool result = s.canPartition(input);
+        bool expect = true;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_416, Case_Customize_3)
+    {
+        Solution s;
+        std::vector<int> input = { 1, 4, 1 };
+        bool result = s.canPartition(input);
+        bool expect = false;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_416, Case_Customize_4)
+    {
+        Solution s;
+        std::vector<int> input = { 1, 4, 1, 8 };
+        bool result = s.canPartition(input);
+        bool expect = false;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_416, Case_Customize_5)
+    {
+        Solution s;
+        std::vector<int> input = { 100, 1, 100, 100, 100, 1 };
+        bool result = s.canPartition(input);
+        bool expect = true;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_416, Case_Customize_6)
+    {
+        Solution s;
+        std::vector<int> input = { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 95, 93, 99, 97 };
+        bool result = s.canPartition(input);
+        bool expect = true;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_416, Case_TimeLimit_1)
+    {
+        Solution s;
+        std::vector<int> input = { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 99, 97 };
+        bool result = s.canPartition(input);
+        bool expect = false;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p416
+
 #include "461_daily.cpp"
 
 namespace p461
