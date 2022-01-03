@@ -6,6 +6,43 @@
 
 using namespace testing;
 
+#include "curated_array_1.cpp"
+
+namespace p_curated_array_1
+{
+    using Solution = Solution;
+
+    TEST(test_curated_array_1, Case_1)
+    {
+        Solution s;
+        std::vector<int> input_nums = { 2,7,11,15 };
+        int input_target = 9;
+        std::vector<int> result = s.twoSum(input_nums, input_target);
+        std::vector<int> expect = { 0, 1 };
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_curated_array_1, Case_2)
+    {
+        Solution s;
+        std::vector<int> input_nums = { 3,2,4 };
+        int input_target = 6;
+        std::vector<int> result = s.twoSum(input_nums, input_target);
+        std::vector<int> expect = { 1, 2 };
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_curated_array_1, Case_3)
+    {
+        Solution s;
+        std::vector<int> input_nums = { 3,3 };
+        int input_target = 6;
+        std::vector<int> result = s.twoSum(input_nums, input_target);
+        std::vector<int> expect = { 0, 1 };
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_array_1
+
 #include "7.cpp"
 
 namespace p7
