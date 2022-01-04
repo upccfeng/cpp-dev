@@ -1,7 +1,7 @@
 #include <vector>
 #include <unordered_map>
 
-namespace p_curated_array_1
+namespace p_curated_array_1_twosum
 {
     class Solution
     {
@@ -24,7 +24,7 @@ namespace p_curated_array_1
             return { -1, -1 };
         }
     };
-} // namespace p_curated_array_1
+} // namespace p_curated_array_1_twosum
 
 /*
 # Problem:

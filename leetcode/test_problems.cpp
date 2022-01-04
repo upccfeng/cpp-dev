@@ -6,13 +6,13 @@
 
 using namespace testing;
 
-#include "curated_array_1.cpp"
+#include "curated_array_1_twosum.cpp"
 
-namespace p_curated_array_1
+namespace p_curated_array_1_twosum
 {
     using Solution = Solution;
 
-    TEST(test_curated_array_1, Case_1)
+    TEST(test_curated_array_1_twosum, Case_1)
     {
         Solution s;
         std::vector<int> input_nums = { 2,7,11,15 };
@@ -22,7 +22,7 @@ namespace p_curated_array_1
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_curated_array_1, Case_2)
+    TEST(test_curated_array_1_twosum, Case_2)
     {
         Solution s;
         std::vector<int> input_nums = { 3,2,4 };
@@ -32,7 +32,7 @@ namespace p_curated_array_1
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_curated_array_1, Case_3)
+    TEST(test_curated_array_1_twosum, Case_3)
     {
         Solution s;
         std::vector<int> input_nums = { 3,3 };
@@ -41,7 +41,7 @@ namespace p_curated_array_1
         std::vector<int> expect = { 0, 1 };
         ASSERT_EQ(result, expect);
     }
-} // namespace p_curated_array_1
+} // namespace p_curated_array_1_twosum
 
 #include "7.cpp"
 
@@ -478,6 +478,76 @@ namespace p14
         ASSERT_EQ(result, expect);
     }
 } // namespace p14
+
+#include "curated_array_15_3sum.cpp"
+
+namespace p_curated_array_15_3sum
+{
+    using Solution = Solution;
+
+    TEST(test_curated_array_15_3sum, Case_1)
+    {
+        Solution s;
+        std::vector<int> input = { -1,0,1,2,-1,-4 };
+        std::vector<std::vector<int>> result = s.threeSum(input);
+        std::vector<std::vector<int>> expect = { {-1,-1,2} ,{-1,0,1} };
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_curated_array_15_3sum, Case_2)
+    {
+        Solution s;
+        std::vector<int> input = {};
+        std::vector<std::vector<int>> result = s.threeSum(input);
+        std::vector<std::vector<int>> expect = {};
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_curated_array_15_3sum, Case_3)
+    {
+        Solution s;
+        std::vector<int> input = { 0 };
+        std::vector<std::vector<int>> result = s.threeSum(input);
+        std::vector<std::vector<int>> expect = {};
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_curated_array_15_3sum, Case_Customize_1)
+    {
+        Solution s;
+        std::vector<int> input = { -1, -1, 0, 1 };
+        std::vector<std::vector<int>> result = s.threeSum(input);
+        std::vector<std::vector<int>> expect = { {-1, 0, 1} };
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_curated_array_15_3sum, Case_Failure_1)
+    {
+        Solution s;
+        std::vector<int> input = { -2, 0, 1, 1, 2 };
+        std::vector<std::vector<int>> result = s.threeSum(input);
+        std::vector<std::vector<int>> expect = { {-2,0,2},{-2,1,1} };
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_curated_array_15_3sum, Case_Failure_2)
+    {
+        Solution s;
+        std::vector<int> input = { 0, 0, 0 };
+        std::vector<std::vector<int>> result = s.threeSum(input);
+        std::vector<std::vector<int>> expect = { {0, 0, 0} };
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_curated_array_15_3sum, Case_Failure_3)
+    {
+        Solution s;
+        std::vector<int> input = { -4,-2,1,-5,-4,-4,4,-2,0,4,0,-2,3,1,-5,0 };
+        std::vector<std::vector<int>> result = s.threeSum(input);
+        std::vector<std::vector<int>> expect = { {-5, 1, 4}, {-4, 0, 4}, {-4, 1, 3}, {-2, -2, 4}, {-2, 1, 1}, {0, 0, 0} };
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_array_15_3sum
 
 #include "17.cpp"
 
