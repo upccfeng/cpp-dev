@@ -1601,7 +1601,7 @@ namespace p_curated_array_121_bestprofit
 {
     using Solution = Solution;
 
-    TEST(test__curated_array_121_besttime, Case_1)
+    TEST(test_curated_array_121_besttime, Case_1)
     {
         Solution s;
         std::vector<int> input = { 7,1,5,3,6,4 };
@@ -1610,7 +1610,7 @@ namespace p_curated_array_121_bestprofit
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test__curated_array_121_besttime, Case_2)
+    TEST(test_curated_array_121_besttime, Case_2)
     {
         Solution s;
         std::vector<int> input = { 7,6,4,3,1 };
@@ -1619,7 +1619,7 @@ namespace p_curated_array_121_bestprofit
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test__curated_array_121_besttime, Case_Failure_1)
+    TEST(test_curated_array_121_besttime, Case_Failure_1)
     {
         Solution s;
         std::vector<int> input = { 2,4,1 };
@@ -1628,6 +1628,40 @@ namespace p_curated_array_121_bestprofit
         ASSERT_EQ(result, expect);
     }
 } // namespace p_curated_array_121_bestprofit
+
+#include "curated_array_217_containduplicate.cpp"
+
+namespace p_curated_array_217_containduplicate
+{
+    using Solution = Solution;
+
+    TEST(test_curated_array_217_containduplicate, Case_1)
+    {
+        Solution s;
+        std::vector<int> input = { 1,2,3,1 };
+        bool result = s.containsDuplicate(input);
+        int expect = true;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_curated_array_217_containduplicate, Case_2)
+    {
+        Solution s;
+        std::vector<int> input = { 1,2,3,4 };
+        bool result = s.containsDuplicate(input);
+        int expect = false;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_curated_array_217_containduplicate, Case_3)
+    {
+        Solution s;
+        std::vector<int> input = { 1,1,1,3,3,4,3,2,4,2 };
+        bool result = s.containsDuplicate(input);
+        int expect = true;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_array_217_containduplicate
 
 #include "307.cpp"
 
