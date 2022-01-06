@@ -1595,6 +1595,40 @@ namespace p66
     }
 } // namespace p66
 
+#include "curated_array_121_bestprofit.cpp"
+
+namespace p_curated_array_121_bestprofit
+{
+    using Solution = Solution;
+
+    TEST(test__curated_array_121_besttime, Case_1)
+    {
+        Solution s;
+        std::vector<int> input = { 7,1,5,3,6,4 };
+        int result = s.maxProfit(input);
+        int expect = 5;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_array_121_besttime, Case_2)
+    {
+        Solution s;
+        std::vector<int> input = { 7,6,4,3,1 };
+        int result = s.maxProfit(input);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_array_121_besttime, Case_Failure_1)
+    {
+        Solution s;
+        std::vector<int> input = { 2,4,1 };
+        int result = s.maxProfit(input);
+        int expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_array_121_bestprofit
+
 #include "307.cpp"
 
 namespace p307
