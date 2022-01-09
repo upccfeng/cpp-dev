@@ -2513,6 +2513,92 @@ namespace p1838_weekly_contest
     }
 } // namespace p1838_weekly_contest
 
+#include "2133_weekly_contest.cpp"
+
+namespace p_2133_weekly_contest
+{
+    using Solution = Solution;
+
+    TEST(test_2133_weekly_contest, Case_1)
+    {
+        Solution s;
+        std::vector<std::vector<int>> input = { {1,2,3} ,{3,1,2},{2,3,1} };
+        bool result = s.checkValid(input);
+        bool expect = true;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_2133_weekly_contest, Case_2)
+    {
+        Solution s;
+        std::vector<std::vector<int>> input = { {1,1,1} ,{1,2,3},{1,2,3} };
+        bool result = s.checkValid(input);
+        bool expect = false;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_2133_weekly_contest
+
+#include "2134_weekly_contest.cpp"
+
+namespace p_2134_weekly_contest
+{
+    using Solution = Solution;
+
+    TEST(test_2134_weekly_contest, Case_1)
+    {
+        Solution s;
+        std::vector<int> input = { 0,1,0,1,1,0,0 };
+        int result = s.minSwaps(input);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_2134_weekly_contest, Case_2)
+    {
+        Solution s;
+        std::vector<int> input = { 0,1,1,1,0,0,1,1,0 };
+        int result = s.minSwaps(input);
+        int expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_2134_weekly_contest, Case_3)
+    {
+        Solution s;
+        std::vector<int> input = { 1,1,0,0,1 };
+        int result = s.minSwaps(input);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_2134_weekly_contest, Case_Failure_1)
+    {
+        Solution s;
+        std::vector<int> input = { 1, 1, 1, 0, 0, 1, 0, 1, 1, 0 };
+        int result = s.minSwaps(input);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_2134_weekly_contest, Case_Failure_2)
+    {
+        Solution s;
+        std::vector<int> input = { 1 };
+        int result = s.minSwaps(input);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_2134_weekly_contest, Case_Failure_3)
+    {
+        Solution s;
+        std::vector<int> input = { 0 };
+        int result = s.minSwaps(input);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_2134_weekly_contest
+
 #include "rekuten210221_1.cpp"
 
 namespace p_rekuten210221_1
