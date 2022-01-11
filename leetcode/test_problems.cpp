@@ -1663,6 +1663,40 @@ namespace p_curated_array_217_containduplicate
     }
 } // namespace p_curated_array_217_containduplicate
 
+#include "curated_array_238_product_of_array_except_self.cpp"
+
+namespace p_curated_array_238_product_of_array_except_self
+{
+    using Solution = Solution;
+
+    TEST(test_curated_array_238_product_of_array_except_self, Case_1)
+    {
+        Solution s;
+        std::vector<int> input = { 1,2,3,4 };
+        std::vector<int> result = s.productExceptSelf(input);
+        std::vector<int> expect = { 24,12,8,6 };
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_curated_array_238_product_of_array_except_self, Case_2)
+    {
+        Solution s;
+        std::vector<int> input = { -1,1,0,-3,3 };
+        std::vector<int> result = s.productExceptSelf(input);
+        std::vector<int> expect = { 0,0,9,0,0 };
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_curated_array_238_product_of_array_except_self, Case_Customize_1)
+    {
+        Solution s;
+        std::vector<int> input = { -1,1,0,-3,0 };
+        std::vector<int> result = s.productExceptSelf(input);
+        std::vector<int> expect = { 0,0,0,0,0 };
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_array_238_product_of_array_except_self
+
 #include "307.cpp"
 
 namespace p307
