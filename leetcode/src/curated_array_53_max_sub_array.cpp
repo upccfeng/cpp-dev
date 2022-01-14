@@ -1,23 +1,26 @@
 #include <vector>
 #include <map>
 
-namespace p53_daily
+namespace p_curated_array_53_max_sub_array
 {
     class Solution
     {
     public:
         int maxSubArray(std::vector<int>& nums)
         {
-            int ans = INT_MIN;
-            int sum = 0;
-            for (int i : nums)
+            int max = nums[0];
+            int sum = max < 0 ? 0 : max;
+            for (int i = 1; i < nums.size(); ++i)
             {
-                sum += i;
-                if (sum > ans) ans = sum;
-                if (sum < 0) sum = 0;
+                sum += nums[i];
+                if (sum > max)
+                    max = sum;
+
+                if (sum < 0)
+                    sum = 0;
             }
 
-            return ans;
+            return max;
         }
     };
 
@@ -57,7 +60,7 @@ namespace p53_daily
             return ans;
         }
     };
-} // namespace p53_daily
+} // namespace p_curated_array_53_max_sub_array
 
 /*
 # Problem:

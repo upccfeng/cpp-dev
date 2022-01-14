@@ -1480,13 +1480,13 @@ namespace p52_daily
     }
 } // namespace p52_daily
 
-#include "53_daily.cpp"
+#include "curated_array_53_max_sub_array.cpp"
 
-namespace p53_daily
+namespace p_curated_array_53_max_sub_array
 {
     using Solution = Solution;
 
-    TEST(test_53_daily, Case_1)
+    TEST(test_curated_array_53_max_sub_array, Case_1)
     {
         Solution s;
         std::vector<int> input = { -2,1,-3,4,-1,2,1,-5,4 };
@@ -1495,7 +1495,7 @@ namespace p53_daily
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_53_daily, Case_2)
+    TEST(test_curated_array_53_max_sub_array, Case_2)
     {
         Solution s;
         std::vector<int> input = { 1 };
@@ -1504,7 +1504,7 @@ namespace p53_daily
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_53_daily, Case_3)
+    TEST(test_curated_array_53_max_sub_array, Case_3)
     {
         Solution s;
         std::vector<int> input = { 5,4,-1,7,8 };
@@ -1515,7 +1515,7 @@ namespace p53_daily
 
     using Solution_dac = Solution_divide_and_conquer;
 
-    TEST(test_53_daily_divide_and_conquer, Case_1)
+    TEST(test_curated_array_53_max_sub_array_divide_and_conquer, Case_1)
     {
         Solution_dac s;
         std::vector<int> input = { -2,1,-3,4,-1,2,1,-5,4 };
@@ -1524,7 +1524,7 @@ namespace p53_daily
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_53_daily_divide_and_conquer, Case_2)
+    TEST(test_curated_array_53_max_sub_array_divide_and_conquer, Case_2)
     {
         Solution_dac s;
         std::vector<int> input = { 1 };
@@ -1533,7 +1533,7 @@ namespace p53_daily
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_53_daily_divide_and_conquer, Case_3)
+    TEST(test_curated_array_53_max_sub_array_divide_and_conquer, Case_3)
     {
         Solution_dac s;
         std::vector<int> input = { 5,4,-1,7,8 };
@@ -1541,7 +1541,7 @@ namespace p53_daily
         int expect = 23;
         ASSERT_EQ(result, expect);
     }
-} // namespace p53_daily
+} // namespace p_curated_array_53_max_sub_array
 
 #include "66.cpp"
 
