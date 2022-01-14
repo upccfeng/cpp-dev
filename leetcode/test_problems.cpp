@@ -1629,6 +1629,102 @@ namespace p_curated_array_121_bestprofit
     }
 } // namespace p_curated_array_121_bestprofit
 
+#include "curated_array_152_max_product_subarray.cpp"
+
+namespace p_curated_array_152_max_product_subarray
+{
+    using Solution = Solution;
+
+    TEST(test__curated_array_152_max_product_subarray, Case_1)
+    {
+        Solution s;
+        std::vector<int> input = { 2,3,-2,4 };
+        int result = s.maxProduct(input);
+        int expect = 6;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_array_152_max_product_subarray, Case_2)
+    {
+        Solution s;
+        std::vector<int> input = { -2,0,-1 };
+        int result = s.maxProduct(input);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_array_152_max_product_subarray, Case_Customize_1)
+    {
+        Solution s;
+        std::vector<int> input = { -2,-1, -1, -1, 5 };
+        int result = s.maxProduct(input);
+        int expect = 10;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_array_152_max_product_subarray, Case_Customize_2)
+    {
+        Solution s;
+        std::vector<int> input = { -2,-1, 1, 1, 5 };
+        int result = s.maxProduct(input);
+        int expect = 10;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_array_152_max_product_subarray, Case_Customize_3)
+    {
+        Solution s;
+        std::vector<int> input = { -2, 1, 1, 1, 5 };
+        int result = s.maxProduct(input);
+        int expect = 5;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_array_152_max_product_subarray, Case_Customize_4)
+    {
+        Solution s;
+        std::vector<int> input = { 2, 1, 1, 1, -5 };
+        int result = s.maxProduct(input);
+        int expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_array_152_max_product_subarray, Case_Customize_5)
+    {
+        Solution s;
+        std::vector<int> input = { 2, 1, 1, -1, -5 };
+        int result = s.maxProduct(input);
+        int expect = 10;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_array_152_max_product_subarray, Case_Failure_1)
+    {
+        Solution s;
+        std::vector<int> input = { 2,-5,-2,-4,3 };
+        int result = s.maxProduct(input);
+        int expect = 24;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_array_152_max_product_subarray, Case_Failure_2)
+    {
+        Solution s;
+        std::vector<int> input = { 0, 2 };
+        int result = s.maxProduct(input);
+        int expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+    TEST(test__curated_array_152_max_product_subarray, Case_Failure_3)
+    {
+        Solution s;
+        std::vector<int> input = { -1, -2, -3, 0 };
+        int result = s.maxProduct(input);
+        int expect = 6;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_array_152_max_product_subarray
+
 #include "curated_array_217_containduplicate.cpp"
 
 namespace p_curated_array_217_containduplicate
