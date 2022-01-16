@@ -1725,6 +1725,67 @@ namespace p_curated_array_152_max_product_subarray
     }
 } // namespace p_curated_array_152_max_product_subarray
 
+#include "curated_array_153_min_in_rotated_sorted_array.cpp"
+
+namespace p_curated_array_153_min_in_rotated_sorted_array
+{
+    using Solution = Solution;
+
+    TEST(test__curated_array_153_min_in_rotated_sorted_array, Case_1)
+    {
+        Solution s;
+        std::vector<int> input = { 3,4,5,1,2 };
+        int result = s.findMin(input);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_array_153_min_in_rotated_sorted_array, Case_2)
+    {
+        Solution s;
+        std::vector<int> input = { 4,5,6,7,0,1,2 };
+        int result = s.findMin(input);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_array_153_min_in_rotated_sorted_array, Case_3)
+    {
+        Solution s;
+        std::vector<int> input = { 11,13,15,17 };
+        int result = s.findMin(input);
+        int expect = 11;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_array_153_min_in_rotated_sorted_array, Case_Customize_1)
+    {
+        Solution s;
+        std::vector<int> input = { 2,3,4,5,1 };
+        int result = s.findMin(input);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_array_153_min_in_rotated_sorted_array, Case_Customize_2)
+    {
+        Solution s;
+        std::vector<int> input = { 5,1,2,3,4 };
+        int result = s.findMin(input);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_array_153_min_in_rotated_sorted_array, Case_Rumtime_1)
+    {
+        Solution s;
+        std::vector<int> input = { 1 };
+        int result = s.findMin(input);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_array_153_min_in_rotated_sorted_array
+
 #include "curated_array_217_containduplicate.cpp"
 
 namespace p_curated_array_217_containduplicate
