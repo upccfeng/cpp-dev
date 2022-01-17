@@ -1115,66 +1115,72 @@ namespace p29
     }
 } // namespace p29
 
-#include "33.cpp"
+#include "curated_array_33_search_in_rotated_sorted_array.cpp"
 
-namespace p33
+namespace p_curated_array_33_search_in_rotated_sorted_array
 {
     using Solution = Solution;
 
-    TEST(test_33, Case_1)
+    TEST(test__curated_array_33_search_in_rotated_sorted_array, Case_1)
     {
         Solution s;
-        vector<int> input = {4,5,6,7,0,1,2};
-        int result = s.search(input, 0);
+        std::vector<int> input_nums = { 4,5,6,7,0,1,2 };
+        int input_target = 0;
+        int result = s.search(input_nums, input_target);
         int expect = 4;
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_33, Case_2)
+    TEST(test__curated_array_33_search_in_rotated_sorted_array, Case_2)
     {
         Solution s;
-        vector<int> input = {4,5,6,7,0,1,2};
-        int result = s.search(input, 3);
+        std::vector<int> input_nums = { 4,5,6,7,0,1,2 };
+        int input_target = 3;
+        int result = s.search(input_nums, input_target);
         int expect = -1;
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_33, Case_3)
+    TEST(test__curated_array_33_search_in_rotated_sorted_array, Case_3)
     {
         Solution s;
-        vector<int> input = {1};
-        int result = s.search(input, 0);
+        std::vector<int> input_nums = { 1 };
+        int input_target = 0;
+        int result = s.search(input_nums, input_target);
         int expect = -1;
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_33, Case_Customer_1)
+    TEST(test__curated_array_33_search_in_rotated_sorted_array, Case_Customize_1)
     {
         Solution s;
-        vector<int> input = {4,5,6,7,0,1,2};
-        int result = s.search(input, 5);
+        std::vector<int> input_nums = { 1 };
+        int input_target = 1;
+        int result = s.search(input_nums, input_target);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_array_33_search_in_rotated_sorted_array, Case_Customize_2)
+    {
+        Solution s;
+        std::vector<int> input_nums = { 5, 1, 2, 3, 4 };
+        int input_target = 4;
+        int result = s.search(input_nums, input_target);
+        int expect = 4;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_array_33_search_in_rotated_sorted_array, Case_Failure_1)
+    {
+        Solution s;
+        std::vector<int> input_nums = { 1,3 };
+        int input_target = 3;
+        int result = s.search(input_nums, input_target);
         int expect = 1;
         ASSERT_EQ(result, expect);
     }
-
-    TEST(test_33, Case_Customer_2)
-    {
-        Solution s;
-        vector<int> input = {4,5,6,7,0,1,2};
-        int result = s.search(input, 1);
-        int expect = 5;
-        ASSERT_EQ(result, expect);
-    }
-
-    TEST(test_33, Case_Fail_1)
-    {
-        Solution s;
-        vector<int> input = {8,9,1,5,6,7};
-        int result = s.search(input, 5);
-        int expect = 3;
-        ASSERT_EQ(result, expect);
-    }
-} // namespace p33
+} // namespace p_curated_array_33_search_in_rotated_sorted_array
 
 #include "34.cpp"
 
