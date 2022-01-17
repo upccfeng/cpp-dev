@@ -1903,6 +1903,83 @@ namespace p307
 
 } // namespace p307
 
+#include "curated_binary_371_sum_of_two.cpp"
+
+namespace p_curated_binary_371_sum_of_two
+{
+    using Solution = Solution;
+
+    TEST(test__curated_binary_371_sum_of_two, Case_1)
+    {
+        Solution s;
+        int input_a = 1;
+        int input_b = 2;
+        int result = s.getSum(input_a, input_b);
+        int expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_binary_371_sum_of_two, Case_2)
+    {
+        Solution s;
+        int input_a = 2;
+        int input_b = 3;
+        int result = s.getSum(input_a, input_b);
+        int expect = 5;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_binary_371_sum_of_two, Case_Customize_1)
+    {
+        Solution s;
+        int input_a = -1000;
+        int input_b = 1000;
+        int result = s.getSum(input_a, input_b);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_binary_371_sum_of_two, Case_Customize_2)
+    {
+        Solution s;
+        int input_a = -1000;
+        int input_b = 999;
+        int result = s.getSum(input_a, input_b);
+        int expect = -1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_binary_371_sum_of_two, Case_Customize_3)
+    {
+        Solution s;
+        int input_a = 0;
+        int input_b = 999;
+        int result = s.getSum(input_a, input_b);
+        int expect = 999;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_binary_371_sum_of_two, Case_Customize_4)
+    {
+        Solution s;
+        int input_a = 1000;
+        int input_b = 1000;
+        int result = s.getSum(input_a, input_b);
+        int expect = 2000;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_binary_371_sum_of_two, Case_Customize_5)
+    {
+        Solution s;
+        int input_a = -1000;
+        int input_b = -1000;
+        int result = s.getSum(input_a, input_b);
+        int expect = -2000;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_binary_371_sum_of_two
+
 #include "328.cpp"
 
 namespace p328
