@@ -1601,6 +1601,58 @@ namespace p66
     }
 } // namespace p66
 
+#include "curated_binary_191_numbers_of_1_bits.cpp"
+
+namespace p_curated_binary_191_numbers_of_1_bits
+{
+    using Solution = Solution;
+
+    TEST(test__curated_binary_191_numbers_of_1_bits, Case_1)
+    {
+        Solution s;
+        uint32_t input = 0b00000000000000000000000000001011;
+        int result = s.hammingWeight(input);
+        int expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_binary_191_numbers_of_1_bits, Case_2)
+    {
+        Solution s;
+        uint32_t input = 0b00000000000000000000000010000000;
+        int result = s.hammingWeight(input);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_binary_191_numbers_of_1_bits, Case_3)
+    {
+        Solution s;
+        uint32_t input = 0b11111111111111111111111111111101;
+        int result = s.hammingWeight(input);
+        int expect = 31;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_binary_191_numbers_of_1_bits, Case_Customize_1)
+    {
+        Solution s;
+        uint32_t input = 0b00000000000000000000000000000000;
+        int result = s.hammingWeight(input);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_binary_191_numbers_of_1_bits, Case_Customize_2)
+    {
+        Solution s;
+        uint32_t input = 0b11111111111111111111111111111111;
+        int result = s.hammingWeight(input);
+        int expect = 32;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_binary_191_numbers_of_1_bits
+
 #include "curated_array_121_bestprofit.cpp"
 
 namespace p_curated_array_121_bestprofit
