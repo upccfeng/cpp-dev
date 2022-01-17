@@ -1,40 +1,33 @@
-#include <string>
 #include <vector>
-#include <map>
 #include <list>
-#include <algorithm>
 
-using namespace std;
-
-namespace p11
+namespace p_curated_array_11_most_water_in_container
 {
     class Solution
     {
     public:
-        int maxArea(vector<int>& height)
+        int maxArea(std::vector<int>& height)
         {
-            int max = 0;
-            auto l_it = height.begin();
-            auto r_it = height.end() - 1;
-            while (true)
-            {
-                int distance = std::distance(l_it, r_it);
-                max = std::max(max, std::min(*l_it, *r_it) * distance);
+            int left = 0;
+            int right = height.size() - 1;
 
-                if (*l_it > *r_it)
+            int max = 0;
+            while (left < right)
+            {
+                int heigh = height[left] < height[right] ? height[left] : height[right];
+                int taking = (right - left) * heigh;
+
+                max = taking > max ? taking : max;
+
+                if (height[left] > height[right])
                 {
-                    --r_it;
+                    --right;
                 }
                 else
                 {
-                    ++l_it;
+                    ++left;
                 }
-
-                if (distance == 1)
-                {
-                    break;
-                }
-            };
+            }
 
             return max;
         }
@@ -72,7 +65,7 @@ namespace p11
         }
 
     public:
-        int maxArea(vector<int>& height)
+        int maxArea(std::vector<int>& height)
         {
             auto it = height.begin();
             int max_height = 0;
@@ -105,12 +98,14 @@ namespace p11
             return max_water;
         }
     };
-} // namespace p11
+} // namespace p_curated_array_11_most_water_in_container
 
 /*
 Problem: https://leetcode.com/problems/container-with-most-water/
 
 HINT:
+* Use left and right to check the area between these two.
+* Move the smaller one.
 
 Algorithm
 Self:
@@ -146,10 +141,10 @@ while true:
 ```
 
 Time Complexity:
-Self: n + (1+n)*n/2 => O(n^2)
-O(n)
+Self: n + (1+n)*n/2 => BigO(n^2)
+BigO(n)
 
 Space Complexity:
-Self: O(1)
-O(1)
+Self: BigO(1)
+BigO(1)
 */
