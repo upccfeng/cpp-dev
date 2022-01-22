@@ -1912,6 +1912,40 @@ namespace p_curated_array_238_product_of_array_except_self
     }
 } // namespace p_curated_array_238_product_of_array_except_self
 
+#include "curated_binary_268_missing_number.cpp"
+
+namespace p_curated_binary_268_missing_number
+{
+    using Solution = Solution;
+
+    TEST(test__curated_binary_268_missing_number, Case_1)
+    {
+        Solution s;
+        std::vector<int> input = { 3,0,1 };
+        int result = s.missingNumber(input);
+        int expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_binary_268_missing_number, Case_2)
+    {
+        Solution s;
+        std::vector<int> input = { 0,1 };
+        int result = s.missingNumber(input);
+        int expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_binary_268_missing_number, Case_3)
+    {
+        Solution s;
+        std::vector<int> input = { 9,6,4,2,3,5,7,0,1 };
+        int result = s.missingNumber(input);
+        int expect = 8;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_binary_268_missing_number
+
 #include "307.cpp"
 
 namespace p307
