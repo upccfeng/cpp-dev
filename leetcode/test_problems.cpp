@@ -1601,6 +1601,31 @@ namespace p66
     }
 } // namespace p66
 
+#include "curated_binary_190_reverse_bits.cpp"
+
+namespace p_curated_binary_190_reverse_bits
+{
+    using Solution = Solution;
+
+    TEST(test__curated_binary_190_reverse_bits, Case_1)
+    {
+        Solution s;
+        uint32_t input = 0b00000010100101000001111010011100;
+        uint32_t result = s.reverseBits(input);
+        uint32_t expect = 0b00111001011110000010100101000000;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_binary_190_reverse_bits, Case_2)
+    {
+        Solution s;
+        uint32_t input = 0b11111111111111111111111111111101;
+        uint32_t result = s.reverseBits(input);
+        uint32_t expect = 0b10111111111111111111111111111111;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_binary_190_reverse_bits
+
 #include "curated_binary_191_numbers_of_1_bits.cpp"
 
 namespace p_curated_binary_191_numbers_of_1_bits

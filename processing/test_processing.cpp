@@ -4,6 +4,8 @@
 
 using namespace testing;
 
+#include <stdint.h>
+
 ////////// include the needed std container ////////////
 
 // using namespace std;
