@@ -1955,6 +1955,101 @@ namespace p307
 
 } // namespace p307
 
+#include "328.cpp"
+
+namespace p328
+{
+    using Solution = Solution;
+
+    TEST(test_328, Case_1)
+    {
+        Solution s;
+        ListNode* input = ListHelper::create({ 1,2,3,4,5 });
+        auto result = std::shared_ptr<ListNode>(s.oddEvenList(input), ListHelper::remove);
+        std::vector<int> expect = { 1,3,5,2,4 };
+        ASSERT_EQ(ListHelper::compare(result, expect), true);
+    }
+
+    TEST(test_328, Case_2)
+    {
+        Solution s;
+        ListNode* input = ListHelper::create({ 2,1,3,5,6,4,7 });
+        auto result = std::shared_ptr<ListNode>(s.oddEvenList(input), ListHelper::remove);
+        std::vector<int> expect = { 2,3,6,7,1,5,4 };
+        ASSERT_EQ(ListHelper::compare(result, expect), true);
+    }
+
+    TEST(test_328, Case_Customize_1)
+    {
+        Solution s;
+        ListNode* input = ListHelper::create({ });
+        auto result = std::shared_ptr<ListNode>(s.oddEvenList(input), ListHelper::remove);
+        std::vector<int> expect = { };
+        ASSERT_EQ(ListHelper::compare(result, expect), true);
+    }
+
+    TEST(test_328, Case_Customize_2)
+    {
+        Solution s;
+        ListNode* input = ListHelper::create({ 2 });
+        auto result = std::shared_ptr<ListNode>(s.oddEvenList(input), ListHelper::remove);
+        std::vector<int> expect = { 2 };
+        ASSERT_EQ(ListHelper::compare(result, expect), true);
+    }
+
+    TEST(test_328, Case_Customize_3)
+    {
+        Solution s;
+        ListNode* input = ListHelper::create({ 1, 2 });
+        auto result = std::shared_ptr<ListNode>(s.oddEvenList(input), ListHelper::remove);
+        std::vector<int> expect = { 1, 2 };
+        ASSERT_EQ(ListHelper::compare(result, expect), true);
+    }
+
+    TEST(test_328, Case_Customize_4)
+    {
+        Solution s;
+        ListNode* input = ListHelper::create({ 1, 2, 10, 20, 100, 200, 1000, 2000, 10000, 20000 });
+        auto result = std::shared_ptr<ListNode>(s.oddEvenList(input), ListHelper::remove);
+        std::vector<int> expect = { 1, 10, 100, 1000, 10000, 2, 20, 200, 2000, 20000 };
+        ASSERT_EQ(ListHelper::compare(result, expect), true);
+    }
+
+    TEST(test_328, Case_RunTime_1)
+    {
+        Solution s;
+        ListNode* input = ListHelper::create({ 1, 2, 3 });
+        auto result = std::shared_ptr<ListNode>(s.oddEvenList(input), ListHelper::remove);
+        std::vector<int> expect = { 1, 3, 2 };
+        ASSERT_EQ(ListHelper::compare(result, expect), true);
+    }
+} // namespace p328
+
+#include "curated_binary_338_counting_bits.cpp"
+
+namespace p_curated_binary_338_counting_bits
+{
+    using Solution = Solution;
+
+    TEST(test__curated_binary_338_counting_bits, Case_1)
+    {
+        Solution s;
+        int input = 2;
+        auto result = s.countBits(input);
+        std::vector<int> expect = { 0,1,1 };
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_binary_338_counting_bits, Case_2)
+    {
+        Solution s;
+        int input = 5;
+        auto result = s.countBits(input);
+        std::vector<int> expect = { 0,1,1,2,1,2 };
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_binary_338_counting_bits
+
 #include "curated_binary_371_sum_of_two.cpp"
 
 namespace p_curated_binary_371_sum_of_two
@@ -2031,76 +2126,6 @@ namespace p_curated_binary_371_sum_of_two
         ASSERT_EQ(result, expect);
     }
 } // namespace p_curated_binary_371_sum_of_two
-
-#include "328.cpp"
-
-namespace p328
-{
-    using Solution = Solution;
-
-    TEST(test_328, Case_1)
-    {
-        Solution s;
-        ListNode* input = ListHelper::create({ 1,2,3,4,5 });
-        auto result = std::shared_ptr<ListNode>(s.oddEvenList(input), ListHelper::remove);
-        std::vector<int> expect = { 1,3,5,2,4 };
-        ASSERT_EQ(ListHelper::compare(result, expect), true);
-    }
-
-    TEST(test_328, Case_2)
-    {
-        Solution s;
-        ListNode* input = ListHelper::create({ 2,1,3,5,6,4,7 });
-        auto result = std::shared_ptr<ListNode>(s.oddEvenList(input), ListHelper::remove);
-        std::vector<int> expect = { 2,3,6,7,1,5,4 };
-        ASSERT_EQ(ListHelper::compare(result, expect), true);
-    }
-
-    TEST(test_328, Case_Customize_1)
-    {
-        Solution s;
-        ListNode* input = ListHelper::create({ });
-        auto result = std::shared_ptr<ListNode>(s.oddEvenList(input), ListHelper::remove);
-        std::vector<int> expect = { };
-        ASSERT_EQ(ListHelper::compare(result, expect), true);
-    }
-
-    TEST(test_328, Case_Customize_2)
-    {
-        Solution s;
-        ListNode* input = ListHelper::create({ 2 });
-        auto result = std::shared_ptr<ListNode>(s.oddEvenList(input), ListHelper::remove);
-        std::vector<int> expect = { 2 };
-        ASSERT_EQ(ListHelper::compare(result, expect), true);
-    }
-
-    TEST(test_328, Case_Customize_3)
-    {
-        Solution s;
-        ListNode* input = ListHelper::create({ 1, 2 });
-        auto result = std::shared_ptr<ListNode>(s.oddEvenList(input), ListHelper::remove);
-        std::vector<int> expect = { 1, 2 };
-        ASSERT_EQ(ListHelper::compare(result, expect), true);
-    }
-
-    TEST(test_328, Case_Customize_4)
-    {
-        Solution s;
-        ListNode* input = ListHelper::create({ 1, 2, 10, 20, 100, 200, 1000, 2000, 10000, 20000 });
-        auto result = std::shared_ptr<ListNode>(s.oddEvenList(input), ListHelper::remove);
-        std::vector<int> expect = { 1, 10, 100, 1000, 10000, 2, 20, 200, 2000, 20000 };
-        ASSERT_EQ(ListHelper::compare(result, expect), true);
-    }
-
-    TEST(test_328, Case_RunTime_1)
-    {
-        Solution s;
-        ListNode* input = ListHelper::create({ 1, 2, 3 });
-        auto result = std::shared_ptr<ListNode>(s.oddEvenList(input), ListHelper::remove);
-        std::vector<int> expect = { 1, 3, 2 };
-        ASSERT_EQ(ListHelper::compare(result, expect), true);
-    }
-} // namespace p328
 
 #include "416.cpp"
 
