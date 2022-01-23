@@ -1601,6 +1601,59 @@ namespace p66
     }
 } // namespace p66
 
+#include "curated_dp_70_climbing_stairts.cpp"
+
+namespace p_curated_dp_70_climbing_stairts
+{
+    using Solution = Solution;
+
+    TEST(test__curated_dp_70_climbing_stairts, Case_1)
+    {
+        Solution s;
+        int input = 2;
+        int result = s.climbStairs(input);
+        int expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_70_climbing_stairts, Case_2)
+    {
+        Solution s;
+        int input = 3;
+        int result = s.climbStairs(input);
+        int expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_70_climbing_stairts, Case_Customize_1)
+    {
+        Solution s;
+        int input = 4;
+        int result = s.climbStairs(input);
+        int expect = 5;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_70_climbing_stairts, Case_Customize_2)
+    {
+        Solution s;
+        int input = 1;
+        int result = s.climbStairs(input);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_70_climbing_stairts, Case_Customize_3)
+    {
+        Solution s;
+        int input = 5;
+        int result = s.climbStairs(input);
+        int expect = 8;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_dp_70_climbing_stairts
+
+
 #include "curated_binary_190_reverse_bits.cpp"
 
 namespace p_curated_binary_190_reverse_bits
