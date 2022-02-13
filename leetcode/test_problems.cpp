@@ -3062,6 +3062,145 @@ namespace p_2134_weekly_contest
     }
 } // namespace p_2134_weekly_contest
 
+#include "2169_weekly_contest.cpp"
+
+namespace p_2169_weekly_contest
+{
+    using Solution = Solution;
+
+    TEST(test_2169_weekly_contest, Case_1)
+    {
+        Solution s;
+        int input_num1 = 2;
+        int input_num2 = 3;
+        int result = s.countOperations(input_num1, input_num2);
+        int expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_2169_weekly_contest, Case_2)
+    {
+        Solution s;
+        int input_num1 = 10;
+        int input_num2 = 10;
+        int result = s.countOperations(input_num1, input_num2);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_2169_weekly_contest, Case_Customize_1)
+    {
+        Solution s;
+        int input_num1 = 3;
+        int input_num2 = 0;
+        int result = s.countOperations(input_num1, input_num2);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_2169_weekly_contest
+
+#include "2170_weekly_contest.cpp"
+
+namespace p_2170_weekly_contest
+{
+    using Solution = Solution;
+
+    TEST(test_2170_weekly_contest, Case_1)
+    {
+        Solution s;
+        std::vector<int> input = { 3,1,3,2,4,3 };
+        int result = s.minimumOperations(input);
+        int expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_2170_weekly_contest, Case_2)
+    {
+        Solution s;
+        std::vector<int> input = { 1,2,2,2,2 };
+        int result = s.minimumOperations(input);
+        int expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_2170_weekly_contest, Case_Customize_1)
+    {
+        Solution s;
+        std::vector<int> input = { 1 };
+        int result = s.minimumOperations(input);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_2170_weekly_contest, Case_Customize_2)
+    {
+        Solution s;
+        std::vector<int> input = { 1, 2, 1 };
+        int result = s.minimumOperations(input);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_2170_weekly_contest, Case_Customize_3)
+    {
+        Solution s;
+        std::vector<int> input = { 2,1,2,2,2 };
+        int result = s.minimumOperations(input);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+    TEST(test_2170_weekly_contest, Case_Customize_4)
+    {
+        Solution s;
+        std::vector<int> input = { 1,2,2,2,2,2 };
+        int result = s.minimumOperations(input);
+        int expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+    TEST(test_2170_weekly_contest, Case_Failure_1)
+    {
+        Solution s;
+        std::vector<int> input = { 2,2 };
+        int result = s.minimumOperations(input);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_2170_weekly_contest
+
+#include "2171_weekly_contest.cpp"
+
+namespace p_2171_weekly_contest
+{
+    using Solution = Solution;
+
+    TEST(test_2171_weekly_contest, Case_1)
+    {
+        Solution s;
+        std::vector<int> input = { 4,1,6,5 };
+        long long result = s.minimumRemoval(input);
+        long long expect = 4;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_2171_weekly_contest, Case_2)
+    {
+        Solution s;
+        std::vector<int> input = { 2,10,3,2 };
+        long long result = s.minimumRemoval(input);
+        long long expect = 7;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_2171_weekly_contest, Case_Customize_1)
+    {
+        Solution s;
+        std::vector<int> input = { 4,4,3,4 };
+        long long result = s.minimumRemoval(input);
+        long long expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_2171_weekly_contest
+
 #include "rekuten210221_1.cpp"
 
 namespace p_rekuten210221_1
