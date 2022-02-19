@@ -24,7 +24,7 @@ namespace pXX
     class Solution
     {
     public:
-        int xx(int xx)
+        int xx(std::vector<int> &xx)
         {
             return 0;
         }
@@ -38,7 +38,7 @@ namespace pXX
     TEST(test_XX, Case_1)
     {
         Solution s;
-        int input = 0;
+        std::vector<int> input = { 0 };
         int result = s.xx(input);
         int expect = 0;
         ASSERT_EQ(result, expect);
@@ -49,8 +49,6 @@ namespace pXX
 # Problem:
 
 ## HINT:
-
-## Algorithm:
 
 ## Time Complexity:
 
