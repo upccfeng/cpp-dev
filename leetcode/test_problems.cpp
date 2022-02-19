@@ -2024,6 +2024,49 @@ namespace p_curated_binary_268_missing_number
     }
 } // namespace p_curated_binary_268_missing_number
 
+#include "curated_dp_300_longest_increasing_subsequence.cpp"
+
+namespace p_curated_dp_300_longest_increasing_subsequence
+{
+    using Solution = Solution;
+
+    TEST(test__curated_dp_300_longest_increasing_subsequence, Case_1)
+    {
+        Solution s;
+        std::vector<int> input = { 10,9,2,5,3,7,101,18 };
+        int result = s.lengthOfLIS(input);
+        int expect = 4;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_300_longest_increasing_subsequence, Case_2)
+    {
+        Solution s;
+        std::vector<int> input = { 0,1,0,3,2,3 };
+        int result = s.lengthOfLIS(input);
+        int expect = 4;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_300_longest_increasing_subsequence, Case_3)
+    {
+        Solution s;
+        std::vector<int> input = { 7,7,7,7,7,7,7 };
+        int result = s.lengthOfLIS(input);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_300_longest_increasing_subsequence, Case_Failure_1)
+    {
+        Solution s;
+        std::vector<int> input = { 0 };
+        int result = s.lengthOfLIS(input);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_dp_300_longest_increasing_subsequence
+
 #include "307.cpp"
 
 namespace p307
