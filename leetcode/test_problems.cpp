@@ -2067,6 +2067,73 @@ namespace p307
 
 } // namespace p307
 
+#include "curated_dp_322_coin_change.cpp"
+
+namespace p_curated_dp_322_coin_change
+{
+    using Solution = Solution;
+
+    TEST(test__curated_dp_322_coin_change, Case_1)
+    {
+        Solution s;
+        std::vector<int> input_coins = { 1, 2, 5 };
+        int input_amount = 11;
+        int result = s.coinChange(input_coins, input_amount);
+        int expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_322_coin_change, Case_2)
+    {
+        Solution s;
+        std::vector<int> input_coins = { 2 };
+        int input_amount = 3;
+        int result = s.coinChange(input_coins, input_amount);
+        int expect = -1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_322_coin_change, Case_3)
+    {
+        Solution s;
+        std::vector<int> input_coins = { 1 };
+        int input_amount = 0;
+        int result = s.coinChange(input_coins, input_amount);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_322_coin_change, Case_Customize_1)
+    {
+        Solution s;
+        std::vector<int> input_coins = { 1, 2, 2, 2, 5 };
+        int input_amount = 11;
+        int result = s.coinChange(input_coins, input_amount);
+        int expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_322_coin_change, Case_Failure_1)
+    {
+        Solution s;
+        std::vector<int> input_coins = { 1,2147483647 };
+        int input_amount = 2;
+        int result = s.coinChange(input_coins, input_amount);
+        int expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_322_coin_change, Case_Rumtime_1)
+    {
+        Solution s;
+        std::vector<int> input_coins = { 186,419,83,408 };
+        int input_amount = 6249;
+        int result = s.coinChange(input_coins, input_amount);
+        int expect = 20;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_dp_322_coin_change
+
 #include "328.cpp"
 
 namespace p328
