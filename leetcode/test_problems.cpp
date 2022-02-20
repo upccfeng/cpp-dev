@@ -3311,6 +3311,84 @@ namespace p_2171_weekly_contest
     }
 } // namespace p_2171_weekly_contest
 
+#include "2180_weekly_contest_281.cpp"
+
+namespace p_2180_weekly_contest_281
+{
+    using Solution = Solution;
+
+    TEST(test__2180_weekly_contest_281, Case_1)
+    {
+        Solution s;
+        int input = 4;
+        int result = s.countEven(input);
+        int expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__2180_weekly_contest_281, Case_2)
+    {
+        Solution s;
+        int input = 30;
+        int result = s.countEven(input);
+        int expect = 14;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_2180_weekly_contest_281
+
+#include "2181_weekly_contest_281.cpp"
+
+namespace p_2181_weekly_contest_281
+{
+    using Solution = Solution;
+
+    TEST(test__2181_weekly_contest_281, Case_1)
+    {
+        Solution s;
+        ListNode* input = ListHelper::create({ 0,3,1,0,4,5,2,0 });
+        ListNode* result = s.mergeNodes(input);
+        std::vector<int> expect = { 4, 11 };
+        ASSERT_EQ(ListHelper::compare(result, expect), true);
+    }
+
+    TEST(test__2181_weekly_contest_281, Case_2)
+    {
+        Solution s;
+        ListNode* input = ListHelper::create({ 0,1,0,3,0,2,2,0 });
+        ListNode* result = s.mergeNodes(input);
+        std::vector<int> expect = { 1, 3, 4 };
+        ASSERT_EQ(ListHelper::compare(result, expect), true);
+    }
+} // namespace p_2181_weekly_contest_281
+
+#include "2182_weekly_contest_281.cpp"
+
+namespace p_2182_weekly_contest_281
+{
+    using Solution = Solution;
+
+    TEST(test__2182_weekly_contest_281, Case_1)
+    {
+        Solution s;
+        std::string input_s = "cczazcc";
+        int input_repeatLimit = 3;
+        std::string result = s.repeatLimitedString(input_s, input_repeatLimit);
+        std::string expect = "zzcccac";
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__2182_weekly_contest_281, Case_2)
+    {
+        Solution s;
+        std::string input_s = "aababab";
+        int input_repeatLimit = 2;
+        std::string result = s.repeatLimitedString(input_s, input_repeatLimit);
+        std::string expect = "bbabaa";
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_2182_weekly_contest_281
+
+
 #include "rekuten210221_1.cpp"
 
 namespace p_rekuten210221_1
