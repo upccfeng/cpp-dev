@@ -2826,6 +2826,63 @@ namespace p820_daily
     }
 } // namespace p820_daily
 
+#include "curated_dp_1143_longest_common_subsequence.cpp"
+
+namespace p_curated_dp_1143_longest_common_subsequence
+{
+    using Solution = Solution;
+
+    TEST(test__curated_dp_1143_longest_common_subsequence, Case_1)
+    {
+        Solution s;
+        std::string input_text1 = "abcde";
+        std::string input_text2 = "ace";
+        int result = s.longestCommonSubsequence(input_text1, input_text2);
+        int expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_1143_longest_common_subsequence, Case_2)
+    {
+        Solution s;
+        std::string input_text1 = "abc";
+        std::string input_text2 = "abc";
+        int result = s.longestCommonSubsequence(input_text1, input_text2);
+        int expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_1143_longest_common_subsequence, Case_3)
+    {
+        Solution s;
+        std::string input_text1 = "abc";
+        std::string input_text2 = "def";
+        int result = s.longestCommonSubsequence(input_text1, input_text2);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_1143_longest_common_subsequence, Case_Customize_1)
+    {
+        Solution s;
+        std::string input_text1 = "a";
+        std::string input_text2 = "ab";
+        int result = s.longestCommonSubsequence(input_text1, input_text2);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_1143_longest_common_subsequence, Case_Customize_2)
+    {
+        Solution s;
+        std::string input_text1 = "aaaaa";
+        std::string input_text2 = "a";
+        int result = s.longestCommonSubsequence(input_text1, input_text2);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_dp_1143_longest_common_subsequence
+
 #include "1209_daily.cpp"
 
 namespace p1209_daily
