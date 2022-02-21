@@ -1720,117 +1720,6 @@ namespace p_curated_dp_139_word_break
     }
 } // namespace p_curated_dp_139_word_break
 
-#include "curated_binary_190_reverse_bits.cpp"
-
-namespace p_curated_binary_190_reverse_bits
-{
-    using Solution = Solution;
-
-    TEST(test__curated_binary_190_reverse_bits, Case_1)
-    {
-        Solution s;
-        uint32_t input = 0b00000010100101000001111010011100;
-        uint32_t result = s.reverseBits(input);
-        uint32_t expect = 0b00111001011110000010100101000000;
-        ASSERT_EQ(result, expect);
-    }
-
-    TEST(test__curated_binary_190_reverse_bits, Case_2)
-    {
-        Solution s;
-        uint32_t input = 0b11111111111111111111111111111101;
-        uint32_t result = s.reverseBits(input);
-        uint32_t expect = 0b10111111111111111111111111111111;
-        ASSERT_EQ(result, expect);
-    }
-} // namespace p_curated_binary_190_reverse_bits
-
-#include "curated_binary_191_numbers_of_1_bits.cpp"
-
-namespace p_curated_binary_191_numbers_of_1_bits
-{
-    using Solution = Solution;
-
-    TEST(test__curated_binary_191_numbers_of_1_bits, Case_1)
-    {
-        Solution s;
-        uint32_t input = 0b00000000000000000000000000001011;
-        int result = s.hammingWeight(input);
-        int expect = 3;
-        ASSERT_EQ(result, expect);
-    }
-
-    TEST(test__curated_binary_191_numbers_of_1_bits, Case_2)
-    {
-        Solution s;
-        uint32_t input = 0b00000000000000000000000010000000;
-        int result = s.hammingWeight(input);
-        int expect = 1;
-        ASSERT_EQ(result, expect);
-    }
-
-    TEST(test__curated_binary_191_numbers_of_1_bits, Case_3)
-    {
-        Solution s;
-        uint32_t input = 0b11111111111111111111111111111101;
-        int result = s.hammingWeight(input);
-        int expect = 31;
-        ASSERT_EQ(result, expect);
-    }
-
-    TEST(test__curated_binary_191_numbers_of_1_bits, Case_Customize_1)
-    {
-        Solution s;
-        uint32_t input = 0b00000000000000000000000000000000;
-        int result = s.hammingWeight(input);
-        int expect = 0;
-        ASSERT_EQ(result, expect);
-    }
-
-    TEST(test__curated_binary_191_numbers_of_1_bits, Case_Customize_2)
-    {
-        Solution s;
-        uint32_t input = 0b11111111111111111111111111111111;
-        int result = s.hammingWeight(input);
-        int expect = 32;
-        ASSERT_EQ(result, expect);
-    }
-} // namespace p_curated_binary_191_numbers_of_1_bits
-
-#include "curated_array_121_bestprofit.cpp"
-
-namespace p_curated_array_121_bestprofit
-{
-    using Solution = Solution;
-
-    TEST(test_curated_array_121_besttime, Case_1)
-    {
-        Solution s;
-        std::vector<int> input = { 7,1,5,3,6,4 };
-        int result = s.maxProfit(input);
-        int expect = 5;
-        ASSERT_EQ(result, expect);
-    }
-
-    TEST(test_curated_array_121_besttime, Case_2)
-    {
-        Solution s;
-        std::vector<int> input = { 7,6,4,3,1 };
-        int result = s.maxProfit(input);
-        int expect = 0;
-        ASSERT_EQ(result, expect);
-    }
-
-    TEST(test_curated_array_121_besttime, Case_Failure_1)
-    {
-        Solution s;
-        std::vector<int> input = { 2,4,1 };
-        int result = s.maxProfit(input);
-        int expect = 2;
-        ASSERT_EQ(result, expect);
-    }
-} // namespace p_curated_array_121_bestprofit
-
 #include "curated_array_152_max_product_subarray.cpp"
 
 namespace p_curated_array_152_max_product_subarray
@@ -1987,6 +1876,196 @@ namespace p_curated_array_153_min_in_rotated_sorted_array
         ASSERT_EQ(result, expect);
     }
 } // namespace p_curated_array_153_min_in_rotated_sorted_array
+
+#include "curated_binary_190_reverse_bits.cpp"
+
+namespace p_curated_binary_190_reverse_bits
+{
+    using Solution = Solution;
+
+    TEST(test__curated_binary_190_reverse_bits, Case_1)
+    {
+        Solution s;
+        uint32_t input = 0b00000010100101000001111010011100;
+        uint32_t result = s.reverseBits(input);
+        uint32_t expect = 0b00111001011110000010100101000000;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_binary_190_reverse_bits, Case_2)
+    {
+        Solution s;
+        uint32_t input = 0b11111111111111111111111111111101;
+        uint32_t result = s.reverseBits(input);
+        uint32_t expect = 0b10111111111111111111111111111111;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_binary_190_reverse_bits
+
+#include "curated_binary_191_numbers_of_1_bits.cpp"
+
+namespace p_curated_binary_191_numbers_of_1_bits
+{
+    using Solution = Solution;
+
+    TEST(test__curated_binary_191_numbers_of_1_bits, Case_1)
+    {
+        Solution s;
+        uint32_t input = 0b00000000000000000000000000001011;
+        int result = s.hammingWeight(input);
+        int expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_binary_191_numbers_of_1_bits, Case_2)
+    {
+        Solution s;
+        uint32_t input = 0b00000000000000000000000010000000;
+        int result = s.hammingWeight(input);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_binary_191_numbers_of_1_bits, Case_3)
+    {
+        Solution s;
+        uint32_t input = 0b11111111111111111111111111111101;
+        int result = s.hammingWeight(input);
+        int expect = 31;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_binary_191_numbers_of_1_bits, Case_Customize_1)
+    {
+        Solution s;
+        uint32_t input = 0b00000000000000000000000000000000;
+        int result = s.hammingWeight(input);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_binary_191_numbers_of_1_bits, Case_Customize_2)
+    {
+        Solution s;
+        uint32_t input = 0b11111111111111111111111111111111;
+        int result = s.hammingWeight(input);
+        int expect = 32;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_binary_191_numbers_of_1_bits
+
+#include "curated_dp_198_house_robber.cpp"
+
+namespace p_curated_dp_198_house_robber
+{
+    using Solution = Solution;
+
+    TEST(test__curated_dp_198_house_robber, Case_1)
+    {
+        Solution s;
+        std::vector<int> input = { 1,2,3,1 };
+        int result = s.rob(input);
+        int expect = 4;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_198_house_robber, Case_2)
+    {
+        Solution s;
+        std::vector<int> input = { 2,7,9,3,1 };
+        int result = s.rob(input);
+        int expect = 12;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_198_house_robber, Case_Customize_1)
+    {
+        Solution s;
+        std::vector<int> input = { 1,2,3,4,100 };
+        int result = s.rob(input);
+        int expect = 104;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_198_house_robber, Case_Customize_2)
+    {
+        Solution s;
+        std::vector<int> input = { 1,2,3,100,4 };
+        int result = s.rob(input);
+        int expect = 102;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_198_house_robber, Case_Customize_3)
+    {
+        Solution s;
+        std::vector<int> input = { 101,2,3,100,4 };
+        int result = s.rob(input);
+        int expect = 201;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_198_house_robber, Case_Customize_4)
+    {
+        Solution s;
+        std::vector<int> input = { 101,2,3,4,100 };
+        int result = s.rob(input);
+        int expect = 204;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_198_house_robber, Case_Customize_5)
+    {
+        Solution s;
+        std::vector<int> input = { 1 };
+        int result = s.rob(input);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_198_house_robber, Case_Failure_1)
+    {
+        Solution s;
+        std::vector<int> input = { 2, 1 };
+        int result = s.rob(input);
+        int expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_dp_198_house_robber
+
+#include "curated_array_121_bestprofit.cpp"
+
+namespace p_curated_array_121_bestprofit
+{
+    using Solution = Solution;
+
+    TEST(test_curated_array_121_besttime, Case_1)
+    {
+        Solution s;
+        std::vector<int> input = { 7,1,5,3,6,4 };
+        int result = s.maxProfit(input);
+        int expect = 5;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_curated_array_121_besttime, Case_2)
+    {
+        Solution s;
+        std::vector<int> input = { 7,6,4,3,1 };
+        int result = s.maxProfit(input);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_curated_array_121_besttime, Case_Failure_1)
+    {
+        Solution s;
+        std::vector<int> input = { 2,4,1 };
+        int result = s.maxProfit(input);
+        int expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_array_121_bestprofit
 
 #include "curated_array_217_containduplicate.cpp"
 
