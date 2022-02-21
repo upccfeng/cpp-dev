@@ -1653,6 +1653,72 @@ namespace p_curated_dp_70_climbing_stairts
     }
 } // namespace p_curated_dp_70_climbing_stairts
 
+#include "curated_dp_139_word_break.cpp"
+
+namespace p_curated_dp_139_word_break
+{
+    using Solution = Solution;
+
+    TEST(test__curated_dp_139_word_break, Case_1)
+    {
+        Solution s;
+        std::string input_s = "leetcode";
+        std::vector<std::string> input_wordDict = { "leet","code" };
+        bool result = s.wordBreak(input_s, input_wordDict);
+        bool expect = true;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_139_word_break, Case_2)
+    {
+        Solution s;
+        std::string input_s = "applepenapple";
+        std::vector<std::string> input_wordDict = { "apple","pen" };
+        bool result = s.wordBreak(input_s, input_wordDict);
+        bool expect = true;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_139_word_break, Case_3)
+    {
+        Solution s;
+        std::string input_s = "catsandog";
+        std::vector<std::string> input_wordDict = { "cats","dog","sand","and","cat" };
+        bool result = s.wordBreak(input_s, input_wordDict);
+        bool expect = false;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_139_word_break, Case_Customize_1)
+    {
+        Solution s;
+        std::string input_s = "s";
+        std::vector<std::string> input_wordDict = { "ss" };
+        bool result = s.wordBreak(input_s, input_wordDict);
+        bool expect = false;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_139_word_break, Case_Customize_2)
+    {
+        Solution s;
+        std::string input_s = "ssssss";
+        std::vector<std::string> input_wordDict = { "ss" };
+        bool result = s.wordBreak(input_s, input_wordDict);
+        bool expect = true;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_139_word_break, Case_Customize_3)
+    {
+        Solution s;
+        std::string input_s = "a";
+        std::vector<std::string> input_wordDict = { "a" };
+        bool result = s.wordBreak(input_s, input_wordDict);
+        bool expect = true;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_dp_139_word_break
 
 #include "curated_binary_190_reverse_bits.cpp"
 
