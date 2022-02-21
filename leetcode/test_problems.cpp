@@ -1653,6 +1653,40 @@ namespace p_curated_dp_70_climbing_stairts
     }
 } // namespace p_curated_dp_70_climbing_stairts
 
+#include "curated_dp_91_decode_ways.cpp"
+
+namespace p_curated_dp_91_decode_ways
+{
+    using Solution = Solution;
+
+    TEST(test__curated_dp_91_decode_ways, Case_1)
+    {
+        Solution s;
+        std::string input = "12";
+        int result = s.numDecodings(input);
+        int expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_91_decode_ways, Case_2)
+    {
+        Solution s;
+        std::string input = "226";
+        int result = s.numDecodings(input);
+        int expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_91_decode_ways, Case_3)
+    {
+        Solution s;
+        std::string input = "06";
+        int result = s.numDecodings(input);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_dp_91_decode_ways
+
 #include "curated_dp_139_word_break.cpp"
 
 namespace p_curated_dp_139_word_break
