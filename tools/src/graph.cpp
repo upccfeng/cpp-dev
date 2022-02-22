@@ -17,7 +17,10 @@ Node::Node(int _val, std::vector<Node*> _neighbors) {
 
 Node* GraphHelper::create(std::vector<std::vector<int>> adjlist)
 {
-    Node* head = nullptr;
+    if (adjlist.size() == 0)
+    {
+        return nullptr;
+    }
 
     std::vector<Node*> all(adjlist.size() + 1);
 
@@ -43,6 +46,11 @@ Node* GraphHelper::create(std::vector<std::vector<int>> adjlist)
 
 void GraphHelper::dfs_discover(Node* taking, std::set<Node*>& discovered, std::set<std::pair<Node*, Node*>>& edges)
 {
+    if (taking == nullptr)
+    {
+        return;
+    }
+
     if (discovered.find(taking) == discovered.end())
     {
         discovered.insert(taking);

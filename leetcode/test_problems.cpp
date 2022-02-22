@@ -1815,6 +1815,49 @@ namespace p_curated_array_121_bestprofit
     }
 } // namespace p_curated_array_121_bestprofit
 
+#include "curated_graph_133_clone_graph.cpp"
+
+namespace p_curated_graph_133_clone_graph
+{
+    using Solution = Solution;
+
+    TEST(test__curated_graph_133_clone_graph, Case_1)
+    {
+        Solution s;
+        using InputType = Node*;
+        using RetsultType = Node*;
+
+        InputType input = GraphHelper::create({ {2,4},{1,3},{2,4},{1,3} });
+        RetsultType result = s.cloneGraph(input);
+        RetsultType expect = GraphHelper::create({ {2,4},{1,3},{2,4},{1,3} });
+        ASSERT_THAT(GraphHelper::compare(result, expect), Eq(true));
+    }
+
+    TEST(test__curated_graph_133_clone_graph, Case_2)
+    {
+        Solution s;
+        using InputType = Node*;
+        using RetsultType = Node*;
+
+        InputType input = GraphHelper::create({ {} });
+        RetsultType result = s.cloneGraph(input);
+        RetsultType expect = GraphHelper::create({ {} });
+        ASSERT_THAT(GraphHelper::compare(result, expect), Eq(true));
+    }
+
+    TEST(test__curated_graph_133_clone_graph, Case_3)
+    {
+        Solution s;
+        using InputType = Node*;
+        using RetsultType = Node*;
+
+        InputType input = GraphHelper::create({ });
+        RetsultType result = s.cloneGraph(input);
+        RetsultType expect = GraphHelper::create({ });
+        ASSERT_THAT(GraphHelper::compare(result, expect), Eq(true));
+    }
+} // namespace p_curated_graph_133_clone_graph
+
 #include "curated_dp_139_word_break.cpp"
 
 namespace p_curated_dp_139_word_break
