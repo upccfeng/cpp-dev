@@ -1549,6 +1549,53 @@ namespace p_curated_array_53_max_sub_array
     }
 } // namespace p_curated_array_53_max_sub_array
 
+#include "curated_dp_62_unique_paths.cpp"
+
+namespace p_curated_dp_62_unique_paths
+{
+    using Solution = Solution;
+
+    TEST(test__curated_dp_62_unique_paths, Case_1)
+    {
+        Solution s;
+        int input_m = 3;
+        int input_n = 7;
+        int result = s.uniquePaths(input_m, input_n);
+        int expect = 28;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_62_unique_paths, Case_2)
+    {
+        Solution s;
+        int input_m = 3;
+        int input_n = 2;
+        int result = s.uniquePaths(input_m, input_n);
+        int expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_62_unique_paths, Case_Customize_1)
+    {
+        Solution s;
+        int input_m = 1;
+        int input_n = 1;
+        int result = s.uniquePaths(input_m, input_n);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_62_unique_paths, Case_Customize_2)
+    {
+        Solution s;
+        int input_m = 1;
+        int input_n = 2;
+        int result = s.uniquePaths(input_m, input_n);
+        int expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_dp_62_unique_paths
+
 #include "66.cpp"
 
 namespace p66
