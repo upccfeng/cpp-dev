@@ -1,70 +1,131 @@
 #include "graph.hpp"
 
-namespace graph
+Node::Node() {
+    val = 0;
+    neighbors = std::vector<Node*>();
+};
+
+Node::Node(int _val) {
+    val = _val;
+    neighbors = std::vector<Node*>();
+};
+
+Node::Node(int _val, std::vector<Node*> _neighbors) {
+    val = _val;
+    neighbors = _neighbors;
+};
+
+Node* GraphHelper::create(std::vector<std::vector<int>> adjlist)
 {
-    Node::Node() {
-        val = 0;
-        neighbors = std::vector<Node*>();
-    };
+    Node* head = nullptr;
 
-    Node::Node(int _val) {
-        val = _val;
-        neighbors = std::vector<Node*>();
-    };
+    std::vector<Node*> all(adjlist.size() + 1);
 
-    Node::Node(int _val, std::vector<Node*> _neighbors) {
-        val = _val;
-        neighbors = _neighbors;
-    };
-
-    Node* Node::create(std::vector<std::vector<int>> adjlist)
+    for (int i = 1; i < adjlist.size() + 1; ++i)
     {
-        Node* head = nullptr;
+        all[i] = new Node(i);
+    }
 
-        std::vector<Node*> all(adjlist.size() + 1);
+    for (int i = 1; i < adjlist.size() + 1; ++i)
+    {
+        std::vector<Node*> neighs(adjlist[i - 1].size());
 
-        for (int i = 1; i < adjlist.size() + 1; ++i)
+        for (int n = 0; n < adjlist[i - 1].size(); ++n)
         {
-            all[i] = new Node(i);
+            neighs[n] = all[adjlist[i - 1][n]];
         }
 
-        for (int i = 1; i < adjlist.size() + 1; ++i)
-        {
-            std::vector<Node*> neighs(adjlist[i - 1].size());
+        all[i]->neighbors = neighs;
+    }
 
-            for (int n = 0; n < adjlist[i - 1].size(); ++n)
+    return all[1];
+}
+
+void GraphHelper::dfs_discover(Node* taking, std::set<Node*>& discovered, std::set<std::pair<Node*, Node*>>& edges)
+{
+    if (discovered.find(taking) == discovered.end())
+    {
+        discovered.insert(taking);
+
+        for (auto nei : taking->neighbors)
+        {
+            edges.insert({ taking, nei });
+            dfs_discover(nei, discovered, edges);
+        }
+    }
+}
+
+void GraphHelper::remove(Node* head)
+{
+    std::set<Node*> discovered;
+    std::set<std::pair<Node*, Node*>> edges;
+
+    dfs_discover(head, discovered, edges);
+
+    for (auto node : discovered)
+    {
+        delete node;
+    }
+}
+
+bool GraphHelper::compare(Node* lhs, Node* rhs)
+{
+    std::set<Node*> lhs_discovered;
+    std::set<std::pair<Node*, Node*>> lhs_edges;
+
+    dfs_discover(lhs, lhs_discovered, lhs_edges);
+
+    std::set<Node*> rhs_discovered;
+    std::set<std::pair<Node*, Node*>> rhs_edges;
+
+    dfs_discover(rhs, rhs_discovered, rhs_edges);
+
+    if (lhs_discovered.size() != rhs_discovered.size() || lhs_edges.size() != rhs_edges.size())
+    {
+        return false;
+    }
+
+    for (auto l_e : lhs_discovered)
+    {
+        bool is_found = false;
+        for (auto r_e : rhs_discovered)
+        {
+            if (l_e->val == r_e->val)
             {
-                neighs[n] = all[adjlist[i - 1][n]];
+                is_found = true;
+                break;
             }
-
-            all[i]->neighbors = neighs;
         }
 
-        return all[1];
+        if (!is_found)
+        {
+            return false;
+        }
     }
 
-    void dfs(Node* taking, std::set<Node*>& discovered)
+    for (auto l_e : lhs_edges)
     {
-        if (discovered.find(taking) == discovered.end())
+        bool is_found = false;
+        for (auto r_e : rhs_edges)
         {
-            discovered.insert(taking);
-
-            for (auto nei : taking->neighbors)
+            if (l_e.first->val == r_e.first->val && l_e.second->val == r_e.second->val)
             {
-                dfs(nei, discovered);
+                is_found = true;
+                break;
             }
         }
-    }
 
-    void Node::delete_graph(Node* head)
-    {
-        std::set<Node*> discovered;
-
-        dfs(head, discovered);
-
-        for (auto node : discovered)
+        if (!is_found)
         {
-            delete node;
+            return false;
         }
     }
+
+    return true;
+}
+
+bool GraphHelper::compare(Node* lhs, std::vector<std::vector<int>> rhs_v)
+{
+    std::shared_ptr<Node> rhs = std::shared_ptr<Node>(GraphHelper::create(rhs_v), GraphHelper::remove);
+    return compare(lhs, rhs.get());
 }

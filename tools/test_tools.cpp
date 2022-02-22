@@ -242,7 +242,19 @@ class TestGraph : public ::testing::Test
 TEST_F(TestGraph, create_delete)
 {
     // FIXME: add more test cases.
-    graph::Node* head = graph::Node::create({ { 2, 4 }, { 1, 3 }, { 2, 4 }, { 1, 3 } });
+    Node* head = GraphHelper::create({ { 2, 4 }, { 1, 3 }, { 2, 4 }, { 1, 3 } });
 
-    graph::Node::delete_graph(head);
+    Node* the_same = GraphHelper::create({ { 2, 4 }, { 1, 3 }, { 2, 4 }, { 1, 3 } });
+    ASSERT_THAT(GraphHelper::compare(head, the_same), testing::Eq(true));
+    GraphHelper::remove(the_same);
+
+    Node* different = GraphHelper::create({ { 2, 4 }, { 1, 3 }, { 2, 4 }, { 3 } });
+    ASSERT_THAT(GraphHelper::compare(head, different), testing::Eq(false));
+    GraphHelper::remove(different);
+
+    ASSERT_THAT(GraphHelper::compare(head, { { 2, 4 }, { 1, 3 }, { 2, 4 }, { 1, 3 } }), testing::Eq(true));
+
+    ASSERT_THAT(GraphHelper::compare(head, { { 2, 4 }, { 1, 3 }, { 4 }, { 1, 3 } }), testing::Eq(false));
+
+    GraphHelper::remove(head);
 }
