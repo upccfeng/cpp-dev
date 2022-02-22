@@ -1781,6 +1781,40 @@ namespace p_curated_dp_91_decode_ways
     }
 } // namespace p_curated_dp_91_decode_ways
 
+#include "curated_array_121_bestprofit.cpp"
+
+namespace p_curated_array_121_bestprofit
+{
+    using Solution = Solution;
+
+    TEST(test_curated_array_121_besttime, Case_1)
+    {
+        Solution s;
+        std::vector<int> input = { 7,1,5,3,6,4 };
+        int result = s.maxProfit(input);
+        int expect = 5;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_curated_array_121_besttime, Case_2)
+    {
+        Solution s;
+        std::vector<int> input = { 7,6,4,3,1 };
+        int result = s.maxProfit(input);
+        int expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test_curated_array_121_besttime, Case_Failure_1)
+    {
+        Solution s;
+        std::vector<int> input = { 2,4,1 };
+        int result = s.maxProfit(input);
+        int expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_array_121_bestprofit
+
 #include "curated_dp_139_word_break.cpp"
 
 namespace p_curated_dp_139_word_break
@@ -2161,39 +2195,84 @@ namespace p_curated_dp_198_house_robber
     }
 } // namespace p_curated_dp_198_house_robber
 
-#include "curated_array_121_bestprofit.cpp"
+#include "curated_dp_213_house_robber_ii.cpp"
 
-namespace p_curated_array_121_bestprofit
+namespace p_curated_dp_213_house_robber_ii
 {
     using Solution = Solution;
 
-    TEST(test_curated_array_121_besttime, Case_1)
+    TEST(test__curated_dp_213_house_robber_ii, Case_1)
     {
         Solution s;
-        std::vector<int> input = { 7,1,5,3,6,4 };
-        int result = s.maxProfit(input);
-        int expect = 5;
+        using InputType = std::vector<int>;
+        using RetsultType = int;
+
+        InputType input = { 2,3,2 };
+        RetsultType result = s.rob(input);
+        RetsultType expect = 3;
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_curated_array_121_besttime, Case_2)
+    TEST(test__curated_dp_213_house_robber_ii, Case_2)
     {
         Solution s;
-        std::vector<int> input = { 7,6,4,3,1 };
-        int result = s.maxProfit(input);
-        int expect = 0;
+        using InputType = std::vector<int>;
+        using RetsultType = int;
+
+        InputType input = { 1,2,3,1 };
+        RetsultType result = s.rob(input);
+        RetsultType expect = 4;
         ASSERT_EQ(result, expect);
     }
 
-    TEST(test_curated_array_121_besttime, Case_Failure_1)
+    TEST(test__curated_dp_213_house_robber_ii, Case_3)
     {
         Solution s;
-        std::vector<int> input = { 2,4,1 };
-        int result = s.maxProfit(input);
-        int expect = 2;
+        using InputType = std::vector<int>;
+        using RetsultType = int;
+
+        InputType input = { 1,2,3 };
+        RetsultType result = s.rob(input);
+        RetsultType expect = 3;
         ASSERT_EQ(result, expect);
     }
-} // namespace p_curated_array_121_bestprofit
+
+    TEST(test__curated_dp_213_house_robber_ii, Case_Failure_1)
+    {
+        Solution s;
+        using InputType = std::vector<int>;
+        using RetsultType = int;
+
+        InputType input = { 200,3,140,20,10 };
+        RetsultType result = s.rob(input);
+        RetsultType expect = 340;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_213_house_robber_ii, Case_Failure_2)
+    {
+        Solution s;
+        using InputType = std::vector<int>;
+        using RetsultType = int;
+
+        InputType input = { 1 };
+        RetsultType result = s.rob(input);
+        RetsultType expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_213_house_robber_ii, Case_Failure_3)
+    {
+        Solution s;
+        using InputType = std::vector<int>;
+        using RetsultType = int;
+
+        InputType input = { 1, 2 };
+        RetsultType result = s.rob(input);
+        RetsultType expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_dp_213_house_robber_ii
 
 #include "curated_array_217_containduplicate.cpp"
 
