@@ -231,3 +231,18 @@ TEST_F(TestNodeList, ListHelper)
         ASSERT_THAT(ListHelper::compare(x.get(), y), testing::Eq(true));
     }
 }
+
+#include "graph.hpp"
+
+class TestGraph : public ::testing::Test
+{
+
+};
+
+TEST_F(TestGraph, create_delete)
+{
+    // FIXME: add more test cases.
+    graph::Node* head = graph::Node::create({ { 2, 4 }, { 1, 3 }, { 2, 4 }, { 1, 3 } });
+
+    graph::Node::delete_graph(head);
+}
