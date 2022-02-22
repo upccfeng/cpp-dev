@@ -1549,6 +1549,53 @@ namespace p_curated_array_53_max_sub_array
     }
 } // namespace p_curated_array_53_max_sub_array
 
+#include "curated_dp_55_jump_game.cpp"
+
+namespace p_curated_dp_55_jump_game
+{
+    using Solution = Solution;
+
+    TEST(test__curated_dp_55_jump_game, Case_1)
+    {
+        Solution s;
+        using result_type = bool;
+        std::vector<int> input = { 2,3,1,1,4 };
+        result_type result = s.canJump(input);
+        result_type expect = true;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_55_jump_game, Case_2)
+    {
+        Solution s;
+        using result_type = bool;
+        std::vector<int> input = { 3,2,1,0,4 };
+        result_type result = s.canJump(input);
+        result_type expect = false;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_55_jump_game, Case_Customize_1)
+    {
+        Solution s;
+        using result_type = bool;
+        std::vector<int> input = { 1 };
+        result_type result = s.canJump(input);
+        result_type expect = true;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_dp_55_jump_game, Case_Failure_1)
+    {
+        Solution s;
+        using result_type = bool;
+        std::vector<int> input = { 2, 0 };
+        result_type result = s.canJump(input);
+        result_type expect = true;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_dp_55_jump_game
+
 #include "curated_dp_62_unique_paths.cpp"
 
 namespace p_curated_dp_62_unique_paths
