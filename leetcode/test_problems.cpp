@@ -2238,6 +2238,152 @@ namespace p_curated_dp_198_house_robber
     }
 } // namespace p_curated_dp_198_house_robber
 
+#include "curated_graph_207_course_schedule.cpp"
+
+namespace p_curated_graph_207_course_schedule
+{
+    using Solution = Solution;
+
+    TEST(test__curated_graph_207_course_schedule, Case_1)
+    {
+        Solution s;
+        using InputType_1 = int;
+        using InputType_2 = std::vector<std::vector<int>>;
+        using RetsultType = bool;
+
+        InputType_1 input_numCourses = 2;
+        InputType_2 input_prerequisites = { { 1,0 } };
+        RetsultType result = s.canFinish(input_numCourses, input_prerequisites);
+        RetsultType expect = true;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_graph_207_course_schedule, Case_2)
+    {
+        Solution s;
+        using InputType_1 = int;
+        using InputType_2 = std::vector<std::vector<int>>;
+        using RetsultType = bool;
+
+        InputType_1 input_numCourses = 2;
+        InputType_2 input_prerequisites = { {1,0} ,{0,1} };
+        RetsultType result = s.canFinish(input_numCourses, input_prerequisites);
+        RetsultType expect = false;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_graph_207_course_schedule, Case_Customize_1)
+    {
+        Solution s;
+        using InputType_1 = int;
+        using InputType_2 = std::vector<std::vector<int>>;
+        using RetsultType = bool;
+
+        InputType_1 input_numCourses = 2;
+        InputType_2 input_prerequisites = { {0,1} };
+        RetsultType result = s.canFinish(input_numCourses, input_prerequisites);
+        RetsultType expect = true;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_graph_207_course_schedule, Case_Customize_2)
+    {
+        Solution s;
+        using InputType_1 = int;
+        using InputType_2 = std::vector<std::vector<int>>;
+        using RetsultType = bool;
+
+        InputType_1 input_numCourses = 1;
+        InputType_2 input_prerequisites = { };
+        RetsultType result = s.canFinish(input_numCourses, input_prerequisites);
+        RetsultType expect = true;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_graph_207_course_schedule, Case_Customize_3)
+    {
+        Solution s;
+        using InputType_1 = int;
+        using InputType_2 = std::vector<std::vector<int>>;
+        using RetsultType = bool;
+
+        InputType_1 input_numCourses = 3;
+        InputType_2 input_prerequisites = { };
+        RetsultType result = s.canFinish(input_numCourses, input_prerequisites);
+        RetsultType expect = true;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_graph_207_course_schedule, Case_Customize_4)
+    {
+        Solution s;
+        using InputType_1 = int;
+        using InputType_2 = std::vector<std::vector<int>>;
+        using RetsultType = bool;
+
+        InputType_1 input_numCourses = 3;
+        InputType_2 input_prerequisites = { {1, 0}, {2, 1} };
+        RetsultType result = s.canFinish(input_numCourses, input_prerequisites);
+        RetsultType expect = true;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_graph_207_course_schedule, Case_Customize_5)
+    {
+        Solution s;
+        using InputType_1 = int;
+        using InputType_2 = std::vector<std::vector<int>>;
+        using RetsultType = bool;
+
+        InputType_1 input_numCourses = 3;
+        InputType_2 input_prerequisites = { {1, 0}, {1, 2}, {0, 2}, {2, 0} };
+        RetsultType result = s.canFinish(input_numCourses, input_prerequisites);
+        RetsultType expect = false;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_graph_207_course_schedule, Case_Customize_6)
+    {
+        Solution s;
+        using InputType_1 = int;
+        using InputType_2 = std::vector<std::vector<int>>;
+        using RetsultType = bool;
+
+        InputType_1 input_numCourses = 3;
+        InputType_2 input_prerequisites = { {0, 1}, {1, 2} };
+        RetsultType result = s.canFinish(input_numCourses, input_prerequisites);
+        RetsultType expect = true;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_graph_207_course_schedule, Case_Failure_1)
+    {
+        Solution s;
+        using InputType_1 = int;
+        using InputType_2 = std::vector<std::vector<int>>;
+        using RetsultType = bool;
+        InputType_1 input_numCourses = 20;
+        InputType_2 input_prerequisites = { {0, 10},{3, 18},{5, 5},{6, 11},{11, 14},{13, 1},{15, 1},{17, 4} };
+        RetsultType result = s.canFinish(input_numCourses, input_prerequisites);
+        RetsultType expect = false;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_graph_207_course_schedule, Case_Failure_2)
+    {
+        Solution s;
+        using InputType_1 = int;
+        using InputType_2 = std::vector<std::vector<int>>;
+        using RetsultType = bool;
+        InputType_1 input_numCourses = 3;
+        InputType_2 input_prerequisites = { {0, 2} ,{1, 2},{2, 0} };
+        RetsultType result = s.canFinish(input_numCourses, input_prerequisites);
+        RetsultType expect = false;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_graph_207_course_schedule
+
+
 #include "curated_dp_213_house_robber_ii.cpp"
 
 namespace p_curated_dp_213_house_robber_ii
