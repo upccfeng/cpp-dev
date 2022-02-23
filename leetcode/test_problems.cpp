@@ -1815,6 +1815,85 @@ namespace p_curated_array_121_bestprofit
     }
 } // namespace p_curated_array_121_bestprofit
 
+#include "curated_graph_128_longest_consecutive_sequence.cpp"
+
+namespace p_curated_graph_128_longest_consecutive_sequence
+{
+    using Solution = Solution;
+
+    TEST(test__curated_graph_128_longest_consecutive_sequence, Case_1)
+    {
+        Solution s;
+        using InputType = std::vector<int>;
+        using RetsultType = int;
+
+        InputType input = { 100,4,200,1,3,2 };
+        RetsultType result = s.longestConsecutive(input);
+        RetsultType expect = 4;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_graph_128_longest_consecutive_sequence, Case_2)
+    {
+        Solution s;
+        using InputType = std::vector<int>;
+        using RetsultType = int;
+
+        InputType input = { 0,3,7,2,5,8,4,6,0,1 };
+        RetsultType result = s.longestConsecutive(input);
+        RetsultType expect = 9;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_graph_128_longest_consecutive_sequence, Case_Custimize_1)
+    {
+        Solution s;
+        using InputType = std::vector<int>;
+        using RetsultType = int;
+
+        InputType input = { };
+        RetsultType result = s.longestConsecutive(input);
+        RetsultType expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_graph_128_longest_consecutive_sequence, Case_Custimize_2)
+    {
+        Solution s;
+        using InputType = std::vector<int>;
+        using RetsultType = int;
+
+        InputType input = { 1, 2, 3 };
+        RetsultType result = s.longestConsecutive(input);
+        RetsultType expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_graph_128_longest_consecutive_sequence, Case_Custimize_3)
+    {
+        Solution s;
+        using InputType = std::vector<int>;
+        using RetsultType = int;
+
+        InputType input = { 3, 2, 1 };
+        RetsultType result = s.longestConsecutive(input);
+        RetsultType expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_graph_128_longest_consecutive_sequence, Case_Failure_1)
+    {
+        Solution s;
+        using InputType = std::vector<int>;
+        using RetsultType = int;
+
+        InputType input = { 1,0,-1 };
+        RetsultType result = s.longestConsecutive(input);
+        RetsultType expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_graph_128_longest_consecutive_sequence
+
 #include "curated_graph_133_clone_graph.cpp"
 
 namespace p_curated_graph_133_clone_graph
