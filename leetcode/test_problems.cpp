@@ -1596,6 +1596,41 @@ namespace p_curated_dp_55_jump_game
     }
 } // namespace p_curated_dp_55_jump_game
 
+#include "curated_interval_57_insert_interval.cpp"
+
+namespace p_curated_interval_57_insert_interval
+{
+    using Solution = Solution;
+
+    TEST(test__curated_interval_57_insert_interval, Case_1)
+    {
+        Solution s;
+        using InputType_1 = std::vector<std::vector<int>>;
+        using InputType_2 = std::vector<int>;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        InputType_1 input_intervals = { {1, 3}, {6, 9} };
+        InputType_2 input_newInterval = { 2, 5 };
+        RetsultType result = s.insert(input_intervals, input_newInterval);
+        RetsultType expect = { {1, 5}, {6, 9} };
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_interval_57_insert_interval, Case_2)
+    {
+        Solution s;
+        using InputType_1 = std::vector<std::vector<int>>;
+        using InputType_2 = std::vector<int>;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        InputType_1 input_intervals = { {1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16} };
+        InputType_2 input_newInterval = { 4, 8 };
+        RetsultType result = s.insert(input_intervals, input_newInterval);
+        RetsultType expect = { {1, 2}, {3, 10}, {12, 16} };
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_interval_57_insert_interval
+
 #include "curated_dp_62_unique_paths.cpp"
 
 namespace p_curated_dp_62_unique_paths
