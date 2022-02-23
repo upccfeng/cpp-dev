@@ -2238,6 +2238,111 @@ namespace p_curated_dp_198_house_robber
     }
 } // namespace p_curated_dp_198_house_robber
 
+#include "curated_graph_200_number_of_islands.cpp"
+
+namespace p_curated_graph_200_number_of_islands
+{
+    using Solution = Solution;
+
+    TEST(test__curated_graph_200_number_of_islands, Case_1)
+    {
+        Solution s;
+        using InputType = std::vector<std::vector<char>>;
+        using RetsultType = int;
+
+        InputType input = {
+            {'1', '1', '1', '1', '0'},
+            {'1', '1', '0', '1', '0'},
+            {'1', '1', '0', '0', '0'},
+            {'0', '0', '0', '0', '0'}
+        };
+        RetsultType result = s.numIslands(input);
+        RetsultType expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_graph_200_number_of_islands, Case_2)
+    {
+        Solution s;
+        using InputType = std::vector<std::vector<char>>;
+        using RetsultType = int;
+
+        InputType input = {
+            {'1','1','0','0','0'} ,
+            {'1','1','0','0','0'},
+            {'0','0','1','0','0'},
+            {'0','0','0','1','1'}
+        };
+        RetsultType result = s.numIslands(input);
+        RetsultType expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_graph_200_number_of_islands, Case_Customize_1)
+    {
+        Solution s;
+        using InputType = std::vector<std::vector<char>>;
+        using RetsultType = int;
+
+        InputType input = {
+            {'1','1','0'} ,
+            {'1','1','0'},
+            {'0','0','1'},
+        };
+        RetsultType result = s.numIslands(input);
+        RetsultType expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_graph_200_number_of_islands, Case_Customize_2)
+    {
+        Solution s;
+        using InputType = std::vector<std::vector<char>>;
+        using RetsultType = int;
+
+        InputType input = {
+            {'1','0','0'} ,
+            {'0','1','0'},
+            {'0','0','1'},
+        };
+        RetsultType result = s.numIslands(input);
+        RetsultType expect = 3;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_graph_200_number_of_islands, Case_Customize_3)
+    {
+        Solution s;
+        using InputType = std::vector<std::vector<char>>;
+        using RetsultType = int;
+
+        InputType input = {
+            {'1','1','1'} ,
+            {'1','1','1'},
+            {'1','1','1'},
+        };
+        RetsultType result = s.numIslands(input);
+        RetsultType expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_graph_200_number_of_islands, Case_Customize_4)
+    {
+        Solution s;
+        using InputType = std::vector<std::vector<char>>;
+        using RetsultType = int;
+
+        InputType input = {
+            {'0','0','0'} ,
+            {'0','0','0'},
+            {'0','0','0'},
+        };
+        RetsultType result = s.numIslands(input);
+        RetsultType expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_graph_200_number_of_islands
+
 #include "curated_graph_207_course_schedule.cpp"
 
 namespace p_curated_graph_207_course_schedule
