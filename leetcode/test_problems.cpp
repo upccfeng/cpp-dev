@@ -844,6 +844,58 @@ namespace p22
     }
 } // namespace p22
 
+#include "curated_linkedlist_23_merge_k_sorted_lists.cpp"
+
+namespace p_curated_linkedlist_23_merge_k_sorted_lists
+{
+    using Solution = Solution;
+
+    TEST(test__curated_linkedlist_23_merge_k_sorted_lists, Case_1)
+    {
+        Solution s;
+        using InputType = std::vector<ListNode*>;
+        using RetsultType = ListNode*;
+
+        InputType input = { ListHelper::create({1, 4, 5}) ,ListHelper::create({1, 3, 4}), ListHelper::create({2, 6}) };
+        RetsultType result = s.mergeKLists(input);
+        RetsultType expect = ListHelper::create({ 1, 1, 2, 3, 4, 4, 5, 6 });
+        ASSERT_THAT(ListHelper::compare(result, expect), Eq(true));
+
+        ListHelper::remove(result);
+        ListHelper::remove(expect);
+    }
+
+    TEST(test__curated_linkedlist_23_merge_k_sorted_lists, Case_2)
+    {
+        Solution s;
+        using InputType = std::vector<ListNode*>;
+        using RetsultType = ListNode*;
+
+        InputType input = {  };
+        RetsultType result = s.mergeKLists(input);
+        RetsultType expect = ListHelper::create({});
+        ASSERT_THAT(ListHelper::compare(result, expect), Eq(true));
+
+        ListHelper::remove(result);
+        ListHelper::remove(expect);
+    }
+
+    TEST(test__curated_linkedlist_23_merge_k_sorted_lists, Case_3)
+    {
+        Solution s;
+        using InputType = std::vector<ListNode*>;
+        using RetsultType = ListNode*;
+
+        InputType input = { ListHelper::create({}) };
+        RetsultType result = s.mergeKLists(input);
+        RetsultType expect = ListHelper::create({});
+        ASSERT_THAT(ListHelper::compare(result, expect), Eq(true));
+
+        ListHelper::remove(result);
+        ListHelper::remove(expect);
+    }
+} // namespace p_curated_linkedlist_23_merge_k_sorted_lists
+
 #include "26.cpp"
 
 namespace p26
