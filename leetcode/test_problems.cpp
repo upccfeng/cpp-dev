@@ -2083,6 +2083,67 @@ namespace p_curated_dp_139_word_break
     }
 } // namespace p_curated_dp_139_word_break
 
+#include "curated_linkedlist_141_linked_list_cycle.cpp"
+
+namespace p_curated_linkedlist_141_linked_list_cycle
+{
+    using Solution = Solution;
+
+    TEST(test__curated_linkedlist_141_linked_list_cycle, Case_1)
+    {
+        Solution s;
+        using InputType = ListNode*;
+        using RetsultType = bool;
+
+        InputType head = ListHelper::create({ 3,2,0,-4 });
+        InputType tail = ListHelper::get_tail(head);
+        InputType input = ListHelper::add_loop(head, tail, 1);
+
+        RetsultType result = s.hasCycle(input);
+        RetsultType expect = true;
+        ASSERT_EQ(result, expect);
+
+        // FIXME: Can not remove a list with loop so far.
+        // ListHelper::remove(head);
+    }
+
+    TEST(test__curated_linkedlist_141_linked_list_cycle, Case_2)
+    {
+        Solution s;
+        using InputType = ListNode*;
+        using RetsultType = bool;
+
+        InputType head = ListHelper::create({ 1, 2 });
+        InputType tail = ListHelper::get_tail(head);
+        InputType input = ListHelper::add_loop(head, tail, 0);
+
+        RetsultType result = s.hasCycle(input);
+        RetsultType expect = true;
+        ASSERT_EQ(result, expect);
+
+        // FIXME: Can not remove a list with loop so far.
+        // ListHelper::remove(head);
+    }
+
+    TEST(test__curated_linkedlist_141_linked_list_cycle, Case_3)
+    {
+        Solution s;
+        using InputType = ListNode*;
+        using RetsultType = bool;
+
+        InputType head = ListHelper::create({ 1 });
+        InputType tail = ListHelper::get_tail(head);
+        InputType input = ListHelper::add_loop(head, tail, -1);
+
+        RetsultType result = s.hasCycle(input);
+        RetsultType expect = false;
+        ASSERT_EQ(result, expect);
+
+        // FIXME: Can not remove a list with loop so far.
+        // ListHelper::remove(head);
+    }
+} // namespace p_curated_linkedlist_141_linked_list_cycle
+
 #include "curated_array_152_max_product_subarray.cpp"
 
 namespace p_curated_array_152_max_product_subarray
