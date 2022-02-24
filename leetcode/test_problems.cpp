@@ -1596,6 +1596,50 @@ namespace p_curated_dp_55_jump_game
     }
 } // namespace p_curated_dp_55_jump_game
 
+#include "curated_interval_56_merge_intervals.cpp"
+
+namespace p_curated_interval_56_merge_intervals
+{
+    using Solution = Solution;
+
+    TEST(test__curated_interval_56_merge_intervals, Case_1)
+    {
+        Solution s;
+        using InputType = std::vector<std::vector<int>>;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        InputType input = { {1, 3}, {2, 6}, {8, 10}, {15, 18} };
+        RetsultType result = s.merge(input);
+        RetsultType expect = { {1, 6}, {8, 10}, {15, 18} };
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_interval_56_merge_intervals, Case_2)
+    {
+        Solution s;
+        using InputType = std::vector<std::vector<int>>;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        InputType input = { {1, 4}, {4, 5} };
+        RetsultType result = s.merge(input);
+        RetsultType expect = { {1, 5} };
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_interval_56_merge_intervals, Case_Failure_1)
+    {
+        Solution s;
+        using InputType = std::vector<std::vector<int>>;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        InputType input = { {1, 4}, {2, 3} };
+        RetsultType result = s.merge(input);
+        RetsultType expect = { {1, 4} };
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_interval_56_merge_intervals
+
+
 #include "curated_interval_57_insert_interval.cpp"
 
 namespace p_curated_interval_57_insert_interval
