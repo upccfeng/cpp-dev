@@ -3386,6 +3386,109 @@ namespace p_curated_graph_417_pacific_atlantic_water_flow
     }
 } // namespace p_curated_graph_417_pacific_atlantic_water_flow
 
+#include "curated_interval_435_non_overlapping_intervals.cpp"
+
+namespace p_curated_interval_435_non_overlapping_intervals
+{
+    using Solution = Solution;
+
+    TEST(test__curated_interval_435_non_overlapping_intervals, Case_1)
+    {
+        Solution s;
+        using InputType = std::vector<std::vector<int>>;
+        using RetsultType = int;
+
+        InputType input = { {1, 2}, {2, 3}, {3, 4}, {1, 3} };
+        RetsultType result = s.eraseOverlapIntervals(input);
+        RetsultType expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_interval_435_non_overlapping_intervals, Case_2)
+    {
+        Solution s;
+        using InputType = std::vector<std::vector<int>>;
+        using RetsultType = int;
+
+        InputType input = { {1, 2}, {1, 2}, {1, 2} };
+        RetsultType result = s.eraseOverlapIntervals(input);
+        RetsultType expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_interval_435_non_overlapping_intervals, Case_3)
+    {
+        Solution s;
+        using InputType = std::vector<std::vector<int>>;
+        using RetsultType = int;
+
+        InputType input = { {1, 2}, {2, 3} };
+        RetsultType result = s.eraseOverlapIntervals(input);
+        RetsultType expect = 0;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_interval_435_non_overlapping_intervals, Case_Customize_1)
+    {
+        Solution s;
+        using InputType = std::vector<std::vector<int>>;
+        using RetsultType = int;
+
+        InputType input = { {1, 2}, {3, 10}, {3, 5}, {6, 9}, {11, 15} };
+        RetsultType result = s.eraseOverlapIntervals(input);
+        RetsultType expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_interval_435_non_overlapping_intervals, Case_Customize_2)
+    {
+        Solution s;
+        using InputType = std::vector<std::vector<int>>;
+        using RetsultType = int;
+
+        InputType input = { {1, 2}, {3, 5}, {3, 10}, {6, 9}, {11, 15} };
+        RetsultType result = s.eraseOverlapIntervals(input);
+        RetsultType expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_interval_435_non_overlapping_intervals, Case_Customize_3)
+    {
+        Solution s;
+        using InputType = std::vector<std::vector<int>>;
+        using RetsultType = int;
+
+        InputType input = { {1, 10}, {3, 5}, {3, 10}, {6, 9}, {11, 15} };
+        RetsultType result = s.eraseOverlapIntervals(input);
+        RetsultType expect = 2;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_interval_435_non_overlapping_intervals, Case_Customize_4)
+    {
+        Solution s;
+        using InputType = std::vector<std::vector<int>>;
+        using RetsultType = int;
+
+        InputType input = { {-50, 12}, {8, 50}, {25, 70}, {80, 90} };
+        RetsultType result = s.eraseOverlapIntervals(input);
+        RetsultType expect = 1;
+        ASSERT_EQ(result, expect);
+    }
+
+    TEST(test__curated_interval_435_non_overlapping_intervals, Case_Failure_1)
+    {
+        Solution s;
+        using InputType = std::vector<std::vector<int>>;
+        using RetsultType = int;
+
+        InputType input = { {-52, 31}, {-73, -26}, {82, 97}, {-65, -11}, {-62, -49}, {95, 99}, {58, 95}, {-31, 49}, {66, 98}, {-63, 2}, {30, 47}, {-40, -26} };
+        RetsultType result = s.eraseOverlapIntervals(input);
+        RetsultType expect = 7;
+        ASSERT_EQ(result, expect);
+    }
+} // namespace p_curated_interval_435_non_overlapping_intervals
+
 #include "461_daily.cpp"
 
 namespace p461

@@ -79,7 +79,7 @@ for taking in intervals:
 return ans
 
 ## Time Complexity:
-BigO(n * n)
+BigO(n * log(n))
 
 ## Space Complexity:
 BigO(n)
