@@ -602,48 +602,68 @@ namespace p17
     }
 } // namespace p17
 
-#include "19.cpp"
+#include "curated_linkedlist_19_remove_nth_node_from_end_of_list.cpp"
 
-namespace p19
+namespace p_curated_linkedlist_19_remove_nth_node_from_end_of_list
 {
     using Solution = Solution;
 
-    TEST(test_19, Case_1)
+    TEST(test__curated_linkedlist_19_remove_nth_node_from_end_of_list, Case_1)
     {
         Solution s;
-        auto input = ListHelper::create({ 1,2,3,4,5 });
-        auto result = std::shared_ptr<ListNode>(s.removeNthFromEnd(input, 2), ListHelper::remove);
-        auto expect = ListHelper::create({ 1,2,3,5 });
-        ASSERT_THAT(ListHelper::compare(expect, result), testing::Eq(true));
+        using InputType_1 = ListNode*;
+        using InputType_2 = int;
+        using RetsultType = ListNode*;
+
+        InputType_1 input_head = ListHelper::create({ 1,2,3,4,5 });
+        InputType_2 input_n = 2;
+        RetsultType result = s.removeNthFromEnd(input_head, input_n);
+        RetsultType expect = ListHelper::create({ 1,2,3,5 });
+        ASSERT_THAT(ListHelper::compare(result, expect), Eq(true));
     }
 
-    TEST(test_19, Case_2)
+    TEST(test__curated_linkedlist_19_remove_nth_node_from_end_of_list, Case_2)
     {
         Solution s;
-        auto input = ListHelper::create({ 1 });
-        auto result = std::shared_ptr<ListNode>(s.removeNthFromEnd(input, 1), ListHelper::remove);
-        auto expect = ListHelper::create({});
-        ASSERT_THAT(ListHelper::compare(expect, result), testing::Eq(true));
+        using InputType_1 = ListNode*;
+        using InputType_2 = int;
+        using RetsultType = ListNode*;
+
+        InputType_1 input_head = ListHelper::create({ 1 });
+        InputType_2 input_n = 1;
+        RetsultType result = s.removeNthFromEnd(input_head, input_n);
+        RetsultType expect = ListHelper::create({});
+        ASSERT_THAT(ListHelper::compare(result, expect), Eq(true));
     }
 
-    TEST(test_19, Case_3)
+    TEST(test__curated_linkedlist_19_remove_nth_node_from_end_of_list, Case_3)
     {
         Solution s;
-        auto input = ListHelper::create({ 1,2 });
-        auto result = std::shared_ptr<ListNode>(s.removeNthFromEnd(input, 1), ListHelper::remove);
-        auto expect = ListHelper::create({ 1 });
-        ASSERT_THAT(ListHelper::compare(expect, result), testing::Eq(true));
+        using InputType_1 = ListNode*;
+        using InputType_2 = int;
+        using RetsultType = ListNode*;
+
+        InputType_1 input_head = ListHelper::create({ 1, 2 });
+        InputType_2 input_n = 1;
+        RetsultType result = s.removeNthFromEnd(input_head, input_n);
+        RetsultType expect = ListHelper::create({ 1 });
+        ASSERT_THAT(ListHelper::compare(result, expect), Eq(true));
     }
 
-    TEST(test_19, Case_Customer_1)
+    TEST(test__curated_linkedlist_19_remove_nth_node_from_end_of_list, Case_Failure_1)
     {
         Solution s;
-        auto input = ListHelper::create({ 1,2 });
-        auto result = std::shared_ptr<ListNode>(s.removeNthFromEnd(input, 2), ListHelper::remove);
-        auto expect = ListHelper::create({ 2 });
-        ASSERT_THAT(ListHelper::compare(expect, result), testing::Eq(true));
+        using InputType_1 = ListNode*;
+        using InputType_2 = int;
+        using RetsultType = ListNode*;
+
+        InputType_1 input_head = ListHelper::create({ 1, 2 });
+        InputType_2 input_n = 2;
+        RetsultType result = s.removeNthFromEnd(input_head, input_n);
+        RetsultType expect = ListHelper::create({ 2 });
+        ASSERT_THAT(ListHelper::compare(result, expect), Eq(true));
     }
-} // namespace p19
+} // namespace p_curated_linkedlist_19_remove_nth_node_from_end_of_list
 
 #include "20.cpp"
 
