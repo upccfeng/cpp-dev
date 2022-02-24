@@ -25,6 +25,7 @@ ListNode* ListHelper::create(std::vector<int> elements)
 
 void ListHelper::remove(ListNode* head)
 {
+    // FIXME: Handle the exist loop case.
     while (head)
     {
         ListNode* current = head;
@@ -47,6 +48,43 @@ bool ListHelper::compare(ListNode* lhs, ListNode* rhs)
     }
 
     return rhs == nullptr;
+}
+
+ListNode* ListHelper::get_tail(ListNode* head)
+{
+    ListNode* pre = head;
+    while (head)
+    {
+        pre = head;
+        head = head->next;
+    }
+
+    return pre;
+}
+
+ListNode* ListHelper::add_loop(ListNode* head, ListNode* taking, int pos)
+{
+    ListNode* tail = get_tail(head);
+
+    int cnt = 0;
+    ListNode* it = head;
+    while (it)
+    {
+        if (cnt == pos)
+        {
+            taking->next = it;
+        }
+
+        if (it == tail)
+        {
+            break;
+        }
+
+        it = it->next;
+        cnt++;
+    }
+
+    return head;
 }
 
 bool ListHelper::compare(ListNode* lhs, const std::vector<int>& rhs_v)
