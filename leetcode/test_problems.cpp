@@ -742,13 +742,13 @@ namespace p20
     }
 } // namespace p20
 
-#include "21.cpp"
+#include "curated_linkedlist_21_sorted_lists.cpp"
 
-namespace p21
+namespace p_curated_linkedlist_21_sorted_lists
 {
     using Solution = Solution;
 
-    TEST(test_21, Case_1)
+    TEST(test__curated_linkedlist_21_sorted_lists, Case_1)
     {
         Solution s;
         auto input_1 = ListHelper::create({ 1,2,4 });
@@ -758,7 +758,7 @@ namespace p21
         ASSERT_THAT(ListHelper::compare(expect, result), testing::Eq(true));
     }
 
-    TEST(test_21, Case_2)
+    TEST(test__curated_linkedlist_21_sorted_lists, Case_2)
     {
         Solution s;
         auto input_1 = ListHelper::create({});
@@ -768,7 +768,7 @@ namespace p21
         ASSERT_THAT(ListHelper::compare(expect, result), testing::Eq(true));
     }
 
-    TEST(test_21, Case_3)
+    TEST(test__curated_linkedlist_21_sorted_lists, Case_3)
     {
         Solution s;
         auto input_1 = ListHelper::create({});
@@ -778,7 +778,7 @@ namespace p21
         ASSERT_THAT(ListHelper::compare(expect, result), testing::Eq(true));
     }
 
-    TEST(test_21, Case_Customer_1)
+    TEST(test__curated_linkedlist_21_sorted_lists, Case_Customer_1)
     {
         Solution s;
         auto input_1 = ListHelper::create({ 1,2 });
@@ -788,7 +788,7 @@ namespace p21
         ASSERT_THAT(ListHelper::compare(expect, result), testing::Eq(true));
     }
 
-    TEST(test_21, Case_Customer_2)
+    TEST(test__curated_linkedlist_21_sorted_lists, Case_Customer_2)
     {
         Solution s;
         auto input_1 = ListHelper::create({ 1,2 });
@@ -798,7 +798,7 @@ namespace p21
         ASSERT_THAT(ListHelper::compare(expect, result), testing::Eq(true));
     }
 
-    TEST(test_21, Case_Customer_3)
+    TEST(test__curated_linkedlist_21_sorted_lists, Case_Customer_3)
     {
         Solution s;
         auto input_1 = ListHelper::create({ 1,2,3 });
@@ -808,7 +808,7 @@ namespace p21
         ASSERT_THAT(ListHelper::compare(expect, result), testing::Eq(true));
     }
 
-    TEST(test_21, Case_Customer_4)
+    TEST(test__curated_linkedlist_21_sorted_lists, Case_Customer_4)
     {
         Solution s;
         auto input_1 = ListHelper::create({ 1 });
@@ -817,7 +817,7 @@ namespace p21
         auto expect = ListHelper::create({ 1,2,3,4 });
         ASSERT_THAT(ListHelper::compare(expect, result), testing::Eq(true));
     }
-} // namespace p21
+} // namespace p_curated_linkedlist_21_sorted_lists
 
 #include "22.cpp"
 
