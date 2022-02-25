@@ -38,13 +38,12 @@ namespace pXX
     TEST(test_XX, Case_1)
     {
         Solution s;
-        using InputType = std::vector<int>;
         using RetsultType = int;
 
-        InputType input = { 0 };
+        std::vector<int> input = { 0 };
         RetsultType result = s.xx(input);
         RetsultType expect = 0;
-        ASSERT_EQ(result, expect);
+        ASSERT_THAT(result == expect, Eq(true));
     }
 } // namespace pXX
 
