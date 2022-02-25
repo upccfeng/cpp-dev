@@ -2216,6 +2216,43 @@ namespace p_curated_linkedlist_141_linked_list_cycle
     }
 } // namespace p_curated_linkedlist_141_linked_list_cycle
 
+#include "curated_linkedlist_143_reorder_list.cpp"
+
+namespace p_curated_linkedlist_143_reorder_list
+{
+    using Solution = Solution;
+
+    TEST(test__curated_linkedlist_143_reorder_list, Case_1)
+    {
+        Solution s;
+        using InputType = ListNode*;
+        using RetsultType = ListNode*;
+
+        InputType input = ListHelper::create({ 1,2,3,4 });
+        s.reorderList(input);
+        RetsultType expect = ListHelper::create({ 1,4,2,3 });
+        ASSERT_THAT(ListHelper::compare(input, expect), Eq(true));
+
+        ListHelper::remove(input);
+        ListHelper::remove(expect);
+    }
+
+    TEST(test__curated_linkedlist_143_reorder_list, Case_2)
+    {
+        Solution s;
+        using InputType = ListNode*;
+        using RetsultType = ListNode*;
+
+        InputType input = ListHelper::create({ 1,2,3,4,5 });
+        s.reorderList(input);
+        RetsultType expect = ListHelper::create({ 1,5,2,4,3 });
+        ASSERT_THAT(ListHelper::compare(input, expect), Eq(true));
+
+        ListHelper::remove(input);
+        ListHelper::remove(expect);
+    }
+} // namespace p_curated_linkedlist_143_reorder_list
+
 #include "curated_array_152_max_product_subarray.cpp"
 
 namespace p_curated_array_152_max_product_subarray
