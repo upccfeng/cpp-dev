@@ -1621,6 +1621,57 @@ namespace p_curated_array_53_max_sub_array
     }
 } // namespace p_curated_array_53_max_sub_array
 
+#include "curated_matrix_54_spiral_matrix.cpp"
+
+namespace p_curated_matrix_54_spiral_matrix
+{
+    using Solution = Solution;
+
+    TEST(test__curated_matrix_54_spiral_matrix, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<std::vector<int>> input = { {1, 2, 3}, {4, 5, 6}, {7, 8, 9} };
+        RetsultType result = s.spiralOrder(input);
+        RetsultType expect = { 1, 2, 3, 6, 9, 8, 7, 4, 5 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_matrix_54_spiral_matrix, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<std::vector<int>> input = { {1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12} };
+        RetsultType result = s.spiralOrder(input);
+        RetsultType expect = { 1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_matrix_54_spiral_matrix, Case_Customize_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<std::vector<int>> input = { {1, 2, 3, 4} };
+        RetsultType result = s.spiralOrder(input);
+        RetsultType expect = { 1, 2, 3, 4 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_matrix_54_spiral_matrix, Case_Customize_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<std::vector<int>> input = { {1}, {2}, {3}, {4} };
+        RetsultType result = s.spiralOrder(input);
+        RetsultType expect = { 1, 2, 3, 4 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_curated_matrix_54_spiral_matrix
+
 #include "curated_dp_55_jump_game.cpp"
 
 namespace p_curated_dp_55_jump_game
