@@ -1533,6 +1533,37 @@ namespace p47
     }
 } // namespace p47
 
+#include "curated_matrix_48_rotate_image.cpp"
+
+namespace p_curated_matrix_48_rotate_image
+{
+    using Solution = Solution;
+
+    TEST(test__curated_matrix_48_rotate_image, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        RetsultType input = { {1, 2, 3}, {4, 5, 6}, {7, 8, 9} };
+        s.rotate(input);
+        RetsultType& result = input;
+        RetsultType expect = { {7, 4, 1}, {8, 5, 2}, {9, 6, 3} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_matrix_48_rotate_image, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        RetsultType input = { {5, 1, 9, 11}, {2, 4, 8, 10}, {13, 3, 6, 7}, {15, 14, 12, 16} };
+        s.rotate(input);
+        RetsultType& result = input;
+        RetsultType expect = { {15, 13, 2, 5}, {14, 3, 4, 1}, {12, 6, 8, 9}, {16, 7, 10, 11} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_curated_matrix_48_rotate_image
+
 #include "52_daily.cpp"
 
 namespace p52_daily
