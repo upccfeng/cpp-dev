@@ -2013,6 +2013,85 @@ namespace p_curated_matrix_73_set_matrix_zeros
     }
 } // namespace p_curated_matrix_73_set_matrix_zeros
 
+#include "cureate_matrix_79_word_search.cpp"
+
+namespace p_cureate_matrix_79_word_search
+{
+    using Solution = Solution;
+
+    TEST(test__cureate_matrix_79_word_search, Case_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::vector<std::vector<char>> input_board = { {'A', 'B', 'C', 'E'}, {'S', 'F', 'C', 'S'}, {'A', 'D', 'E', 'E'} };
+        std::string input_word = "ABCCED";
+        RetsultType result = s.exist(input_board, input_word);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__cureate_matrix_79_word_search, Case_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::vector<std::vector<char>> input_board = { {'A', 'B', 'C', 'E'}, {'S', 'F', 'C', 'S'}, {'A', 'D', 'E', 'E'} };
+        std::string input_word = "SEE";
+        RetsultType result = s.exist(input_board, input_word);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__cureate_matrix_79_word_search, Case_3)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::vector<std::vector<char>> input_board = { {'A', 'B', 'C', 'E'}, {'S', 'F', 'C', 'S'}, {'A', 'D', 'E', 'E'} };
+        std::string input_word = "ABCB";
+        RetsultType result = s.exist(input_board, input_word);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__cureate_matrix_79_word_search, Case_Customize_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::vector<std::vector<char>> input_board = { {'A'} };
+        std::string input_word = "A";
+        RetsultType result = s.exist(input_board, input_word);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__cureate_matrix_79_word_search, Case_Customize_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::vector<std::vector<char>> input_board = { {'A'} };
+        std::string input_word = "B";
+        RetsultType result = s.exist(input_board, input_word);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__cureate_matrix_79_word_search, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::vector<std::vector<char>> input_board = { {'A', 'B', 'C', 'E'}, {'S', 'F', 'E', 'S'}, {'A', 'D', 'E', 'E'} };
+        std::string input_word = "ABCESEEEFS";
+        RetsultType result = s.exist(input_board, input_word);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_cureate_matrix_79_word_search
+
 #include "curated_dp_91_decode_ways.cpp"
 
 namespace p_curated_dp_91_decode_ways
