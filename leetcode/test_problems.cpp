@@ -1898,6 +1898,39 @@ namespace p_curated_dp_70_climbing_stairts
     }
 } // namespace p_curated_dp_70_climbing_stairts
 
+#include "curated_matrix_73_set_matrix_zeros.cpp"
+
+namespace p_curated_matrix_73_set_matrix_zeros
+{
+    using Solution = Solution;
+
+    TEST(test__curated_matrix_73_set_matrix_zeros, Case_1)
+    {
+        Solution s;
+        using InputType = std::vector<std::vector<int>>&;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        std::vector<std::vector<int>> input = { {1, 1, 1}, { 1, 0, 1 }, { 1, 1, 1 } };
+        s.setZeroes(input);
+        InputType result = input;
+        RetsultType expect = { {1, 0, 1}, {0, 0, 0}, {1, 0, 1} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_matrix_73_set_matrix_zeros, Case_2)
+    {
+        Solution s;
+        using InputType = std::vector<std::vector<int>>&;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        std::vector<std::vector<int>> input = { {0, 1, 2, 0}, {3, 4, 5, 2}, {1, 3, 1, 5} };
+        s.setZeroes(input);
+        InputType result = input;
+        RetsultType expect = { {0, 0, 0, 0}, {0, 4, 5, 0}, {0, 3, 1, 0} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_curated_matrix_73_set_matrix_zeros
+
 #include "curated_dp_91_decode_ways.cpp"
 
 namespace p_curated_dp_91_decode_ways
