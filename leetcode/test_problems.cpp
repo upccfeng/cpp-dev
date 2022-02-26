@@ -43,6 +43,57 @@ namespace p_curated_array_1_twosum
     }
 } // namespace p_curated_array_1_twosum
 
+#include "curated_string_3_longest_substring_without_repeating_characters.cpp"
+
+namespace p_curated_string_3_longest_substring_without_repeating_characters
+{
+    using Solution = Solution;
+
+    TEST(test__curated_string_3_longest_substring_without_repeating_characters, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input = "abcabcbb";
+        RetsultType result = s.lengthOfLongestSubstring(input);
+        RetsultType expect = 3;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_string_3_longest_substring_without_repeating_characters, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input = "bbbbb";
+        RetsultType result = s.lengthOfLongestSubstring(input);
+        RetsultType expect = 1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_string_3_longest_substring_without_repeating_characters, Case_3)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input = "pwwkew";
+        RetsultType result = s.lengthOfLongestSubstring(input);
+        RetsultType expect = 3;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_string_3_longest_substring_without_repeating_characters, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input = "abba";
+        RetsultType result = s.lengthOfLongestSubstring(input);
+        RetsultType expect = 2;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_curated_string_3_longest_substring_without_repeating_characters
+
 #include "7.cpp"
 
 namespace p7
@@ -2013,13 +2064,13 @@ namespace p_curated_matrix_73_set_matrix_zeros
     }
 } // namespace p_curated_matrix_73_set_matrix_zeros
 
-#include "cureate_matrix_79_word_search.cpp"
+#include "curated_matrix_79_word_search.cpp"
 
-namespace p_cureate_matrix_79_word_search
+namespace p_curated_matrix_79_word_search
 {
     using Solution = Solution;
 
-    TEST(test__cureate_matrix_79_word_search, Case_1)
+    TEST(test__curated_matrix_79_word_search, Case_1)
     {
         Solution s;
         using RetsultType = bool;
@@ -2031,7 +2082,7 @@ namespace p_cureate_matrix_79_word_search
         ASSERT_THAT(result == expect, Eq(true));
     }
 
-    TEST(test__cureate_matrix_79_word_search, Case_2)
+    TEST(test__curated_matrix_79_word_search, Case_2)
     {
         Solution s;
         using RetsultType = bool;
@@ -2043,7 +2094,7 @@ namespace p_cureate_matrix_79_word_search
         ASSERT_THAT(result == expect, Eq(true));
     }
 
-    TEST(test__cureate_matrix_79_word_search, Case_3)
+    TEST(test__curated_matrix_79_word_search, Case_3)
     {
         Solution s;
         using RetsultType = bool;
@@ -2055,7 +2106,7 @@ namespace p_cureate_matrix_79_word_search
         ASSERT_THAT(result == expect, Eq(true));
     }
 
-    TEST(test__cureate_matrix_79_word_search, Case_Customize_1)
+    TEST(test__curated_matrix_79_word_search, Case_Customize_1)
     {
         Solution s;
         using RetsultType = bool;
@@ -2067,7 +2118,7 @@ namespace p_cureate_matrix_79_word_search
         ASSERT_THAT(result == expect, Eq(true));
     }
 
-    TEST(test__cureate_matrix_79_word_search, Case_Customize_2)
+    TEST(test__curated_matrix_79_word_search, Case_Customize_2)
     {
         Solution s;
         using RetsultType = bool;
@@ -2079,7 +2130,7 @@ namespace p_cureate_matrix_79_word_search
         ASSERT_THAT(result == expect, Eq(true));
     }
 
-    TEST(test__cureate_matrix_79_word_search, Case_Failure_1)
+    TEST(test__curated_matrix_79_word_search, Case_Failure_1)
     {
         Solution s;
         using RetsultType = bool;
@@ -2090,7 +2141,7 @@ namespace p_cureate_matrix_79_word_search
         RetsultType expect = true;
         ASSERT_THAT(result == expect, Eq(true));
     }
-} // namespace p_cureate_matrix_79_word_search
+} // namespace p_curated_matrix_79_word_search
 
 #include "curated_dp_91_decode_ways.cpp"
 

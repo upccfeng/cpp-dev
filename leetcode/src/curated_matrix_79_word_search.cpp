@@ -1,7 +1,7 @@
 #include <vector>
 #include <string>
 
-namespace p_cureate_matrix_79_word_search
+namespace p_curated_matrix_79_word_search
 {
     class Solution
     {
@@ -67,7 +67,7 @@ namespace p_cureate_matrix_79_word_search
             return false;
         }
     };
-} // namespace p_cureate_matrix_79_word_search
+} // namespace p_curated_matrix_79_word_search
 
 /*
 # Problem:
