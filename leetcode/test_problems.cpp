@@ -3853,6 +3853,73 @@ namespace p_curated_graph_417_pacific_atlantic_water_flow
     }
 } // namespace p_curated_graph_417_pacific_atlantic_water_flow
 
+#include "curated_string_424_longest_repeating_character_replacement.cpp"
+
+namespace p_curated_string_424_longest_repeating_character_replacement
+{
+    using Solution = Solution;
+
+    TEST(test__curated_string_424_longest_repeating_character_replacement, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input_s = "ABAB";
+        int input_k = 2;
+        RetsultType result = s.characterReplacement(input_s, input_k);
+        RetsultType expect = 4;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_string_424_longest_repeating_character_replacement, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input_s = "AABABBA";
+        int input_k = 1;
+        RetsultType result = s.characterReplacement(input_s, input_k);
+        RetsultType expect = 4;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_string_424_longest_repeating_character_replacement, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input_s = "BAAA";
+        int input_k = 0;
+        RetsultType result = s.characterReplacement(input_s, input_k);
+        RetsultType expect = 3;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_string_424_longest_repeating_character_replacement, Case_Failure_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input_s = "ABCDE";
+        int input_k = 1;
+        RetsultType result = s.characterReplacement(input_s, input_k);
+        RetsultType expect = 2;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_string_424_longest_repeating_character_replacement, Case_Failure_3)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input_s = "KRSCDCSONAJNHLBMDQGIFCPEKPOHQIHLTDIQGEKLRLCQNBOHNDQGHJPNDQPERNFSSSRDEQLFPCCCARFMDLHADJADAGNNSBNCJQOF";
+        int input_k = 4;
+        RetsultType result = s.characterReplacement(input_s, input_k);
+        RetsultType expect = 7;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_curated_string_424_longest_repeating_character_replacement
+
 #include "curated_interval_435_non_overlapping_intervals.cpp"
 
 namespace p_curated_interval_435_non_overlapping_intervals
