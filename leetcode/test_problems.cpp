@@ -2064,6 +2064,61 @@ namespace p_curated_matrix_73_set_matrix_zeros
     }
 } // namespace p_curated_matrix_73_set_matrix_zeros
 
+#include "curated_string_76_minimum_window_substring.cpp"
+
+namespace p_curated_string_76_minimum_window_substring
+{
+    using Solution = Solution;
+
+    TEST(test__curated_string_76_minimum_window_substring, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        std::string input_s = "ADOBECODEBANC";
+        std::string input_t = "ACB";
+        RetsultType result = s.minWindow(input_s, input_t);
+        RetsultType expect = "BANC";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_string_76_minimum_window_substring, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        std::string input_s = "a";
+        std::string input_t = "a";
+        RetsultType result = s.minWindow(input_s, input_t);
+        RetsultType expect = "a";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_string_76_minimum_window_substring, Case_3)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        std::string input_s = "a";
+        std::string input_t = "aa";
+        RetsultType result = s.minWindow(input_s, input_t);
+        RetsultType expect = "";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_string_76_minimum_window_substring, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        std::string input_s = "aaabbaaba";
+        std::string input_t = "abbb";
+        RetsultType result = s.minWindow(input_s, input_t);
+        RetsultType expect = "bbaab";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_curated_string_76_minimum_window_substring
+
 #include "curated_matrix_79_word_search.cpp"
 
 namespace p_curated_matrix_79_word_search
