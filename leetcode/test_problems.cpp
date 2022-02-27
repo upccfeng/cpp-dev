@@ -1615,6 +1615,46 @@ namespace p_curated_matrix_48_rotate_image
     }
 } // namespace p_curated_matrix_48_rotate_image
 
+#include "curated_string_49_group_anagrams.cpp"
+
+namespace p_curated_string_49_group_anagrams
+{
+    using Solution = Solution;
+
+    TEST(test__curated_string_49_group_anagrams, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<std::string>>;
+
+        std::vector<std::string> input = { "eat","tea","tan","ate","nat","bat" };
+        std::vector<std::vector<std::string>> result = s.groupAnagrams(input);
+        RetsultType expect = { {"tan", "nat"}, {"eat", "tea", "ate"}, {"bat"} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_string_49_group_anagrams, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<std::string>>;
+
+        std::vector<std::string> input = { "" };
+        std::vector<std::vector<std::string>> result = s.groupAnagrams(input);
+        RetsultType expect = { {""} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_string_49_group_anagrams, Case_3)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<std::string>>;
+
+        std::vector<std::string> input = { "a" };
+        std::vector<std::vector<std::string>> result = s.groupAnagrams(input);
+        RetsultType expect = { {"a"} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_curated_string_49_group_anagrams
+
 #include "52_daily.cpp"
 
 namespace p52_daily
