@@ -3316,6 +3316,49 @@ namespace p_curated_array_238_product_of_array_except_self
     }
 } // namespace p_curated_array_238_product_of_array_except_self
 
+#include "curated_string_242_valid_anagram.cpp"
+
+namespace p_curated_string_242_valid_anagram
+{
+    using Solution = Solution;
+
+    TEST(test__curated_string_242_valid_anagram, Case_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input_s = "anagram";
+        std::string input_t = "nagaram";
+        RetsultType result = s.isAnagram(input_s, input_t);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_string_242_valid_anagram, Case_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input_s = "rat";
+        std::string input_t = "car";
+        RetsultType result = s.isAnagram(input_s, input_t);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_string_242_valid_anagram, Case_Customize_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input_s = "ra";
+        std::string input_t = "car";
+        RetsultType result = s.isAnagram(input_s, input_t);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_curated_string_242_valid_anagram
+
 #include "curated_binary_268_missing_number.cpp"
 
 namespace p_curated_binary_268_missing_number
