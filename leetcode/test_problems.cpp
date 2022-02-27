@@ -5129,6 +5129,146 @@ namespace p_2182_weekly_contest_281
     }
 } // namespace p_2182_weekly_contest_281
 
+#include "2185_weekly_contest_282.cpp"
+
+namespace p_2185_weekly_contest_282
+{
+    using Solution = Solution;
+
+    TEST(test__2185_weekly_contest_282, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<std::string> input_words = { "pay", "attention", "practice", "attend" };
+        std::string input_pref = "at";
+        RetsultType result = s.prefixCount(input_words, input_pref);
+        RetsultType expect = 2;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2185_weekly_contest_282, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<std::string> input_words = { "leetcode","win","loops","success" };
+        std::string input_pref = "code";
+        RetsultType result = s.prefixCount(input_words, input_pref);
+        RetsultType expect = 0;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_2185_weekly_contest_282
+
+#include "2186_weekly_contest_282.cpp"
+
+namespace p_2186_weekly_contest_282
+{
+    using Solution = Solution;
+
+    TEST(test__2186_weekly_contest_282, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input_s = "leetcode";
+        std::string input_t = "coats";
+        RetsultType result = s.minSteps(input_s, input_t);
+        RetsultType expect = 7;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2186_weekly_contest_282, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input_s = "night";
+        std::string input_t = "thing";
+        RetsultType result = s.minSteps(input_s, input_t);
+        RetsultType expect = 0;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_2186_weekly_contest_282
+
+#include "2187_weekly_contest_282.cpp"
+
+namespace p_2187_weekly_contest_282
+{
+    using Solution = Solution;
+
+    TEST(test__2187_weekly_contest_282, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input_time = { 1, 2, 3 };
+        int input_totalTrips = 5;
+        RetsultType result = s.minimumTime(input_time, input_totalTrips);
+        RetsultType expect = 3;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2187_weekly_contest_282, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input_time = { 2 };
+        int input_totalTrips = 1;
+        RetsultType result = s.minimumTime(input_time, input_totalTrips);
+        RetsultType expect = 2;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2187_weekly_contest_282, Case_Customize_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input_time = { 1, 2, 3, 4, 5, 6 };
+        int input_totalTrips = 148;
+        RetsultType result = s.minimumTime(input_time, input_totalTrips);
+        RetsultType expect = 61;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2187_weekly_contest_282, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input_time = { 3, 3, 8 };
+        int input_totalTrips = 6;
+        RetsultType result = s.minimumTime(input_time, input_totalTrips);
+        RetsultType expect = 9;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2187_weekly_contest_282, Case_Failure_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input_time = { 39, 82, 69, 37, 78, 14, 93, 36, 66, 61, 13, 58, 57, 12, 70, 14, 67, 75, 91, 1, 34, 68, 73, 50, 13, 40, 81, 21, 79, 12, 35, 18, 71, 43, 5, 50, 37, 16, 15, 6, 61, 7, 87, 43, 27, 62, 95, 45, 82, 100, 15, 74, 33, 95, 38, 88, 91, 47, 22, 82, 51, 19, 10, 24, 87, 38, 5, 91, 10, 36, 56, 86, 48, 92, 10, 26, 63, 2, 50, 88, 9, 83, 20, 42, 59, 55, 8, 15, 48, 25 };
+        int input_totalTrips = 4187;
+        RetsultType result = s.minimumTime(input_time, input_totalTrips);
+        RetsultType expect = 858;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2187_weekly_contest_282, Case_3)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input_time = { 5, 10, 10 };
+        int input_totalTrips = 9;
+        RetsultType result = s.minimumTime(input_time, input_totalTrips);
+        RetsultType expect = 25;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_2187_weekly_contest_282
 
 #include "rekuten210221_1.cpp"
 
