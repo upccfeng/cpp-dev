@@ -2271,6 +2271,90 @@ namespace p_curated_array_121_bestprofit
     }
 } // namespace p_curated_array_121_bestprofit
 
+#include "curated_string_125_valid_palindrome.cpp"
+
+namespace p_curated_string_125_valid_palindrome
+{
+    using Solution = Solution;
+
+    TEST(test__curated_string_125_valid_palindrome, Case_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input = "A man, a plan, a canal: Panama";
+        RetsultType result = s.isPalindrome(input);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_string_125_valid_palindrome, Case_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input = "race a car";
+        RetsultType result = s.isPalindrome(input);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_string_125_valid_palindrome, Case_3)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input = "";
+        RetsultType result = s.isPalindrome(input);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_string_125_valid_palindrome, Case_Customize_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input = "aa";
+        RetsultType result = s.isPalindrome(input);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_string_125_valid_palindrome, Case_Customize_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input = "ab";
+        RetsultType result = s.isPalindrome(input);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_string_125_valid_palindrome, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input = "a";
+        RetsultType result = s.isPalindrome(input);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_string_125_valid_palindrome, Case_Failure_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input = "Marge, let's \"[went].\" I await {news} telegram.";
+        RetsultType result = s.isPalindrome(input);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_curated_string_125_valid_palindrome
+
 #include "curated_graph_128_longest_consecutive_sequence.cpp"
 
 namespace p_curated_graph_128_longest_consecutive_sequence
