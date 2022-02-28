@@ -1,8 +1,7 @@
 #include <stack>
 using namespace std;
 
-#include "common.hpp"
-using namespace common;
+#include "treenode.hpp"
 
 namespace p637_daily
 {

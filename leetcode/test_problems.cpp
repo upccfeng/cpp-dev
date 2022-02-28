@@ -4397,56 +4397,56 @@ namespace p637_daily
     TEST(test_637_daily, Case_1)
     {
         Solution s;
-        TreeNode* input = TreeNode::makeTree({3, 9, 20, -1, -1, 15, 7}, {true, true, true, false, false, true, true}, 3);
+        TreeNode* input = TreeHelper::makeTree({3, 9, 20, -1, -1, 15, 7}, {true, true, true, false, false, true, true}, 3);
         vector<double> result = s.averageOfLevels(input);
         vector<double> expect = {3, 14.5, 11};
         ASSERT_EQ(result, expect);
 
-        TreeNode::freeTree(input);
+        TreeHelper::freeTree(input);
     }
 
     TEST(test_637_daily, Case_2)
     {
         Solution s;
-        TreeNode* input = TreeNode::makeTree({3, 9, 20, 15, 7, -1, -1}, {true, true, true, true, true, false, false}, 3);
+        TreeNode* input = TreeHelper::makeTree({3, 9, 20, 15, 7, -1, -1}, {true, true, true, true, true, false, false}, 3);
         vector<double> result = s.averageOfLevels(input);
         vector<double> expect = {3, 14.5, 11};
         ASSERT_EQ(result, expect);
 
-        TreeNode::freeTree(input);
+        TreeHelper::freeTree(input);
     }
 
     TEST(test_637_daily, Case_3)
     {
         Solution s;
-        TreeNode* input = TreeNode::makeTree({1, -1, 1}, {true, false, true}, 2);
+        TreeNode* input = TreeHelper::makeTree({1, -1, 1}, {true, false, true}, 2);
         vector<double> result = s.averageOfLevels(input);
         vector<double> expect = {1, 1};
         ASSERT_EQ(result, expect);
 
-        TreeNode::freeTree(input);
+        TreeHelper::freeTree(input);
     }
 
     TEST(test_637_daily, Case_4)
     {
         Solution s;
-        TreeNode* input = TreeNode::makeTree({57, 46, 89, -36, -1, -1, -1}, {true, true, true, true, false, false, false}, 3);
+        TreeNode* input = TreeHelper::makeTree({57, 46, 89, -36, -1, -1, -1}, {true, true, true, true, false, false, false}, 3);
         vector<double> result = s.averageOfLevels(input);
         vector<double> expect = {57, 67.5, -36};
         ASSERT_EQ(result, expect);
 
-        TreeNode::freeTree(input);
+        TreeHelper::freeTree(input);
     }
 
     TEST(test_637_daily, Case_5)
     {
         Solution s;
-        TreeNode* input = TreeNode::makeTree({0, 1, -1}, {true, true, false}, 2);
+        TreeNode* input = TreeHelper::makeTree({0, 1, -1}, {true, true, false}, 2);
         vector<double> result = s.averageOfLevels(input);
         vector<double> expect = {0, 1};
         ASSERT_EQ(result, expect);
 
-        TreeNode::freeTree(input);
+        TreeHelper::freeTree(input);
     }
 } // namespace p637_daily
 
