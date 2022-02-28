@@ -258,3 +258,47 @@ TEST_F(TestGraph, create_delete)
 
     GraphHelper::remove(head);
 }
+
+#include "treenode.hpp"
+
+class TestTree : public ::testing::Test
+{
+
+};
+
+TEST_F(TestTree, create_compare)
+{
+    {
+        TreeNode* lhs = TreeHelper::create({ 4,2,7,1,3,6,9 }, {});
+        TreeNode* rhs = TreeHelper::create({ 4,7,2,9,6,3,1 }, {});
+        ASSERT_THAT(TreeHelper::compare(lhs, rhs), testing::Eq(false));
+
+        TreeHelper::remove(lhs);
+        TreeHelper::remove(rhs);
+    }
+
+    {
+        TreeNode* lhs = TreeHelper::create({ 4,2,7,1,3,6,9 }, {});
+        TreeNode* rhs = TreeHelper::create({ 4,2,7,1,3,6,9 }, {});
+        ASSERT_THAT(TreeHelper::compare(lhs, rhs), testing::Eq(true));
+
+        TreeHelper::remove(lhs);
+        TreeHelper::remove(rhs);
+    }
+
+    {
+        TreeNode* lhs = TreeHelper::create({ 4,2,7,1,3,6,9 }, {});
+        std::pair<std::vector<int>, std::vector<bool>> rhs = { { 4,7,2,9,6,3,1 }, {} };
+        ASSERT_THAT(TreeHelper::compare(lhs, rhs), testing::Eq(false));
+
+        TreeHelper::remove(lhs);
+    }
+
+    {
+        TreeNode* lhs = TreeHelper::create({ 4,2,7,1,3,6,9 }, {});
+        std::pair<std::vector<int>, std::vector<bool>> rhs = { { 4,2,7,1,3,6,9 }, {} };
+        ASSERT_THAT(TreeHelper::compare(lhs, rhs), testing::Eq(true));
+
+        TreeHelper::remove(lhs);
+    }
+}

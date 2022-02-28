@@ -3507,6 +3507,55 @@ namespace p_curated_array_217_containduplicate
     }
 } // namespace p_curated_array_217_containduplicate
 
+#include "curated_tree_226_invert_binary_tree.cpp"
+
+namespace p_curated_tree_226_invert_binary_tree
+{
+    using Solution = Solution;
+
+    TEST(test__curated_tree_226_invert_binary_tree, Case_1)
+    {
+        Solution s;
+        using RetsultType = TreeNode*;
+
+        TreeNode* input = TreeHelper::create({ 4,2,7,1,3,6,9 }, {});
+        RetsultType result = s.invertTree(input);
+        RetsultType expect = TreeHelper::create({ 4,7,2,9,6,3,1 }, {});
+        ASSERT_THAT(TreeHelper::compare(result, expect), Eq(true));
+
+        TreeHelper::remove(result);
+        TreeHelper::remove(expect);
+    }
+
+    TEST(test__curated_tree_226_invert_binary_tree, Case_2)
+    {
+        Solution s;
+        using RetsultType = TreeNode*;
+
+        TreeNode* input = TreeHelper::create({ 2,1,3 }, {});
+        RetsultType result = s.invertTree(input);
+        RetsultType expect = TreeHelper::create({ 2,3,1 }, {});
+        ASSERT_THAT(TreeHelper::compare(result, expect), Eq(true));
+
+        TreeHelper::remove(result);
+        TreeHelper::remove(expect);
+    }
+
+    TEST(test__curated_tree_226_invert_binary_tree, Case_3)
+    {
+        Solution s;
+        using RetsultType = TreeNode*;
+
+        TreeNode* input = TreeHelper::create({ }, {});
+        RetsultType result = s.invertTree(input);
+        RetsultType expect = TreeHelper::create({}, {});
+        ASSERT_THAT(TreeHelper::compare(result, expect), Eq(true));
+
+        TreeHelper::remove(result);
+        TreeHelper::remove(expect);
+    }
+} // namespace p_curated_tree_226_invert_binary_tree
+
 #include "curated_array_238_product_of_array_except_self.cpp"
 
 namespace p_curated_array_238_product_of_array_except_self

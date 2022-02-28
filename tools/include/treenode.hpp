@@ -12,7 +12,11 @@ struct TreeNode {
 
 class TreeHelper
 {
+private:
+    static bool TreeHelper::isTheSame(TreeNode* p, TreeNode* q);
 public:
     static TreeNode* create(const std::vector<int>& target, const std::vector<bool>& valid);
     static void remove(TreeNode* head);
+    static bool compare(TreeNode* lhs, TreeNode* rhs);
+    static bool compare(TreeNode* lhs, std::pair<std::vector<int>, std::vector<bool>>& rhs);
 };
