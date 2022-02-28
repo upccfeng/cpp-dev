@@ -4388,6 +4388,107 @@ namespace p540
     }
 } // namespace p540
 
+#include "637_daily.cpp"
+
+namespace p637_daily
+{
+    using Solution = Solution;
+
+    TEST(test_637_daily, Case_1)
+    {
+        Solution s;
+        TreeNode* input = TreeNode::makeTree({3, 9, 20, -1, -1, 15, 7}, {true, true, true, false, false, true, true}, 3);
+        vector<double> result = s.averageOfLevels(input);
+        vector<double> expect = {3, 14.5, 11};
+        ASSERT_EQ(result, expect);
+
+        TreeNode::freeTree(input);
+    }
+
+    TEST(test_637_daily, Case_2)
+    {
+        Solution s;
+        TreeNode* input = TreeNode::makeTree({3, 9, 20, 15, 7, -1, -1}, {true, true, true, true, true, false, false}, 3);
+        vector<double> result = s.averageOfLevels(input);
+        vector<double> expect = {3, 14.5, 11};
+        ASSERT_EQ(result, expect);
+
+        TreeNode::freeTree(input);
+    }
+
+    TEST(test_637_daily, Case_3)
+    {
+        Solution s;
+        TreeNode* input = TreeNode::makeTree({1, -1, 1}, {true, false, true}, 2);
+        vector<double> result = s.averageOfLevels(input);
+        vector<double> expect = {1, 1};
+        ASSERT_EQ(result, expect);
+
+        TreeNode::freeTree(input);
+    }
+
+    TEST(test_637_daily, Case_4)
+    {
+        Solution s;
+        TreeNode* input = TreeNode::makeTree({57, 46, 89, -36, -1, -1, -1}, {true, true, true, true, false, false, false}, 3);
+        vector<double> result = s.averageOfLevels(input);
+        vector<double> expect = {57, 67.5, -36};
+        ASSERT_EQ(result, expect);
+
+        TreeNode::freeTree(input);
+    }
+
+    TEST(test_637_daily, Case_5)
+    {
+        Solution s;
+        TreeNode* input = TreeNode::makeTree({0, 1, -1}, {true, true, false}, 2);
+        vector<double> result = s.averageOfLevels(input);
+        vector<double> expect = {0, 1};
+        ASSERT_EQ(result, expect);
+
+        TreeNode::freeTree(input);
+    }
+} // namespace p637_daily
+
+#include "curated_string_647_palindromic_substrings.cpp"
+
+namespace p_curated_string_647_palindromic_substrings
+{
+    using Solution = Solution;
+
+    TEST(test__curated_string_647_palindromic_substrings, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input = "abc";
+        RetsultType result = s.countSubstrings(input);
+        RetsultType expect = 3;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_string_647_palindromic_substrings, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input = "aaa";
+        RetsultType result = s.countSubstrings(input);
+        RetsultType expect = 6;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_string_647_palindromic_substrings, Case_Customize_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input = "a";
+        RetsultType result = s.countSubstrings(input);
+        RetsultType expect = 1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_curated_string_647_palindromic_substrings
 
 #include "696_daily.cpp"
 
@@ -4450,7 +4551,7 @@ namespace p763
         Solution s;
         string input = "ababcbacadefegdehijhklij";
         auto result = s.partitionLabels(input);
-        vector<int> expect = {9, 7, 8};
+        vector<int> expect = { 9, 7, 8 };
         ASSERT_EQ(result, expect);
     }
 
@@ -4459,7 +4560,7 @@ namespace p763
         Solution s;
         string input = "a";
         auto result = s.partitionLabels(input);
-        vector<int> expect = {1};
+        vector<int> expect = { 1 };
         ASSERT_EQ(result, expect);
     }
 
@@ -4468,7 +4569,7 @@ namespace p763
         Solution s;
         string input = "aaaaa";
         auto result = s.partitionLabels(input);
-        vector<int> expect = {5};
+        vector<int> expect = { 5 };
         ASSERT_EQ(result, expect);
     }
 
@@ -4477,7 +4578,7 @@ namespace p763
         Solution s;
         string input = "aaabbbccc";
         auto result = s.partitionLabels(input);
-        vector<int> expect = {3, 3, 3};
+        vector<int> expect = { 3, 3, 3 };
         ASSERT_EQ(result, expect);
     }
 
@@ -4486,7 +4587,7 @@ namespace p763
         Solution s;
         string input = "aaabbbccca";
         auto result = s.partitionLabels(input);
-        vector<int> expect = {10};
+        vector<int> expect = { 10 };
         ASSERT_EQ(result, expect);
     }
 
@@ -4495,7 +4596,7 @@ namespace p763
         Solution s;
         string input = "aaabbbcccabgkgge";
         auto result = s.partitionLabels(input);
-        vector<int> expect = {11, 4, 1};
+        vector<int> expect = { 11, 4, 1 };
         ASSERT_EQ(result, expect);
     }
 
@@ -4504,72 +4605,10 @@ namespace p763
         Solution s;
         string input = "caedbdedda";
         auto result = s.partitionLabels(input);
-        vector<int> expect = {1, 9};
+        vector<int> expect = { 1, 9 };
         ASSERT_EQ(result, expect);
     }
 } // namespace p763
-
-#include "637_daily.cpp"
-
-namespace p637_daily
-{
-    using Solution = Solution;
-
-    TEST(test_637_daily, Case_1)
-    {
-        Solution s;
-        TreeNode* input = TreeNode::makeTree({3, 9, 20, -1, -1, 15, 7}, {true, true, true, false, false, true, true}, 3);
-        vector<double> result = s.averageOfLevels(input);
-        vector<double> expect = {3, 14.5, 11};
-        ASSERT_EQ(result, expect);
-
-        TreeNode::freeTree(input);
-    }
-
-    TEST(test_637_daily, Case_2)
-    {
-        Solution s;
-        TreeNode* input = TreeNode::makeTree({3, 9, 20, 15, 7, -1, -1}, {true, true, true, true, true, false, false}, 3);
-        vector<double> result = s.averageOfLevels(input);
-        vector<double> expect = {3, 14.5, 11};
-        ASSERT_EQ(result, expect);
-
-        TreeNode::freeTree(input);
-    }
-
-    TEST(test_637_daily, Case_3)
-    {
-        Solution s;
-        TreeNode* input = TreeNode::makeTree({1, -1, 1}, {true, false, true}, 2);
-        vector<double> result = s.averageOfLevels(input);
-        vector<double> expect = {1, 1};
-        ASSERT_EQ(result, expect);
-
-        TreeNode::freeTree(input);
-    }
-
-    TEST(test_637_daily, Case_4)
-    {
-        Solution s;
-        TreeNode* input = TreeNode::makeTree({57, 46, 89, -36, -1, -1, -1}, {true, true, true, true, false, false, false}, 3);
-        vector<double> result = s.averageOfLevels(input);
-        vector<double> expect = {57, 67.5, -36};
-        ASSERT_EQ(result, expect);
-
-        TreeNode::freeTree(input);
-    }
-
-    TEST(test_637_daily, Case_5)
-    {
-        Solution s;
-        TreeNode* input = TreeNode::makeTree({0, 1, -1}, {true, true, false}, 2);
-        vector<double> result = s.averageOfLevels(input);
-        vector<double> expect = {0, 1};
-        ASSERT_EQ(result, expect);
-
-        TreeNode::freeTree(input);
-    }
-} // namespace p637_daily
 
 #include "820_daily.cpp"
 
