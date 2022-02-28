@@ -13,6 +13,6 @@ struct TreeNode {
 class TreeHelper
 {
 public:
-    static TreeNode* makeTree(const std::vector<int>& target, const std::vector<bool>& valid, const int level);
-    static void freeTree(TreeNode* head);
+    static TreeNode* create(const std::vector<int>& target, const std::vector<bool>& valid);
+    static void remove(TreeNode* head);
 };

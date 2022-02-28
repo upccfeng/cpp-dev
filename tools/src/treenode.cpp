@@ -1,15 +1,15 @@
 #include "treenode.hpp"
 #include "math.h"
 
-TreeNode* TreeHelper::makeTree(const std::vector<int>& target, const std::vector<bool>& valid, const int level)
+TreeNode* TreeHelper::create(const std::vector<int>& target, const std::vector<bool>& valid)
 {
-    int node_cnt = 0;
-    for (int l = 0; l < level; ++l)
-    {
-        node_cnt += pow(2, l);
-    }
+    //int node_cnt = 0;
+    //for (int l = 0; l < level; ++l)
+    //{
+    //    node_cnt += pow(2, l);
+    //}
 
-    std::vector<TreeNode*> nodes(node_cnt);
+    std::vector<TreeNode*> nodes(target.size());
     for (auto& n : nodes)
     {
         n = new TreeNode();
@@ -42,7 +42,7 @@ TreeNode* TreeHelper::makeTree(const std::vector<int>& target, const std::vector
     return nodes[0];
 }
 
-void TreeHelper::freeTree(TreeNode* head)
+void TreeHelper::remove(TreeNode* head)
 {
     // FIXME: free it which bfs or dfs.
 }
