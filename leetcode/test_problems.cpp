@@ -2288,6 +2288,58 @@ namespace p_curated_dp_91_decode_ways
     }
 } // namespace p_curated_dp_91_decode_ways
 
+#include "curated_tree_100_same_tree.cpp"
+
+namespace p_curated_tree_100_same_tree
+{
+    using Solution = Solution;
+
+    TEST(test__curated_tree_100_same_tree, Case_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        TreeNode* input_p = TreeHelper::create({ 1,2,3 }, { true, true, true });
+        TreeNode* input_q = TreeHelper::create({ 1,2,3 }, { true, true, true });
+        RetsultType result = s.isSameTree(input_p, input_q);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+
+        TreeHelper::remove(input_p);
+        TreeHelper::remove(input_q);
+    }
+
+    TEST(test__curated_tree_100_same_tree, Case_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        TreeNode* input_p = TreeHelper::create({ 1,2 }, { true, true });
+        TreeNode* input_q = TreeHelper::create({ 1,-1,2 }, { true, false, true });
+        RetsultType result = s.isSameTree(input_p, input_q);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+
+        TreeHelper::remove(input_p);
+        TreeHelper::remove(input_q);
+    }
+
+    TEST(test__curated_tree_100_same_tree, Case_3)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        TreeNode* input_p = TreeHelper::create({ 1,2,1 }, { true, true, true });
+        TreeNode* input_q = TreeHelper::create({ 1,1,2 }, { true, true, true });
+        RetsultType result = s.isSameTree(input_p, input_q);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+
+        TreeHelper::remove(input_p);
+        TreeHelper::remove(input_q);
+    }
+} // namespace p_curated_tree_100_same_tree
+
 #include "curated_tree_104_maximum_depth_of_binary_tree.cpp"
 
 namespace p_curated_tree_104_maximum_depth_of_binary_tree

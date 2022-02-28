@@ -23,11 +23,11 @@ TreeNode* TreeHelper::create(const std::vector<int>& target, const std::vector<b
 
             if (taking * 2 + 1 < target.size())
             {
-                if (valid[taking * 2 + 1])
+                if (taking * 2 + 1 < target.size() && valid[taking * 2 + 1])
                 {
                     nodes[taking]->left = nodes[taking * 2 + 1];
                 }
-                if (valid[taking * 2 + 2])
+                if (taking * 2 + 2 < target.size() && valid[taking * 2 + 2])
                 {
                     nodes[taking]->right = nodes[taking * 2 + 2];
                 }
