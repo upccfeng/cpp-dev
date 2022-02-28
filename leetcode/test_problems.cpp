@@ -94,6 +94,57 @@ namespace p_curated_string_3_longest_substring_without_repeating_characters
     }
 } // namespace p_curated_string_3_longest_substring_without_repeating_characters
 
+#include "curated_string_5_longest_palindromic_substring.cpp"
+
+namespace p_curated_string_5_longest_palindromic_substring
+{
+    using Solution = Solution;
+
+    TEST(test__curated_string_5_longest_palindromic_substring, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        std::string input = "babad";
+        RetsultType result = s.longestPalindrome(input);
+        RetsultType expect = "bab";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_string_5_longest_palindromic_substring, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        std::string input = "cbbd";
+        RetsultType result = s.longestPalindrome(input);
+        RetsultType expect = "bb";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_string_5_longest_palindromic_substring, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        std::string input = "ac";
+        RetsultType result = s.longestPalindrome(input);
+        RetsultType expect = "a";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_string_5_longest_palindromic_substring, Case_Failure_2)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        std::string input = "abb";
+        RetsultType result = s.longestPalindrome(input);
+        RetsultType expect = "bb";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_curated_string_5_longest_palindromic_substring
+
 #include "7.cpp"
 
 namespace p7
