@@ -716,102 +716,67 @@ namespace p_curated_linkedlist_19_remove_nth_node_from_end_of_list
     }
 } // namespace p_curated_linkedlist_19_remove_nth_node_from_end_of_list
 
-#include "20.cpp"
+#include "curated_string_20_valid_parantheses.cpp"
 
-namespace p20
+namespace p_curated_string_20_valid_parantheses
 {
     using Solution = Solution;
 
-    TEST(test_20, Case_1)
+    TEST(test__curated_string_20_valid_parantheses, Case_1)
     {
         Solution s;
-        string input = "()";
-        bool result = s.isValid(input);
-        bool expect = true;
-        ASSERT_EQ(result, expect);
+        using RetsultType = bool;
+
+        std::string input = "()";
+        RetsultType result = s.isValid(input);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
     }
 
-    TEST(test_20, Case_2)
+    TEST(test__curated_string_20_valid_parantheses, Case_2)
     {
         Solution s;
-        string input = "()[]{}";
-        bool result = s.isValid(input);
-        bool expect = true;
-        ASSERT_EQ(result, expect);
+        using RetsultType = bool;
+
+        std::string input = "()[]{}";
+        RetsultType result = s.isValid(input);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
     }
 
-    TEST(test_20, Case_3)
+    TEST(test__curated_string_20_valid_parantheses, Case_3)
     {
         Solution s;
-        string input = "(]";
-        bool result = s.isValid(input);
-        bool expect = false;
-        ASSERT_EQ(result, expect);
+        using RetsultType = bool;
+
+        std::string input = "(]";
+        RetsultType result = s.isValid(input);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
     }
 
-    TEST(test_20, Case_4)
+    TEST(test__curated_string_20_valid_parantheses, Case_Customize_1)
     {
         Solution s;
-        string input = "([)]";
-        bool result = s.isValid(input);
-        bool expect = false;
-        ASSERT_EQ(result, expect);
+        using RetsultType = bool;
+
+        std::string input = "(}}}}}}";
+        RetsultType result = s.isValid(input);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
     }
 
-    TEST(test_20, Case_5)
+    TEST(test__curated_string_20_valid_parantheses, Case_Customize_2)
     {
         Solution s;
-        string input = "{[]}";
-        bool result = s.isValid(input);
-        bool expect = true;
-        ASSERT_EQ(result, expect);
-    }
+        using RetsultType = bool;
 
-    TEST(test_20, Case_Customer_1)
-    {
-        Solution s;
-        string input = "";
-        bool result = s.isValid(input);
-        bool expect = true;
-        ASSERT_EQ(result, expect);
+        std::string input = "()))))";
+        RetsultType result = s.isValid(input);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
     }
-
-    TEST(test_20, Case_Customer_2)
-    {
-        Solution s;
-        string input = "{{{{";
-        bool result = s.isValid(input);
-        bool expect = false;
-        ASSERT_EQ(result, expect);
-    }
-
-    TEST(test_20, Case_Customer_3)
-    {
-        Solution s;
-        string input = "]]]]";
-        bool result = s.isValid(input);
-        bool expect = false;
-        ASSERT_EQ(result, expect);
-    }
-
-    TEST(test_20, Case_Customer_4)
-    {
-        Solution s;
-        string input = ")]]]]";
-        bool result = s.isValid(input);
-        bool expect = false;
-        ASSERT_EQ(result, expect);
-    }
-
-    TEST(test_20, Case_Customer_5)
-    {
-        Solution s;
-        string input = "11";
-        bool result = s.isValid(input);
-        bool expect = false;
-        ASSERT_EQ(result, expect);
-    }
-} // namespace p20
+} // namespace p_curated_string_20_valid_parantheses
 
 #include "curated_linkedlist_21_sorted_lists.cpp"
 
