@@ -2413,6 +2413,58 @@ namespace p_curated_tree_104_maximum_depth_of_binary_tree
     }
 } // namespace p_curated_tree_104_maximum_depth_of_binary_tree
 
+#include "curated_tree_105_construct_binary_tree_from_preorder_and_inorder_traversal.cpp"
+
+namespace p_curated_tree_105_construct_binary_tree_from_preorder_and_inorder_traversal
+{
+    using Solution = Solution;
+
+    TEST(test__curated_tree_105_construct_binary_tree_from_preorder_and_inorder_traversal, Case_1)
+    {
+        Solution s;
+        using RetsultType = TreeNode*;
+
+        std::vector<int> input_preorder = { 3,9,20,15,7 };
+        std::vector<int> input_inorder = { 9,3,15,20,7 };
+        RetsultType result = s.buildTree(input_preorder, input_inorder);
+        RetsultType expect = TreeHelper::create({ 3,9,20,-1,-1,15,7 }, { true,true,true,false,false,true,true });
+        ASSERT_THAT(TreeHelper::compare(result, expect), Eq(true));
+
+        TreeHelper::remove(result);
+        TreeHelper::remove(expect);
+    }
+
+    TEST(test__curated_tree_105_construct_binary_tree_from_preorder_and_inorder_traversal, Case_2)
+    {
+        Solution s;
+        using RetsultType = TreeNode*;
+
+        std::vector<int> input_preorder = { -1 };
+        std::vector<int> input_inorder = { -1 };
+        RetsultType result = s.buildTree(input_preorder, input_inorder);
+        RetsultType expect = TreeHelper::create({ -1 }, {});
+        ASSERT_THAT(TreeHelper::compare(result, expect), Eq(true));
+
+        TreeHelper::remove(result);
+        TreeHelper::remove(expect);
+    }
+
+    TEST(test__curated_tree_105_construct_binary_tree_from_preorder_and_inorder_traversal, Case_Runtime_1)
+    {
+        Solution s;
+        using RetsultType = TreeNode*;
+
+        std::vector<int> input_preorder = { 1, 2 };
+        std::vector<int> input_inorder = { 1, 2 };
+        RetsultType result = s.buildTree(input_preorder, input_inorder);
+        RetsultType expect = TreeHelper::create({ 1, -1, 2 }, { true,false,true });
+        ASSERT_THAT(TreeHelper::compare(result, expect), Eq(true));
+
+        TreeHelper::remove(result);
+        TreeHelper::remove(expect);
+    }
+} // namespace p_curated_tree_105_construct_binary_tree_from_preorder_and_inorder_traversal
+
 #include "curated_array_121_bestprofit.cpp"
 
 namespace p_curated_array_121_bestprofit
