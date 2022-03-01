@@ -30,7 +30,7 @@ TreeNode* TreeHelper::create(const std::vector<int>& target, const std::vector<b
                 {
                     is_left_valid = taking * 2 + 1 < target.size() && valid[taking * 2 + 1];
                 }
-                if (is_left_valid)
+                if (taking * 2 + 1 < target.size() && is_left_valid)
                 {
                     nodes[taking]->left = nodes[taking * 2 + 1];
                 }
@@ -40,7 +40,7 @@ TreeNode* TreeHelper::create(const std::vector<int>& target, const std::vector<b
                 {
                     is_right_valid = taking * 2 + 2 < target.size() && valid[taking * 2 + 2];
                 }
-                if (is_right_valid)
+                if (taking * 2 + 2 < target.size() && is_right_valid)
                 {
                     nodes[taking]->right = nodes[taking * 2 + 2];
                 }

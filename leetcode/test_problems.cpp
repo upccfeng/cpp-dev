@@ -4698,6 +4698,60 @@ namespace p540
     }
 } // namespace p540
 
+#include "curated_tree_572_subtree_of_another_tree.cpp"
+
+namespace p_curated_tree_572_subtree_of_another_tree
+{
+    using Solution = Solution;
+
+    TEST(test__curated_tree_572_subtree_of_another_tree, Case_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        TreeNode* input_root = TreeHelper::create({ 3,4,5,1,2 }, {});
+        TreeNode* input_subRoot = TreeHelper::create({ 4,1,2 }, {});
+        RetsultType result = s.isSubtree(input_root, input_subRoot);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_tree_572_subtree_of_another_tree, Case_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        TreeNode* input_root = TreeHelper::create({ 3,4,5,1,2,-1,-1,-1,-1,0 }, { true, true,true,true,true,false,false,false,false,true });
+        TreeNode* input_subRoot = TreeHelper::create({ 4,1,2 }, {});
+        RetsultType result = s.isSubtree(input_root, input_subRoot);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_tree_572_subtree_of_another_tree, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        TreeNode* input_root = TreeHelper::create({ 1, 1 }, {});
+        TreeNode* input_subRoot = TreeHelper::create({ 1 }, {});
+        RetsultType result = s.isSubtree(input_root, input_subRoot);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_tree_572_subtree_of_another_tree, Case_Failure_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+        TreeNode* input_root = TreeHelper::create({ 3, 4, 5, 1, -1, 2 }, { true,true,true,true,false,true });
+        TreeNode* input_subRoot = TreeHelper::create({ 3, 1, 2 }, {});
+        RetsultType result = s.isSubtree(input_root, input_subRoot);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_curated_tree_572_subtree_of_another_tree
+
 #include "637_daily.cpp"
 
 namespace p637_daily
