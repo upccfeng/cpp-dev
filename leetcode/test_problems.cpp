@@ -3780,6 +3780,69 @@ namespace p_curated_binary_268_missing_number
     }
 } // namespace p_curated_binary_268_missing_number
 
+#include "curated_tree_297_serialize_and_deserialize_binary_tree.cpp"
+
+namespace p_curated_tree_297_serialize_and_deserialize_binary_tree
+{
+    using Solution = Codec;
+
+    TEST(test__curated_tree_297_serialize_and_deserialize_binary_tree, Case_1)
+    {
+        Solution s;
+        using RetsultType = TreeNode*;
+
+        RetsultType input = TreeHelper::create({ 1,2,3,-1,-1,4,5 }, { true,true,true,false,false,true,true });
+        std::string result_str = s.serialize(input);
+        RetsultType result_tree = s.deserialize(result_str);
+        ASSERT_THAT(TreeHelper::compare(input, result_tree), Eq(true));
+
+        TreeHelper::remove(input);
+        TreeHelper::remove(result_tree);
+    }
+
+    TEST(test__curated_tree_297_serialize_and_deserialize_binary_tree, Case_2)
+    {
+        Solution s;
+        using RetsultType = TreeNode*;
+
+        RetsultType input = TreeHelper::create({ }, { });
+        std::string result_str = s.serialize(input);
+        RetsultType result_tree = s.deserialize(result_str);
+        ASSERT_THAT(TreeHelper::compare(input, result_tree), Eq(true));
+
+        TreeHelper::remove(input);
+        TreeHelper::remove(result_tree);
+    }
+
+    TEST(test__curated_tree_297_serialize_and_deserialize_binary_tree, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = TreeNode*;
+
+        RetsultType input = TreeHelper::create({ 4,-7,-3,-1,-1,-9,-3,9,-7,-4,-1,6,-1,-6,-6,-1,-1,0,6,5,-1,9,-1,-1,-1,-4,-1,-1,-1,-2 }, { true,true,true,false,false,true,true,true,true,true,false,true,false,true,true,false,false,true,true,true,false,true,false,false,true,true,false,false,false,true });
+        std::string result_str = s.serialize(input);
+        RetsultType result_tree = s.deserialize(result_str);
+        ASSERT_THAT(TreeHelper::compare(input, result_tree), Eq(true));
+
+        TreeHelper::remove(input);
+        TreeHelper::remove(result_tree);
+    }
+
+    TEST(test__curated_tree_297_serialize_and_deserialize_binary_tree, Case_Failure_2)
+    {
+        Solution s;
+        using RetsultType = TreeNode*;
+
+        RetsultType input = TreeHelper::create({ 1,2,-13,-1,-1,4,5 }, { true,true,true,false,false,true,true });
+        std::string result_str = s.serialize(input);
+        RetsultType result_tree = s.deserialize(result_str);
+        ASSERT_THAT(TreeHelper::compare(input, result_tree), Eq(true));
+
+        TreeHelper::remove(input);
+        TreeHelper::remove(result_tree);
+    }
+} // namespace p_curated_tree_297_serialize_and_deserialize_binary_tree
+
 #include "curated_dp_300_longest_increasing_subsequence.cpp"
 
 namespace p_curated_dp_300_longest_increasing_subsequence
