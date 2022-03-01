@@ -2340,6 +2340,46 @@ namespace p_curated_tree_100_same_tree
     }
 } // namespace p_curated_tree_100_same_tree
 
+#include "curated_tree_102_binary_tree_level_order_traversal.cpp"
+
+namespace p_curated_tree_102_binary_tree_level_order_traversal
+{
+    using Solution = Solution;
+
+    TEST(test__curated_tree_102_binary_tree_level_order_traversal, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        TreeNode* input = TreeHelper::create({ 3,9,20,-1,-1,15,7 }, { true,true,true,false,false,true,true });
+        RetsultType result = s.levelOrder(input);
+        RetsultType expect = { {3}, {9, 20}, {15, 7} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_tree_102_binary_tree_level_order_traversal, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        TreeNode* input = TreeHelper::create({ 1 }, { true });
+        RetsultType result = s.levelOrder(input);
+        RetsultType expect = { {1} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_tree_102_binary_tree_level_order_traversal, Case_3)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        TreeNode* input = TreeHelper::create({ }, { });
+        RetsultType result = s.levelOrder(input);
+        RetsultType expect = { };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_curated_tree_102_binary_tree_level_order_traversal
+
 #include "curated_tree_104_maximum_depth_of_binary_tree.cpp"
 
 namespace p_curated_tree_104_maximum_depth_of_binary_tree
