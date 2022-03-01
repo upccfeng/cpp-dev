@@ -2407,6 +2407,79 @@ namespace p_curated_array_121_bestprofit
     }
 } // namespace p_curated_array_121_bestprofit
 
+#include "curated_tree_124_binary_tree_maximum_path_sum.cpp"
+
+namespace p_curated_tree_124_binary_tree_maximum_path_sum
+{
+    using Solution = Solution;
+
+    TEST(test__curated_tree_124_binary_tree_maximum_path_sum, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        TreeNode* input = TreeHelper::create({ 1,2,3 }, {});
+        RetsultType result = s.maxPathSum(input);
+        RetsultType expect = 6;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_tree_124_binary_tree_maximum_path_sum, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        TreeNode* input = TreeHelper::create({ -10,9,20,-1,-1,15,7 }, { true, true, true, false, false, true, true });
+        RetsultType result = s.maxPathSum(input);
+        RetsultType expect = 42;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_tree_124_binary_tree_maximum_path_sum, Case_Customize_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        TreeNode* input = TreeHelper::create({ 99, -1, -2 }, {});
+        RetsultType result = s.maxPathSum(input);
+        RetsultType expect = 99;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_tree_124_binary_tree_maximum_path_sum, Case_Customize_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        TreeNode* input = TreeHelper::create({ 3 }, {});
+        RetsultType result = s.maxPathSum(input);
+        RetsultType expect = 3;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_tree_124_binary_tree_maximum_path_sum, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        TreeNode* input = TreeHelper::create({ -3 }, {});
+        RetsultType result = s.maxPathSum(input);
+        RetsultType expect = -3;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_tree_124_binary_tree_maximum_path_sum, Case_Failure_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        TreeNode* input = TreeHelper::create({ -1,-2,10,-6,-1,-3,-6 }, { true,true,true,true,false,true,true });
+        RetsultType result = s.maxPathSum(input);
+        RetsultType expect = 10;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_curated_tree_124_binary_tree_maximum_path_sum
+
 #include "curated_string_125_valid_palindrome.cpp"
 
 namespace p_curated_string_125_valid_palindrome
