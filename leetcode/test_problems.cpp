@@ -3654,6 +3654,35 @@ namespace p_curated_graph_207_course_schedule
     }
 } // namespace p_curated_graph_207_course_schedule
 
+#include "curated_tree_208_implement_trie_or_prefix_tree.cpp"
+
+namespace p_curated_tree_208_implement_trie_or_prefix_tree
+{
+    using Solution = Trie;
+
+    TEST(test__curated_tree_208_implement_trie_or_prefix_tree, Case_1)
+    {
+        Solution trie;
+        trie.insert("apple");
+        ASSERT_THAT(trie.search("apple"), Eq(true));
+        ASSERT_THAT(trie.search("app"), Eq(false));
+        ASSERT_THAT(trie.startsWith("app"), Eq(true));
+        trie.insert("app");
+        ASSERT_THAT(trie.search("app"), Eq(true));
+    }
+
+    TEST(test__curated_tree_208_implement_trie_or_prefix_tree, Case_Failure_1)
+    {
+        Solution trie;
+        trie.insert("hello");
+        ASSERT_THAT(trie.search("hell"), Eq(false));
+        ASSERT_THAT(trie.search("helloa"), Eq(false));
+        ASSERT_THAT(trie.search("hello"), Eq(true));
+        ASSERT_THAT(trie.startsWith("hell"), Eq(true));
+        ASSERT_THAT(trie.startsWith("helloa"), Eq(false));
+        ASSERT_THAT(trie.startsWith("hello"), Eq(true));
+    }
+} // namespace p_curated_tree_208_implement_trie_or_prefix_tree
 
 #include "curated_dp_213_house_robber_ii.cpp"
 
