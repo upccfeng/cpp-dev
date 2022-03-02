@@ -2288,6 +2288,102 @@ namespace p_curated_dp_91_decode_ways
     }
 } // namespace p_curated_dp_91_decode_ways
 
+#include "curated_tree_98_validate_bindary_search_tree.cpp"
+
+namespace p_curated_tree_98_validate_bindary_search_tree
+{
+    using Solution = Solution;
+
+    TEST(test__curated_tree_98_validate_bindary_search_tree, Case_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        TreeNode* input = TreeHelper::create({ 2,1,3 }, {});
+        RetsultType result = s.isValidBST(input);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_tree_98_validate_bindary_search_tree, Case_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        TreeNode* input = TreeHelper::create({ 5,1,4,-1,-1,3,6 }, { true,true,true,false,false,true,true });
+        RetsultType result = s.isValidBST(input);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_tree_98_validate_bindary_search_tree, Case_Customize_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        TreeNode* input = TreeHelper::create({ 1 }, { });
+        RetsultType result = s.isValidBST(input);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_tree_98_validate_bindary_search_tree, Case_Customize_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        TreeNode* input = TreeHelper::create({ INT_MAX }, { });
+        RetsultType result = s.isValidBST(input);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_tree_98_validate_bindary_search_tree, Case_Customize_3)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        TreeNode* input = TreeHelper::create({ INT_MIN }, { });
+        RetsultType result = s.isValidBST(input);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_tree_98_validate_bindary_search_tree, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        TreeNode* input = TreeHelper::create({ 2,2,2 }, { });
+        RetsultType result = s.isValidBST(input);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_tree_98_validate_bindary_search_tree, Case_Failure_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        TreeNode* input = TreeHelper::create({ 5, 4, 6, -1, -1, 3, 7 }, { true,true,true,false,false,true,true });
+        RetsultType result = s.isValidBST(input);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_tree_98_validate_bindary_search_tree, Case_Failure_3)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        TreeNode* input = TreeHelper::create({ INT_MIN, -1, INT_MAX }, { true,false,true });
+        RetsultType result = s.isValidBST(input);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_curated_tree_98_validate_bindary_search_tree
+
+
 #include "curated_tree_100_same_tree.cpp"
 
 namespace p_curated_tree_100_same_tree
