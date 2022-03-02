@@ -3817,6 +3817,37 @@ namespace p_curated_tree_226_invert_binary_tree
     }
 } // namespace p_curated_tree_226_invert_binary_tree
 
+#include "curated_tree_230_kth_smallest_element_in_a_bst.cpp"
+
+namespace p_curated_tree_230_kth_smallest_element_in_a_bst
+{
+    using Solution = Solution;
+
+    TEST(test__curated_tree_230_kth_smallest_element_in_a_bst, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        TreeNode* input_root = TreeHelper::create({ 3,1,4,-1,2 }, { true,true,true,false,true });
+        int input_k = 1;
+        RetsultType result = s.kthSmallest(input_root, input_k);
+        RetsultType expect = 1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_tree_230_kth_smallest_element_in_a_bst, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        TreeNode* input_root = TreeHelper::create({ 5,3,6,2,4,-1,-1,1 }, { true,true,true,true,true,false,false,true });
+        int input_k = 3;
+        RetsultType result = s.kthSmallest(input_root, input_k);
+        RetsultType expect = 3;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_curated_tree_230_kth_smallest_element_in_a_bst
+
 #include "curated_array_238_product_of_array_except_self.cpp"
 
 namespace p_curated_array_238_product_of_array_except_self

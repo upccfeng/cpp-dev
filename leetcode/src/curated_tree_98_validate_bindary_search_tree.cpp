@@ -23,7 +23,6 @@ namespace p_curated_tree_98_validate_bindary_search_tree
                 return true;
             }
 
-
             if (root->val <= left_boundary || root->val >= right_boundary)
             {
                 return false;
@@ -76,5 +75,6 @@ https://leetcode.com/problems/validate-binary-search-tree/
 BigO(n)
 
 ## Space Complexity:
-BigO(n)
+Method-1: BigO(n)
+Method-2: BigO(Height)
 */
