@@ -3684,6 +3684,40 @@ namespace p_curated_tree_208_implement_trie_or_prefix_tree
     }
 } // namespace p_curated_tree_208_implement_trie_or_prefix_tree
 
+#include "curated_tree_211_design_add_and_search_words_data_structure.cpp"
+
+namespace p_curated_tree_211_design_add_and_search_words_data_structure
+{
+    using Solution = WordDictionary;
+
+    TEST(test__curated_tree_211_design_add_and_search_words_data_structure, Case_1)
+    {
+        Solution word_dictionary;
+        word_dictionary.addWord("bad");
+        word_dictionary.addWord("dad");
+        word_dictionary.addWord("mad");
+        word_dictionary.addWord("madddd");
+        ASSERT_THAT(word_dictionary.search("pad"), Eq(false));
+        ASSERT_THAT(word_dictionary.search("bad"), Eq(true));
+        ASSERT_THAT(word_dictionary.search(".ad"), Eq(true));
+        ASSERT_THAT(word_dictionary.search("b.."), Eq(true));
+        ASSERT_THAT(word_dictionary.search("m.."), Eq(true));
+    }
+
+    TEST(test__curated_tree_211_design_add_and_search_words_data_structure, Case_2)
+    {
+        Solution word_dictionary;
+        word_dictionary.addWord("a");
+        word_dictionary.addWord("a");
+        ASSERT_THAT(word_dictionary.search("."), Eq(true));
+        ASSERT_THAT(word_dictionary.search("a"), Eq(true));
+        ASSERT_THAT(word_dictionary.search("aa"), Eq(false));
+        ASSERT_THAT(word_dictionary.search("a"), Eq(true));
+        ASSERT_THAT(word_dictionary.search(".a"), Eq(false));
+        ASSERT_THAT(word_dictionary.search("a."), Eq(false));
+    }
+} // namespace p_curated_tree_211_design_add_and_search_words_data_structure
+
 #include "curated_dp_213_house_robber_ii.cpp"
 
 namespace p_curated_dp_213_house_robber_ii
