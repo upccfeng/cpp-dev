@@ -1,4 +1,5 @@
 #include "treenode.hpp"
+#include <vector>
 
 namespace p_curated_tree_230_kth_smallest_element_in_a_bst
 {

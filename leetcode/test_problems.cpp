@@ -3833,6 +3833,8 @@ namespace p_curated_tree_230_kth_smallest_element_in_a_bst
         RetsultType result = s.kthSmallest(input_root, input_k);
         RetsultType expect = 1;
         ASSERT_THAT(result == expect, Eq(true));
+
+        TreeHelper::remove(input_root);
     }
 
     TEST(test__curated_tree_230_kth_smallest_element_in_a_bst, Case_2)
@@ -3845,8 +3847,71 @@ namespace p_curated_tree_230_kth_smallest_element_in_a_bst
         RetsultType result = s.kthSmallest(input_root, input_k);
         RetsultType expect = 3;
         ASSERT_THAT(result == expect, Eq(true));
+
+        TreeHelper::remove(input_root);
     }
 } // namespace p_curated_tree_230_kth_smallest_element_in_a_bst
+
+#include "curated_tree_235_lowest_common_ancestor_of_a_binary_search_tree.cpp"
+
+namespace p_curated_tree_235_lowest_common_ancestor_of_a_binary_search_tree
+{
+    using Solution = Solution;
+
+    TEST(test__curated_tree_235_lowest_common_ancestor_of_a_binary_search_tree, Case_1)
+    {
+        Solution s;
+        using RetsultType = TreeNode*;
+
+        TreeNode* input_root = TreeHelper::create({ 6,2,8,0,4,7,9,-1,-1,3,5 }, { true,true,true,true,true,true,true,false,false,true,true });
+        TreeNode* input_p = TreeHelper::create({ 2 }, {});
+        TreeNode* input_q = TreeHelper::create({ 8 }, {});
+        RetsultType result = s.lowestCommonAncestor(input_root, input_p, input_q);
+        RetsultType expect = TreeHelper::create({ 6 }, {});;
+        ASSERT_THAT(result->val == expect->val, Eq(true));
+
+        TreeHelper::remove(input_root);
+        TreeHelper::remove(input_p);
+        TreeHelper::remove(input_q);
+        TreeHelper::remove(expect);
+    }
+
+    TEST(test__curated_tree_235_lowest_common_ancestor_of_a_binary_search_tree, Case_2)
+    {
+        Solution s;
+        using RetsultType = TreeNode*;
+
+        TreeNode* input_root = TreeHelper::create({ 6,2,8,0,4,7,9,-1,-1,3,5 }, { true,true,true,true,true,true,true,false,false,true,true });
+        TreeNode* input_p = TreeHelper::create({ 2 }, {});
+        TreeNode* input_q = TreeHelper::create({ 4 }, {});
+        RetsultType result = s.lowestCommonAncestor(input_root, input_p, input_q);
+        RetsultType expect = TreeHelper::create({ 2 }, {});;
+        ASSERT_THAT(result->val == expect->val, Eq(true));
+
+        TreeHelper::remove(input_root);
+        TreeHelper::remove(input_p);
+        TreeHelper::remove(input_q);
+        TreeHelper::remove(expect);
+    }
+
+    TEST(test__curated_tree_235_lowest_common_ancestor_of_a_binary_search_tree, Case_3)
+    {
+        Solution s;
+        using RetsultType = TreeNode*;
+
+        TreeNode* input_root = TreeHelper::create({ 2,1 }, { });
+        TreeNode* input_p = TreeHelper::create({ 2 }, {});
+        TreeNode* input_q = TreeHelper::create({ 1 }, {});
+        RetsultType result = s.lowestCommonAncestor(input_root, input_p, input_q);
+        RetsultType expect = TreeHelper::create({ 2 }, {});;
+        ASSERT_THAT(result->val == expect->val, Eq(true));
+
+        TreeHelper::remove(input_root);
+        TreeHelper::remove(input_p);
+        TreeHelper::remove(input_q);
+        TreeHelper::remove(expect);
+    }
+} // namespace p_curated_tree_235_lowest_common_ancestor_of_a_binary_search_tree
 
 #include "curated_array_238_product_of_array_except_self.cpp"
 
