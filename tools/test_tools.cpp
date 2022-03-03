@@ -302,3 +302,41 @@ TEST_F(TestTree, create_compare)
         TreeHelper::remove(lhs);
     }
 }
+
+#include "heap.hpp"
+
+class TestHeap : public ::testing::Test
+{
+
+};
+
+TEST_F(TestHeap, Insert_Remove)
+{
+    Heap heap;
+
+    heap.insert(10);
+    ASSERT_THAT(*heap.getTopPtr() == 10, testing::Eq(true));
+    heap.insert(50);
+    ASSERT_THAT(*heap.getTopPtr() == 10, testing::Eq(true));
+    heap.insert(100);
+    ASSERT_THAT(*heap.getTopPtr() == 10, testing::Eq(true));
+    heap.insert(5);
+    ASSERT_THAT(*heap.getTopPtr() == 5, testing::Eq(true));
+    heap.insert(2);
+    ASSERT_THAT(*heap.getTopPtr() == 2, testing::Eq(true));
+    heap.insert(1);
+    ASSERT_THAT(*heap.getTopPtr() == 1, testing::Eq(true));
+
+    heap.removeTop();
+    ASSERT_THAT(*heap.getTopPtr() == 2, testing::Eq(true));
+    heap.removeTop();
+    ASSERT_THAT(*heap.getTopPtr() == 5, testing::Eq(true));
+    heap.removeTop();
+    ASSERT_THAT(*heap.getTopPtr() == 10, testing::Eq(true));
+    heap.removeTop();
+    ASSERT_THAT(*heap.getTopPtr() == 50, testing::Eq(true));
+    heap.removeTop();
+    ASSERT_THAT(*heap.getTopPtr() == 100, testing::Eq(true));
+    heap.removeTop();
+    ASSERT_THAT(heap.getTopPtr() == nullptr, testing::Eq(true));
+}
