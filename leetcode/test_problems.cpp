@@ -3718,6 +3718,37 @@ namespace p_curated_tree_211_design_add_and_search_words_data_structure
     }
 } // namespace p_curated_tree_211_design_add_and_search_words_data_structure
 
+#include "curated_tree_212_word_search_ii.cpp"
+
+namespace p_curated_tree_212_word_search_ii
+{
+    using Solution = Solution;
+
+    TEST(test__curated_tree_212_word_search_ii, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::string>;
+
+        std::vector<std::vector<char>> input_board = { {'o', 'a', 'a', 'n'}, {'e', 't', 'a', 'e'}, {'i', 'h', 'k', 'r'}, {'i', 'f', 'l', 'v'} };
+        std::vector<std::string> input_words = { "oath", "pea", "eat", "rain" };
+        RetsultType result = s.findWords(input_board, input_words);
+        RetsultType expect = { "oath", "eat" };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_tree_212_word_search_ii, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::string>;
+
+        std::vector<std::vector<char>> input_board = { {'a', 'b'}, {'c', 'd'} };
+        std::vector<std::string> input_words = { "abcb" };
+        RetsultType result = s.findWords(input_board, input_words);
+        RetsultType expect = { };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_curated_tree_212_word_search_ii
+
 #include "curated_dp_213_house_robber_ii.cpp"
 
 namespace p_curated_dp_213_house_robber_ii
