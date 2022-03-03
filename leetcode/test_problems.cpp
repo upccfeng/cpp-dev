@@ -4496,6 +4496,59 @@ namespace p_curated_binary_338_counting_bits
     }
 } // namespace p_curated_binary_338_counting_bits
 
+#include "curated_heap_347_top_k_frequent_elements.cpp"
+
+namespace p_curated_heap_347_top_k_frequent_elements
+{
+    using Solution = Solution;
+
+    TEST(test__curated_heap_347_top_k_frequent_elements, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input_nums = { 1,1,1,2,2,3 };
+        int input_k = 2;
+        RetsultType result = s.topKFrequent(input_nums, input_k);
+        RetsultType expect = { 1,2 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_heap_347_top_k_frequent_elements, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input_nums = { 1 };
+        int input_k = 1;
+        RetsultType result = s.topKFrequent(input_nums, input_k);
+        RetsultType expect = { 1 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_heap_347_top_k_frequent_elements, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+        std::vector<int> input_nums = { 3, 0, 1, 0 };
+        int input_k = 1;
+        RetsultType result = s.topKFrequent(input_nums, input_k);
+        RetsultType expect = { 0 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_heap_347_top_k_frequent_elements, Case_Failure_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+        std::vector<int> input_nums = { 4, 1, -1, 2, -1, 2, 3 };
+        int input_k = 2;
+        RetsultType result = s.topKFrequent(input_nums, input_k);
+        RetsultType expect = { -1, 2 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_curated_heap_347_top_k_frequent_elements
+
 #include "curated_binary_371_sum_of_two.cpp"
 
 namespace p_curated_binary_371_sum_of_two

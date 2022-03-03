@@ -6,9 +6,20 @@ int Heap::_getSize()
     return last;
 }
 
-bool Heap::_isBetter(int lhs, int rhs)
+bool Heap::_isKeySmaller(int lhs, int rhs)
 {
     return lhs < rhs;
+}
+
+bool Heap::_isKeyBigger(int lhs, int rhs)
+{
+    return lhs > rhs;
+}
+
+bool Heap::_isBetterByPos(int lhs_pos, int rhs_pos)
+{
+    // return _isKeySmaller(elements[lhs_pos], elements[rhs_pos]);
+    return _isKeyBigger(cnts[lhs_pos], cnts[rhs_pos]);
 }
 
 void Heap::_adjustToUp(int pos)
@@ -21,7 +32,8 @@ void Heap::_adjustToUp(int pos)
     {
         int parent_pos = (pos + 1) / 2 - 1;
         //               ^^^^           ^^^   base 1
-        if (_isBetter(elements[pos], elements[parent_pos]))
+
+        if (_isBetterByPos(pos, parent_pos))
         {
             int tmp = elements[pos];
             elements[pos] = elements[parent_pos];
@@ -65,7 +77,7 @@ void Heap::_adjustToDown(int pos)
             else
             {
                 // there are two children
-                if (_isBetter(elements[left_pos], elements[right_pos]))
+                if (_isBetterByPos(left_pos, right_pos))
                 {
                     min_value_pos = left_pos;
                 }
@@ -76,7 +88,7 @@ void Heap::_adjustToDown(int pos)
             }
         }
 
-        if (_isBetter(elements[min_value_pos], elements[pos]))
+        if (_isBetterByPos(min_value_pos, pos))
         {
             int tmp = elements[pos];
             elements[pos] = elements[min_value_pos];
@@ -126,16 +138,18 @@ void Heap::insert(int val)
     else
     {
         ++cnts[pos];
+
+        _adjustToUp(pos);
     }
 }
 
-void Heap::removeValue(int value)
+void Heap::removeValue(int value, bool remove_all)
 {
     int pos = _findPos(value);
 
     if (pos != -1)
     {
-        if (cnts[pos] == 1)
+        if (cnts[pos] == 1 || remove_all)
         {
             elements[pos] = elements[last - 1];
             cnts[pos] = cnts[last - 1];
@@ -150,15 +164,17 @@ void Heap::removeValue(int value)
         {
             assert(cnts[pos] > 1);
             --cnts[pos];
+
+            _adjustToDown(pos);
         }
     }
 }
 
-void Heap::removeTop()
+void Heap::removeTop(bool remove_all)
 {
     if (_getSize() != 0)
     {
-        removeValue(elements[0]);
+        removeValue(elements[0], remove_all);
     }
 }
 
