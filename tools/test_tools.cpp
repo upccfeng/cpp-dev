@@ -327,6 +327,20 @@ TEST_F(TestHeap, Insert_Remove)
     heap.insert(1);
     ASSERT_THAT(*heap.getTopPtr() == 1, testing::Eq(true));
 
+
+    heap.insert(100);
+    ASSERT_THAT(*heap.getTopPtr() == 1, testing::Eq(true));
+    ASSERT_THAT(heap.getValueCnt(100) == 2, testing::Eq(true));
+    heap.removeValue(100);
+    ASSERT_THAT(*heap.getTopPtr() == 1, testing::Eq(true));
+    ASSERT_THAT(heap.getValueCnt(100) == 1, testing::Eq(true));
+    heap.insert(1);
+    ASSERT_THAT(*heap.getTopPtr() == 1, testing::Eq(true));
+    ASSERT_THAT(heap.getValueCnt(1) == 2, testing::Eq(true));
+    heap.removeTop();
+    ASSERT_THAT(*heap.getTopPtr() == 1, testing::Eq(true));
+    ASSERT_THAT(heap.getValueCnt(1) == 1, testing::Eq(true));
+
     heap.removeTop();
     ASSERT_THAT(*heap.getTopPtr() == 2, testing::Eq(true));
     heap.removeTop();

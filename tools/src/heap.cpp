@@ -1,4 +1,5 @@
 #include "heap.hpp"
+#include <cassert>
 
 int Heap::_getSize()
 {
@@ -25,6 +26,11 @@ void Heap::_adjustToUp(int pos)
             int tmp = elements[pos];
             elements[pos] = elements[parent_pos];
             elements[parent_pos] = tmp;
+
+            tmp = cnts[pos];
+            cnts[pos] = cnts[parent_pos];
+            cnts[parent_pos] = tmp;
+
             _adjustToUp(parent_pos);
         }
     }
@@ -75,6 +81,11 @@ void Heap::_adjustToDown(int pos)
             int tmp = elements[pos];
             elements[pos] = elements[min_value_pos];
             elements[min_value_pos] = tmp;
+
+            tmp = cnts[pos];
+            cnts[pos] = cnts[min_value_pos];
+            cnts[min_value_pos] = tmp;
+
             _adjustToDown(min_value_pos);
         }
     }
@@ -96,29 +107,50 @@ int Heap::_findPos(int value)
 
 void Heap::insert(int val)
 {
-    if (_getSize() + 1 > elements.size())
+    int pos = _findPos(val);
+
+    if (pos == -1)
     {
-        elements.resize(elements.size() * 2);
+        if (_getSize() + 1 > elements.size())
+        {
+            elements.resize(elements.size() * 2);
+            cnts.resize(cnts.size() * 2);
+        }
+
+        elements[last] = val;
+        cnts[last] = 1;
+        _adjustToUp(last);
+
+        ++last;
     }
-
-    elements[last] = val;
-
-    _adjustToUp(last);
-
-    ++last;
+    else
+    {
+        ++cnts[pos];
+    }
 }
 
-void Heap::_removeValue(int value)
+void Heap::removeValue(int value)
 {
     int pos = _findPos(value);
 
     if (pos != -1)
     {
-        elements[pos] = elements[last - 1];
-        elements[last - 1] = 0; // not necessary, just for visualize debug.
-        --last;
+        if (cnts[pos] == 1)
+        {
+            elements[pos] = elements[last - 1];
+            cnts[pos] = cnts[last - 1];
 
-        _adjustToDown(pos);
+            elements[last - 1] = 0; // not necessary, just for visualize debug.
+            cnts[last - 1] = 0; // not necessary, just for visualize debug.
+            --last;
+
+            _adjustToDown(pos);
+        }
+        else
+        {
+            assert(cnts[pos] > 1);
+            --cnts[pos];
+        }
     }
 }
 
@@ -126,7 +158,21 @@ void Heap::removeTop()
 {
     if (_getSize() != 0)
     {
-        _removeValue(elements[0]);
+        removeValue(elements[0]);
+    }
+}
+
+int Heap::getValueCnt(int val)
+{
+    int pos = _findPos(val);
+
+    if (pos == -1)
+    {
+        return -1;
+    }
+    else
+    {
+        return cnts[pos];
     }
 }
 
