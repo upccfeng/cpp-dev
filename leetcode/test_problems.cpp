@@ -4185,6 +4185,34 @@ namespace p_curated_binary_268_missing_number
     }
 } // namespace p_curated_binary_268_missing_number
 
+#include "curated_heap_295_find_median_from_data_stream.cpp"
+
+namespace p_curated_heap_295_find_median_from_data_stream
+{
+
+    TEST(test__curated_heap_295_find_median_from_data_stream, Case_1)
+    {
+        MedianFinder mf;
+
+        mf.addNum(1);
+        mf.addNum(2);
+        ASSERT_THAT(mf.findMedian() == 1.5, Eq(true));
+        mf.addNum(3);
+        ASSERT_THAT(mf.findMedian() == 2.0, Eq(true));
+    }
+
+    TEST(test__curated_heap_295_find_median_from_data_stream, Case_Customize_1)
+    {
+        MedianFinder mf;
+
+        mf.addNum(3);
+        mf.addNum(2);
+        mf.addNum(7);
+        mf.addNum(4);
+        ASSERT_THAT(mf.findMedian() == 3.5, Eq(true));
+    }
+} // namespace p_curated_heap_295_find_median_from_data_stream
+
 #include "curated_tree_297_serialize_and_deserialize_binary_tree.cpp"
 
 namespace p_curated_tree_297_serialize_and_deserialize_binary_tree
