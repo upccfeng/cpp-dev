@@ -1762,6 +1762,57 @@ namespace p_38
     }
 } // namespace p_38
 
+#include "41.cpp"
+
+namespace p_41
+{
+    using Solution = Solution;
+
+    TEST(test__41, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 1,2,0 };
+        RetsultType result = s.firstMissingPositive(input);
+        RetsultType expect = 3;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__41, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 3,4,-1,1 };
+        RetsultType result = s.firstMissingPositive(input);
+        RetsultType expect = 2;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__41, Case_3)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 7,8,9,11,12 };
+        RetsultType result = s.firstMissingPositive(input);
+        RetsultType expect = 1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__41, Case_Customize_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 0,1,2 };
+        RetsultType result = s.firstMissingPositive(input);
+        RetsultType expect = 3;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_41
+
 #include "46.cpp"
 
 namespace p46
