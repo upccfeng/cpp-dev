@@ -5460,6 +5460,65 @@ namespace p763
     }
 } // namespace p763
 
+#include "799.cpp"
+
+namespace p_799
+{
+    using Solution = Solution;
+
+    TEST(test__799, Case_1)
+    {
+        Solution s;
+        using RetsultType = double;
+
+        int input_poured = 1;
+        int input_query_row = 1;
+        int input_query_galss = 1;
+        RetsultType result = s.champagneTower(input_poured, input_query_row, input_query_galss);
+        RetsultType expect = 0;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__799, Case_2)
+    {
+        Solution s;
+        using RetsultType = double;
+
+        int input_poured = 2;
+        int input_query_row = 1;
+        int input_query_galss = 1;
+        RetsultType result = s.champagneTower(input_poured, input_query_row, input_query_galss);
+        RetsultType expect = 0.5;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__799, Case_Customize_1)
+    {
+        Solution s;
+        using RetsultType = double;
+
+        int input_poured = 5;
+        int input_query_row = 2;
+        int input_query_galss = 2;
+        RetsultType result = s.champagneTower(input_poured, input_query_row, input_query_galss);
+        RetsultType expect = 0.5;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__799, Case_3)
+    {
+        Solution s;
+        using RetsultType = double;
+
+        int input_poured = 100000009;
+        int input_query_row = 33;
+        int input_query_galss = 17;
+        RetsultType result = s.champagneTower(input_poured, input_query_row, input_query_galss);
+        RetsultType expect = 1.0;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_799
+
 #include "820_daily.cpp"
 
 namespace p820_daily

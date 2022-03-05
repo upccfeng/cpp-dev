@@ -63,7 +63,7 @@ namespace p_curated_array_15_3sum
 
 /*
 # Problem:
-https://leetcode.com/problems/3sum/submissions/
+https://leetcode.com/problems/3sum/
 
 ## HINT:
 * Use a map for quickly search.

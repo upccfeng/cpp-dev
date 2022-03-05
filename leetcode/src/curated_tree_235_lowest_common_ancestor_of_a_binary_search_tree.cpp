@@ -96,9 +96,9 @@ https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
 * Method-2: Do binary search together, if they don't go the same way, return the current point.
 
 ## Time Complexity:
-BigO(n)
+Method-1: BigO(Height * Height) // can imporve to Height
+Method-2: BigO(Height)
 
 ## Space Complexity:
-Method-1: BigO(n)
-Method-2: BigO(Height)
+BigO(Height)
 */

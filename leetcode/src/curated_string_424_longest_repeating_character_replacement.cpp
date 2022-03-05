@@ -53,7 +53,7 @@ https://leetcode.com/problems/longest-repeating-character-replacement/
 ## HINT:
 * Use sliding window.
 * The (right - left + 1) - max_count shoud be smaller than k.
-* Once substr is  invalid, move left to left+1 until substr is valid.
+* Once substr is invalid, move left to left+1 until substr is valid.
 
 ## Time Complexity:
 BigO(26 * n)
