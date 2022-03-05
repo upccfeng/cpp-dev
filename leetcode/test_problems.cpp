@@ -5392,6 +5392,57 @@ namespace p696_daily
     }
 } // namespace p696_daily
 
+#include "740.cpp"
+
+namespace p_740
+{
+    using Solution = Solution;
+
+    TEST(test__740, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 3,4,2 };
+        RetsultType result = s.deleteAndEarn(input);
+        RetsultType expect = 6;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__740, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 2,2,3,3,3,4 };
+        RetsultType result = s.deleteAndEarn(input);
+        RetsultType expect = 9;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__740, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 8, 7, 3, 8, 1, 4, 10, 10, 10, 2 };
+        RetsultType result = s.deleteAndEarn(input);
+        RetsultType expect = 52;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__740, Case_Runtime_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 1, 8, 5, 9, 6, 9, 4, 1, 7, 3, 3, 6, 3, 3, 8, 2, 6, 3, 2, 2, 1, 2, 9, 8, 7, 1, 1, 10, 6, 7, 3, 9, 6, 10, 5, 4, 10, 1, 6, 7, 4, 7, 4, 1, 9, 5, 1, 5, 7, 5 };
+        RetsultType result = s.deleteAndEarn(input);
+        RetsultType expect = 138;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_740
+
 #include "763.cpp"
 
 namespace p763
