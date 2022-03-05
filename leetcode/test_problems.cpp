@@ -408,6 +408,109 @@ namespace p9
     }
 } // namespace p9
 
+#include "10.cpp"
+
+namespace p_10
+{
+    using Solution = Solution;
+
+    TEST(test__10, Case_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input_s = "aa";
+        std::string input_p = "a";
+        RetsultType result = s.isMatch(input_s, input_p);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__10, Case_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input_s = "aa";
+        std::string input_p = "a*";
+        RetsultType result = s.isMatch(input_s, input_p);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__10, Case_3)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input_s = "ab";
+        std::string input_p = ".*";
+        RetsultType result = s.isMatch(input_s, input_p);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__10, Case_Customize_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input_s = "aab";
+        std::string input_p = ".*a*b";
+        RetsultType result = s.isMatch(input_s, input_p);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__10, Case_Customize_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input_s = "a";
+        std::string input_p = "ab";
+        RetsultType result = s.isMatch(input_s, input_p);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__10, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input_s = "aaa";
+        std::string input_p = "a.a";
+        RetsultType result = s.isMatch(input_s, input_p);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__10, Case_Failure_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input_s = "a";
+        std::string input_p = "ab*";
+        RetsultType result = s.isMatch(input_s, input_p);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__10, Case_Failure_3)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input_s = "bbbba";
+        std::string input_p = ".*a*a";
+        RetsultType result = s.isMatch(input_s, input_p);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_10
+
 #include "curated_array_11_most_water_in_container.cpp"
 
 namespace p_curated_array_11_most_water_in_container
