@@ -1711,6 +1711,57 @@ namespace p36
     }
 } // namespace p36
 
+#include "38.cpp"
+
+namespace p_38
+{
+    using Solution = Solution;
+
+    TEST(test__38, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        int input = 1;
+        RetsultType result = s.countAndSay(input);
+        RetsultType expect = "1";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__38, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        int input = 4;
+        RetsultType result = s.countAndSay(input);
+        RetsultType expect = "1211";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__38, Case_Customize_1)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        int input = 5;
+        RetsultType result = s.countAndSay(input);
+        RetsultType expect = "111221";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__38, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        int input = 6;
+        RetsultType result = s.countAndSay(input);
+        RetsultType expect = "312211";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_38
+
 #include "46.cpp"
 
 namespace p46
