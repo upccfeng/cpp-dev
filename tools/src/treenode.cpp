@@ -1,6 +1,88 @@
 #include "treenode.hpp"
 #include "math.h"
 #include <memory>
+#include <queue>
+
+int TreeHelper::readStringTil(const std::string& str, int& pos, char end_char)
+{
+    int value = 0;
+    int sign = 1;
+
+    if (pos >= str.size())
+    {
+        return -999999;
+    }
+
+    while (pos < str.size() && str[pos] != ',')
+    {
+        if (str[pos] == '-')
+        {
+            sign = -1;
+        }
+        else if (str[pos] == 'n')
+        {
+            value = -999999; // assert min value is greater than -999999
+
+            pos = pos + 4;
+            break;
+        }
+        else
+        {
+            value = value * 10 + str[pos] - '0';
+        }
+
+        pos++;
+    }
+
+    pos++;
+    return value * sign;
+}
+
+TreeNode* TreeHelper::create(const std::string& str)
+{
+    if (str == "")
+    {
+        return nullptr;
+    }
+    
+    int pos = 0;
+    int value = readStringTil(str, pos, ',');
+
+    TreeNode* head = new TreeNode(value);
+    TreeNode* taking = head;
+
+    std::queue<TreeNode*> queue;
+
+    while (pos < str.size())
+    {
+        int left_value = readStringTil(str, pos, ',');
+        int right_value = readStringTil(str, pos, ',');
+
+        if (left_value != -999999)
+        {
+            taking->left = new TreeNode(left_value);
+            queue.push(taking->left);
+        }
+
+        if (right_value != -999999)
+        {
+            taking->right = new TreeNode(right_value);
+            queue.push(taking->right);
+        }
+
+        if (!queue.empty())
+        {
+            taking = queue.front();
+            queue.pop();
+        }
+        else
+        {
+            break;
+        }
+    }
+
+    return head;
+}
 
 TreeNode* TreeHelper::create(const std::vector<int>& target, const std::vector<bool>& valid)
 {
