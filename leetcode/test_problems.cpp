@@ -6614,6 +6614,336 @@ namespace p_2187_weekly_contest_282
     }
 } // namespace p_2187_weekly_contest_282
 
+#include "2190_biweekly.cpp"
+
+namespace p_2190_biweekly
+{
+    using Solution = Solution;
+
+    TEST(test__2190_biweekly, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input_nums = { 1,100,200,1,100 };
+        int input_key = 1;
+        RetsultType result = s.mostFrequent(input_nums, input_key);
+        RetsultType expect = 100;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2190_biweekly, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input_nums = { 2,2,2,2,3 };
+        int input_key = 2;
+        RetsultType result = s.mostFrequent(input_nums, input_key);
+        RetsultType expect = 2;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2190_biweekly, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input_nums = { 1, 1000, 2 };
+        int input_key = 1000;
+        RetsultType result = s.mostFrequent(input_nums, input_key);
+        RetsultType expect = 2;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2190_biweekly, Case_Failure_2)
+    {
+        Solution s;
+        using RetsultType = int;
+        std::vector<int> input_nums = { 2, 1000, 2, 1000, 2, 3 };
+        int input_key = 2;
+        RetsultType result = s.mostFrequent(input_nums, input_key);
+        RetsultType expect = 1000;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_2190_biweekly
+
+#include "2191_biweekly.cpp"
+
+namespace p_2191_biweekly
+{
+    using Solution = Solution;
+
+    TEST(test__2191_biweekly, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input_mapping = { 8,9,4,0,2,1,3,5,7,6 };
+        std::vector<int> input_nums = { 991,338,38 };
+        RetsultType result = s.sortJumbled(input_mapping, input_nums);
+        RetsultType expect = { 338, 38, 991 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2191_biweekly, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input_mapping = { 0,1,2,3,4,5,6,7,8,9 };
+        std::vector<int> input_nums = { 789,456,123 };
+        RetsultType result = s.sortJumbled(input_mapping, input_nums);
+        RetsultType expect = { 123,456,789 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2191_biweekly, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input_mapping = { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 };
+        std::vector<int> input_nums = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        RetsultType result = s.sortJumbled(input_mapping, input_nums);
+        RetsultType expect = { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2191_biweekly, Case_Failure_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input_mapping = { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 };
+        std::vector<int> input_nums = { 9, 99, 999, 9999, 999999999 };
+        RetsultType result = s.sortJumbled(input_mapping, input_nums);
+        RetsultType expect = { 9, 99, 999, 9999, 999999999 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_2191_biweekly
+
+#include "2192_biweekly.cpp"
+
+namespace p_2192_biweekly
+{
+    using Solution = Solution;
+
+    TEST(test__2192_biweekly, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        int input_n = 8;
+        std::vector<std::vector<int>> input_edges = { {0, 3}, {0, 4}, {1, 3}, {2, 4}, {2, 7}, {3, 5}, {3, 6}, {3, 7}, {4, 6} };
+        RetsultType result = s.getAncestors(input_n, input_edges);
+        RetsultType expect = { {}, {}, {}, {0, 1}, {0, 2}, {0, 1, 3}, {0, 1, 2, 3, 4}, {0, 1, 2, 3} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2192_biweekly, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        int input_n = 5;
+        std::vector<std::vector<int>> input_edges = { {0, 1}, {0, 2}, {0, 3}, {0, 4}, {1, 2}, {1, 3}, {1, 4}, {2, 3}, {2, 4}, {3, 4} };
+        RetsultType result = s.getAncestors(input_n, input_edges);
+        RetsultType expect = { {}, {0}, {0, 1}, {0, 1, 2}, {0, 1, 2, 3} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2192_biweekly, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        int input_n = 8;
+        std::vector<std::vector<int>> input_edges = { {0, 7}, {7, 6}, {0, 3}, {6, 3}, {5, 4}, {1, 5}, {2, 7}, {3, 5}, {3, 1}, {0, 5}, {7, 5}, {2, 1}, {1, 4}, {6, 1} };
+        RetsultType result = s.getAncestors(input_n, input_edges);
+        RetsultType expect = { {}, {0, 2, 3, 6, 7}, {}, {0, 2, 6, 7}, {0, 1, 2, 3, 5, 6, 7}, {0, 1, 2, 3, 6, 7}, {0, 2, 7}, {0, 2} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_2192_biweekly
+
+#include "2194_weekly.cpp"
+
+namespace p_2194_weekly
+{
+    using Solution = Solution;
+
+    TEST(test__2194_weekly, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::string>;
+
+        std::string input = "K1:L2";
+        RetsultType result = s.cellsInRange(input);
+        RetsultType expect = { "K1","K2","L1","L2" };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2194_weekly, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::string>;
+
+        std::string input = "A1:F1";
+        RetsultType result = s.cellsInRange(input);
+        RetsultType expect = { "A1", "B1", "C1", "D1", "E1", "F1" };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2194_weekly, Case_Customize_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::string>;
+
+        std::string input = "A2:C5";
+        RetsultType result = s.cellsInRange(input);
+        RetsultType expect = { "A2", "A3", "A4", "A5", "B2", "B3", "B4", "B5", "C2", "C3", "C4", "C5" };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_2194_weekly
+
+#include "2195_weekly.cpp"
+
+namespace p_2195_weekly
+{
+    using Solution = Solution;
+
+    TEST(test__2195_weekly, Case_1)
+    {
+        Solution s;
+        using RetsultType = long long;
+
+        std::vector<int> input_nums = { 1,4,25,10,25 };
+        int input_k = 2;
+        RetsultType result = s.minimalKSum(input_nums, input_k);
+        RetsultType expect = 5;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2195_weekly, Case_2)
+    {
+        Solution s;
+        using RetsultType = long long;
+
+        std::vector<int> input_nums = { 5,6 };
+        int input_k = 6;
+        RetsultType result = s.minimalKSum(input_nums, input_k);
+        RetsultType expect = 25;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2195_weekly, Case_Customize_1)
+    {
+        Solution s;
+        using RetsultType = long long;
+
+        std::vector<int> input_nums = { 2,4,5 };
+        int input_k = 4;
+        RetsultType result = s.minimalKSum(input_nums, input_k);
+        RetsultType expect = 17;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2195_weekly, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = long long;
+
+        std::vector<int> input_nums = { 96, 44, 99, 25, 61, 84, 88, 18, 19, 33, 60, 86, 52, 19, 32, 47, 35, 50, 94, 17, 29, 98, 22, 21, 72, 100, 40, 84 };
+        int input_k = 35;
+        RetsultType result = s.minimalKSum(input_nums, input_k);
+        RetsultType expect = 794;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2195_weekly, Case_Failure_2)
+    {
+        Solution s;
+        using RetsultType = long long;
+
+        std::vector<int> input_nums = { 53, 41, 90, 33, 84, 26, 50, 32, 63, 47, 66, 43, 29, 88, 71, 28, 83 };
+        int input_k = 76;
+        RetsultType result = s.minimalKSum(input_nums, input_k);
+        RetsultType expect = 3444;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2195_weekly, Case_Failure_3)
+    {
+        Solution s;
+        using RetsultType = long long;
+
+        std::vector<int> input_nums = { 93, 44, 49, 45, 93, 52, 6, 7, 88, 70, 86, 15, 38, 86, 86, 95, 8, 62, 13, 84, 26, 16, 33, 85, 7, 62, 55, 50, 77, 10, 76, 10, 35, 67, 19, 12, 24, 39, 76, 37 };
+        int input_k = 17;
+        RetsultType result = s.minimalKSum(input_nums, input_k);
+        RetsultType expect = 250;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2195_weekly, Case_Runtime_1)
+    {
+        Solution s;
+        using RetsultType = long long;
+
+        std::vector<int> input_nums = { 1 };
+        int input_k = 1000000000;
+        RetsultType result = s.minimalKSum(input_nums, input_k);
+        RetsultType expect = 500000001500000000;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2195_weekly, Case_Runtime_2)
+    {
+        Solution s;
+        using RetsultType = long long;
+
+        std::vector<int> input_nums = { 1000000000 };
+        int input_k = 1000000000;
+        RetsultType result = s.minimalKSum(input_nums, input_k);
+        RetsultType expect = 500000000500000001;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_2195_weekly
+
+#include "2196_weekly.cpp"
+
+namespace p_2196_weekly
+{
+    using Solution = Solution;
+
+    TEST(test__2196_weekly, Case_1)
+    {
+        Solution s;
+        using RetsultType = TreeNode*;
+
+        std::vector<std::vector<int>> input = { {20, 15, 1}, {20, 17, 0}, {50, 20, 1}, {50, 80, 0}, {80, 19, 1} };
+        RetsultType result = s.createBinaryTree(input);
+        RetsultType expect = TreeHelper::create("50,20,80,15,17,19");
+        ASSERT_THAT(TreeHelper::compare(result, expect), Eq(true));
+
+        TreeHelper::remove(result);
+        TreeHelper::remove(expect);
+    }
+
+    TEST(test__2196_weekly, Case_2)
+    {
+        Solution s;
+        using RetsultType = TreeNode*;
+
+        std::vector<std::vector<int>> input = { {1, 2, 1}, {2, 3, 0}, {3, 4, 1} };
+        RetsultType result = s.createBinaryTree(input);
+        RetsultType expect = TreeHelper::create("1,2,null,null,3,4");
+        ASSERT_THAT(TreeHelper::compare(result, expect), Eq(true));
+
+        TreeHelper::remove(result);
+        TreeHelper::remove(expect);
+    }
+} // namespace p_2196_weekly
+
 #include "rekuten210221_1.cpp"
 
 namespace p_rekuten210221_1
