@@ -1813,6 +1813,35 @@ namespace p_41
     }
 } // namespace p_41
 
+#include "42.cpp"
+
+namespace p_42
+{
+    using Solution = Solution;
+
+    TEST(test__42, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 0,1,0,2,1,0,1,3,2,1,2,1 };
+        RetsultType result = s.trap(input);
+        RetsultType expect = 6;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__42, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 4,2,0,3,2,5 };
+        RetsultType result = s.trap(input);
+        RetsultType expect = 9;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_42
+
 #include "46.cpp"
 
 namespace p46
