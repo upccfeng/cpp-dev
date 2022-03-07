@@ -2711,6 +2711,35 @@ namespace p_curated_matrix_73_set_matrix_zeros
     }
 } // namespace p_curated_matrix_73_set_matrix_zeros
 
+#include "75.cpp"
+
+namespace p_75
+{
+    using Solution = Solution;
+
+    TEST(test__75, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input = { 2,0,2,1,1,0 };
+        s.sortColors(input);
+        RetsultType expect = { 0,0,1,1,2,2 };
+        ASSERT_THAT(input == expect, Eq(true));
+    }
+
+    TEST(test__75, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input = { 2,0,1 };
+        s.sortColors(input);
+        RetsultType expect = { 0,1,2 };
+        ASSERT_THAT(input == expect, Eq(true));
+    }
+} // namespace p_75
+
 #include "curated_string_76_minimum_window_substring.cpp"
 
 namespace p_curated_string_76_minimum_window_substring
