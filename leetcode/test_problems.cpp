@@ -2795,6 +2795,35 @@ namespace p_curated_string_76_minimum_window_substring
     }
 } // namespace p_curated_string_76_minimum_window_substring
 
+#include "78.cpp"
+
+namespace p_78
+{
+    using Solution = Solution;
+
+    TEST(test__78, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        std::vector<int> input = { 1,2,3 };
+        RetsultType result = s.subsets(input);
+        RetsultType expect = { {1, 2, 3}, {1, 2}, {1, 3}, {1}, {2, 3}, {2}, {3}, {} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__78, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        std::vector<int> input = { 0 };
+        RetsultType result = s.subsets(input);
+        RetsultType expect = { {0}, {} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_78
+
 #include "curated_matrix_79_word_search.cpp"
 
 namespace p_curated_matrix_79_word_search
