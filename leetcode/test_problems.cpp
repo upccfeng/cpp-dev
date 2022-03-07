@@ -2542,6 +2542,90 @@ namespace p66
     }
 } // namespace p66
 
+#include "69.cpp"
+
+namespace p_69
+{
+    using Solution = Solution;
+
+    TEST(test__69, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        int input = 4;
+        RetsultType result = s.mySqrt(input);
+        RetsultType expect = 2;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__69, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        int input = 8;
+        RetsultType result = s.mySqrt(input);
+        RetsultType expect = 2;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__69, Case_Customize_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        int input = 9;
+        RetsultType result = s.mySqrt(input);
+        RetsultType expect = 3;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__69, Case_Customize_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        int input = 0;
+        RetsultType result = s.mySqrt(input);
+        RetsultType expect = 0;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__69, Case_Customize_3)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        int input = 1;
+        RetsultType result = s.mySqrt(input);
+        RetsultType expect = 1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__69, Case_Customize_4)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        int input = 2;
+        RetsultType result = s.mySqrt(input);
+        RetsultType expect = 1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__69, Case_Customize_5)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        int input = 3;
+        RetsultType result = s.mySqrt(input);
+        RetsultType expect = 1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_69
+
 #include "curated_dp_70_climbing_stairts.cpp"
 
 namespace p_curated_dp_70_climbing_stairts
