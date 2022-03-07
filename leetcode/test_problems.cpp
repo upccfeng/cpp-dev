@@ -2135,6 +2135,49 @@ namespace p_curated_string_49_group_anagrams
     }
 } // namespace p_curated_string_49_group_anagrams
 
+#include "50.cpp"
+
+namespace p_50
+{
+    using Solution = Solution;
+
+    TEST(test__50, Case_1)
+    {
+        Solution s;
+        using RetsultType = double;
+
+        double input_x = 2.0;
+        int input_n = 10;
+        RetsultType result = s.myPow(input_x, input_n);
+        RetsultType expect = 1024.0;
+        ASSERT_THAT(result - expect < 0.000001 && result - expect > -0.000001, Eq(true));
+    }
+
+    TEST(test__50, Case_2)
+    {
+        Solution s;
+        using RetsultType = double;
+
+        double input_x = 2.1;
+        int input_n = 3;
+        RetsultType result = s.myPow(input_x, input_n);
+        RetsultType expect = 9.261;
+        ASSERT_THAT(result - expect < 0.000001 && result - expect > -0.000001, Eq(true));
+    }
+
+    TEST(test__50, Case_3)
+    {
+        Solution s;
+        using RetsultType = double;
+
+        double input_x = 2.0;
+        int input_n = -2;
+        RetsultType result = s.myPow(input_x, input_n);
+        RetsultType expect = 0.25;
+        ASSERT_THAT(result - expect < 0.000001 && result - expect > -0.000001, Eq(true));
+    }
+} // namespace p_50
+
 #include "52_daily.cpp"
 
 namespace p52_daily
