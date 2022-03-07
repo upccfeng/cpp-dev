@@ -1842,6 +1842,169 @@ namespace p_42
     }
 } // namespace p_42
 
+#include "44.cpp"
+
+namespace p_44
+{
+    using Solution = Solution;
+
+    TEST(test__44, Case_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input_s = "aa";
+        std::string input_p = "a";
+        RetsultType result = s.isMatch(input_s, input_p);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__44, Case_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input_s = "aa";
+        std::string input_p = "*";
+        RetsultType result = s.isMatch(input_s, input_p);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__44, Case_3)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input_s = "cb";
+        std::string input_p = "?a";
+        RetsultType result = s.isMatch(input_s, input_p);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__44, Case_Customize_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input_s = "cb";
+        std::string input_p = "?b";
+        RetsultType result = s.isMatch(input_s, input_p);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__44, Case_Customize_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input_s = "acccb";
+        std::string input_p = "a*b";
+        RetsultType result = s.isMatch(input_s, input_p);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__44, Case_Customize_3)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input_s = "acccd";
+        std::string input_p = "a*b";
+        RetsultType result = s.isMatch(input_s, input_p);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__44, Case_Customize_4)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input_s = "abc";
+        std::string input_p = "abc*";
+        RetsultType result = s.isMatch(input_s, input_p);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__44, Case_Customize_5)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input_s = "abc";
+        std::string input_p = "abc*b";
+        RetsultType result = s.isMatch(input_s, input_p);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__44, Case_Customize_6)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input_s = "abc";
+        std::string input_p = "abcbbbbb";
+        RetsultType result = s.isMatch(input_s, input_p);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__44, Case_Customize_7)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input_s = "acccbe";
+        std::string input_p = "a*be";
+        RetsultType result = s.isMatch(input_s, input_p);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__44, Case_Customize_8)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input_s = "acccbe";
+        std::string input_p = "a*bc";
+        RetsultType result = s.isMatch(input_s, input_p);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__44, Case_Runtime_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::string input_s = "aaaabaaaabbbbaabbbaabbaababbabbaaaababaaabbbbbbaabbbabababbaaabaabaaaaaabbaabbbbaababbababaabbbaababbbba";
+        std::string input_p = "*****b*aba***babaa*bbaba***a*aaba*b*aa**a*b**ba***a*a*";
+        RetsultType result = s.isMatch(input_s, input_p);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    //TEST(test__44, Case_Runtime_2)
+    //{
+    //    Solution s;
+    //    using RetsultType = bool;
+
+    //    std::string input_s = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+    //    std::string input_p = "*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*";
+    //    RetsultType result = s.isMatch(input_s, input_p);
+    //    RetsultType expect = false;
+    //    ASSERT_THAT(result == expect, Eq(true));
+    //}
+} // namespace p_44
+
 #include "46.cpp"
 
 namespace p46
