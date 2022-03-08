@@ -3283,6 +3283,46 @@ namespace p_curated_tree_102_binary_tree_level_order_traversal
     }
 } // namespace p_curated_tree_102_binary_tree_level_order_traversal
 
+#include "103.cpp"
+
+namespace p_103
+{
+    using Solution = Solution;
+
+    TEST(test__103, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        TreeNode* input = TreeHelper::create("3,9,20,null,null,15,7");
+        RetsultType result = s.zigzagLevelOrder(input);
+        RetsultType expect = { {3}, {20, 9}, {15, 7} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__103, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        TreeNode* input = TreeHelper::create("1");
+        RetsultType result = s.zigzagLevelOrder(input);
+        RetsultType expect = { {1} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__103, Case_3)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        TreeNode* input = TreeHelper::create("");
+        RetsultType result = s.zigzagLevelOrder(input);
+        RetsultType expect = { };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_103
+
 #include "curated_tree_104_maximum_depth_of_binary_tree.cpp"
 
 namespace p_curated_tree_104_maximum_depth_of_binary_tree
