@@ -2903,6 +2903,35 @@ namespace p_curated_matrix_79_word_search
     }
 } // namespace p_curated_matrix_79_word_search
 
+#include "84.cpp"
+
+namespace p_84
+{
+    using Solution = Solution;
+
+    TEST(test__84, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 2,1,5,6,2,3 };
+        RetsultType result = s.largestRectangleArea(input);
+        RetsultType expect = 10;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__84, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 2,4 };
+        RetsultType result = s.largestRectangleArea(input);
+        RetsultType expect = 4;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_84
+
 #include "curated_dp_91_decode_ways.cpp"
 
 namespace p_curated_dp_91_decode_ways
