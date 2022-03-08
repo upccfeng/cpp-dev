@@ -3408,6 +3408,37 @@ namespace p_curated_tree_105_construct_binary_tree_from_preorder_and_inorder_tra
     }
 } // namespace p_curated_tree_105_construct_binary_tree_from_preorder_and_inorder_traversal
 
+#include "108.cpp"
+
+namespace p_108
+{
+    using Solution = Solution;
+
+    TEST(test__108, Case_1)
+    {
+        Solution s;
+        using RetsultType = TreeNode*;
+
+        std::vector<int> input = { -10,-3,0,5,9 };
+        RetsultType result = s.sortedArrayToBST(input);
+        RetsultType expect_1 = TreeHelper::create("0,-3,9,-10,null,5");
+        RetsultType expect_2 = TreeHelper::create("0,-10,5,null,-3,null,9");
+        ASSERT_THAT(TreeHelper::compare(result, expect_1) || TreeHelper::compare(result, expect_2), Eq(true));
+    }
+
+    TEST(test__108, Case_2)
+    {
+        Solution s;
+        using RetsultType = TreeNode*;
+
+        std::vector<int> input = { 1,3 };
+        RetsultType result = s.sortedArrayToBST(input);
+        RetsultType expect_1 = TreeHelper::create("3,1");
+        RetsultType expect_2 = TreeHelper::create("1,null,3");
+        ASSERT_THAT(TreeHelper::compare(result, expect_1) || TreeHelper::compare(result, expect_2), Eq(true));
+    }
+} // namespace p_108
+
 #include "curated_array_121_bestprofit.cpp"
 
 namespace p_curated_array_121_bestprofit
