@@ -3533,6 +3533,46 @@ namespace p_curated_array_121_bestprofit
     }
 } // namespace p_curated_array_121_bestprofit
 
+#include "122.cpp"
+
+namespace p_122
+{
+    using Solution = Solution;
+
+    TEST(test__122, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 7,1,5,3,6,4 };
+        RetsultType result = s.maxProfit(input);
+        RetsultType expect = 7;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__122, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 1,2,3,4,5 };
+        RetsultType result = s.maxProfit(input);
+        RetsultType expect = 4;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__122, Case_3)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 7,6,4,3,1 };
+        RetsultType result = s.maxProfit(input);
+        RetsultType expect = 0;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_122
+
 #include "curated_tree_124_binary_tree_maximum_path_sum.cpp"
 
 namespace p_curated_tree_124_binary_tree_maximum_path_sum
