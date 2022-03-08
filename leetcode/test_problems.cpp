@@ -3439,6 +3439,37 @@ namespace p_108
     }
 } // namespace p_108
 
+#include "116.cpp"
+
+namespace p_116
+{
+    using Solution = Solution;
+
+    TEST(test__116, Case_1)
+    {
+        Solution s;
+        using RetsultType = Node*;
+
+        // FIXME: There is no implementation for verify this data structure
+        Node* input = nullptr; // NodeHelper::create("1,2,3,4,5,6,7");
+        RetsultType result = s.connect(input);
+        RetsultType expect = nullptr; // NodeHelper:;create("1,#,2,3,#,4,5,6,7,#");
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__116, Case_2)
+    {
+        Solution s;
+        using RetsultType = Node*;
+
+        // FIXME: There is no implementation for verify this data structure
+        Node* input = nullptr; // NodeHelper::create("");
+        RetsultType result = s.connect(input);
+        RetsultType expect = nullptr; // NodeHelper:;create("");
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_116
+
 #include "curated_array_121_bestprofit.cpp"
 
 namespace p_curated_array_121_bestprofit
