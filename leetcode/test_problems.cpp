@@ -3470,6 +3470,35 @@ namespace p_116
     }
 } // namespace p_116
 
+#include "118.cpp"
+
+namespace p_118
+{
+    using Solution = Solution;
+
+    TEST(test__118, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        int input = 5;
+        RetsultType result = s.generate(input);
+        RetsultType expect = { {1}, {1, 1}, {1, 2, 1}, {1, 3, 3, 1}, {1, 4, 6, 4, 1} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__118, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        int input = 1;
+        RetsultType result = s.generate(input);
+        RetsultType expect = { {1} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_118
+
 #include "curated_array_121_bestprofit.cpp"
 
 namespace p_curated_array_121_bestprofit
