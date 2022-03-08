@@ -3030,6 +3030,8 @@ namespace p_94
         RetsultType result = s.inorderTraversal(input);
         RetsultType expect = { 1,3,2 };
         ASSERT_THAT(result == expect, Eq(true));
+
+        TreeHelper::remove(input);
     }
 
     TEST(test__94, Case_2)
@@ -3041,6 +3043,8 @@ namespace p_94
         RetsultType result = s.inorderTraversal(input);
         RetsultType expect = { };
         ASSERT_THAT(result == expect, Eq(true));
+
+        TreeHelper::remove(input);
     }
 
     TEST(test__94, Case_3)
@@ -3052,6 +3056,8 @@ namespace p_94
         RetsultType result = s.inorderTraversal(input);
         RetsultType expect = { 1 };
         ASSERT_THAT(result == expect, Eq(true));
+
+        TreeHelper::remove(input);
     }
 } // namespace p_94
 
@@ -3203,6 +3209,39 @@ namespace p_curated_tree_100_same_tree
         TreeHelper::remove(input_q);
     }
 } // namespace p_curated_tree_100_same_tree
+
+#include "101.cpp"
+
+namespace p_101
+{
+    using Solution = Solution;
+
+    TEST(test__101, Case_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        TreeNode* input = TreeHelper::create("1,2,2,3,4,4,3");
+        RetsultType result = s.isSymmetric(input);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+
+        TreeHelper::remove(input);
+    }
+
+    TEST(test__101, Case_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        TreeNode* input = TreeHelper::create("1,2,2,null,3,null,3");
+        RetsultType result = s.isSymmetric(input);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+
+        TreeHelper::remove(input);
+    }
+} // namespace p_101
 
 #include "curated_tree_102_binary_tree_level_order_traversal.cpp"
 

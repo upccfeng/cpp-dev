@@ -39,5 +39,5 @@ https://leetcode.com/problems/binary-tree-inorder-traversal/
 BigO(n)
 
 ## Space Complexity:
-BigO(1)
+BigO(Height)
 */
