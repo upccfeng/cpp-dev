@@ -3015,6 +3015,47 @@ namespace p_curated_dp_91_decode_ways
     }
 } // namespace p_curated_dp_91_decode_ways
 
+#include "94.cpp"
+
+namespace p_94
+{
+    using Solution = Solution;
+
+    TEST(test__94, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        TreeNode* input = TreeHelper::create("1,null,2,3");
+        RetsultType result = s.inorderTraversal(input);
+        RetsultType expect = { 1,3,2 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__94, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        TreeNode* input = TreeHelper::create("");
+        RetsultType result = s.inorderTraversal(input);
+        RetsultType expect = { };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__94, Case_3)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        TreeNode* input = TreeHelper::create("1");
+        RetsultType result = s.inorderTraversal(input);
+        RetsultType expect = { 1 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_94
+
+
 #include "curated_tree_98_validate_bindary_search_tree.cpp"
 
 namespace p_curated_tree_98_validate_bindary_search_tree
