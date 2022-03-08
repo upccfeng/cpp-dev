@@ -2932,6 +2932,55 @@ namespace p_84
     }
 } // namespace p_84
 
+#include "88.cpp"
+
+namespace p_88
+{
+    using Solution = Solution;
+
+    TEST(test__88, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input_nums1 = { 1,2,3,0,0,0 };
+        int input_m = 3;
+        std::vector<int> input_nums2 = { 2,5,6 };
+        int input_n = 3;
+        s.merge(input_nums1, input_m, input_nums2, input_n);
+        RetsultType expect = { 1, 2, 2, 3, 5, 6 };
+        ASSERT_THAT(input_nums1 == expect, Eq(true));
+    }
+
+    TEST(test__88, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input_nums1 = { 1 };
+        int input_m = 1;
+        std::vector<int> input_nums2 = { };
+        int input_n = 0;
+        s.merge(input_nums1, input_m, input_nums2, input_n);
+        RetsultType expect = { 1 };
+        ASSERT_THAT(input_nums1 == expect, Eq(true));
+    }
+
+    TEST(test__88, Case_3)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input_nums1 = { 0 };
+        int input_m = 0;
+        std::vector<int> input_nums2 = { 1 };
+        int input_n = 1;
+        s.merge(input_nums1, input_m, input_nums2, input_n);
+        RetsultType expect = { 1 };
+        ASSERT_THAT(input_nums1 == expect, Eq(true));
+    }
+} // namespace p_88
+
 #include "curated_dp_91_decode_ways.cpp"
 
 namespace p_curated_dp_91_decode_ways
