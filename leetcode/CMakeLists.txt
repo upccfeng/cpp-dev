@@ -16,6 +16,7 @@ add_executable(test_problems
 
 if(MSVC)
 target_link_libraries(test_problems tools gtest gmock gtest_main)
+add_definitions(/bigobj)
 else()
 target_link_libraries(test_problems tools gtest gmock gtest_main pthread)
 endif()
