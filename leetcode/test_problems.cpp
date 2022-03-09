@@ -3888,6 +3888,112 @@ namespace p_curated_graph_128_longest_consecutive_sequence
     }
 } // namespace p_curated_graph_128_longest_consecutive_sequence
 
+#include "130.cpp"
+
+namespace p_130
+{
+    using Solution = Solution;
+
+    TEST(test__130, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<char>>;
+
+        std::vector<std::vector<char>> input = { {'X', 'X', 'X', 'X'}, {'X', 'O', 'O', 'X'}, {'X', 'X', 'O', 'X'}, {'X', 'O', 'X', 'X'} };
+        s.solve(input);
+        RetsultType expect = { {'X', 'X', 'X', 'X'}, {'X', 'X', 'X', 'X'}, {'X', 'X', 'X', 'X'}, {'X', 'O', 'X', 'X'} };
+        ASSERT_THAT(input == expect, Eq(true));
+    }
+
+    TEST(test__130, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<char>>;
+
+        std::vector<std::vector<char>> input = { {'X'} };
+        s.solve(input);
+        RetsultType expect = { {'X'} };
+        ASSERT_THAT(input == expect, Eq(true));
+    }
+
+    TEST(test__130, Case_Customize_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<char>>;
+
+        std::vector<std::vector<char>> input = { {'O'} };
+        s.solve(input);
+        RetsultType expect = { {'O'} };
+        ASSERT_THAT(input == expect, Eq(true));
+    }
+
+    TEST(test__130, Case_Customize_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<char>>;
+
+        std::vector<std::vector<char>> input = { {'X', 'X', 'X'}, {'X', 'O', 'X'}, {'X', 'X', 'X'} };
+        s.solve(input);
+        RetsultType expect = { {'X', 'X', 'X'}, {'X', 'X', 'X'}, {'X', 'X', 'X'} };
+        ASSERT_THAT(input == expect, Eq(true));
+    }
+
+    TEST(test__130, Case_Customize_3)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<char>>;
+
+        std::vector<std::vector<char>> input = { {'O', 'X', 'O'}, {'X', 'O', 'X'}, {'O', 'X', 'O'} };
+        s.solve(input);
+        RetsultType expect = { {'O', 'X', 'O'}, {'X', 'X', 'X'}, {'O', 'X', 'O'} };
+        ASSERT_THAT(input == expect, Eq(true));
+    }
+
+    TEST(test__130, Case_Customize_4)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<char>>;
+
+        std::vector<std::vector<char>> input = { {'X', 'O', 'X'}, {'X', 'O', 'X'}, {'X', 'X', 'X'} };
+        s.solve(input);
+        RetsultType expect = { {'X', 'O', 'X'}, {'X', 'O', 'X'}, {'X', 'X', 'X'} };
+        ASSERT_THAT(input == expect, Eq(true));
+    }
+
+    TEST(test__130, Case_Customize_5)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<char>>;
+
+        std::vector<std::vector<char>> input = { {'O', 'O', 'O'}, {'O', 'O', 'O'}, {'O', 'O', 'O'} };
+        s.solve(input);
+        RetsultType expect = { {'O', 'O', 'O'}, {'O', 'O', 'O'}, {'O', 'O', 'O'} };
+        ASSERT_THAT(input == expect, Eq(true));
+    }
+
+    TEST(test__130, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<char>>;
+
+        std::vector<std::vector<char>> input = { {'X', 'O', 'X'}, {'O', 'X', 'O'}, {'X', 'O', 'X'} };
+        s.solve(input);
+        RetsultType expect = { {'X', 'O', 'X'}, {'O', 'X', 'O'}, {'X', 'O', 'X'} };
+        ASSERT_THAT(input == expect, Eq(true));
+    }
+
+    TEST(test__130, Case_Failure_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<char>>;
+
+        std::vector<std::vector<char>> input = { {'O', 'X', 'X', 'O', 'X'}, {'X', 'O', 'O', 'X', 'O'}, {'X', 'O', 'X', 'O', 'X'}, {'O', 'X', 'O', 'O', 'O'}, {'X', 'X', 'O', 'X', 'O'} };
+        s.solve(input);
+        RetsultType expect = { {'O', 'X', 'X', 'O', 'X'}, {'X', 'X', 'X', 'X', 'O'}, {'X', 'X', 'X', 'O', 'X'}, {'O', 'X', 'O', 'O', 'O'}, {'X', 'X', 'O', 'X', 'O'} };
+        ASSERT_THAT(input == expect, Eq(true));
+    }
+} // namespace p_130
+
 #include "curated_graph_133_clone_graph.cpp"
 
 namespace p_curated_graph_133_clone_graph
