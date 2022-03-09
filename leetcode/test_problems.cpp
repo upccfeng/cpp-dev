@@ -3763,6 +3763,52 @@ namespace p_curated_string_125_valid_palindrome
     }
 } // namespace p_curated_string_125_valid_palindrome
 
+#include "127.cpp"
+
+namespace p_127
+{
+    using Solution = Solution;
+
+    TEST(test__127, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input_beginWord = "hit";
+        std::string input_endWord = "cog";
+        std::vector<std::string> input_wordList = { "hot", "dot", "dog", "lot", "log", "cog" };
+        RetsultType result = s.ladderLength(input_beginWord, input_endWord, input_wordList);
+        RetsultType expect = 5;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__127, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input_beginWord = "hit";
+        std::string input_endWord = "cog";
+        std::vector<std::string> input_wordList = { "hot", "dot", "dog", "lot", "log" };
+        RetsultType result = s.ladderLength(input_beginWord, input_endWord, input_wordList);
+        RetsultType expect = 0;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__127, Case_3)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input_beginWord = "red";
+        std::string input_endWord = "tax";
+        std::vector<std::string> input_wordList = { "ted", "tex", "red", "tax", "tad", "den", "rex", "pee" };
+        RetsultType result = s.ladderLength(input_beginWord, input_endWord, input_wordList);
+        RetsultType expect = 4;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_127
+
 #include "curated_graph_128_longest_consecutive_sequence.cpp"
 
 namespace p_curated_graph_128_longest_consecutive_sequence
