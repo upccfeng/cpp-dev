@@ -3994,6 +3994,57 @@ namespace p_130
     }
 } // namespace p_130
 
+#include "131.cpp"
+
+namespace p_131
+{
+    using Solution = Solution;
+
+    TEST(test__131, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<std::string>>;
+
+        std::string input = "aab";
+        RetsultType result = s.partition(input);
+        RetsultType expect = { {"a", "a", "b"}, {"aa", "b"} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__131, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<std::string>>;
+
+        std::string input = "a";
+        RetsultType result = s.partition(input);
+        RetsultType expect = { {"a"} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__131, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<std::string>>;
+
+        std::string input = "efe";
+        RetsultType result = s.partition(input);
+        RetsultType expect = { {"e", "f", "e"}, {"efe"} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__131, Case_Failure_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<std::string>>;
+
+        std::string input = "abbab";
+        RetsultType result = s.partition(input);
+        RetsultType expect = { {"a", "b", "b", "a", "b"}, {"a", "b", "bab"}, {"a", "bb", "a", "b"}, {"abba", "b"} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_131
+
 #include "curated_graph_133_clone_graph.cpp"
 
 namespace p_curated_graph_133_clone_graph
