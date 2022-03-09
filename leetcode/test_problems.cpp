@@ -2903,6 +2903,39 @@ namespace p_curated_matrix_79_word_search
     }
 } // namespace p_curated_matrix_79_word_search
 
+#include "82.cpp"
+
+namespace p_82
+{
+    using Solution = Solution;
+
+    TEST(test__82, Case_1)
+    {
+        Solution s;
+        using RetsultType = ListNode*;
+
+        ListNode* input = ListHelper::create({ 1,2,3,3,4,4,5 });
+        RetsultType result = s.deleteDuplicates(input);
+        RetsultType expect = ListHelper::create({ 1,2,5 });
+        ASSERT_THAT(ListHelper::compare(result, expect), Eq(true));
+
+        ListHelper::remove(result);
+    }
+
+    TEST(test__82, Case_2)
+    {
+        Solution s;
+        using RetsultType = ListNode*;
+
+        ListNode* input = ListHelper::create({ 1,1,1,2,3 });
+        RetsultType result = s.deleteDuplicates(input);
+        RetsultType expect = ListHelper::create({ 2,3 });
+        ASSERT_THAT(ListHelper::compare(result, expect), Eq(true));
+
+        ListHelper::remove(result);
+    }
+} // namespace p_82
+
 #include "84.cpp"
 
 namespace p_84
