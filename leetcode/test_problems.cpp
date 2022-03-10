@@ -4466,6 +4466,83 @@ namespace p_curated_linkedlist_143_reorder_list
     }
 } // namespace p_curated_linkedlist_143_reorder_list
 
+#include "146.cpp"
+
+namespace p_146
+{
+    TEST(test__146, Case_1)
+    {
+        LRUCache lru(2);
+
+        int ret;
+
+        lru.put(1, 1);
+        lru.put(2, 2);
+        ret = lru.get(1);
+        ASSERT_THAT(ret == 1, Eq(true));
+        lru.put(3, 3);
+        ret = lru.get(2);
+        ASSERT_THAT(ret == -1, Eq(true));
+        lru.put(4, 4);
+        ret = lru.get(1);
+        ASSERT_THAT(ret == -1, Eq(true));
+        ret = lru.get(3);
+        ASSERT_THAT(ret == 3, Eq(true));
+        ret = lru.get(4);
+        ASSERT_THAT(ret == 4, Eq(true));
+    }
+
+    TEST(test__146, Case_Runtime_1)
+    {
+        LRUCache lru(2);
+
+        int ret;
+
+        lru.put(2, 1);
+        ret = lru.get(2);
+        ASSERT_THAT(ret == 1, Eq(true));
+    }
+
+    TEST(test__146, Case_Runtime_2)
+    {
+        LRUCache lru(1);
+
+        int ret;
+
+        lru.put(2, 1);
+        ret = lru.get(2);
+        ASSERT_THAT(ret == 1, Eq(true));
+        lru.put(3, 2);
+        ret = lru.get(2);
+        ASSERT_THAT(ret == -1, Eq(true));
+        ret = lru.get(3);
+        ASSERT_THAT(ret == 2, Eq(true));
+    }
+
+    TEST(test__146, Case_Runtime_3)
+    {
+        LRUCache lru(3);
+
+        int ret;
+
+        lru.put(1, 1);
+        lru.put(2, 2);
+        lru.put(3, 3);
+        lru.put(4, 4);
+        ASSERT_THAT(lru.get(4) == 4, Eq(true));
+        ASSERT_THAT(lru.get(3) == 3, Eq(true));
+        ASSERT_THAT(lru.get(2) == 2, Eq(true));
+        ASSERT_THAT(lru.get(1) == -1, Eq(true));
+        lru.put(5, 5);
+        ASSERT_THAT(lru.get(1) == -1, Eq(true));
+        ASSERT_THAT(lru.get(2) == 2, Eq(true));
+        ASSERT_THAT(lru.get(3) == 3, Eq(true));
+        ASSERT_THAT(lru.get(4) == -1, Eq(true));
+        ASSERT_THAT(lru.get(5) == 5, Eq(true));
+
+    }
+} // namespace p_146
+
 #include "curated_array_152_max_product_subarray.cpp"
 
 namespace p_curated_array_152_max_product_subarray
