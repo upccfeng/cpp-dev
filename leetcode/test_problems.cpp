@@ -4212,6 +4212,52 @@ namespace p_137
     }
 } // namespace p_137
 
+#include "138.cpp"
+
+namespace p_138
+{
+    using Solution = Solution;
+
+    TEST(test__138, Case_1)
+    {
+        Solution s;
+        using RetsultType = Node*;
+
+        Node* input = nullptr; // NodeHelper::create({{7,null],{13,0},{11,4},{10,2},{1,0}});
+        RetsultType result = s.copyRandomList(input);
+        RetsultType expect = nullptr; // NodeHelper::create({{7,null],{13,0},{11,4},{10,2},{1,0}});
+
+        // FIXME: Mock comparison due to lack of NodeHelper
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__138, Case_2)
+    {
+        Solution s;
+        using RetsultType = Node*;
+
+        Node* input = nullptr; // NodeHelper::create({{1,1},{2,1}});
+        RetsultType result = s.copyRandomList(input);
+        RetsultType expect = nullptr; // NodeHelper::create({{1,1},{2,1}});
+
+        // FIXME: Mock comparison due to lack of NodeHelper
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__138, Case_3)
+    {
+        Solution s;
+        using RetsultType = Node*;
+
+        Node* input = nullptr; // NodeHelper::create({{3,null},{3,0},{3,null}});
+        RetsultType result = s.copyRandomList(input);
+        RetsultType expect = nullptr; // NodeHelper::create({{3,null},{3,0},{3,null}});
+
+        // FIXME: Mock comparison due to lack of NodeHelper
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_138
+
 #include "curated_dp_139_word_break.cpp"
 
 namespace p_curated_dp_139_word_break
