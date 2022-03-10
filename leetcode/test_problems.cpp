@@ -4543,6 +4543,97 @@ namespace p_146
     }
 } // namespace p_146
 
+#include "148.cpp"
+
+namespace p_148
+{
+    using Solution = Solution;
+
+    TEST(test__148, Case_1)
+    {
+        Solution s;
+        using RetsultType = ListNode*;
+
+        ListNode* input = ListHelper::create({ 4,2,1,3 });
+        RetsultType result = s.sortList(input);
+        RetsultType expect = ListHelper::create({ 1,2,3,4 });;
+        ASSERT_THAT(ListHelper::compare(result, expect), Eq(true));
+
+        ListHelper::remove(result);
+        ListHelper::remove(expect);
+    }
+
+    TEST(test__148, Case_2)
+    {
+        Solution s;
+        using RetsultType = ListNode*;
+
+        ListNode* input = ListHelper::create({ -1,5,3,4,0 });
+        RetsultType result = s.sortList(input);
+        RetsultType expect = ListHelper::create({ -1,0,3,4,5 });;
+        ASSERT_THAT(ListHelper::compare(result, expect), Eq(true));
+
+        ListHelper::remove(result);
+        ListHelper::remove(expect);
+    }
+
+    TEST(test__148, Case_3)
+    {
+        Solution s;
+        using RetsultType = ListNode*;
+
+        ListNode* input = ListHelper::create({});
+        RetsultType result = s.sortList(input);
+        RetsultType expect = ListHelper::create({});;
+        ASSERT_THAT(ListHelper::compare(result, expect), Eq(true));
+
+        ListHelper::remove(result);
+        ListHelper::remove(expect);
+    }
+
+    TEST(test__148, Case_Customize_1)
+    {
+        Solution s;
+        using RetsultType = ListNode*;
+
+        ListNode* input = ListHelper::create({ 1,2,3,4 });
+        RetsultType result = s.sortList(input);
+        RetsultType expect = ListHelper::create({ 1,2,3,4 });;
+        ASSERT_THAT(ListHelper::compare(result, expect), Eq(true));
+
+        ListHelper::remove(result);
+        ListHelper::remove(expect);
+    }
+
+    TEST(test__148, Case_Customize_2)
+    {
+        Solution s;
+        using RetsultType = ListNode*;
+
+        ListNode* input = ListHelper::create({ 4,3,2,1 });
+        RetsultType result = s.sortList(input);
+        RetsultType expect = ListHelper::create({ 1,2,3,4 });;
+        ASSERT_THAT(ListHelper::compare(result, expect), Eq(true));
+
+        ListHelper::remove(result);
+        ListHelper::remove(expect);
+    }
+
+    TEST(test__148, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = ListNode*;
+
+        ListNode* input = ListHelper::create({ 4, 19, 14, 5, -3, 1, 8, 5, 11, 15 });
+        RetsultType result = s.sortList(input);
+        RetsultType expect = ListHelper::create({ -3, 1, 4, 5, 5, 8, 11, 14, 15, 19 });;
+        ASSERT_THAT(ListHelper::compare(result, expect), Eq(true));
+
+        ListHelper::remove(result);
+        ListHelper::remove(expect);
+    }
+} // namespace p_148
+
 #include "curated_array_152_max_product_subarray.cpp"
 
 namespace p_curated_array_152_max_product_subarray
