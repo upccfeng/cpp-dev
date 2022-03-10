@@ -4088,6 +4088,61 @@ namespace p_curated_graph_133_clone_graph
     }
 } // namespace p_curated_graph_133_clone_graph
 
+#include "134.cpp"
+
+namespace p_134
+{
+    using Solution = Solution;
+
+    TEST(test__134, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input_gas = { 1,2,3,4,5 };
+        std::vector<int> input_cost = { 3,4,5,1,2 };
+        RetsultType result = s.canCompleteCircuit(input_gas, input_cost);
+        RetsultType expect = 3;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__134, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input_gas = { 2,3,4 };
+        std::vector<int> input_cost = { 3,4,3 };
+        RetsultType result = s.canCompleteCircuit(input_gas, input_cost);
+        RetsultType expect = -1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__134, Case_Customize_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input_gas = { 11, 1, 0 };
+        std::vector<int> input_cost = { 1, 11, 0 };
+        RetsultType result = s.canCompleteCircuit(input_gas, input_cost);
+        RetsultType expect = 0;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__134, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input_gas = { 2 };
+        std::vector<int> input_cost = { 2 };
+        RetsultType result = s.canCompleteCircuit(input_gas, input_cost);
+        RetsultType expect = 0;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_134
+
 #include "curated_dp_139_word_break.cpp"
 
 namespace p_curated_dp_139_word_break
