@@ -4183,6 +4183,35 @@ namespace p_136
     }
 } // namespace p_136
 
+#include "137.cpp"
+
+namespace p_137
+{
+    using Solution = Solution;
+
+    TEST(test__137, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 2,2,3,2 };
+        RetsultType result = s.singleNumber(input);
+        RetsultType expect = 3;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__137, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 0,1,0,1,0,1,99 };
+        RetsultType result = s.singleNumber(input);
+        RetsultType expect = 99;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_137
+
 #include "curated_dp_139_word_break.cpp"
 
 namespace p_curated_dp_139_word_break
