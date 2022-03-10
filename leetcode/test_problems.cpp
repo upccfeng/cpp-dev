@@ -4325,6 +4325,49 @@ namespace p_curated_dp_139_word_break
     }
 } // namespace p_curated_dp_139_word_break
 
+#include "140.cpp"
+
+namespace p_140
+{
+    using Solution = Solution;
+
+    TEST(test__140, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::string>;
+
+        std::string input_s = "catsanddog";
+        std::vector<std::string> input_wordDict = { "cat", "cats", "and", "sand", "dog" };
+        RetsultType result = s.wordBreak(input_s, input_wordDict);
+        RetsultType expect = { "cat sand dog", "cats and dog" };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__140, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::string>;
+
+        std::string input_s = "pineapplepenapple";
+        std::vector<std::string> input_wordDict = { "apple","pen","applepen","pine","pineapple" };
+        RetsultType result = s.wordBreak(input_s, input_wordDict);
+        RetsultType expect = { "pine apple pen apple","pine applepen apple","pineapple pen apple" };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__140, Case_3)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::string>;
+
+        std::string input_s = "catsandog";
+        std::vector<std::string> input_wordDict = { "cats","dog","sand","and","cat" };
+        RetsultType result = s.wordBreak(input_s, input_wordDict);
+        RetsultType expect = { };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_140
+
 #include "curated_linkedlist_141_linked_list_cycle.cpp"
 
 namespace p_curated_linkedlist_141_linked_list_cycle
