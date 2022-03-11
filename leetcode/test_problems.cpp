@@ -4992,6 +4992,35 @@ namespace p_160
     }
 } // namespace p_160
 
+#include "162.cpp"
+
+namespace p_162
+{
+    using Solution = Solution;
+
+    TEST(test__162, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 1,2,3,1 };
+        RetsultType result = s.findPeakElement(input);
+        RetsultType expect = 2;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__162, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 1,2,1,3,5,6,4 };
+        RetsultType result = s.findPeakElement(input);
+        RetsultType expect = 5;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_162
+
 #include "curated_binary_190_reverse_bits.cpp"
 
 namespace p_curated_binary_190_reverse_bits
