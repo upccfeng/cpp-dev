@@ -4919,6 +4919,79 @@ namespace p_155
     }
 } // namespace p_155
 
+#include "160.cpp"
+
+namespace p_160
+{
+    using Solution = Solution;
+
+    TEST(test__160, Case_1)
+    {
+        Solution s;
+        using RetsultType = ListNode*;
+
+        ListNode* input_headA = ListHelper::create({ 4,1 });
+        ListNode* input_headB = ListHelper::create({ 5,6,1 });
+        ListNode* part_common = ListHelper::create({ 8,4,5 });
+        ListNode* partA_tail = ListHelper::get_tail(input_headA);
+        ListNode* partB_tail = ListHelper::get_tail(input_headB);
+        partA_tail->next = part_common;
+        partB_tail->next = part_common;
+
+        RetsultType result = s.getIntersectionNode(input_headA, input_headB);
+        RetsultType expect = part_common;
+        ASSERT_THAT(ListHelper::compare(result, expect), Eq(true));
+
+        // FIXME: No way to free two head list
+        // ListHelper::remove(input_headA);
+        // ListHelper::remove(input_headB);
+    }
+
+    TEST(test__160, Case_2)
+    {
+        Solution s;
+        using RetsultType = ListNode*;
+
+        ListNode* input_headA = ListHelper::create({ 1,9,1 });
+        ListNode* input_headB = ListHelper::create({ 3 });
+        ListNode* part_common = ListHelper::create({ 2,4 });
+        ListNode* partA_tail = ListHelper::get_tail(input_headA);
+        ListNode* partB_tail = ListHelper::get_tail(input_headB);
+        partA_tail->next = part_common;
+        partB_tail->next = part_common;
+
+        RetsultType result = s.getIntersectionNode(input_headA, input_headB);
+        RetsultType expect = part_common;
+        ASSERT_THAT(ListHelper::compare(result, expect), Eq(true));
+
+        // FIXME: No way to free two head list
+        // ListHelper::remove(input_headA);
+        // ListHelper::remove(input_headB);
+    }
+
+    TEST(test__160, Case_3)
+    {
+        Solution s;
+        using RetsultType = ListNode*;
+
+        ListNode* input_headA = ListHelper::create({ 2,6,4 });
+        ListNode* input_headB = ListHelper::create({ 1,5 });
+        ListNode* part_common = ListHelper::create({});
+        ListNode* partA_tail = ListHelper::get_tail(input_headA);
+        ListNode* partB_tail = ListHelper::get_tail(input_headB);
+        partA_tail->next = part_common;
+        partB_tail->next = part_common;
+
+        RetsultType result = s.getIntersectionNode(input_headA, input_headB);
+        RetsultType expect = part_common;
+        ASSERT_THAT(ListHelper::compare(result, expect), Eq(true));
+
+        // FIXME: No way to free two head list
+        // ListHelper::remove(input_headA);
+        // ListHelper::remove(input_headB);
+    }
+} // namespace p_160
+
 #include "curated_binary_190_reverse_bits.cpp"
 
 namespace p_curated_binary_190_reverse_bits
