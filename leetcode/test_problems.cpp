@@ -4634,6 +4634,46 @@ namespace p_148
     }
 } // namespace p_148
 
+#include "149.cpp"
+
+namespace p_149
+{
+    using Solution = Solution;
+
+    TEST(test__149, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<std::vector<int>> input = { {1, 1}, {2, 2}, {3, 3} };
+        RetsultType result = s.maxPoints(input);
+        RetsultType expect = 3;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__149, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<std::vector<int>> input = { {1, 1}, {3, 2}, {5, 3}, {4, 1}, {2, 3}, {1, 4} };
+        RetsultType result = s.maxPoints(input);
+        RetsultType expect = 4;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__149, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<std::vector<int>> input = { {0, 1}, {0, 0}, {0, 4}, {0, -2}, {0, -1}, {0, 3}, {0, -4} };
+        RetsultType result = s.maxPoints(input);
+        RetsultType expect = 7;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_149
+
 #include "curated_array_152_max_product_subarray.cpp"
 
 namespace p_curated_array_152_max_product_subarray
