@@ -1,4 +1,3 @@
-#include "assert.h"
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
 
@@ -8,6 +7,8 @@ using namespace testing;
 
 ////////// include the needed std container ////////////
 
+#include "assert.h"
+
 // using namespace std;
 // #include <vector>
 // #include <map>
@@ -15,6 +16,9 @@ using namespace testing;
 // #include <algorithm>
 // #include <set>
 // #include <unordered_map>
+// #include <queue>
+// #include <stack>
+// #include <cmath>
 // ...
 
 ////////////////////////////////////////////////////////
