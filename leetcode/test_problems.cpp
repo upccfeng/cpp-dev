@@ -4705,6 +4705,46 @@ namespace p_149
     }
 } // namespace p_149
 
+#include "150.cpp"
+
+namespace p_150
+{
+    using Solution = Solution;
+
+    TEST(test__150, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<std::string> input = { "2","1","+","3","*" };
+        RetsultType result = s.evalRPN(input);
+        RetsultType expect = 9;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__150, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<std::string> input = { "4","13","5","/","+" };
+        RetsultType result = s.evalRPN(input);
+        RetsultType expect = 6;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__150, Case_3)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<std::string> input = { "10","6","9","3","+","-11","*","/","*","17","+","5","+" };
+        RetsultType result = s.evalRPN(input);
+        RetsultType expect = 22;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_150
+
 #include "curated_array_152_max_product_subarray.cpp"
 
 namespace p_curated_array_152_max_product_subarray
