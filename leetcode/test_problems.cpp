@@ -4902,6 +4902,23 @@ namespace p_curated_array_153_min_in_rotated_sorted_array
     }
 } // namespace p_curated_array_153_min_in_rotated_sorted_array
 
+#include "155.cpp"
+
+namespace p_155
+{
+    TEST(test__155, Case_1)
+    {
+        MinStack ms;
+        ms.push(-2);
+        ms.push(0);
+        ms.push(-3);
+        ASSERT_THAT(ms.getMin() == -3, Eq(true));
+        ms.pop();
+        ASSERT_THAT(ms.top() == 0, Eq(true));
+        ASSERT_THAT(ms.getMin() == -2, Eq(true));
+    }
+} // namespace p_155
+
 #include "curated_binary_190_reverse_bits.cpp"
 
 namespace p_curated_binary_190_reverse_bits
