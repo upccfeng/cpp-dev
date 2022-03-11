@@ -5021,6 +5021,109 @@ namespace p_162
     }
 } // namespace p_162
 
+#include "166.cpp"
+
+namespace p_166
+{
+    using Solution = Solution;
+
+    TEST(test__166, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        int input_numerator = 1;
+        int input_denominator = 2;
+        RetsultType result = s.fractionToDecimal(input_numerator, input_denominator);
+        RetsultType expect = "0.5";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__166, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        int input_numerator = 2;
+        int input_denominator = 1;
+        RetsultType result = s.fractionToDecimal(input_numerator, input_denominator);
+        RetsultType expect = "2";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__166, Case_3)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        int input_numerator = 4;
+        int input_denominator = 333;
+        RetsultType result = s.fractionToDecimal(input_numerator, input_denominator);
+        RetsultType expect = "0.(012)";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__166, Case_Customize_1)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        int input_numerator = 1;
+        int input_denominator = -2;
+        RetsultType result = s.fractionToDecimal(input_numerator, input_denominator);
+        RetsultType expect = "-0.5";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__166, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        int input_numerator = 1;
+        int input_denominator = 6;
+        RetsultType result = s.fractionToDecimal(input_numerator, input_denominator);
+        RetsultType expect = "0.1(6)";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__166, Case_Failure_2)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        int input_numerator = -50;
+        int input_denominator = 8;
+        RetsultType result = s.fractionToDecimal(input_numerator, input_denominator);
+        RetsultType expect = "-6.25";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__166, Case_Failure_3)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        int input_numerator = 0;
+        int input_denominator = -5;
+        RetsultType result = s.fractionToDecimal(input_numerator, input_denominator);
+        RetsultType expect = "0";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__166, Case_Failure_4)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        int input_numerator = -2147483648;
+        int input_denominator = 1;
+        RetsultType result = s.fractionToDecimal(input_numerator, input_denominator);
+        RetsultType expect = "-2147483648";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_166
+
 #include "curated_binary_190_reverse_bits.cpp"
 
 namespace p_curated_binary_190_reverse_bits
