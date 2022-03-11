@@ -2443,6 +2443,37 @@ namespace p_curated_interval_57_insert_interval
     }
 } // namespace p_curated_interval_57_insert_interval
 
+#include "61.cpp"
+
+namespace p_61
+{
+    using Solution = Solution;
+
+    TEST(test__61, Case_1)
+    {
+        Solution s;
+        using RetsultType = ListNode*;
+
+        ListNode* input_head = ListHelper::create({ 1,2,3,4,5 });
+        int input_k = 2;
+        RetsultType result = s.rotateRight(input_head, input_k);
+        RetsultType expect = ListHelper::create({ 4,5,1,2,3 });;
+        ASSERT_THAT(ListHelper::compare(result, expect), Eq(true));
+    }
+
+    TEST(test__61, Case_2)
+    {
+        Solution s;
+        using RetsultType = ListNode*;
+
+        ListNode* input_head = ListHelper::create({ 0,1,2 });
+        int input_k = 4;
+        RetsultType result = s.rotateRight(input_head, input_k);
+        RetsultType expect = ListHelper::create({ 2,0,1 });;
+        ASSERT_THAT(ListHelper::compare(result, expect), Eq(true));
+    }
+} // namespace p_61
+
 #include "curated_dp_62_unique_paths.cpp"
 
 namespace p_curated_dp_62_unique_paths
