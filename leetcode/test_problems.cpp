@@ -8600,6 +8600,140 @@ namespace p_2196_weekly
     }
 } // namespace p_2196_weekly
 
+#include "2200.cpp"
+
+namespace p_2200_weekly
+{
+    using Solution = Solution;
+
+    TEST(test__2200_weekly, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input_nums = { 3,4,9,1,3,9,5 };
+        int input_key = 9;
+        int input_k = 1;
+        RetsultType result = s.findKDistantIndices(input_nums, input_key, input_k);
+        RetsultType expect = { 1,2,3,4,5,6 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2200_weekly, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input_nums = { 2,2,2,2,2 };
+        int input_key = 2;
+        int input_k = 2;
+        RetsultType result = s.findKDistantIndices(input_nums, input_key, input_k);
+        RetsultType expect = { 0,1,2,3,4 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2200_weekly, Case_3)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input_nums = { 2 };
+        int input_key = 3;
+        int input_k = 1;
+        RetsultType result = s.findKDistantIndices(input_nums, input_key, input_k);
+        RetsultType expect = { };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_2200_weekly
+
+#include "2201.cpp"
+
+namespace p_2201_weekly
+{
+    using Solution = Solution;
+
+    TEST(test__2201_weekly, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        int input_n = 2;
+        std::vector<std::vector<int>> input_artifacts = { {0, 0, 0, 0}, {0, 1, 1, 1} };
+        std::vector<std::vector<int>> input_dig = { {0, 0}, {0, 1} };
+        RetsultType result = s.digArtifacts(input_n, input_artifacts, input_dig);
+        RetsultType expect = 1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2201_weekly, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        int input_n = 2;
+        std::vector<std::vector<int>> input_artifacts = { {0, 0, 0, 0}, {0, 1, 1, 1} };
+        std::vector<std::vector<int>> input_dig = { {0, 0}, {0, 1}, {1, 1} };
+        RetsultType result = s.digArtifacts(input_n, input_artifacts, input_dig);
+        RetsultType expect = 2;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_2201_weekly
+
+#include "2202.cpp"
+
+namespace p_2202_weekly
+{
+    using Solution = Solution;
+
+    TEST(test__2202_weekly, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input_nums = { 5,2,2,4,0,6 };
+        int input_k = 4;
+        RetsultType result = s.maximumTop(input_nums, input_k);
+        RetsultType expect = 5;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2202_weekly, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input_nums = { 2 };
+        int input_k = 1;
+        RetsultType result = s.maximumTop(input_nums, input_k);
+        RetsultType expect = -1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2202_weekly, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input_nums = { 99, 95, 68, 24, 18 };
+        int input_k = 69;
+        RetsultType result = s.maximumTop(input_nums, input_k);
+        RetsultType expect = 99;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2202_weekly, Case_Failure_3)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input_nums = { 18 };
+        int input_k = 3;
+        RetsultType result = s.maximumTop(input_nums, input_k);
+        RetsultType expect = -1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_2202_weekly
+
 #include "rekuten210221_1.cpp"
 
 namespace p_rekuten210221_1
