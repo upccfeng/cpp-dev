@@ -5204,6 +5204,68 @@ namespace p_171
     }
 } // namespace p_171
 
+#include "172.cpp"
+
+namespace p_172
+{
+    using Solution = Solution;
+
+    TEST(test__172, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        int input = 3;
+        RetsultType result = s.trailingZeroes(input);
+        RetsultType expect = 0;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__172, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        int input = 5;
+        RetsultType result = s.trailingZeroes(input);
+        RetsultType expect = 1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__172, Case_3)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        int input = 0;
+        RetsultType result = s.trailingZeroes(input);
+        RetsultType expect = 0;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__172, Case_Customize_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        int input = 5000;
+        RetsultType result = s.trailingZeroes(input);
+        RetsultType expect = 1249;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__172, Case_Customize_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        int input = 10000;
+        RetsultType result = s.trailingZeroes(input);
+        RetsultType expect = 2499;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_172
+
 #include "curated_binary_190_reverse_bits.cpp"
 
 namespace p_curated_binary_190_reverse_bits
