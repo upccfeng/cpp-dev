@@ -5339,6 +5339,37 @@ namespace p_179
     }
 } // namespace p_179
 
+#include "189.cpp"
+
+namespace p_189
+{
+    using Solution = Solution;
+
+    TEST(test__189, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input_nums = { 1,2,3,4,5,6,7 };
+        int input_k = 3;
+        s.rotate(input_nums, input_k);
+        RetsultType expect = { 5,6,7,1,2,3,4 };
+        ASSERT_THAT(input_nums == expect, Eq(true));
+    }
+
+    TEST(test__189, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input_nums = { -1,-100,3,99 };
+        int input_k = 2;
+        s.rotate(input_nums, input_k);
+        RetsultType expect = { 3,99,-1,-100 };
+        ASSERT_THAT(input_nums == expect, Eq(true));
+    }
+} // namespace p_189
+
 #include "curated_binary_190_reverse_bits.cpp"
 
 namespace p_curated_binary_190_reverse_bits
