@@ -5124,6 +5124,35 @@ namespace p_166
     }
 } // namespace p_166
 
+#include "169.cpp"
+
+namespace p_169
+{
+    using Solution = Solution;
+
+    TEST(test__169, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 3,2,3 };
+        RetsultType result = s.majorityElement(input);
+        RetsultType expect = 3;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__169, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 2,2,1,1,1,2,2 };
+        RetsultType result = s.majorityElement(input);
+        RetsultType expect = 2;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_169
+
 #include "curated_binary_190_reverse_bits.cpp"
 
 namespace p_curated_binary_190_reverse_bits
