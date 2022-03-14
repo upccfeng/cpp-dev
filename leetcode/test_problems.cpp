@@ -5660,6 +5660,57 @@ namespace p_202
     }
 } // namespace p_202
 
+#include "204.cpp"
+
+namespace p_204
+{
+    using Solution = Solution;
+
+    TEST(test__204, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        int input = 10;
+        RetsultType result = s.countPrimes(input);
+        RetsultType expect = 4;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__204, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        int input = 0;
+        RetsultType result = s.countPrimes(input);
+        RetsultType expect = 0;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__204, Case_3)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        int input = 1;
+        RetsultType result = s.countPrimes(input);
+        RetsultType expect = 0;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    //TEST(test__204, Case_Customize_1)
+    //{
+    //    Solution s;
+    //    using RetsultType = int;
+    //
+    //    int input = 5000000;
+    //    RetsultType result = s.countPrimes(input);
+    //    RetsultType expect = 348513;
+    //    ASSERT_THAT(result == expect, Eq(true));
+    //}
+} // namespace p_204
+
 #include "curated_linkedlist_206_reverse_linked_list.cpp"
 
 namespace p_curated_linkedlist_206_reverse_linked_list
