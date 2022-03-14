@@ -5266,6 +5266,79 @@ namespace p_172
     }
 } // namespace p_172
 
+#include "179.cpp"
+
+namespace p_179
+{
+    using Solution = Solution;
+
+    TEST(test__179, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        std::vector<int> input = { 10,2 };
+        RetsultType result = s.largestNumber(input);
+        RetsultType expect = "210";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__179, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        std::vector<int> input = { 3,30,34,5,9 };
+        RetsultType result = s.largestNumber(input);
+        RetsultType expect = "9534330";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__179, Case_Customize_1)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        std::vector<int> input = { 3,30,32,5,9 };
+        RetsultType result = s.largestNumber(input);
+        RetsultType expect = "9533230";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__179, Case_Customize_2)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        std::vector<int> input = { 12,12 };
+        RetsultType result = s.largestNumber(input);
+        RetsultType expect = "1212";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__179, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        std::vector<int> input = { 34323, 3432 };
+        RetsultType result = s.largestNumber(input);
+        RetsultType expect = "343234323";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__179, Case_Failure_2)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        std::vector<int> input = { 0, 0 };
+        RetsultType result = s.largestNumber(input);
+        RetsultType expect = "0";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_179
+
 #include "curated_binary_190_reverse_bits.cpp"
 
 namespace p_curated_binary_190_reverse_bits
