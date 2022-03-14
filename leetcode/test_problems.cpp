@@ -5153,6 +5153,57 @@ namespace p_169
     }
 } // namespace p_169
 
+#include "171.cpp"
+
+namespace p_171
+{
+    using Solution = Solution;
+
+    TEST(test__171, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input = "A";
+        RetsultType result = s.titleToNumber(input);
+        RetsultType expect = 1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__171, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input = "AB";
+        RetsultType result = s.titleToNumber(input);
+        RetsultType expect = 28;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__171, Case_3)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input = "ZY";
+        RetsultType result = s.titleToNumber(input);
+        RetsultType expect = 701;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__171, Case_Runtime_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input = "FXSHRXW";
+        RetsultType result = s.titleToNumber(input);
+        RetsultType expect = 2147483647;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_171
+
 #include "curated_binary_190_reverse_bits.cpp"
 
 namespace p_curated_binary_190_reverse_bits
