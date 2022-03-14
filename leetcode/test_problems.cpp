@@ -5631,6 +5631,35 @@ namespace p_curated_graph_200_number_of_islands
     }
 } // namespace p_curated_graph_200_number_of_islands
 
+#include "202.cpp"
+
+namespace p_202
+{
+    using Solution = Solution;
+
+    TEST(test__202, Case_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        int input = 19;
+        RetsultType result = s.isHappy(input);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__202, Case_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        int input = 2;
+        RetsultType result = s.isHappy(input);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_202
+
 #include "curated_linkedlist_206_reverse_linked_list.cpp"
 
 namespace p_curated_linkedlist_206_reverse_linked_list
