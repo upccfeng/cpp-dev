@@ -6184,6 +6184,57 @@ namespace p_curated_array_217_containduplicate
     }
 } // namespace p_curated_array_217_containduplicate
 
+#include "218.cpp"
+
+namespace p_218
+{
+    using Solution = Solution;
+
+    TEST(test__218, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        std::vector<std::vector<int>> input = { {2, 9, 10}, {3, 7, 15}, {5, 12, 12}, {15, 20, 10}, {19, 24, 8} };
+        RetsultType result = s.getSkyline(input);
+        RetsultType expect = { {2, 10}, {3, 15}, {7, 12}, {12, 0}, {15, 10}, {20, 8}, {24, 0} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__218, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        std::vector<std::vector<int>> input = { {0, 2, 3}, {2, 5, 3} };
+        RetsultType result = s.getSkyline(input);
+        RetsultType expect = { {0, 3}, {5, 0} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__218, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        std::vector<std::vector<int>> input = { {2, 9, 10}, {9, 12, 15} };
+        RetsultType result = s.getSkyline(input);
+        RetsultType expect = { {2, 10}, {9, 15}, {12, 0} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__218, Case_Failure_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        std::vector<std::vector<int>> input = { {2, 9, 10}, {9, 12, 5} };
+        RetsultType result = s.getSkyline(input);
+        RetsultType expect = { {2, 10}, {9, 5}, {12, 0} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_218
+
 #include "curated_tree_226_invert_binary_tree.cpp"
 
 namespace p_curated_tree_226_invert_binary_tree
