@@ -5938,6 +5938,74 @@ namespace p_curated_tree_208_implement_trie_or_prefix_tree
     }
 } // namespace p_curated_tree_208_implement_trie_or_prefix_tree
 
+#include "210.cpp"
+
+namespace p_210
+{
+    using Solution = Solution;
+
+    TEST(test__210, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        int input_numCourses = 2;
+        std::vector<std::vector<int>> input_prerequisites = { {1, 0} };
+        RetsultType result = s.findOrder(input_numCourses, input_prerequisites);
+        RetsultType expect = { 0,1 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__210, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        int input_numCourses = 4;
+        std::vector<std::vector<int>> input_prerequisites = { {1,0},{2,0},{3,1},{3,2} };
+        RetsultType result = s.findOrder(input_numCourses, input_prerequisites);
+        RetsultType expect = { 0,1,2,3 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__210, Case_3)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        int input_numCourses = 1;
+        std::vector<std::vector<int>> input_prerequisites = { };
+        RetsultType result = s.findOrder(input_numCourses, input_prerequisites);
+        RetsultType expect = { 0 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__210, Case_Customize_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        int input_numCourses = 4;
+        std::vector<std::vector<int>> input_prerequisites = { {0, 1}, {0, 2}, {0, 3}, {1, 2}, {1, 3}, {2, 3} };
+        RetsultType result = s.findOrder(input_numCourses, input_prerequisites);
+        RetsultType expect = { 3, 2, 1, 0 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__210, Case_Customize_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        int input_numCourses = 4;
+        std::vector<std::vector<int>> input_prerequisites = { {0, 1}, {0, 2}, {0, 3}, {1, 2}, {1, 3}, {2, 3}, {3, 0} };
+        RetsultType result = s.findOrder(input_numCourses, input_prerequisites);
+        RetsultType expect = {};
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_210
+
+
 #include "curated_tree_211_design_add_and_search_words_data_structure.cpp"
 
 namespace p_curated_tree_211_design_add_and_search_words_data_structure
