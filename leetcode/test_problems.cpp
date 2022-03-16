@@ -6412,6 +6412,46 @@ namespace p_curated_tree_230_kth_smallest_element_in_a_bst
     }
 } // namespace p_curated_tree_230_kth_smallest_element_in_a_bst
 
+#include "234.cpp"
+
+namespace p_234
+{
+    using Solution = Solution;
+
+    TEST(test__234, Case_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        ListNode* input = ListHelper::create({ 1,2,2,1 });
+        RetsultType result = s.isPalindrome(input);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__234, Case_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        ListNode* input = ListHelper::create({ 1,2 });
+        RetsultType result = s.isPalindrome(input);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__234, Case_Customize_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        ListNode* input = ListHelper::create({ 1,2,3,2,1 });
+        RetsultType result = s.isPalindrome(input);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_234
+
 #include "curated_tree_235_lowest_common_ancestor_of_a_binary_search_tree.cpp"
 
 namespace p_curated_tree_235_lowest_common_ancestor_of_a_binary_search_tree
