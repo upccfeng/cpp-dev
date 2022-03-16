@@ -6150,6 +6150,37 @@ namespace p_curated_dp_213_house_robber_ii
     }
 } // namespace p_curated_dp_213_house_robber_ii
 
+#include "215.cpp"
+
+namespace p_215
+{
+    using Solution = Solution;
+
+    TEST(test__215, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input_nums = { 3,2,1,5,6,4 };
+        int input_k = 2;
+        RetsultType result = s.findKthLargest(input_nums, input_k);
+        RetsultType expect = 5;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__215, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input_nums = { 3,2,3,1,2,4,5,5,6 };
+        int input_k = 4;
+        RetsultType result = s.findKthLargest(input_nums, input_k);
+        RetsultType expect = 4;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_215
+
 #include "curated_array_217_containduplicate.cpp"
 
 namespace p_curated_array_217_containduplicate
