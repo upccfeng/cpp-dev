@@ -6284,6 +6284,68 @@ namespace p_curated_tree_226_invert_binary_tree
     }
 } // namespace p_curated_tree_226_invert_binary_tree
 
+#include "227.cpp"
+
+namespace p_227
+{
+    using Solution = Solution;
+
+    TEST(test__227, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input = "3+2*2";
+        RetsultType result = s.calculate(input);
+        RetsultType expect = 7;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__227, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input = "3/2";
+        RetsultType result = s.calculate(input);
+        RetsultType expect = 1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__227, Case_3)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input = "3+5 / 2 ";
+        RetsultType result = s.calculate(input);
+        RetsultType expect = 5;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__227, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input = "1-1+1";
+        RetsultType result = s.calculate(input);
+        RetsultType expect = 1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__227, Case_Failure_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input = "0-2147483647";
+        RetsultType result = s.calculate(input);
+        RetsultType expect = -2147483647;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_227
+
 #include "curated_tree_230_kth_smallest_element_in_a_bst.cpp"
 
 namespace p_curated_tree_230_kth_smallest_element_in_a_bst
