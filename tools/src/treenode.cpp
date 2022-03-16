@@ -163,6 +163,33 @@ bool TreeHelper::isTheSame(TreeNode* p, TreeNode* q)
     }
 }
 
+void TreeHelper::dfsWithValue(std::vector<TreeNode*>& ret, TreeNode* root, int target)
+{
+    if (root == nullptr)
+    {
+        return;
+    }
+
+    if (root->val == target)
+    {
+        ret.push_back(root);
+    }
+
+    dfsWithValue(ret, root->left, target);
+    dfsWithValue(ret, root->right, target);
+}
+
+
+std::vector<TreeNode*> TreeHelper::findElements(TreeNode* head, int target)
+{
+    std::vector<TreeNode*> ret;
+
+    dfsWithValue(ret, head, target);
+
+    return ret;
+}
+
+
 bool TreeHelper::compare(TreeNode* lhs, TreeNode* rhs)
 {
     return isTheSame(lhs, rhs);

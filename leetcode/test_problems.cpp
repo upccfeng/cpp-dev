@@ -6513,6 +6513,61 @@ namespace p_curated_tree_235_lowest_common_ancestor_of_a_binary_search_tree
     }
 } // namespace p_curated_tree_235_lowest_common_ancestor_of_a_binary_search_tree
 
+#include "236.cpp"
+
+namespace p_236
+{
+    using Solution = Solution;
+
+    TEST(test__236, Case_1)
+    {
+        Solution s;
+        using RetsultType = TreeNode*;
+
+        TreeNode* input_root = TreeHelper::create("3,5,1,6,2,0,8,null,null,7,4");
+        std::vector<TreeNode*> elements_p = TreeHelper::findElements(input_root, 5);
+        TreeNode* input_p = elements_p[0];
+        std::vector<TreeNode*> elements_q = TreeHelper::findElements(input_root, 1);
+        TreeNode* input_q = elements_q[0];
+        RetsultType result = s.lowestCommonAncestor(input_root, input_p, input_q);
+        std::vector<TreeNode*> elements_expect = TreeHelper::findElements(input_root, 3);
+        RetsultType expect = elements_expect[0];
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__236, Case_2)
+    {
+        Solution s;
+        using RetsultType = TreeNode*;
+
+        TreeNode* input_root = TreeHelper::create("3,5,1,6,2,0,8,null,null,7,4");
+        std::vector<TreeNode*> elements_p = TreeHelper::findElements(input_root, 5);
+        TreeNode* input_p = elements_p[0];
+        std::vector<TreeNode*> elements_q = TreeHelper::findElements(input_root, 4);
+        TreeNode* input_q = elements_q[0];
+        RetsultType result = s.lowestCommonAncestor(input_root, input_p, input_q);
+        std::vector<TreeNode*> elements_expect = TreeHelper::findElements(input_root, 5);
+        RetsultType expect = elements_expect[0];
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__236, Case_3)
+    {
+        Solution s;
+        using RetsultType = TreeNode*;
+
+        TreeNode* input_root = TreeHelper::create("1,2");
+        std::vector<TreeNode*> elements_p = TreeHelper::findElements(input_root, 1);
+        TreeNode* input_p = elements_p[0];
+        std::vector<TreeNode*> elements_q = TreeHelper::findElements(input_root, 2);
+        TreeNode* input_q = elements_q[0];
+        RetsultType result = s.lowestCommonAncestor(input_root, input_p, input_q);
+        std::vector<TreeNode*> elements_expect = TreeHelper::findElements(input_root, 1);
+        RetsultType expect = elements_expect[0];
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_236
+
 #include "curated_array_238_product_of_array_except_self.cpp"
 
 namespace p_curated_array_238_product_of_array_except_self
