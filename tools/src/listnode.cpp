@@ -87,6 +87,24 @@ ListNode* ListHelper::add_loop(ListNode* head, ListNode* taking, int pos)
     return head;
 }
 
+std::vector<ListNode*> ListHelper::getElements(ListNode* head, int target)
+{
+    std::vector<ListNode*> ret;
+
+    while (head != nullptr)
+    {
+        if (head->val == target)
+        {
+            ret.push_back(head);
+        }
+
+        head = head->next;
+    }
+
+    return ret;
+}
+
+
 bool ListHelper::compare(ListNode* lhs, const std::vector<int>& rhs_v)
 {
     std::shared_ptr<ListNode> rhs = std::shared_ptr<ListNode>(ListHelper::create(rhs_v), ListHelper::remove);

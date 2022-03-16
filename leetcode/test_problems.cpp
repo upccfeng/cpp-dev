@@ -6568,6 +6568,45 @@ namespace p_236
     }
 } // namespace p_236
 
+#include "237.cpp"
+
+namespace p_237
+{
+    using Solution = Solution;
+
+    TEST(test__237, Case_1)
+    {
+        Solution s;
+        using RetsultType = ListNode*;
+
+        ListNode* head = ListHelper::create({ 4,5,1,9 });
+        auto elements_input = ListHelper::getElements(head, 5);
+        ListNode* input = elements_input[0];
+        s.deleteNode(input);
+        RetsultType expect = ListHelper::create({ 4,1,9 });
+        ASSERT_THAT(ListHelper::compare(head, expect), Eq(true));
+
+        ListHelper::remove(head);
+        ListHelper::remove(expect);
+    }
+
+    TEST(test__237, Case_2)
+    {
+        Solution s;
+        using RetsultType = ListNode*;
+
+        ListNode* head = ListHelper::create({ 4,5,1,9 });
+        auto elements_input = ListHelper::getElements(head, 1);
+        ListNode* input = elements_input[0];
+        s.deleteNode(input);
+        RetsultType expect = ListHelper::create({ 4,5,9 });
+        ASSERT_THAT(ListHelper::compare(head, expect), Eq(true));
+
+        ListHelper::remove(head);
+        ListHelper::remove(expect);
+    }
+} // namespace p_237
+
 #include "curated_array_238_product_of_array_except_self.cpp"
 
 namespace p_curated_array_238_product_of_array_except_self
