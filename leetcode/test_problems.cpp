@@ -6817,6 +6817,46 @@ namespace p_curated_binary_268_missing_number
     }
 } // namespace p_curated_binary_268_missing_number
 
+#include "279.cpp"
+
+namespace p_279
+{
+    using Solution = Solution;
+
+    TEST(test__279, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        int input = 12;
+        RetsultType result = s.numSquares(input);
+        RetsultType expect = 3;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__279, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        int input = 13;
+        RetsultType result = s.numSquares(input);
+        RetsultType expect = 2;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__279, Case_Runtime_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        int input = 8935;
+        RetsultType result = s.numSquares(input);
+        RetsultType expect = 4;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_279
+
 #include "curated_heap_295_find_median_from_data_stream.cpp"
 
 namespace p_curated_heap_295_find_median_from_data_stream
