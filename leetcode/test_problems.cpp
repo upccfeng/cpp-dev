@@ -6857,6 +6857,57 @@ namespace p_279
     }
 } // namespace p_279
 
+#include "283.cpp"
+
+namespace p_283
+{
+    using Solution = Solution;
+
+    TEST(test__283, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input = { 0,1,0,3,12 };
+        s.moveZeroes(input);
+        RetsultType expect = { 1,3,12,0,0 };
+        ASSERT_THAT(input == expect, Eq(true));
+    }
+
+    TEST(test__283, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input = { 0 };
+        s.moveZeroes(input);
+        RetsultType expect = { 0 };
+        ASSERT_THAT(input == expect, Eq(true));
+    }
+
+    TEST(test__283, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input = { 1,0,1 };
+        s.moveZeroes(input);
+        RetsultType expect = { 1,1,0 };
+        ASSERT_THAT(input == expect, Eq(true));
+    }
+
+    TEST(test__283, Case_Failure_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input = { 2,1 };
+        s.moveZeroes(input);
+        RetsultType expect = { 2,1 };
+        ASSERT_THAT(input == expect, Eq(true));
+    }
+} // namespace p_283
+
 #include "curated_heap_295_find_median_from_data_stream.cpp"
 
 namespace p_curated_heap_295_find_median_from_data_stream
