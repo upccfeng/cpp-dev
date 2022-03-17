@@ -6908,6 +6908,35 @@ namespace p_283
     }
 } // namespace p_283
 
+#include "287.cpp"
+
+namespace p_287
+{
+    using Solution = Solution;
+
+    TEST(test__287, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 1,3,4,2,2 };
+        RetsultType result = s.findDuplicate(input);
+        RetsultType expect = 2;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__287, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 3,1,3,4,2 };
+        RetsultType result = s.findDuplicate(input);
+        RetsultType expect = 3;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_287
+
 #include "curated_heap_295_find_median_from_data_stream.cpp"
 
 namespace p_curated_heap_295_find_median_from_data_stream
