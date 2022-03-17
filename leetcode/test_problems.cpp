@@ -6685,6 +6685,61 @@ namespace p_239
     }
 } // namespace p_239
 
+#include "240.cpp"
+
+namespace p_240
+{
+    using Solution = Solution;
+
+    TEST(test__240, Case_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::vector<std::vector<int>> input_matrix = { {1, 4, 7, 11, 15}, {2, 5, 8, 12, 19}, {3, 6, 9, 16, 22}, {10, 13, 14, 17, 24}, {18, 21, 23, 26, 30} };
+        int input_target = 5;
+        RetsultType result = s.searchMatrix(input_matrix, input_target);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__240, Case_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::vector<std::vector<int>> input_matrix = { {1, 4, 7, 11, 15}, {2, 5, 8, 12, 19}, {3, 6, 9, 16, 22}, {10, 13, 14, 17, 24}, {18, 21, 23, 26, 30} };
+        int input_target = 20;
+        RetsultType result = s.searchMatrix(input_matrix, input_target);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__240, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::vector<std::vector<int>> input_matrix = { {1} };
+        int input_target = 1;
+        RetsultType result = s.searchMatrix(input_matrix, input_target);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__240, Case_Failure_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::vector<std::vector<int>> input_matrix = { {-1, 1} };
+        int input_target = 0;
+        RetsultType result = s.searchMatrix(input_matrix, input_target);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_240
+
 #include "curated_string_242_valid_anagram.cpp"
 
 namespace p_curated_string_242_valid_anagram
