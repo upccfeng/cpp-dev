@@ -6937,6 +6937,35 @@ namespace p_287
     }
 } // namespace p_287
 
+#include "289.cpp"
+
+namespace p_289
+{
+    using Solution = Solution;
+
+    TEST(test__289, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        std::vector<std::vector<int>> input = { {0, 1, 0}, {0, 0, 1}, {1, 1, 1}, {0, 0, 0} };
+        s.gameOfLife(input);
+        RetsultType expect = { {0, 0, 0}, {1, 0, 1}, {0, 1, 1}, {0, 1, 0} };
+        ASSERT_THAT(input == expect, Eq(true));
+    }
+
+    TEST(test__289, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        std::vector<std::vector<int>> input = { {1, 1}, {1, 0} };
+        s.gameOfLife(input);
+        RetsultType expect = { {1, 1}, {1, 1} };
+        ASSERT_THAT(input == expect, Eq(true));
+    }
+} // namespace p_289
+
 #include "curated_heap_295_find_median_from_data_stream.cpp"
 
 namespace p_curated_heap_295_find_median_from_data_stream
