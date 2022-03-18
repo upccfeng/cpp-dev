@@ -7250,6 +7250,35 @@ namespace p_curated_dp_322_coin_change
     }
 } // namespace p_curated_dp_322_coin_change
 
+#include "324.cpp"
+
+namespace p_324
+{
+    using Solution = Solution;
+
+    TEST(test__324, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input = { 1,5,1,1,6,4 };
+        s.wiggleSort(input);
+        RetsultType expect = { 1,6,1,5,1,4 };
+        ASSERT_THAT(input == expect, Eq(true));
+    }
+
+    TEST(test__324, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input = { 1,3,2,2,3,1 };
+        s.wiggleSort(input);
+        RetsultType expect = { 2,3,1,3,1,2 };
+        ASSERT_THAT(input == expect, Eq(true));
+    }
+} // namespace p_324
+
 #include "328.cpp"
 
 namespace p328
