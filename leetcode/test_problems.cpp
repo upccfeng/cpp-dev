@@ -7279,6 +7279,57 @@ namespace p_324
     }
 } // namespace p_324
 
+#include "326.cpp"
+
+namespace p_326
+{
+    using Solution = Solution;
+
+    TEST(test__326, Case_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        int input = 27;
+        RetsultType result = s.isPowerOfThree(input);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__326, Case_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        int input = 0;
+        RetsultType result = s.isPowerOfThree(input);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__326, Case_3)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        int input = 9;
+        RetsultType result = s.isPowerOfThree(input);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__326, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        int input = 1;
+        RetsultType result = s.isPowerOfThree(input);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_326
+
 #include "328.cpp"
 
 namespace p328
