@@ -7143,6 +7143,46 @@ namespace p307
 
 } // namespace p307
 
+#include "315.cpp"
+
+namespace p_315
+{
+    using Solution = Solution;
+
+    TEST(test__315, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input = { 5,2,6,1 };
+        RetsultType result = s.countSmaller(input);
+        RetsultType expect = { 2,1,1,0 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__315, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input = { -1 };
+        RetsultType result = s.countSmaller(input);
+        RetsultType expect = { 0 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__315, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input = { 1,2,0 };
+        RetsultType result = s.countSmaller(input);
+        RetsultType expect = { 1,1,0 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_315
+
 #include "curated_dp_322_coin_change.cpp"
 
 namespace p_curated_dp_322_coin_change
