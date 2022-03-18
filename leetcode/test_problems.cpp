@@ -7400,6 +7400,46 @@ namespace p328
     }
 } // namespace p328
 
+#include "329.cpp"
+
+namespace p_329
+{
+    using Solution = Solution;
+
+    TEST(test__329, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<std::vector<int>> input = { {9, 9, 4}, {6, 6, 8}, {2, 1, 1} };
+        RetsultType result = s.longestIncreasingPath(input);
+        RetsultType expect = 4;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__329, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<std::vector<int>> input = { {3, 4, 5}, {3, 2, 6}, {2, 2, 1} };
+        RetsultType result = s.longestIncreasingPath(input);
+        RetsultType expect = 4;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__329, Case_3)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<std::vector<int>> input = { {1} };
+        RetsultType result = s.longestIncreasingPath(input);
+        RetsultType expect = 1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_329
+
 #include "curated_binary_338_counting_bits.cpp"
 
 namespace p_curated_binary_338_counting_bits
