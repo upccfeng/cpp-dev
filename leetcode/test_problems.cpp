@@ -7440,6 +7440,68 @@ namespace p_329
     }
 } // namespace p_329
 
+#include "334.cpp"
+
+namespace p_334
+{
+    using Solution = Solution;
+
+    TEST(test__334, Case_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::vector<int> input = { 1,2,3,4,5 };
+        RetsultType result = s.increasingTriplet(input);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__334, Case_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::vector<int> input = { 5,4,3,2,1 };
+        RetsultType result = s.increasingTriplet(input);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__334, Case_3)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::vector<int> input = { 2,1,5,0,4,6 };
+        RetsultType result = s.increasingTriplet(input);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__334, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::vector<int> input = { 20, 100, 10, 12, 5, 13 };
+        RetsultType result = s.increasingTriplet(input);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__334, Case_Failure_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::vector<int> input = { 4,5,2147483647,1,2 };
+        RetsultType result = s.increasingTriplet(input);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_334
+
 #include "curated_binary_338_counting_bits.cpp"
 
 namespace p_curated_binary_338_counting_bits
