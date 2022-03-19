@@ -7566,6 +7566,35 @@ namespace p_341
     }
 } // namespace p_341
 
+#include "344.cpp"
+
+namespace p_344
+{
+    using Solution = Solution;
+
+    TEST(test__344, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<char>;
+
+        std::vector<char> input = { 'h','e','l','l','o' };
+        s.reverseString(input);
+        RetsultType expect = { 'o','l','l','e','h' };
+        ASSERT_THAT(input == expect, Eq(true));
+    }
+
+    TEST(test__344, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<char>;
+
+        std::vector<char> input = { 'H','a','n','n','a','h' };
+        s.reverseString(input);
+        RetsultType expect = { 'h','a','n','n','a','H' };
+        ASSERT_THAT(input == expect, Eq(true));
+    }
+} // namespace p_344
+
 #include "curated_heap_347_top_k_frequent_elements.cpp"
 
 namespace p_curated_heap_347_top_k_frequent_elements
