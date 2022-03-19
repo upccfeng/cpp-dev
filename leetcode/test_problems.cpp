@@ -7527,6 +7527,45 @@ namespace p_curated_binary_338_counting_bits
     }
 } // namespace p_curated_binary_338_counting_bits
 
+#include "341.cpp"
+
+namespace p_341
+{
+    TEST(test__341, Case_1)
+    {
+        std::vector<NestedInteger> input = { NestedInteger({NestedInteger(1), NestedInteger(1)}), NestedInteger(2), NestedInteger({NestedInteger(1), NestedInteger(1)}) };
+        NestedIterator nested_iter(input);
+
+        std::vector<int> result;
+
+        while (nested_iter.hasNext())
+        {
+            result.push_back(nested_iter.next());
+        }
+
+        std::vector<int> expected = { 1,1,2,1,1 };
+
+        ASSERT_THAT(result == expected, Eq(true));
+    }
+
+    TEST(test__341, Case_2)
+    {
+        std::vector<NestedInteger> input = { NestedInteger(1), NestedInteger({NestedInteger(4), NestedInteger({NestedInteger(6)})}) };
+        NestedIterator nested_iter(input);
+
+        std::vector<int> result;
+
+        while (nested_iter.hasNext())
+        {
+            result.push_back(nested_iter.next());
+        }
+
+        std::vector<int> expected = { 1,4,6 };
+
+        ASSERT_THAT(result == expected, Eq(true));
+    }
+} // namespace p_341
+
 #include "curated_heap_347_top_k_frequent_elements.cpp"
 
 namespace p_curated_heap_347_top_k_frequent_elements
