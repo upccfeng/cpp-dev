@@ -7648,6 +7648,37 @@ namespace p_curated_heap_347_top_k_frequent_elements
     }
 } // namespace p_curated_heap_347_top_k_frequent_elements
 
+#include "350.cpp"
+
+namespace p_350
+{
+    using Solution = Solution;
+
+    TEST(test__350, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input_nums1 = { 1,2,2,1 };
+        std::vector<int> input_nums2 = { 2,2 };
+        RetsultType result = s.intersect(input_nums1, input_nums2);
+        RetsultType expect = { 2,2 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__350, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        std::vector<int> input_nums1 = { 4,9,5 };
+        std::vector<int> input_nums2 = { 9,4,9,8,4 };
+        RetsultType result = s.intersect(input_nums1, input_nums2);
+        RetsultType expect = { 9, 4 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_350
+
 #include "curated_binary_371_sum_of_two.cpp"
 
 namespace p_curated_binary_371_sum_of_two
