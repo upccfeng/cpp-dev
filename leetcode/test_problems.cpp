@@ -9975,6 +9975,231 @@ namespace p_2202_weekly
     }
 } // namespace p_2202_weekly
 
+#include "2206_biweekly_74.cpp"
+
+namespace p_2206_biweekly_74
+{
+    using Solution = Solution;
+
+    TEST(test__2206_biweekly_74, Case_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::vector<int> input = { 3,2,3,2,2,2 };
+        RetsultType result = s.divideArray(input);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2206_biweekly_74, Case_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::vector<int> input = { 1,2,3,4 };
+        RetsultType result = s.divideArray(input);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_2206_biweekly_74
+
+#include "2207_biweekly_74.cpp"
+
+namespace p_2207_biweekly_74
+{
+    using Solution = Solution;
+
+    TEST(test__2207_biweekly_74, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input_text = "abdcdbc";
+        std::string input_pattern = "ac";
+        RetsultType result = s.maximumSubsequenceCount(input_text, input_pattern);
+        RetsultType expect = 4;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2207_biweekly_74, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input_text = "aabb";
+        std::string input_pattern = "ab";
+        RetsultType result = s.maximumSubsequenceCount(input_text, input_pattern);
+        RetsultType expect = 6;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2207_biweekly_74, Case_Customize_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input_text = "bbaa";
+        std::string input_pattern = "ab";
+        RetsultType result = s.maximumSubsequenceCount(input_text, input_pattern);
+        RetsultType expect = 2;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2207_biweekly_74, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input_text = "fwymvreuftzgrcrxczjacqovduqaiig";
+        std::string input_pattern = "yy";
+        RetsultType result = s.maximumSubsequenceCount(input_text, input_pattern);
+        RetsultType expect = 1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_2207_biweekly_74
+
+#include "2208_biweekly_74.cpp"
+
+namespace p_2208_biweekly_74
+{
+    using Solution = Solution;
+
+    TEST(test__2208_biweekly_74, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 5,19,8,1 };
+        RetsultType result = s.halveArray(input);
+        RetsultType expect = 3;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2208_biweekly_74, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 3,8,20 };
+        RetsultType result = s.halveArray(input);
+        RetsultType expect = 3;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_2208_biweekly_74
+
+#include "2210_weekly_285.cpp"
+
+namespace p_2210_weekly_285
+{
+    using Solution = Solution;
+
+    TEST(test__2210_weekly_285, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 2,4,1,1,6,5 };
+        RetsultType result = s.countHillValley(input);
+        RetsultType expect = 3;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2210_weekly_285, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 6,6,5,5,4,1 };
+        RetsultType result = s.countHillValley(input);
+        RetsultType expect = 0;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2210_weekly_285, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 21,21,21,2,2,2,2,21,21,45 };
+        RetsultType result = s.countHillValley(input);
+        RetsultType expect = 1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_2210_weekly_285
+
+#include "2211_weekly_285.cpp"
+
+namespace p_2211_weekly_285
+{
+    using Solution = Solution;
+
+    TEST(test__2211_weekly_285, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input = "RLRSLL";
+        RetsultType result = s.countCollisions(input);
+        RetsultType expect = 5;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2211_weekly_285, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input = "LLRR";
+        RetsultType result = s.countCollisions(input);
+        RetsultType expect = 0;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_2211_weekly_285
+
+#include "2212_weekly_285.cpp"
+
+namespace p_2212_weekly_285
+{
+    using Solution = Solution;
+
+    TEST(test__2212_weekly_285, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        int input_numArrows = 9;
+        std::vector<int> input_aliceArrows = { 1,1,0,1,0,0,2,1,0,1,2,0 };
+        RetsultType result = s.maximumBobPoints(input_numArrows, input_aliceArrows);
+        RetsultType expect = { 0,0,0,0,1,1,0,0,1,2,3,1 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2212_weekly_285, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        int input_numArrows = 3;
+        std::vector<int> input_aliceArrows = { 0,0,1,0,0,0,0,0,0,0,0,2 };
+        RetsultType result = s.maximumBobPoints(input_numArrows, input_aliceArrows);
+        RetsultType expect = { 0,0,0,0,0,0,0,0,1,1,1,0 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2212_weekly_285, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<int>;
+
+        int input_numArrows = 89;
+        std::vector<int> input_aliceArrows = { 3, 2, 28, 1, 7, 1, 16, 7, 3, 13, 3, 5 };
+        RetsultType result = s.maximumBobPoints(input_numArrows, input_aliceArrows);
+        RetsultType expect = { 21,3,0,2,8,2,17,8,4,14,4,6 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_2212_weekly_285
+
 #include "rekuten210221_1.cpp"
 
 namespace p_rekuten210221_1
