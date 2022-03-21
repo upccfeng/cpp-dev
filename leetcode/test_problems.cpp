@@ -7896,6 +7896,37 @@ namespace p_378
     }
 } // namespace p_378
 
+#include "380.cpp"
+
+namespace p_380
+{
+    TEST(test__380, Case_1)
+    {
+        RandomizedSet rs;
+
+        ASSERT_THAT(rs.insert(1), Eq(true));
+        ASSERT_THAT(rs.remove(2), Eq(false));
+        ASSERT_THAT(rs.insert(2), Eq(true));
+        int a = rs.getRandom();
+        ASSERT_THAT(rs.remove(1), Eq(true));
+        ASSERT_THAT(rs.insert(2), Eq(false));
+        a = rs.getRandom();
+    }
+
+    TEST(test__380, Case_Customize_1)
+    {
+        RandomizedSet rs;
+
+        ASSERT_THAT(rs.insert(1), Eq(true));
+        ASSERT_THAT(rs.insert(2), Eq(true));
+        ASSERT_THAT(rs.insert(3), Eq(true));
+        ASSERT_THAT(rs.insert(4), Eq(true));
+        ASSERT_THAT(rs.insert(5), Eq(true));
+        ASSERT_THAT(rs.remove(3), Eq(true));
+
+    }
+} // namespace p_380
+
 #include "416.cpp"
 
 namespace p416
