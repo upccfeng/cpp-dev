@@ -7793,6 +7793,108 @@ namespace p_curated_dp_377_combination_sum_iv
     }
 } // namespace p_curated_dp_377_combination_sum_iv
 
+#include "378.cpp"
+
+namespace p_378
+{
+    using Solution = Solution;
+
+    TEST(test__378, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<std::vector<int>> input_matrix = { {1, 5, 9}, {10, 11, 13}, {12, 13, 15} };
+        int input_k = 8;
+        RetsultType result = s.kthSmallest(input_matrix, input_k);
+        RetsultType expect = 13;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__378, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<std::vector<int>> input_matrix = { {-5} };
+        int input_k = 1;
+        RetsultType result = s.kthSmallest(input_matrix, input_k);
+        RetsultType expect = -5;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__378, Case_Customize_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<std::vector<int>> input_matrix = { {1, 1, 1}, {1,1,1}, {1,1,1} };
+        int input_k = 9;
+        RetsultType result = s.kthSmallest(input_matrix, input_k);
+        RetsultType expect = 1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__378, Case_Customize_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<std::vector<int>> input_matrix = { {1, 1, 1}, {1,1,1}, {1,1,999} };
+        int input_k = 9;
+        RetsultType result = s.kthSmallest(input_matrix, input_k);
+        RetsultType expect = 999;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__378, Case_Customize_3)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<std::vector<int>> input_matrix = { {1, 1, 1}, {1,1,1}, {1,1,999} };
+        int input_k = 8;
+        RetsultType result = s.kthSmallest(input_matrix, input_k);
+        RetsultType expect = 1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__378, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<std::vector<int>> input_matrix = { {1, 2}, {1, 3} };
+        int input_k = 2;
+        RetsultType result = s.kthSmallest(input_matrix, input_k);
+        RetsultType expect = 1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__378, Case_Failure_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<std::vector<int>> input_matrix = { {1, 3, 5}, {6, 7, 12}, {11, 14, 14} };
+        int input_k = 6;
+        RetsultType result = s.kthSmallest(input_matrix, input_k);
+        RetsultType expect = 11;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__378, Case_Failure_3)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<std::vector<int>> input_matrix = { {1, 4, 7, 11, 15}, {2, 5, 8, 12, 19}, {3, 6, 9, 16, 22}, {10, 13, 14, 17, 24}, {18, 21, 23, 26, 30} };
+        int input_k = 5;
+        RetsultType result = s.kthSmallest(input_matrix, input_k);
+        RetsultType expect = 5;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_378
 
 #include "416.cpp"
 
