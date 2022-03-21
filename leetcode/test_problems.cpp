@@ -7941,6 +7941,46 @@ namespace p_384
     }
 } // namespace p_384
 
+#include "387.cpp"
+
+namespace p_387
+{
+    using Solution = Solution;
+
+    TEST(test__387, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input = "leetcode";
+        RetsultType result = s.firstUniqChar(input);
+        RetsultType expect = 0;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__387, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input = "loveleetcode";
+        RetsultType result = s.firstUniqChar(input);
+        RetsultType expect = 2;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__387, Case_3)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input = "aabb";
+        RetsultType result = s.firstUniqChar(input);
+        RetsultType expect = -1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_387
+
 #include "416.cpp"
 
 namespace p416
