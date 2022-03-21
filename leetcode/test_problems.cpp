@@ -7981,6 +7981,49 @@ namespace p_387
     }
 } // namespace p_387
 
+#include "395.cpp"
+
+namespace p_395
+{
+    using Solution = Solution;
+
+    TEST(test__395, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input_s = "aaabb";
+        int input_k = 3;
+        RetsultType result = s.longestSubstring(input_s, input_k);
+        RetsultType expect = 3;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__395, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input_s = "ababbc";
+        int input_k = 2;
+        RetsultType result = s.longestSubstring(input_s, input_k);
+        RetsultType expect = 5;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__395, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input_s = "bbaaacbd";
+        int input_k = 3;
+        RetsultType result = s.longestSubstring(input_s, input_k);
+        RetsultType expect = 3;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_395
+
 #include "416.cpp"
 
 namespace p416
