@@ -7927,6 +7927,20 @@ namespace p_380
     }
 } // namespace p_380
 
+#include "384.cpp"
+
+namespace p_384
+{
+    TEST(test__384, Case_1)
+    {
+        Solution s(std::vector<int>({ 1, 2, 3 }));
+
+        s.shuffle();
+        ASSERT_THAT(s.reset() == std::vector<int>({ 1, 2, 3 }), Eq(true));
+        s.shuffle();
+    }
+} // namespace p_384
+
 #include "416.cpp"
 
 namespace p416
