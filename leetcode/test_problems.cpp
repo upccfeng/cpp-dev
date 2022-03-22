@@ -5052,6 +5052,39 @@ namespace p_162
     }
 } // namespace p_162
 
+#include "163.cpp"
+
+namespace p_163
+{
+    using Solution = Solution;
+
+    TEST(test__163, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::string>;
+
+        std::vector<int> input_nums = { 0,1,3,50,75 };
+        int input_lower = 0;
+        int input_upper = 99;
+        RetsultType result = s.findMissingRanges(input_nums, input_lower, input_upper);
+        RetsultType expect = { "2","4->49","51->74","76->99" };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__163, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::string>;
+
+        std::vector<int> input_nums = { -1 };
+        int input_lower = -1;
+        int input_upper = -1;
+        RetsultType result = s.findMissingRanges(input_nums, input_lower, input_upper);
+        RetsultType expect = { };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_163
+
 #include "166.cpp"
 
 namespace p_166
