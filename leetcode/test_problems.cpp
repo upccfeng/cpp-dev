@@ -6847,6 +6847,25 @@ namespace p_curated_string_242_valid_anagram
     }
 } // namespace p_curated_string_242_valid_anagram
 
+#include "251.cpp"
+
+namespace p_251
+{
+    TEST(test__251, Case_1)
+    {
+        std::vector<std::vector<int>> vec({ {1, 2}, {3}, {4} });
+        Vector2D v2d(vec);
+
+        ASSERT_THAT(v2d.next() == 1, Eq(true));
+        ASSERT_THAT(v2d.next() == 2, Eq(true));
+        ASSERT_THAT(v2d.next() == 3, Eq(true));
+        ASSERT_THAT(v2d.hasNext(), Eq(true));
+        ASSERT_THAT(v2d.hasNext(), Eq(true));
+        ASSERT_THAT(v2d.next() == 4, Eq(true));
+        ASSERT_THAT(v2d.hasNext(), Eq(false));
+    }
+} // namespace p_251
+
 #include "curated_binary_268_missing_number.cpp"
 
 namespace p_curated_binary_268_missing_number
