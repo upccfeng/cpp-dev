@@ -807,6 +807,37 @@ namespace p17
     }
 } // namespace p17
 
+#include "18.cpp"
+
+namespace p_18
+{
+    using Solution = Solution;
+
+    TEST(test__18, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        std::vector<int> input_nums = { 1,0,-1,0,-2,2 };
+        int input_target = 0;
+        RetsultType result = s.fourSum(input_nums, input_target);
+        RetsultType expect = { {-2, -1, 1, 2}, {-2, 0, 0, 2}, {-1, 0, 0, 1} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__18, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        std::vector<int> input_nums = { 2,2,2,2,2 };
+        int input_target = 8;
+        RetsultType result = s.fourSum(input_nums, input_target);
+        RetsultType expect = { {2, 2, 2, 2} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_18
+
 #include "curated_linkedlist_19_remove_nth_node_from_end_of_list.cpp"
 
 namespace p_curated_linkedlist_19_remove_nth_node_from_end_of_list
