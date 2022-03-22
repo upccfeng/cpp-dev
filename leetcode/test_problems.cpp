@@ -6866,6 +6866,35 @@ namespace p_251
     }
 } // namespace p_251
 
+#include "253.cpp"
+
+namespace p_253
+{
+    using Solution = Solution;
+
+    TEST(test__253, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<std::vector<int>> input = { {0, 30}, {5, 10}, {15, 20} };
+        RetsultType result = s.minMeetingRooms(input);
+        RetsultType expect = 2;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__253, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<std::vector<int>> input = { {7, 10}, {2, 4} };
+        RetsultType result = s.minMeetingRooms(input);
+        RetsultType expect = 1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_253
+
 #include "curated_binary_268_missing_number.cpp"
 
 namespace p_curated_binary_268_missing_number
