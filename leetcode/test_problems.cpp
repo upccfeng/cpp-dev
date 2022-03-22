@@ -8024,6 +8024,46 @@ namespace p_395
     }
 } // namespace p_395
 
+#include "412.cpp"
+
+namespace p_412
+{
+    using Solution = Solution;
+
+    TEST(test__412, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::string>;
+
+        int input = 3;
+        RetsultType result = s.fizzBuzz(input);
+        RetsultType expect = { "1","2","Fizz" };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__412, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::string>;
+
+        int input = 5;
+        RetsultType result = s.fizzBuzz(input);
+        RetsultType expect = { "1","2","Fizz","4","Buzz" };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__412, Case_3)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::string>;
+
+        int input = 15;
+        RetsultType result = s.fizzBuzz(input);
+        RetsultType expect = { "1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz" };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_412
+
 #include "416.cpp"
 
 namespace p416
