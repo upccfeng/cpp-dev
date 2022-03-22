@@ -8460,6 +8460,41 @@ namespace p_curated_interval_435_non_overlapping_intervals
     }
 } // namespace p_curated_interval_435_non_overlapping_intervals
 
+#include "454.cpp"
+
+namespace p_454
+{
+    using Solution = Solution;
+
+    TEST(test__454, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input_nums1 = { 1,2 };
+        std::vector<int> input_nums2 = { -2,-1 };
+        std::vector<int> input_nums3 = { -1,2 };
+        std::vector<int> input_nums4 = { 0,2 };
+        RetsultType result = s.fourSumCount(input_nums1, input_nums2, input_nums3, input_nums4);
+        RetsultType expect = 2;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__454, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input_nums1 = { 0 };
+        std::vector<int> input_nums2 = { 0 };
+        std::vector<int> input_nums3 = { 0 };
+        std::vector<int> input_nums4 = { 0 };
+        RetsultType result = s.fourSumCount(input_nums1, input_nums2, input_nums3, input_nums4);
+        RetsultType expect = 1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_454
+
 #include "461_daily.cpp"
 
 namespace p461
