@@ -7035,6 +7035,61 @@ namespace p_curated_graph_269_alien_dictionary
     }
 } // namespace p_curated_graph_269_alien_dictionary
 
+#include "277.cpp"
+
+namespace p_277
+{
+    using Solution = Solution;
+
+    TEST(test__277, Case_1)
+    {
+        std::vector<std::vector<int>> data = { {1, 1, 0}, { 0, 1, 0 }, { 1, 1, 1 } };
+        knows = [&data](int a, int b) -> bool {
+            return data[a][b];
+        };
+
+        Solution s;
+        using RetsultType = int;
+
+        int input = 3;
+        RetsultType result = s.findCelebrity(input);
+        RetsultType expect = 1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__277, Case_2)
+    {
+        std::vector<std::vector<int>> data = { {1, 0, 1}, {1, 1, 0}, {0, 1, 1} };
+        knows = [&data](int a, int b) -> bool {
+            return data[a][b];
+        };
+
+        Solution s;
+        using RetsultType = int;
+
+        int input = 3;
+        RetsultType result = s.findCelebrity(input);
+        RetsultType expect = -1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__277, Case_Failure_1)
+    {
+        std::vector<std::vector<int>> data = { {1, 0}, {0, 1} };
+        knows = [&data](int a, int b) -> bool {
+            return data[a][b];
+        };
+
+        Solution s;
+        using RetsultType = int;
+
+        int input = 2;
+        RetsultType result = s.findCelebrity(input);
+        RetsultType expect = -1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_277
+
 #include "279.cpp"
 
 namespace p_279
