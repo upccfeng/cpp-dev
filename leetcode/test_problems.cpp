@@ -7181,6 +7181,55 @@ namespace p_283
     }
 } // namespace p_283
 
+#include "285.cpp"
+
+namespace p_285
+{
+    using Solution = Solution;
+
+    TEST(test__285, Case_1)
+    {
+        Solution s;
+        using RetsultType = TreeNode*;
+
+        TreeNode* input_root = TreeHelper::create("2,1,3");
+        TreeNode* input_p = TreeHelper::findElements(input_root, 1)[0];
+        RetsultType result = s.inorderSuccessor(input_root, input_p);
+        RetsultType expect = TreeHelper::findElements(input_root, 2)[0];
+        ASSERT_THAT(result == expect, Eq(true));
+
+        TreeHelper::remove(input_root);
+    }
+
+    TEST(test__285, Case_2)
+    {
+        Solution s;
+        using RetsultType = TreeNode*;
+
+        TreeNode* input_root = TreeHelper::create("5,3,6,2,4,null,null,1");
+        TreeNode* input_p = TreeHelper::findElements(input_root, 6)[0];
+        RetsultType result = s.inorderSuccessor(input_root, input_p);
+        RetsultType expect = nullptr;
+        ASSERT_THAT(result == expect, Eq(true));
+
+        TreeHelper::remove(input_root);
+    }
+
+    TEST(test__285, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = TreeNode*;
+
+        TreeNode* input_root = TreeHelper::create("5,3,6,1,4,null,null,null,2");
+        TreeNode* input_p = TreeHelper::findElements(input_root, 4)[0];
+        RetsultType result = s.inorderSuccessor(input_root, input_p);
+        RetsultType expect = TreeHelper::findElements(input_root, 5)[0];;
+        ASSERT_THAT(result == expect, Eq(true));
+
+        TreeHelper::remove(input_root);
+    }
+} // namespace p_285
+
 #include "287.cpp"
 
 namespace p_287
