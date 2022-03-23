@@ -6929,6 +6929,112 @@ namespace p_curated_binary_268_missing_number
     }
 } // namespace p_curated_binary_268_missing_number
 
+#include "curated_graph_269_alien_dictionary.cpp"
+
+namespace p_curated_graph_269_alien_dictionary
+{
+    using Solution = Solution;
+
+    TEST(test__curated_graph_269_alien_dictionary, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        std::vector<std::string> input = { "wrt","wrf","er","ett","rftt" };
+        RetsultType result = s.alienOrder(input);
+        RetsultType expect = "wertf";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_graph_269_alien_dictionary, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        std::vector<std::string> input = { "z","x" };
+        RetsultType result = s.alienOrder(input);
+        RetsultType expect = "zx";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_graph_269_alien_dictionary, Case_3)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        std::vector<std::string> input = { "z", "x", "z" };
+        RetsultType result = s.alienOrder(input);
+        RetsultType expect = "";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_graph_269_alien_dictionary, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        std::vector<std::string> input = { "z", "z" };
+        RetsultType result = s.alienOrder(input);
+        RetsultType expect = "z";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_graph_269_alien_dictionary, Case_Failure_2)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        std::vector<std::string> input = { "zy","zx" };
+        RetsultType result = s.alienOrder(input);
+        RetsultType expect = "yxz";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_graph_269_alien_dictionary, Case_Failure_3)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        std::vector<std::string> input = { "ac","ab","zc","zb" };
+        RetsultType result = s.alienOrder(input);
+        RetsultType expect = "cbaz";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_graph_269_alien_dictionary, Case_Failure_4)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        std::vector<std::string> input = { "aac","aabb","aaba" };
+        RetsultType result = s.alienOrder(input);
+        RetsultType expect = "cba";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_graph_269_alien_dictionary, Case_Failure_5)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        std::vector<std::string> input = { "abc","ab" };
+        RetsultType result = s.alienOrder(input);
+        RetsultType expect = "";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_graph_269_alien_dictionary, Case_Runtime_1)
+    {
+        Solution s;
+        using RetsultType = std::string;
+
+        std::vector<std::string> input = { "ze","yf","xd","wd","vd","ua","tt","sz","rd","qd","pz","op","nw","mt","ln","ko","jm","il","ho","gk","fa","ed","dg","ct","bb","ba" };
+        RetsultType result = s.alienOrder(input);
+        RetsultType expect = "zyxwvutsrqponmlkjihgfedcba";
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_curated_graph_269_alien_dictionary
+
 #include "279.cpp"
 
 namespace p_279
