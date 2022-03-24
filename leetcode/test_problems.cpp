@@ -6895,6 +6895,49 @@ namespace p_curated_interval_253_meeting_rooms_ii
     }
 } // namespace p_curated_interval_253_meeting_rooms_ii
 
+#include "curated_graph_261_graph_valid_tree.cpp"
+
+namespace p_curated_graph_261_graph_valid_tree
+{
+    using Solution = Solution;
+
+    TEST(test__curated_graph_261_graph_valid_tree, Case_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        int input_n = 5;
+        std::vector<std::vector<int>> input_edges = { {0, 1}, {0, 2}, {0, 3}, {1, 4} };
+        RetsultType result = s.validTree(input_n, input_edges);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_graph_261_graph_valid_tree, Case_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        int input_n = 5;
+        std::vector<std::vector<int>> input_edges = { {0, 1}, {1, 2}, {2, 3}, {1, 3}, {1, 4} };
+        RetsultType result = s.validTree(input_n, input_edges);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_graph_261_graph_valid_tree, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        int input_n = 4;
+        std::vector<std::vector<int>> input_edges = { {0, 1}, {2, 3} };
+        RetsultType result = s.validTree(input_n, input_edges);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_curated_graph_261_graph_valid_tree
+
 #include "curated_binary_268_missing_number.cpp"
 
 namespace p_curated_binary_268_missing_number
