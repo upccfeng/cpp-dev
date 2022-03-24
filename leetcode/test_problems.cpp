@@ -8016,6 +8016,23 @@ namespace p_curated_heap_347_top_k_frequent_elements
     }
 } // namespace p_curated_heap_347_top_k_frequent_elements
 
+#include "348.cpp"
+
+namespace p_348
+{
+    TEST(test__348, Case_1)
+    {
+        TicTacToe ttt(3);
+        ASSERT_THAT(ttt.move(0, 0, 1) == 0, Eq(true));
+        ASSERT_THAT(ttt.move(0, 2, 2) == 0, Eq(true));
+        ASSERT_THAT(ttt.move(2, 2, 1) == 0, Eq(true));
+        ASSERT_THAT(ttt.move(1, 1, 2) == 0, Eq(true));
+        ASSERT_THAT(ttt.move(2, 0, 1) == 0, Eq(true));
+        ASSERT_THAT(ttt.move(1, 0, 2) == 0, Eq(true));
+        ASSERT_THAT(ttt.move(2, 1, 1) == 1, Eq(true));
+    }
+} // namespace p_348
+
 #include "350.cpp"
 
 namespace p_350
