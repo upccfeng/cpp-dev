@@ -7078,6 +7078,27 @@ namespace p_curated_graph_269_alien_dictionary
     }
 } // namespace p_curated_graph_269_alien_dictionary
 
+#include "curated_string_271_encode_and_decode_strings.cpp"
+
+namespace p_curated_string_271_encode_and_decode_strings
+{
+    TEST(test__curated_string_271_encode_and_decode_strings, Case_1)
+    {
+        Codec cc;
+
+        std::vector<std::string> data({ "Hello","World" });
+        ASSERT_THAT(cc.decode(cc.encode(data)) == data, Eq(true));
+    }
+
+    TEST(test__curated_string_271_encode_and_decode_strings, Case_Failure_1)
+    {
+        Codec cc;
+
+        std::vector<std::string> data({ "" });
+        ASSERT_THAT(cc.decode(cc.encode(data)) == data, Eq(true));
+    }
+} // namespace p_curated_string_271_encode_and_decode_strings
+
 #include "277.cpp"
 
 namespace p_277
