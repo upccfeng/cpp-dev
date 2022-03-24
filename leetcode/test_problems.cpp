@@ -7864,6 +7864,37 @@ namespace p_curated_binary_338_counting_bits
     }
 } // namespace p_curated_binary_338_counting_bits
 
+#include "340.cpp"
+
+namespace p_340
+{
+    using Solution = Solution;
+
+    TEST(test__340, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input_s = "eceba";
+        int input_k = 2;
+        RetsultType result = s.lengthOfLongestSubstringKDistinct(input_s, input_k);
+        RetsultType expect = 3;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__340, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input_s = "aa";
+        int input_k = 1;
+        RetsultType result = s.lengthOfLongestSubstringKDistinct(input_s, input_k);
+        RetsultType expect = 2;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_340
+
 #include "341.cpp"
 
 namespace p_341
