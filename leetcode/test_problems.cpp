@@ -7465,6 +7465,21 @@ namespace p307
 
 } // namespace p307
 
+#include "308.cpp"
+
+namespace p_308
+{
+    TEST(test__308, Case_1)
+    {
+        std::vector<std::vector<int>> data = { {3, 0, 1, 4, 2},{5, 6, 3, 2, 1},{1, 2, 0, 1, 5},{4, 1, 0, 1, 7},{1, 0, 3, 0, 5} };
+        NumMatrix nmx(data);
+
+        ASSERT_THAT(nmx.sumRegion(2, 1, 4, 3) == 8, Eq(true));
+        nmx.update(3, 2, 2);
+        ASSERT_THAT(nmx.sumRegion(2, 1, 4, 3) == 10, Eq(true));
+    }
+} // namespace p_308
+
 #include "315.cpp"
 
 namespace p_315
