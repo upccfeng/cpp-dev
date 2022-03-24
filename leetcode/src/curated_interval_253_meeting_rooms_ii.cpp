@@ -3,7 +3,7 @@
 #include <set>
 #include <algorithm>
 
-namespace p_253
+namespace p_curated_interval_253_meeting_rooms_ii
 {
     class Solution
     {
@@ -60,7 +60,7 @@ namespace p_253
             return ret;
         }
     };
-} // namespace p_253
+} // namespace p_curated_interval_253_meeting_rooms_ii
 
 /*
 # Problem:

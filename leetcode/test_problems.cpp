@@ -6866,13 +6866,13 @@ namespace p_251
     }
 } // namespace p_251
 
-#include "253.cpp"
+#include "curated_interval_253_meeting_rooms_ii.cpp"
 
-namespace p_253
+namespace p_curated_interval_253_meeting_rooms_ii
 {
     using Solution = Solution;
 
-    TEST(test__253, Case_1)
+    TEST(test__curated_interval_253_meeting_rooms_ii, Case_1)
     {
         Solution s;
         using RetsultType = int;
@@ -6883,7 +6883,7 @@ namespace p_253
         ASSERT_THAT(result == expect, Eq(true));
     }
 
-    TEST(test__253, Case_2)
+    TEST(test__curated_interval_253_meeting_rooms_ii, Case_2)
     {
         Solution s;
         using RetsultType = int;
@@ -6893,7 +6893,7 @@ namespace p_253
         RetsultType expect = 1;
         ASSERT_THAT(result == expect, Eq(true));
     }
-} // namespace p_253
+} // namespace p_curated_interval_253_meeting_rooms_ii
 
 #include "curated_binary_268_missing_number.cpp"
 
