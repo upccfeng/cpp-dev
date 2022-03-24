@@ -7651,6 +7651,73 @@ namespace p_curated_dp_322_coin_change
     }
 } // namespace p_curated_dp_322_coin_change
 
+#include "curated_graph_323_number_of_connected_components_in_an_undirected_graph.cpp"
+
+namespace p_curated_graph_323_number_of_connected_components_in_an_undirected_graph
+{
+    using Solution = Solution;
+
+    TEST(test__curated_graph_323_number_of_connected_components_in_an_undirected_graph, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        int input_n = 5;
+        std::vector<std::vector<int>> input_edges = { {0, 1}, {1, 2}, {3, 4} };
+        RetsultType result = s.countComponents(input_n, input_edges);
+        RetsultType expect = 2;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_graph_323_number_of_connected_components_in_an_undirected_graph, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        int input_n = 5;
+        std::vector<std::vector<int>> input_edges = { {0, 1}, {1, 2}, {2, 3}, {3, 4} };
+        RetsultType result = s.countComponents(input_n, input_edges);
+        RetsultType expect = 1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_graph_323_number_of_connected_components_in_an_undirected_graph, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        int input_n = 6;
+        std::vector<std::vector<int>> input_edges = { {0, 1}, {0, 2}, {2, 5}, {3, 4}, {3, 5} };
+        RetsultType result = s.countComponents(input_n, input_edges);
+        RetsultType expect = 1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_graph_323_number_of_connected_components_in_an_undirected_graph, Case_Failure_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        int input_n = 5;
+        std::vector<std::vector<int>> input_edges = { {0, 1}, {0, 2}, {2, 3}, {2, 4} };
+        RetsultType result = s.countComponents(input_n, input_edges);
+        RetsultType expect = 1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_graph_323_number_of_connected_components_in_an_undirected_graph, Case_Failure_3)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        int input_n = 10;
+        std::vector<std::vector<int>> input_edges = { {5, 6}, {0, 2}, {1, 7}, {5, 9}, {1, 8}, {3, 4}, {0, 6}, {0, 7}, {0, 3}, {8, 9} };
+        RetsultType result = s.countComponents(input_n, input_edges);
+        RetsultType expect = 1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_curated_graph_323_number_of_connected_components_in_an_undirected_graph
+
 #include "324.cpp"
 
 namespace p_324
