@@ -6866,6 +6866,46 @@ namespace p_251
     }
 } // namespace p_251
 
+#include "curated_interval_252_meeting_rooms.cpp"
+
+namespace p_curated_interval_252_meeting_rooms
+{
+    using Solution = Solution;
+
+    TEST(test__curated_interval_252_meeting_rooms, Case_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::vector<std::vector<int>> input = { {0, 30}, {5, 10}, {15, 20} };
+        RetsultType result = s.canAttendMeetings(input);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_interval_252_meeting_rooms, Case_2)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::vector<std::vector<int>> input = { {7, 10}, {2, 4} };
+        RetsultType result = s.canAttendMeetings(input);
+        RetsultType expect = true;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__curated_interval_252_meeting_rooms, Case_Failure_1)
+    {
+        Solution s;
+        using RetsultType = bool;
+
+        std::vector<std::vector<int>> input = { {9, 10}, { 4, 9 }, { 4, 17 } };
+        RetsultType result = s.canAttendMeetings(input);
+        RetsultType expect = false;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_curated_interval_252_meeting_rooms
+
 #include "curated_interval_253_meeting_rooms_ii.cpp"
 
 namespace p_curated_interval_253_meeting_rooms_ii
