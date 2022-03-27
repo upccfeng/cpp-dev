@@ -11061,6 +11061,109 @@ namespace p_2212_weekly_285
     }
 } // namespace p_2212_weekly_285
 
+#include "2215_weekly_286.cpp"
+
+namespace p_2215_weekly_286
+{
+    using Solution = Solution;
+
+    TEST(test__2215_weekly_286, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        std::vector<int> input_nums1 = { 1,2,3 };
+        std::vector<int> input_nums2 = { 2,4,6 };
+        RetsultType result = s.findDifference(input_nums1, input_nums2);
+        RetsultType expect = { {1, 3}, {4, 6} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2215_weekly_286, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::vector<int>>;
+
+        std::vector<int> input_nums1 = { 1,2,3,3 };
+        std::vector<int> input_nums2 = { 1,1,2,2 };
+        RetsultType result = s.findDifference(input_nums1, input_nums2);
+        RetsultType expect = { {3}, {} };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_2215_weekly_286
+
+#include "2216_weekly_286.cpp"
+
+namespace p_2216_weekly_286
+{
+    using Solution = Solution;
+
+    TEST(test__2216_weekly_286, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 1,1,2,3,5 };
+        RetsultType result = s.minDeletion(input);
+        RetsultType expect = 1;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2216_weekly_286, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input = { 1,1,2,2,3,3 };
+        RetsultType result = s.minDeletion(input);
+        RetsultType expect = 2;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_2216_weekly_286
+
+#include "2217_weekly_286.cpp"
+
+namespace p_2217_weekly_286
+{
+    using Solution = Solution;
+
+    TEST(test__2217_weekly_286, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<long long>;
+
+        std::vector<int> input_queries = { 1,2,3,4,5,90 };
+        int input_intLength = 3;
+        RetsultType result = s.kthPalindrome(input_queries, input_intLength);
+        RetsultType expect = { 101,111,121,131,141,999 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2217_weekly_286, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<long long>;
+
+        std::vector<int> input_queries = { 2,4,6 };
+        int input_intLength = 4;
+        RetsultType result = s.kthPalindrome(input_queries, input_intLength);
+        RetsultType expect = { 1111,1331,1551 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__2217_weekly_286, Case_Cusotmize_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<long long>;
+
+        std::vector<int> input_queries = { 89,90,91 };
+        int input_intLength = 3;
+        RetsultType result = s.kthPalindrome(input_queries, input_intLength);
+        RetsultType expect = { 989,999,-1 };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_2217_weekly_286
+
 #include "rekuten210221_1.cpp"
 
 namespace p_rekuten210221_1
