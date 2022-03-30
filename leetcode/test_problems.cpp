@@ -2604,6 +2604,49 @@ namespace p66
     }
 } // namespace p66
 
+#include "68.cpp"
+
+namespace p_68
+{
+    using Solution = Solution;
+
+    TEST(test__68, Case_1)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::string>;
+
+        std::vector<std::string> input_words = { "This", "is", "an", "example", "of", "text", "justification." };
+        int input_maxWidth = 16;
+        RetsultType result = s.fullJustify(input_words, input_maxWidth);
+        RetsultType expect = { "This    is    an", "example  of text", "justification.  " };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__68, Case_2)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::string>;
+
+        std::vector<std::string> input_words = { "What","must","be","acknowledgment","shall","be" };
+        int input_maxWidth = 16;
+        RetsultType result = s.fullJustify(input_words, input_maxWidth);
+        RetsultType expect = { "What   must   be", "acknowledgment  ", "shall be        " };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test__68, Case_3)
+    {
+        Solution s;
+        using RetsultType = std::vector<std::string>;
+
+        std::vector<std::string> input_words = { "Science","is","what","we","understand","well","enough","to","explain","to","a","computer.","Art","is","everything","else","we","do" };
+        int input_maxWidth = 20;
+        RetsultType result = s.fullJustify(input_words, input_maxWidth);
+        RetsultType expect = { "Science  is  what we", "understand      well", "enough to explain to", "a  computer.  Art is", "everything  else  we", "do                  " };
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_68
+
 #include "69.cpp"
 
 namespace p_69
