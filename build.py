@@ -66,7 +66,7 @@ class Build:
             #
             # TODO: Get Visual Studio version, shouldn't hardcode
             #
-            return "Visual Studio 16 2019"
+            return "Visual Studio 17 2022"
         else:
             return "Unix Makefiles"
 

@@ -7,10 +7,14 @@
 * python3
 * python3-venv (optional)
 * cmake & make
+  * Install Visual Studio C++ environment
 
 ### Build
 
 ```bat
+REM Enter VC build env
+call "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsall.bat" x64
+
 REM "git clone https://github.com/upccfeng/cpp-dev.git" as <SOURCE_DIR>
 
 mkdir <BUILD_DIR>
