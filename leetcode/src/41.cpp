@@ -1,4 +1,6 @@
 #include <vector>
+#include <limits.h>
+#include <cstdlib>
 
 namespace p_41
 {
@@ -17,7 +19,7 @@ namespace p_41
 
             for (auto n : nums)
             {
-                int taking = abs(n);
+                int taking = std::abs(n);
                 if (taking - 1 >= 0 && taking - 1 < nums.size())
                 {
                     if (nums[taking - 1] > 0)

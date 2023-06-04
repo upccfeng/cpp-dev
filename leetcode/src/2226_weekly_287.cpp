@@ -1,4 +1,5 @@
 #include <vector>
+#include <limits.h>
 
 namespace p_2226_weekly_287
 {

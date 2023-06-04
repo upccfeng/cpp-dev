@@ -1,4 +1,5 @@
 #include "treenode.hpp"
+#include <limits.h>
 
 namespace p_curated_tree_98_validate_bindary_search_tree
 {

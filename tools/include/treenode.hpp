@@ -20,7 +20,7 @@ private:
 
 public:
     static TreeNode* create(const std::vector<int>& target, const std::vector<bool>& valid);
-    static TreeNode* TreeHelper::create(const std::string& str);
+    static TreeNode* create(const std::string& str);
     static void remove(TreeNode* head);
     static std::vector<TreeNode*> findElements(TreeNode* head, int target);
     static bool compare(TreeNode* lhs, TreeNode* rhs);

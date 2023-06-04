@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <sstream>
+#include <cmath>
 
 namespace p_curated_string_271_encode_and_decode_strings
 {

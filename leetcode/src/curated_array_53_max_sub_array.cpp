@@ -1,5 +1,6 @@
 #include <vector>
 #include <map>
+#include <limits.h>
 
 namespace p_curated_array_53_max_sub_array
 {

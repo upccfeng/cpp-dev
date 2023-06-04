@@ -1,4 +1,5 @@
 #include "treenode.hpp"
+#include <algorithm>
 #include <vector>
 
 namespace p_103

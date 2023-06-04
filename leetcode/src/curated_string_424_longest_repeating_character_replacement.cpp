@@ -1,5 +1,6 @@
 #include <vector>
 #include <unordered_map>
+#include <string>
 
 namespace p_curated_string_424_longest_repeating_character_replacement
 {

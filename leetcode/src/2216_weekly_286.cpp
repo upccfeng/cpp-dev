@@ -1,4 +1,4 @@
-#include <vector>s
+#include <vector>
 
 namespace p_2216_weekly_286
 {

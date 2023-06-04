@@ -1,5 +1,6 @@
 #include <set>
 #include <unordered_map>
+#include <vector>
 
 namespace p_curated_graph_207_course_schedule
 {

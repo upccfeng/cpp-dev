@@ -1,5 +1,6 @@
 #include "assert.h"
 #include <map>
+#include <vector>
 #include <unordered_map>
 
 namespace p_329

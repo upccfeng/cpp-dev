@@ -1,7 +1,11 @@
 #include "assert.h"
+#include <limits.h>
 #include <map>
 #include <unordered_map>
 #include <unordered_set>
+#include <string>
+#include <cstddef>
+
 
 namespace p_340
 {

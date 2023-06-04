@@ -1,4 +1,5 @@
 #include "assert.h"
+#include <cstdlib>
 #include <vector>
 
 namespace p_384

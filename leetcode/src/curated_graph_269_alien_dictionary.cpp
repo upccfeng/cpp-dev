@@ -4,6 +4,7 @@
 #include <set>
 #include <unordered_set>
 #include <unordered_map>
+#include <vector>
 
 namespace p_curated_graph_269_alien_dictionary
 {

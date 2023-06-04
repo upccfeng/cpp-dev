@@ -1,5 +1,6 @@
 #include "assert.h"
 #include <vector>
+#include <limits.h>
 #include <map>
 
 namespace p_334

@@ -1,5 +1,6 @@
 #include <string>
 #include <unordered_map>
+#include <limits.h>
 
 namespace p_curated_string_76_minimum_window_substring
 {

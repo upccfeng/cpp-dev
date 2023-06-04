@@ -100,7 +100,7 @@ code .
 cd <BUILD_DIR>
 
 ./processing/test_processing
-./leetcode/test_all
+./leetcode/test_problems
 ./tools/test_tools
 ```
 

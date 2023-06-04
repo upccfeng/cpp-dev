@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <limits.h>
 #include "assert.h"
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
@@ -8532,10 +8532,12 @@ namespace p_384
 {
     TEST(test__384, Case_1)
     {
-        Solution s(std::vector<int>({ 1, 2, 3 }));
+        std::vector<int> input = { 1, 2, 3 };
+        std::vector<int> output = { 1, 2, 3 };
+        Solution s(input);
 
         s.shuffle();
-        ASSERT_THAT(s.reset() == std::vector<int>({ 1, 2, 3 }), Eq(true));
+        ASSERT_THAT(s.reset() == output, Eq(true));
         s.shuffle();
     }
 } // namespace p_384

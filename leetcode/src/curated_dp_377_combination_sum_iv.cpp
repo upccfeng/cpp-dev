@@ -1,4 +1,5 @@
 #include <vector>
+#include <cstdint>
 
 namespace p_curated_dp_377_combination_sum_iv
 {
