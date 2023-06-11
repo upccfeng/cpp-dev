@@ -1,7 +1,7 @@
 #include "assert.h"
 #include <algorithm>
 #include <unordered_map>
-
+#include <vector>
 namespace p_454
 {
     class Solution
