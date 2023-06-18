@@ -11412,6 +11412,117 @@ namespace p_2226_weekly_287
     }
 } // namespace p_2226_weekly_287
 
+#include "2716_weekly_348_fred.cpp"
+
+namespace p_2716_weekly_348_fred
+{
+    using Solution = Solution;
+
+    TEST(test_2716_weekly_348_fred, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input = "aaabc";
+        RetsultType result = s.minimizedStringLength(input);
+        RetsultType expect = 3;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test_2716_weekly_348_fred, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input = "cbbd";
+        RetsultType result = s.minimizedStringLength(input);
+        RetsultType expect = 3;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test_2716_weekly_348_fred, Case_3)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::string input = "dddaaa";
+        RetsultType result = s.minimizedStringLength(input);
+        RetsultType expect = 2;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+} // namespace p_2716_weekly_348_fred
+
+#include "2717_weekly_348_fred.cpp"
+
+namespace p_2717_weekly_348_fred
+{
+    using Solution = Solution;
+
+    TEST(test_2717_weekly_348_fred, Case_1)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input  { 2,1,4,3 };
+        RetsultType result = s.semiOrderedPermutation(input);
+        RetsultType expect = 2;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test_2717_weekly_348_fred, Case_2)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input{ 2,4,1,3 };
+        RetsultType result = s.semiOrderedPermutation(input);
+        RetsultType expect = 3;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test_2717_weekly_348_fred, Case_3)
+    {
+        Solution s;
+        using RetsultType = int;
+
+        std::vector<int> input{ 1,3,4,2,5 };
+        RetsultType result = s.semiOrderedPermutation(input);
+        RetsultType expect = 0;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+}
+
+#include "2718_weekly_348_fred.cpp"
+
+namespace p_2718_weekly_348_fred
+{
+    using Solution = Solution;
+
+    TEST(test_2718_weekly_348_fred, Case_1)
+    {
+        Solution s;
+        using RetsultType = long long;
+
+        int input_n = 3;
+        std::vector<std::vector<int>> input_queries{ { 0, 0, 1 }, { 1, 2, 2 }, { 0, 2, 3 }, { 1, 0, 4 } };
+        RetsultType result = s.matrixSumQueries(input_n, input_queries);
+        RetsultType expect = 23;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+
+    TEST(test_2718_weekly_348_fred, Case_2)
+    {
+        Solution s;
+        using RetsultType = long long;
+
+        int input_n = 3;
+        std::vector<std::vector<int>> input_queries {{ 0, 0, 4 }, { 0, 1, 2 }, { 1, 0, 1 }, { 0, 2, 3 }, { 1, 2, 1 }};
+        RetsultType result = s.matrixSumQueries(input_n, input_queries);
+        RetsultType expect = 17;
+        ASSERT_THAT(result == expect, Eq(true));
+    }
+}
+
 #include "rekuten210221_1.cpp"
 
 namespace p_rekuten210221_1
